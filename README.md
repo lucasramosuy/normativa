@@ -1,66 +1,45 @@
-# Sistema Personal de Conocimiento Académico (Derecho + Sociología, Uruguay)
+# Normativa UY - sitio web
 
-Corpus normativo + apuntes + bibliografía, procesado en chunks con metadata,
-indexado con embeddings para búsqueda semántica en lenguaje natural.
+Esta rama (`www`) contiene el sitio estático de prueba para consultar la Constitución de la República Oriental del Uruguay.
 
-Fuente principal: [IMPO](https://www.impo.com.uy) (Centro de Información Oficial de Uruguay).
+## Sitio
 
-## Estructura del proyecto
+La interfaz usa Tailwind CSS y carga `data/constitucion.jsonl` en el navegador. Permite:
 
-```
-/sources_raw/          # HTML/PDF crudo, sin tocar
-/sources_processed/    # texto limpio en Markdown/JSON
-/chunks/                # fragmentos + metadata (listos para embeddings)
-/embeddings/            # vectores + índice FAISS
-/schemas/               # esquema de metadata (JSON Schema) + ejemplos
-/scripts/
-  ingest/               # scrapers por fuente (IMPO, ANEP, etc.)
-  process/              # limpieza, chunking, normalización
-  index/                # generación y actualización de embeddings/FAISS
-  query/                # búsqueda semántica sobre el índice
-/notebooks/             # prototipado en Colab
-```
+- buscar por número de artículo, texto, título, sección, capítulo y notas;
+- abrir enlaces directos con el formato `#articulo-N`;
+- navegar entre artículos;
+- consultar la fuente oficial de cada artículo en IMPO.
 
-## Setup
+No requiere compilación ni dependencias locales. Para probarlo, serví la raíz del repositorio por HTTP, por ejemplo:
 
 ```bash
-python -m venv venv
-source venv/bin/activate  # en Windows: venv\Scripts\activate
-pip install -r requirements.txt
+python -m http.server 8000
 ```
 
-## Esquema de metadata
+Luego abrí `http://localhost:8000`.
 
-Cada documento procesado (típicamente un artículo de una norma) debe cumplir
-`schemas/metadata_schema.json`. Ver `schemas/ejemplo_documento.json` para un caso concreto.
+## Publicación
 
-Campos obligatorios: `id`, `fuente`, `tipo`, `titulo`, `texto`, `url_origen`, `fecha_scrapeo`, `vigente`.
+GitHub Pages se despliega exclusivamente desde esta rama mediante `.github/workflows/pages.yml`. El workflow corre con cada push a `www` o manualmente desde Actions.
 
-Convención de `id`: `{tipo}_{titulo_slug}_art_{n}` — ej. `constitucion_1967_art_7`,
-`codigo_civil_art_1245`.
+En **Settings → Pages**, la fuente debe ser **GitHub Actions**. La URL prevista es:
 
-## Estado del roadmap
+https://lucasramosuy.github.io/normativa-uy/
 
-- [x] Fase 0 — Setup del proyecto
-- [ ] Fase 1 — Corpus normativo estable (Constitución + Códigos)
-- [ ] Fase 2 — Pipeline de procesamiento
-- [ ] Fase 3 — Embeddings y búsqueda semántica
-- [ ] Fase 4 — Ampliar el corpus
-- [ ] Fase 5 — Automatización
-- [ ] Fase 6 — Interfaz (opcional)
+## Actualización de datos
 
-## Notas éticas/técnicas
+La rama `main` queda reservada para el scraper y genera `data/constitucion.jsonl` y `reports/last_run.json`.
 
-- Antes de scrapear IMPO: revisar `impo.com.uy/robots.txt`.
-- Respetar rate limits (delays entre requests) e identificar el user-agent.
-- No redistribuir el corpus completo públicamente salvo que el sitio lo habilite.
+La actualización de la web es deliberadamente manual. Cuando se quiera publicar información nueva:
 
-## Constitución uruguaya desde IMPO
+1. ejecutar y validar el scraper en `main`;
+2. incorporar `main` en `www` mediante un merge revisado;
+3. resolver cualquier conflicto conservando los archivos propios del sitio (`index.html`, `app.js`, este README y el workflow de Pages);
+4. hacer push a `www`.
 
-El workflow manual genera `data/constitucion.jsonl`, una línea JSON por artículo, y `reports/last_run.json`, con cobertura y hash del dataset.
+Ese push dispara el despliegue. No hay sincronización automática desde `main` hacia `www`.
 
-Para actualizar: **Actions → Actualizar Constitución desde IMPO → Run workflow**.
+## Fuente
 
-El proceso consulta `robots.txt`, respeta un mínimo de 10 segundos, descubre el total desde el índice oficial, valida huecos y duplicados y solo hace commit si cambian las salidas.
-
-Fuente: https://www.impo.com.uy/bases/constitucion/1967-1967
+Los textos y enlaces del dataset provienen de [IMPO](https://www.impo.com.uy/bases/constitucion/1967-1967), Centro de Información Oficial de Uruguay.
