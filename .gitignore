@@ -1,0 +1,16 @@
+# entorno
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# artefactos pesados (ajustar según tu criterio de versionado)
+embeddings/*.faiss
+embeddings/*.index
+
+# entorno local
+.env
+.DS_Store
+
+# notebooks checkpoints
+.ipynb_checkpoints/
