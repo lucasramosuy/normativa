@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Buscador experimental de normativa uruguaya. Consulta los 332 artículos de la Constitución." />
+  <title>Normativa UY · Buscador constitucional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { ink:'#17201d', mate:'#f4f0e8', celeste:'#2d7d78', cielo:'#dcefed' }, fontFamily:{ sans:['Inter','ui-sans-serif','system-ui','sans-serif'] } } } }
+  </script>
+  <style>
+    :focus-visible{outline:3px solid #2d7d78;outline-offset:3px}.article-text{white-space:pre-wrap}.mark{background:#fef08a;color:inherit;border-radius:.2rem;padding:0 .1rem}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body class="min-h-screen bg-mate text-ink antialiased">
+  <header class="border-b border-black/10 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <a href="#" class="flex items-center gap-3 font-semibold" aria-label="Normativa UY, inicio">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-celeste text-lg font-black text-white">UY</span>
+        <span><span class="block leading-5">Normativa UY</span><span class="block text-xs font-normal text-slate-500">Prueba con la Constitución</span></span>
+      </a>
+      <a href="https://www.impo.com.uy/bases/constitucion/1967-1967" target="_blank" rel="noreferrer" class="rounded-lg px-3 py-2 text-sm font-semibold text-celeste hover:bg-cielo">Fuente oficial ↗</a>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+    <section class="max-w-3xl">
+      <p class="mb-3 text-sm font-bold uppercase tracking-[.18em] text-celeste">República Oriental del Uruguay</p>
+      <h1 class="text-4xl font-black tracking-tight sm:text-5xl">La Constitución, fácil de consultar.</h1>
+      <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600">Buscá por palabras, número de artículo, sección, capítulo o notas. Este sitio usa el contenido guardado en el repositorio y enlaza cada artículo a IMPO.</p>
+    </section>
+
+    <section class="mt-8" aria-labelledby="search-title">
+      <h2 id="search-title" class="sr-only">Buscar artículos</h2>
+      <div class="rounded-2xl border border-black/10 bg-white p-4 shadow-sm sm:p-5">
+        <label for="search" class="mb-2 block text-sm font-semibold">Buscar en la Constitución</label>
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <div class="relative flex-1">
+            <span aria-hidden="true" class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">⌕</span>
+            <input id="search" type="search" autocomplete="off" placeholder="Ej.: libertad, artículo 7, ciudadanía…" class="h-12 w-full rounded-xl border border-slate-300 bg-white pl-11 pr-12 text-base shadow-inner placeholder:text-slate-400 focus:border-celeste" />
+            <kbd class="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-xs text-slate-500 sm:block">/</kbd>
+          </div>
+          <button id="clear" type="button" class="h-12 rounded-xl border border-slate-300 px-5 font-semibold hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40">Limpiar</button>
+        </div>
+        <div id="status" class="mt-3 text-sm text-slate-600" role="status" aria-live="polite">Cargando artículos…</div>
+      </div>
+    </section>
+
+    <div id="error" class="mt-8 hidden rounded-2xl border border-red-200 bg-red-50 p-5 text-red-900" role="alert">
+      <h2 class="font-bold">No pudimos cargar la Constitución</h2>
+      <p class="mt-1 text-sm">Revisá tu conexión o volvé a intentar en unos segundos.</p>
+      <button id="retry" class="mt-4 rounded-lg bg-red-900 px-4 py-2 text-sm font-semibold text-white">Reintentar</button>
+    </div>
+
+    <div id="content" class="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)]">
+      <section aria-labelledby="results-title">
+        <div class="mb-4 flex items-end justify-between gap-4"><div><p class="text-sm font-semibold text-celeste">Resultados</p><h2 id="results-title" class="text-2xl font-black">Artículos</h2></div><span id="count" class="rounded-full bg-cielo px-3 py-1 text-sm font-bold text-celeste">—</span></div>
+        <div id="results" class="space-y-3" aria-live="polite"></div>
+        <button id="more" class="mt-5 hidden w-full rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold hover:border-celeste hover:text-celeste">Mostrar más</button>
+      </section>
+
+      <aside id="detail" class="hidden self-start rounded-2xl border border-black/10 bg-white p-5 shadow-sm lg:sticky lg:top-5 sm:p-6" aria-labelledby="detail-title">
+        <div class="flex items-start justify-between gap-4">
+          <div><p id="detail-meta" class="text-sm font-semibold text-celeste"></p><h2 id="detail-title" class="mt-1 text-3xl font-black"></h2></div>
+          <button id="close-detail" class="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-xl text-slate-500 hover:bg-slate-100" aria-label="Cerrar detalle">×</button>
+        </div>
+        <div id="detail-context" class="mt-4 text-sm text-slate-500"></div>
+        <div id="detail-text" class="article-text mt-5 border-t border-slate-200 pt-5 text-[1.04rem] leading-8"></div>
+        <div id="detail-notes" class="mt-5 hidden rounded-xl bg-mate p-4 text-sm leading-6"></div>
+        <a id="source" target="_blank" rel="noreferrer" class="mt-6 inline-flex min-h-11 items-center font-bold text-celeste hover:underline">Ver artículo en IMPO ↗</a>
+        <div class="mt-6 flex gap-2 border-t border-slate-200 pt-4"><button id="prev" class="min-h-11 flex-1 rounded-lg border border-slate-300 px-3 text-sm font-semibold disabled:opacity-30">← Anterior</button><button id="next" class="min-h-11 flex-1 rounded-lg border border-slate-300 px-3 text-sm font-semibold disabled:opacity-30">Siguiente →</button></div>
+      </aside>
+    </div>
+  </main>
+  <footer class="mt-12 border-t border-black/10 bg-white"><div class="mx-auto max-w-7xl px-4 py-6 text-sm text-slate-500 sm:px-6 lg:px-8">Proyecto experimental. Para usos oficiales, consultá siempre la fuente enlazada de IMPO.</div></footer>
+  <script src="./app.js" defer></script>
+</body>
+  </html>
