@@ -21,7 +21,8 @@ concurrency:
 jobs:
   revisar:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # ~14 s por ley/decreto (Crawl-Delay de 10 s + respuesta de IMPO): 240 min alcanzan para unas 900 normas.
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
         with:
