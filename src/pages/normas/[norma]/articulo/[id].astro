@@ -1,9 +1,65 @@
 ---
 import Base from '../../../../layouts/Base.astro';
-import {NORMAS,getArticles,getNorma,idOf,labelOf,headingsOf} from '../../../../data/normas';
+import Icon from '../../../../components/Icon.astro';
+import {NORMAS,getArticles,getNorma,idOf,labelOf,headingsOf,splitTitle,toBlocks,splitHeading} from '../../../../data/normas';
 export function getStaticPaths(){return NORMAS.flatMap(n=>{const list=getArticles(n.slug);return list.map((a,i)=>({params:{norma:n.slug,id:idOf(a)},props:{article:a,prev:list[i-1]??null,next:list[i+1]??null}}))})}
 const {article,prev,next}=Astro.props;const slug=Astro.params.norma!;const norma=getNorma(slug);const base=import.meta.env.BASE_URL;
-const label=labelOf(article);const path=headingsOf(article);
-const derogado=/^\s*\(?derogado/i.test(article.texto);
+const label=labelOf(article);const levels=headingsOf(article).map(splitHeading);
+const {rubro,body}=splitTitle(article.texto);const blocks=toBlocks(body);
+const derogado=/^\s*\(?derogad/i.test(article.texto);
+const rubroOf=(a:any)=>splitTitle(a.texto).rubro;
+const cita=`${norma.nombre}, artículo ${label}.`;
+const fecha=(article as any).fecha_scraping?new Date((article as any).fecha_scraping).toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'}):null;
+const notas=(article.notas_oficiales||'').split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+const ids=new Set(getArticles(slug).map(idOf));
+const linkRefs=(line:string)=>/^Ver en esta norma/i.test(line)?line.replace(/\b(\d+(?:-[a-z]+)?)\b(?=\s*[,y.(]|\s*$)/gi,(m)=>ids.has(m.toLowerCase())?`<a href="${base}normas/${slug}/articulo/${m.toLowerCase()}/">${m}</a>`:m):line.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
 ---
-<Base title={`Artículo ${label} · ${norma.corto} · Normativa Uruguay`} description={article.texto.slice(0,155)}><main class="wrap py-10"><nav class="text-sm text-slate-500"><a href={base}>Inicio</a> › <a href={`${base}normas/${slug}/`}>{norma.corto}</a> › Artículo {label}</nav><article class="mx-auto mt-10 max-w-3xl" data-pagefind-body><span class="chip" data-pagefind-ignore>{derogado?'Derogado':'Texto actualizado · IMPO'}</span><p class="eyebrow mt-8" data-pagefind-filter="norma">{norma.corto}</p><h1 class="mt-3 text-6xl" data-pagefind-meta="title">Artículo {label}</h1>{path.length>0&&<p class="mt-3 text-sm text-slate-500">{path.join(' · ')}</p>}<div class="prose-legal mt-10 border-y border-black/10 py-9"><p class="whitespace-pre-line">{article.texto}</p></div>{article.notas_oficiales&&<aside class="mt-8 rounded-xl bg-ivory p-5" data-pagefind-ignore><b>Notas oficiales</b><p class="mt-2 whitespace-pre-line text-sm text-slate-600">{article.notas_oficiales}</p></aside>}<a class="mt-8 flex items-center justify-between rounded-xl border bg-white p-5 font-bold text-forest" href={article.url_fuente} target="_blank" rel="noreferrer" data-pagefind-ignore><span><small class="block font-normal text-slate-500">Fuente oficial</small>{norma.fuente}</span><span>↗</span></a><nav class="mt-8 flex justify-between text-sm font-bold text-forest" data-pagefind-ignore>{prev?<a href={`${base}normas/${slug}/articulo/${idOf(prev)}/`}>← Artículo {labelOf(prev)}</a>:<span/>}{next&&<a href={`${base}normas/${slug}/articulo/${idOf(next)}/`}>Artículo {labelOf(next)} →</a>}</nav></article></main></Base>
+<Base title={`Artículo ${label}${rubro?` (${rubro})`:''} · ${norma.corto} · Normativa Uruguay`} description={desc}>
+<main class="wrap pb-20 pt-8">
+  <nav class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500" aria-label="Ruta"><a class="hover:text-forest" href={base}>Inicio</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}explorar/`}>Explorar</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}normas/${slug}/`}>{norma.corto}</a><span aria-hidden="true">›</span><span class="text-slate-700">Artículo {label}</span></nav>
+
+  <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14">
+    <article data-pagefind-body>
+      <header class="border-b border-black/10 pb-8">
+        <div class="flex flex-wrap items-center gap-3"><a class="eyebrow hover:underline" href={`${base}normas/${slug}/`} data-pagefind-filter="norma">{norma.corto}</a><span class={`chip ${derogado?'!border-red-200 !bg-red-50 !text-red-800':''}`} data-pagefind-ignore>{derogado?'Derogado':'Vigente · texto actualizado'}</span></div>
+        <h1 class="mt-4 text-5xl leading-none tracking-[-.02em] md:text-6xl" data-pagefind-meta="title">Artículo {label}</h1>
+        {rubro&&<p class="mt-4 font-serif text-2xl italic text-forest md:text-[1.7rem]">{rubro}</p>}
+        {levels.length>0&&<ol class="mt-7 grid gap-2 text-sm" data-pagefind-ignore>{levels.map((l,i)=><li class="flex items-baseline gap-3" style={`padding-left:${i*0.9}rem`}><span class="w-24 shrink-0 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-400">{l.level}</span><span class="line-clamp-2 text-[.8rem] uppercase tracking-[.06em] text-slate-600">{l.name||'—'}</span></li>)}</ol>}
+        <div class="mt-6 flex flex-wrap gap-2 lg:hidden" data-pagefind-ignore><a class="inline-flex items-center gap-2 rounded-xl bg-forest px-4 py-2.5 text-sm font-bold text-white" href={article.url_fuente} target="_blank" rel="noreferrer">Ver en IMPO<Icon name="external" class="size-4"/></a><button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold" data-copy="link">Copiar enlace</button><button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold" data-copy={cita}>Copiar cita</button></div>
+      </header>
+
+      <div class="article-text mt-9 max-w-[68ch]">
+        {blocks.map(b=>b.type==='p'?<p>{b.text}</p>:<ol class="enum">{b.items.map(it=><li><span class="enum-mark">{it.marker}</span><span>{it.text}</span></li>)}</ol>)}
+      </div>
+
+      {notas.length>0&&<section class="mt-12 max-w-[68ch] rounded-2xl border border-black/10 bg-ivory/70 p-6" data-pagefind-ignore aria-labelledby="notas"><h2 id="notas" class="text-xl">Notas oficiales</h2><ul class="mt-3 grid gap-1.5 text-sm leading-6 text-slate-600">{notas.map(n=><li class={/^TEXTO ORIGINAL/i.test(n)?'mt-2 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-500':''} set:html={linkRefs(n)}/>)}</ul></section>}
+
+      <nav class="mt-12 grid gap-4 sm:grid-cols-2" aria-label="Artículos contiguos" data-pagefind-ignore>
+        {prev?<a class="soft-card group p-5 transition hover:border-forest" href={`${base}normas/${slug}/articulo/${idOf(prev)}/`}><span class="text-xs font-bold uppercase tracking-[.12em] text-slate-400">← Anterior</span><b class="mt-2 block font-serif text-xl text-ink group-hover:text-forest">Artículo {labelOf(prev)}</b>{rubroOf(prev)&&<span class="mt-1 block truncate text-sm text-slate-500">{rubroOf(prev)}</span>}</a>:<span class="hidden sm:block"/>}
+        {next&&<a class="soft-card group p-5 text-right transition hover:border-forest" href={`${base}normas/${slug}/articulo/${idOf(next)}/`}><span class="text-xs font-bold uppercase tracking-[.12em] text-slate-400">Siguiente →</span><b class="mt-2 block font-serif text-xl text-ink group-hover:text-forest">Artículo {labelOf(next)}</b>{rubroOf(next)&&<span class="mt-1 block truncate text-sm text-slate-500">{rubroOf(next)}</span>}</a>}
+      </nav>
+    </article>
+
+    <aside class="hidden lg:block lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:self-start" data-pagefind-ignore>
+      <div class="soft-card p-5">
+        <a class="flex items-center justify-between gap-3 rounded-xl bg-forest px-4 py-3.5 font-bold text-white transition hover:bg-[#12564f]" href={article.url_fuente} target="_blank" rel="noreferrer"><span><small class="block text-[.7rem] font-semibold uppercase tracking-[.12em] text-white/70">Fuente oficial</small>Ver en IMPO</span><Icon name="external" class="size-5"/></a>
+        <div class="mt-3 grid grid-cols-2 gap-2">
+          <button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold text-ink transition hover:border-forest hover:text-forest" data-copy="link">Copiar enlace</button>
+          <button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold text-ink transition hover:border-forest hover:text-forest" data-copy={cita}>Copiar cita</button>
+        </div>
+        <p class="mt-4 rounded-lg bg-ivory px-3 py-2 font-serif text-[.95rem] leading-6 text-slate-700">{cita}</p>
+        <dl class="mt-4 grid gap-2 border-t border-black/10 pt-4 text-sm">
+          {article.fecha_promulgacion&&<div class="flex justify-between gap-3"><dt class="text-slate-500">Promulgación</dt><dd class="font-medium">{article.fecha_promulgacion}</dd></div>}
+          {article.fecha_publicacion&&<div class="flex justify-between gap-3"><dt class="text-slate-500">Publicación</dt><dd class="font-medium">{article.fecha_publicacion}</dd></div>}
+          {fecha&&<div class="flex justify-between gap-3"><dt class="text-slate-500">Consultado en IMPO</dt><dd class="font-medium">{fecha}</dd></div>}
+        </dl>
+      </div>
+      <a class="mt-4 flex items-center justify-between rounded-xl px-2 py-2 text-sm font-bold text-forest hover:underline" href={`${base}normas/${slug}/`}>Índice del {norma.corto}<Icon name="arrow" class="size-4"/></a>
+    </aside>
+  </div>
+</main>
+<script>
+document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach(btn=>{const orig=btn.textContent;btn.addEventListener('click',async()=>{const v=btn.dataset.copy==='link'?location.href.split('#')[0]:btn.dataset.copy||'';try{await navigator.clipboard.writeText(v);btn.textContent='Copiado ✓';}catch{btn.textContent='No se pudo copiar';}setTimeout(()=>btn.textContent=orig,1800);});});
+</script>
+</Base>

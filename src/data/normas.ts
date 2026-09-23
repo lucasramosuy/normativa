@@ -46,3 +46,48 @@ export const slugify = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f
 export const articles = getArticles('constitucion').slice();
 export const sections = [...new Set(articles.map(a => a.seccion).filter(Boolean))] as string[];
 export const normalize = (value = '') => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+/* ---------- Article text formatting ---------- */
+export type Block = { type: 'p'; text: string } | { type: 'list'; items: { marker: string; text: string }[] };
+const MARKER = /^((?:[A-Za-z]|[0-9]{1,3}[°º]?|[IVXLC]{1,6})\))\s*([A-Za-zÁÉÍÓÚÑáéíóúñ¿\"“(].*)$/;
+
+/** Splits the "(Legítima defensa).-" marginal title off the start of the text. */
+export function splitTitle(texto: string): { rubro: string | null; body: string } {
+  const m = texto.match(/^\s*\(([^()\n]{2,140})\)\s*\.?\s*-?\s*/);
+  if (!m || /^derogad/i.test(m[1])) return { rubro: null, body: texto.trim() };
+  return { rubro: m[1].trim(), body: texto.slice(m[0].length).trim() };
+}
+
+/** Reflows IMPO hard-wrapped lines into paragraphs and enumerated lists. */
+export function toBlocks(body: string): Block[] {
+  const lines = body.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  const blocks: Block[] = [];
+  let cur: { kind: 'p' | 'item'; text: string; marker?: string } | null = null;
+  const flush = () => {
+    if (!cur) return;
+    if (cur.kind === 'p') blocks.push({ type: 'p', text: cur.text });
+    else {
+      const last = blocks[blocks.length - 1];
+      const item = { marker: cur.marker!, text: cur.text };
+      if (last && last.type === 'list') last.items.push(item); else blocks.push({ type: 'list', items: [item] });
+    }
+    cur = null;
+  };
+  for (const line of lines) {
+    const m = line.match(MARKER);
+    const ends = cur ? (/[.:]["”)]?$/.test(cur.text) && !/\b(?:arts?|inc|incs|num|lit|ley|Nº|N°|Dr|Sr|Sra|etc)\.$/i.test(cur.text)) || (cur.kind === 'item' && /;$/.test(cur.text)) : true;
+    if (m && (ends || !cur || /[;,]$/.test(cur.text))) { flush(); cur = { kind: 'item', marker: m[1], text: m[2] }; continue; }
+    if (cur && !ends) { cur.text += ' ' + line; continue; }
+    flush(); cur = { kind: 'p', text: line };
+  }
+  flush();
+  return blocks;
+}
+
+/** "LIBRO I - PARTE GENERAL" -> { level: "Libro I", name: "Parte general" } */
+export function splitHeading(h: string): { level: string; name: string } {
+  const m = h.match(/^\s*([A-ZÁÉÍÓÚÑ]+(?:\s+[A-Z0-9ÚNICOPRELIMINAR]+)?)\s*[-–]\s*(.+)$/);
+  const tidy = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+  if (!m) return { level: tidy(h.trim()), name: '' };
+  return { level: tidy(m[1]).replace(/\b([ivxlc]+)\b/g, r => r.toUpperCase()), name: m[2].trim() };
+}
