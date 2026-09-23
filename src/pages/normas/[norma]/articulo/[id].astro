@@ -10,7 +10,7 @@ const derogado=/^\s*\(?derogad/i.test(article.texto);
 const rubroOf=(a:any)=>splitTitle(a.texto).rubro;
 const cita=`${norma.nombre}, artículo ${label}.`;
 const fecha=(article as any).fecha_scraping?new Date((article as any).fecha_scraping).toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'}):null;
-const notas=(article.notas_oficiales||'').split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+const notas=(article.notas_oficiales||'').split(/\r?\n/).map(l=>l.trim()).filter(Boolean).reduce((acc:string[],l)=>{const prev=acc[acc.length-1];if(prev!==undefined&&!/[.,:)]$/.test(prev)&&!/^TEXTO ORIGINAL/i.test(l))acc[acc.length-1]=prev+' '+l;else acc.push(l);return acc;},[]);
 const ids=new Set(getArticles(slug).map(idOf));
 const linkRefs=(line:string)=>/^Ver en esta norma/i.test(line)?line.replace(/\b(\d+(?:-[a-z]+)?)\b(?=\s*[,y.(]|\s*$)/gi,(m)=>ids.has(m.toLowerCase())?`<a href="${base}normas/${slug}/articulo/${m.toLowerCase()}/">${m}</a>`:m):line.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
