@@ -1,7 +1,7 @@
 # Normativa Uruguay - sitio web
 
-[![Deploy GitHub Pages](https://github.com/lucasramosuy/normativa-uy/actions/workflows/pages.yml/badge.svg?branch=www)](https://github.com/lucasramosuy/normativa-uy/actions/workflows/pages.yml)
-[![Sitio](https://img.shields.io/website?url=https%3A%2F%2Flucasramosuy.github.io%2Fnormativa-uy%2F&label=sitio)](https://lucasramosuy.github.io/normativa-uy/)
+[![Deploy GitHub Pages](https://github.com/lucasramosuy/normativa/actions/workflows/pages.yml/badge.svg?branch=www)](https://github.com/lucasramosuy/normativa/actions/workflows/pages.yml)
+[![Sitio](https://img.shields.io/website?url=https%3A%2F%2Flucasramos.uy%2Fnormativa%2F&label=sitio)](https://lucasramos.uy/normativa/)
 [![Astro](https://img.shields.io/badge/Astro-static-BC52EE?logo=astro)](https://astro.build/)
 
 Sitio estático en Astro para buscar y leer normativa uruguaya, publicado en GitHub Pages.

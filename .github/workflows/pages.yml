@@ -39,6 +39,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          SITE_URL: ${{ vars.SITE_URL }}
           PUBLIC_SENTRY_DSN: ${{ vars.PUBLIC_SENTRY_DSN }}
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           PUBLIC_POSTHOG_KEY: ${{ vars.PUBLIC_POSTHOG_KEY }}

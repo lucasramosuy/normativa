@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 import sentry from '@sentry/astro';
 
 export default defineConfig({
-  site: 'https://lucasramosuy.github.io',
-  base: '/normativa-uy/',
+  site: process.env.SITE_URL || 'https://lucasramos.uy',
+  base: '/normativa/',
   trailingSlash: 'ignore',
   output: 'static',
   integrations: [

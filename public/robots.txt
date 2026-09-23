@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://lucasramosuy.github.io/normativa-uy/sitemap-index.xml
+Sitemap: https://lucasramos.uy/normativa/sitemap-index.xml
