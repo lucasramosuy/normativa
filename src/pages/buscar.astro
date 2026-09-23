@@ -33,8 +33,6 @@ async function run(){paint();syncUrl();const my=++seq;
   const filters=norma&&labels[norma]?{norma:labels[norma]}:{};
   const res=await pf.search(term,{filters});if(my!==seq||!res)return;
   results=res.results;
-  const num=/^\d+[a-z-]*$/i.test(term.trim());
-  if(num){const t=term.trim().toLowerCase();const exact=(r:any)=>r.url.endsWith(`/articulo/${t}/`);results=[...results.filter(exact),...results.filter((r:any)=>!exact(r))];}
   // One search gives both: totalFilters = counts ignoring the active norma filter.
   const counts=(norma?res.totalFilters:res.filters)?.norma||{};let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
   $('[data-count-all]').textContent=String(total);
