@@ -1,19 +1,40 @@
 ---
-import Base from '../layouts/Base.astro';import Search from '../components/Search.astro';import {articles,normalize} from '../data/normas';
+import Base from '../layouts/Base.astro';import Search from '../components/Search.astro';import {NORMAS,getArticles,fmt} from '../data/normas';
 const base=import.meta.env.BASE_URL;
-const items=articles.map(a=>({a,s:normalize([a.articulo,a.texto,a.seccion,a.capitulo,a.notas_oficiales].join(' '))}));
+const normas=NORMAS.map(n=>({slug:n.slug,corto:n.corto,total:getArticles(n.slug).length}));
 ---
-<Base title="Buscar · Normativa Uruguay"><main class="wrap py-12"><Search/><div class="mt-12 grid gap-9 lg:grid-cols-[220px_1fr]"><aside><b>Filtrar resultados</b><p class="eyebrow mt-8">Tipo de norma</p><div class="mt-3 rounded-lg bg-mint px-3 py-2 text-sm font-bold text-forest">Constitución <span class="float-right" data-count>{articles.length}</span></div></aside><section><p class="eyebrow"><span data-count>{articles.length}</span> resultados</p><h1 class="mt-2 text-5xl" data-heading>Todos los artículos</h1><div class="mt-7 space-y-3" data-results>{items.map(({a,s})=><a class="soft-card block p-6 transition hover:border-forest" data-s={s} data-n={String(a.articulo)} href={`${base}normas/constitucion/articulo/${a.articulo}/`}><div class="flex gap-3 text-xs"><span class="chip">Constitución</span><span class="py-1.5 text-slate-500">Artículo {a.articulo}</span></div><p class="mt-4 line-clamp-3 font-semibold leading-7">{a.texto}</p><small class="mt-3 block text-slate-500">{a.seccion}</small></a>)}</div><div class="soft-card mt-8 hidden p-10 text-center" data-empty><h2 class="text-2xl">No encontramos resultados</h2><p class="mt-3 text-slate-600">Probá con menos palabras, otra forma de escribir o un número de artículo.</p></div></section></div></main></Base>
+<Base title="Buscar · Normativa Uruguay"><main class="wrap py-12"><Search/><div class="mt-12 grid gap-9 lg:grid-cols-[240px_1fr]"><aside><b>Filtrar por norma</b><div class="mt-4 space-y-1.5" data-filters><button type="button" data-norma="" class="filter-btn flex w-full justify-between rounded-lg px-3 py-2 text-left text-sm">Todas <span data-count-all></span></button>{normas.map(n=><button type="button" data-norma={n.slug} data-label={n.corto} class="filter-btn flex w-full justify-between rounded-lg px-3 py-2 text-left text-sm">{n.corto} <span data-count={n.corto}></span></button>)}</div></aside>
+<section><p class="eyebrow" data-status>Escribí una búsqueda</p><h1 class="mt-2 text-5xl" data-heading>Buscar normativa</h1><div class="mt-7 space-y-3" data-results></div><button type="button" class="mt-6 hidden rounded-lg border px-4 py-2 text-sm font-bold text-forest" data-more>Ver más resultados</button><div class="soft-card mt-8 hidden p-10 text-center" data-empty><h2 class="text-2xl">No encontramos resultados</h2><p class="mt-3 text-slate-600">Probá con menos palabras, otra forma de escribir o un número de artículo.</p></div>
+<div class="mt-2 grid gap-3 sm:grid-cols-2" data-intro>{normas.map(n=><a class="soft-card p-5 hover:border-forest" href={`${base}normas/${n.slug}/`}><b>{n.corto}</b><small class="mt-1 block text-slate-500">{fmt(n.total)} artículos</small></a>)}</div></section></div></main></Base>
+<style is:global>.filter-btn[aria-pressed="true"]{background:var(--color-mint,#dcefe9);color:var(--color-forest,#176b63);font-weight:700}</style>
 <script>
-const norm=(v:string)=>v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-const q=(new URLSearchParams(location.search).get('q')||'').trim();
+const base=import.meta.env.BASE_URL;
+const params=new URLSearchParams(location.search);
+const q=(params.get('q')||'').trim();let norma=params.get('norma')||'';
+const $=(s:string)=>document.querySelector(s) as HTMLElement;
 const input=document.querySelector<HTMLInputElement>('input[name="q"]');if(input)input.value=q;
-if(q){
-  const f=norm(q.replace(/^art(i|í)culo\s+/i,''));const num=/^\d+$/.test(f);
-  let n=0;document.querySelectorAll<HTMLElement>('[data-results] > a').forEach(el=>{const ok=num?el.dataset.n===f||(el.dataset.s||'').includes(f):(el.dataset.s||'').includes(f);el.hidden=!ok;if(ok)n++;});
-  document.querySelectorAll('[data-count]').forEach(e=>e.textContent=String(n));
-  const h=document.querySelector('[data-heading]');if(h)h.textContent=`“${q}”`;
-  document.title=`“${q}” · Normativa Uruguay`;
-  document.querySelector('[data-empty]')?.classList.toggle('hidden',n>0);
-}
+const labels:Record<string,string>={};document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>{if(b.dataset.norma)labels[b.dataset.norma]=b.dataset.label!;});
+const esc=(s:string)=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]!));
+let pf:any;let results:any[]=[];let shown=0;
+function paint(){document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.norma===norma)));}
+async function more(){const box=$('[data-results]');const next=results.slice(shown,shown+20);const data=await Promise.all(next.map(r=>r.data()));
+  for(const d of data){const a=document.createElement('a');a.className='soft-card block p-6 transition hover:border-forest';a.href=d.url;
+    a.innerHTML=`<div class="flex gap-3 text-xs"><span class="chip">${esc((d.filters?.norma||[])[0]||'')}</span><span class="py-1.5 text-slate-500">${esc(d.meta?.title||'')}</span></div><p class="mt-4 line-clamp-3 leading-7 text-slate-700">${d.excerpt}</p>`;box.appendChild(a);}
+  shown+=next.length;$('[data-more]').classList.toggle('hidden',shown>=results.length);}
+async function run(){paint();if(!q)return;$('[data-intro]').classList.add('hidden');
+  pf=pf||await import(/* @vite-ignore */ `${base}pagefind/pagefind.js`);
+  const m=q.match(/^art(?:i|í)culo\s+(.+)$/i);const term=m?m[1]:q;
+  const filters=norma&&labels[norma]?{norma:labels[norma]}:{};
+  const [res,all]=await Promise.all([pf.search(term,{filters}),pf.search(term)]);
+  results=res.results;
+  const num=/^\d+[a-z-]*$/i.test(term.trim());
+  if(num){const t=term.trim().toLowerCase();const exact=(r:any)=>r.url.endsWith(`/articulo/${t}/`);results=[...results.filter(exact),...results.filter((r:any)=>!exact(r))];}
+  const counts=all.filters?.norma||{};let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
+  $('[data-count-all]').textContent=String(total);
+  $('[data-status]').textContent=`${results.length} resultados${norma&&labels[norma]?' en '+labels[norma]:''}`;
+  $('[data-heading]').textContent=`“${q}”`;document.title=`“${q}” · Normativa Uruguay`;
+  $('[data-results]').innerHTML='';shown=0;$('[data-empty]').classList.toggle('hidden',results.length>0);await more();}
+document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>b.addEventListener('click',()=>{norma=b.dataset.norma||'';const u=new URL(location.href);norma?u.searchParams.set('norma',norma):u.searchParams.delete('norma');history.replaceState(null,'',u);run();}));
+$('[data-more]').addEventListener('click',more);
+run();
 </script>

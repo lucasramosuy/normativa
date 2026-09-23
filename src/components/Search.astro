@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-const { value='', action=`${import.meta.env.BASE_URL}buscar/`, label='Buscar normativa' }=Astro.props;
+const { value='', action=`${import.meta.env.BASE_URL}buscar/`, label='Buscar normativa', norma='' }=Astro.props;
 ---
-<form class="search-control" action={action} role="search"><Icon name="search" class="size-5 shrink-0 text-forest"/><label class="sr-only" for="global-search">{label}</label><input id="global-search" name="q" type="search" value={value} placeholder="Buscá por norma, tema o número de artículo" autocomplete="off"/><kbd class="hidden rounded-md border border-black/10 bg-ivory px-2 py-1 text-xs text-slate-500 sm:block">/</kbd><button class="rounded-lg bg-forest px-4 py-2 text-sm font-bold text-white">Buscar</button></form>
+<form class="search-control" action={action} role="search">{norma&&<input type="hidden" name="norma" value={norma}/>}<Icon name="search" class="size-5 shrink-0 text-forest"/><label class="sr-only" for="global-search">{label}</label><input id="global-search" name="q" type="search" value={value} placeholder="Buscá por norma, tema o número de artículo" autocomplete="off"/><kbd class="hidden rounded-md border border-black/10 bg-ivory px-2 py-1 text-xs text-slate-500 sm:block">/</kbd><button class="rounded-lg bg-forest px-4 py-2 text-sm font-bold text-white">Buscar</button></form>
 <script is:inline>document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)){e.preventDefault();document.querySelector('#global-search')?.focus()}})</script>
