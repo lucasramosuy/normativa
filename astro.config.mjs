@@ -5,7 +5,8 @@ import sentry from '@sentry/astro';
 
 export default defineConfig({
   site: 'https://lucasramosuy.github.io',
-  base: '/normativa-uy',
+  base: '/normativa-uy/',
+  trailingSlash: 'ignore',
   output: 'static',
   integrations: [
     sitemap(),
