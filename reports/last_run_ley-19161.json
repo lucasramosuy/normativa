@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 22,
+  "articulos_guardados": 22,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.161",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T19:51:20Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19161-2013",
+  "sha256_jsonl": "576083a32f38c2610a8f08d0983da17d08c82b04b0323e71bd73458243e2891e",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

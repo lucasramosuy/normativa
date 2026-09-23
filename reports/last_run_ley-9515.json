@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fecha_scraping": "2026-09-23T19:51:20Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/9515-1935",
-  "sha256_jsonl": "46f653f08f6a6633f5a0573b14ddb33dab61e3aeead7e0594166103725001ad1",
+  "sha256_jsonl": "8ac3d0c313e0ce2b83aadc6ae87447c456fae3c138604170b3cd154c5756cb8a",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

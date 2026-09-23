@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 50,
+  "articulos_guardados": 50,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.643",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T19:51:20Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19643-2018",
+  "sha256_jsonl": "8ee54ef4774d4b977b52521af75e330e12b22aec37f6ea20cd647d6fb7a7641b",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
