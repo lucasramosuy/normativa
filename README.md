@@ -4,8 +4,9 @@ Datos publicados de normativa uruguaya, extraídos de [IMPO](https://www.impo.co
 
 - `data/*.jsonl`: una línea JSON por artículo. Formato documentado en el README de `main`.
 - `reports/*.json`: cobertura, validación y sha256 de cada corrida.
+- `historial/*.json`: cambios publicados por artículo (lo genera *Publicar datos en api*; formato en el README de `main`).
 
-Esta rama no se edita a mano: se actualiza desde `main` con **Actions → Publicar datos en api**. La web (`www`) lee `data/` desde acá.
+Esta rama no se edita a mano: se actualiza desde `main` con **Actions → Publicar datos en api**. La web (`www`) lee `data/` e `historial/` desde acá.
 
 Acceso directo a un archivo: `https://raw.githubusercontent.com/lucasramosuy/normativa/api/data/constitucion.jsonl`
 
@@ -16,5 +17,8 @@ Los mismos datos están disponibles como endpoints JSON estáticos en `https://l
 - `normas.json`: todas las normas, con cantidad de artículos y enlaces.
 - `{norma}.json`: índice de artículos de una norma, sin el texto.
 - `{norma}/{articulo}.json`: un artículo completo.
+- `historial.json` y `historial/{norma}.json`: cambios publicados.
 
 Documentación completa (campos, ejemplos, actualización y nota sobre IMPO): https://lucasramos.uy/normativa/api/
+
+Sitio: https://lucasramos.uy/normativa/ · Cambios recientes: https://lucasramos.uy/normativa/cambios/
