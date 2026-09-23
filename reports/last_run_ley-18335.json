@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 26,
+  "articulos_guardados": 26,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.335",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18335-2008",
+  "sha256_jsonl": "e6b20cdb98aca30989b0f19684b97704203292547715156cb645b86d25110baa",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 218,
+  "articulos_guardados": 218,
+  "crawl_delay_segundos": 10,
+  "documento": "Código Aeronáutico",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:10:28Z",
+  "fuente": "https://www.impo.com.uy/bases/codigo-aeronautico/14305-1974",
+  "sha256_jsonl": "0bcbb8385873635d35089efa9afaef97c8f969dc76a048785a1607c9e96f6891",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 53,
+  "articulos_guardados": 53,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.250",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17250-2000",
+  "sha256_jsonl": "591532c59cad87a1221b98ffac5351eeb8f7b40a5e8c572e901e01433a896868",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

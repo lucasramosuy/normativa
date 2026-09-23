@@ -6,8 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T00:16:33Z",
+  "fecha_scraping": "2026-09-23T18:10:28Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-proceso-penal-2017/19293-2014",
-  "sha256_jsonl": "71b0efb844ad6f4aab3f068e479c0bf20836671fab931bbfa456f2d83ca43676",
-  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa-uy)"
+  "sha256_jsonl": "145cd147892c44080d2d03b7405317ea936486c9361f6ec0be1e8a2968d40575",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 11,
+  "articulos_guardados": 11,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.940",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17940-2006",
+  "sha256_jsonl": "d5aa2ce6b50b9d250e173c902296f80de3e7a943ad4f0bd0208ee38dbf6c389c",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

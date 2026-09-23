@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 24,
+  "articulos_guardados": 24,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.684",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19684-2018",
+  "sha256_jsonl": "45336399b52f1050a6edb4b72491eb0c9f938f88c41a442bfd8a6ac54337d0e3",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

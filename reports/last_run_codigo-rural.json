@@ -1,0 +1,16 @@
+{
+  "articulos_esperados_segun_impo": 294,
+  "articulos_guardados": 294,
+  "crawl_delay_segundos": 10,
+  "documento": "Código Rural",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:10:28Z",
+  "fuente": "https://www.impo.com.uy/bases/codigo-rural/10024-1941",
+  "sha256_jsonl": "57ea10cf421c3fc244264a058c9c058f4b45ccfa28c641e598b7a76ec058105a",
+  "sin_texto_en_impo": [
+    "259"
+  ],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

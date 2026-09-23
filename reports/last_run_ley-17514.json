@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 29,
+  "articulos_guardados": 29,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.514",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17514-2002",
+  "sha256_jsonl": "eeca6d0fd047153867b8fdfcb3d43d2e8f2339d290d8df1fba8f36b32ca49136",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

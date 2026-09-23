@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 98,
+  "articulos_guardados": 98,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.580",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19580-2017",
+  "sha256_jsonl": "49d49667036e31b6ad7b0925cf3a85dac7c3787da5221c62e5f3959e064cb68a",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

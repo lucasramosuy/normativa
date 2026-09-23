@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 31,
+  "articulos_guardados": 31,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.212",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18212-2007",
+  "sha256_jsonl": "94f4c8589a2f16b921d9557fc0a8fc338dad39f033b99062fa4db63587b6eeb3",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

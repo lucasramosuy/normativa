@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 130,
+  "articulos_guardados": 130,
+  "crawl_delay_segundos": 10,
+  "documento": "Decreto-ley 14.701",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/decretos-ley/14701-1977",
+  "sha256_jsonl": "1dc0e322e5e8651bc19ce9ebaea7065fac41033a30ee35d48d0fa626be331b11",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 525,
+  "articulos_guardados": 525,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.060",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16060-1989",
+  "sha256_jsonl": "ba401aaacdb419aa01d48b1c497ada05e1287169308d403ba765c3acca587304",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 476,
+  "articulos_guardados": 476,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.889",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19889-2020",
+  "sha256_jsonl": "e330633024ab7f99f07c47d433f30610a105bca233f1d131b34d3659a641e3fd",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

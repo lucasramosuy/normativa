@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 276,
+  "articulos_guardados": 276,
+  "crawl_delay_segundos": 10,
+  "documento": "Código Aduanero",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:10:28Z",
+  "fuente": "https://www.impo.com.uy/bases/codigo-aduanero/19276-2014",
+  "sha256_jsonl": "a643b0f099acd2776936cd679f60a272d16d313a47ea2c18558e98073f200656",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

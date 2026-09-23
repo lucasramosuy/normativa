@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 67,
+  "articulos_guardados": 67,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 9.739",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/9739-1937",
+  "sha256_jsonl": "54295d8bb45567a1c95008056132bab1d8e5ee7718b22002d14a470caade36c3",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

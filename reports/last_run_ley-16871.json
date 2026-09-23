@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 104,
+  "articulos_guardados": 104,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.871",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16871-1997",
+  "sha256_jsonl": "af3b654168b46b7d305153c04eaca77509897e586779c1350e6d50ecd206d320",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

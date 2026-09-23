@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 27,
+  "articulos_guardados": 27,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.246",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18246-2007",
+  "sha256_jsonl": "97866133588d72278c019dfe4f22e232cf3286f0a7631a7c2e6be028ec732767",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

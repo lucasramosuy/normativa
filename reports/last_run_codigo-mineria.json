@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 139,
+  "articulos_guardados": 139,
+  "crawl_delay_segundos": 10,
+  "documento": "Código de Minería",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:10:28Z",
+  "fuente": "https://www.impo.com.uy/bases/codigo-mineria/15242-1982",
+  "sha256_jsonl": "e2b014d5bb7a8e659f0d0012609c3d6dbd66ba331c746e628073294ab4c3f2c3",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

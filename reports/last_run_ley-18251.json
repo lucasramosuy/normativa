@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 10,
+  "articulos_guardados": 10,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.251",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18251-2008",
+  "sha256_jsonl": "1313ba63f1ef77dcc4d1cb991e2cfaf794e3c4ad903a229853b7bccac6f0cb08",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
