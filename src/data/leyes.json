@@ -898,5 +898,365 @@
   "titulo_impo": "DECLARACION DE INTERES NACIONAL. LUCHA CONTRA EL RACISMO LA XENOFOBIA Y TODA OTRA FORMA DE DISCRIMINACION",
   "area": "Familia y derechos de las personas",
   "url": "https://www.impo.com.uy/bases/leyes/17817-2004"
+ },
+ {
+  "id": "ley-18627",
+  "tipo": "Ley",
+  "numero": "18.627",
+  "anio": 2009,
+  "corto": "Ley de Mercado de Valores",
+  "titulo_impo": "REGULACION DEL MERCADO DE VALORES. DEUDA PUBLICA",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/18627-2009"
+ },
+ {
+  "id": "decreto-ley-15322",
+  "tipo": "Decreto-ley",
+  "numero": "15.322",
+  "anio": 1982,
+  "corto": "Ley de Intermediación Financiera",
+  "titulo_impo": "APROBACION DEL SISTEMA DE INTERMEDIACION FINANCIERA",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/decretos-ley/15322-1982"
+ },
+ {
+  "id": "ley-16696",
+  "tipo": "Ley",
+  "numero": "16.696",
+  "anio": 1995,
+  "corto": "Carta Orgánica del BCU",
+  "titulo_impo": "CARTA ORGANICA DEL BANCO CENTRAL DEL URUGUAY",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/16696-1995"
+ },
+ {
+  "id": "ley-19820",
+  "tipo": "Ley",
+  "numero": "19.820",
+  "anio": 2019,
+  "corto": "Ley de Emprendedurismo y SAS",
+  "titulo_impo": "DECLARACION DE INTERES NACIONAL EL FOMENTO DE LOS EMPRENDIMIENTOS - PROMOCION DEL EMPRENDEDURISMO",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/19820-2019"
+ },
+ {
+  "id": "ley-18159",
+  "tipo": "Ley",
+  "numero": "18.159",
+  "anio": 2007,
+  "corto": "Ley de Defensa de la Competencia",
+  "titulo_impo": "DEFENSA DE LA LIBRE COMPETENCIA EN EL COMERCIO",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/18159-2007"
+ },
+ {
+  "id": "ley-19636",
+  "tipo": "Ley",
+  "numero": "19.636",
+  "anio": 2018,
+  "corto": "Ley de Arbitraje Comercial Internacional",
+  "titulo_impo": "LEY SOBRE ARBITRAJE COMERCIAL INTERNACIONAL",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/19636-2018"
+ },
+ {
+  "id": "ley-15921",
+  "tipo": "Ley",
+  "numero": "15.921",
+  "anio": 1987,
+  "corto": "Ley de Zonas Francas",
+  "titulo_impo": "APROBACION DE LA LEY DE ZONAS FRANCAS",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/15921-1987"
+ },
+ {
+  "id": "ley-16906",
+  "tipo": "Ley",
+  "numero": "16.906",
+  "anio": 1998,
+  "corto": "Ley de Promoción de Inversiones",
+  "titulo_impo": "LEY DE INVERSIONES. PROMOCION INDUSTRIAL",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/16906-1998"
+ },
+ {
+  "id": "ley-18786",
+  "tipo": "Ley",
+  "numero": "18.786",
+  "anio": 2011,
+  "corto": "Ley de Participación Público-Privada",
+  "titulo_impo": "LEY DE PARTICIPACION PUBLICO PRIVADA",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/18786-2011"
+ },
+ {
+  "id": "ley-19353",
+  "tipo": "Ley",
+  "numero": "19.353",
+  "anio": 2015,
+  "corto": "Ley del Sistema de Cuidados",
+  "titulo_impo": "CREACION DEL SISTEMA NACIONAL INTEGRADO DE CUIDADOS (SNIC)",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/19353-2015"
+ },
+ {
+  "id": "ley-19529",
+  "tipo": "Ley",
+  "numero": "19.529",
+  "anio": 2017,
+  "corto": "Ley de Salud Mental",
+  "titulo_impo": "LEY DE SALUD MENTAL",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/19529-2017"
+ },
+ {
+  "id": "ley-18104",
+  "tipo": "Ley",
+  "numero": "18.104",
+  "anio": 2007,
+  "corto": "Ley de Igualdad de Derechos y Oportunidades",
+  "titulo_impo": "DECLARACION DE INTERES GENERAL. IGUALDAD DE DERECHOS ENTRE HOMBRES Y MUJERES. ROU",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/18104-2007"
+ },
+ {
+  "id": "ley-19122",
+  "tipo": "Ley",
+  "numero": "19.122",
+  "anio": 2013,
+  "corto": "Ley de Afrodescendientes",
+  "titulo_impo": "FIJACION DE DISPOSICIONES CON EL FIN DE FAVORECER LA PARTICIPACION EN LAS AREAS EDUCATIVA Y LABORAL, DE LOS AFRODESCENDIENTES",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/19122-2013"
+ },
+ {
+  "id": "ley-18476",
+  "tipo": "Ley",
+  "numero": "18.476",
+  "anio": 2009,
+  "corto": "Ley de Participación Política de Ambos Sexos",
+  "titulo_impo": "DECLARACION DE INTERES GENERAL LA PARTICIPACION EQUITATIVA DE PERSONAS DE AMBOS SEXOS EN LA INTEGRACION DE LOS ORGANOS ELECTIVOS Y DIRECCION DE PARTIDOS POLITICOS",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/18476-2009"
+ },
+ {
+  "id": "ley-18471",
+  "tipo": "Ley",
+  "numero": "18.471",
+  "anio": 2009,
+  "corto": "Ley de Tenencia Responsable de Animales",
+  "titulo_impo": "LEY DE PROTECCION, BIENESTAR Y TENENCIA DE ANIMALES",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/18471-2009"
+ },
+ {
+  "id": "ley-18441",
+  "tipo": "Ley",
+  "numero": "18.441",
+  "anio": 2008,
+  "corto": "Ley de Jornada de Trabajadores Rurales",
+  "titulo_impo": "REGULACION DE LA JORNADA LABORAL Y EL REGIMEN DE DESCANSO DE LOS TRABAJADORES RURALES",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/18441-2008"
+ },
+ {
+  "id": "ley-19690",
+  "tipo": "Ley",
+  "numero": "19.690",
+  "anio": 2018,
+  "corto": "Ley del Fondo de Garantía de Créditos Laborales",
+  "titulo_impo": "CREACION DEL FONDO DE GARANTIA DE CREDITOS LABORALES EN EL AMBITO DEL BPS",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/19690-2018"
+ },
+ {
+  "id": "ley-19133",
+  "tipo": "Ley",
+  "numero": "19.133",
+  "anio": 2013,
+  "corto": "Ley de Empleo Juvenil",
+  "titulo_impo": "FIJACION DE NORMAS SOBRE EL FOMENTO DEL EMPLEO JUVENIL Y DEROGACION DE LA LEY DE EMPLEO JUVENIL",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/19133-2013"
+ },
+ {
+  "id": "ley-19691",
+  "tipo": "Ley",
+  "numero": "19.691",
+  "anio": 2018,
+  "corto": "Ley de Empleo de Personas con Discapacidad",
+  "titulo_impo": "APROBACION DE NORMAS SOBRE LA PROMOCION DEL TRABAJO PARA PERSONAS CON DISCAPACIDAD",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/19691-2018"
+ },
+ {
+  "id": "ley-19978",
+  "tipo": "Ley",
+  "numero": "19.978",
+  "anio": 2021,
+  "corto": "Ley de Teletrabajo",
+  "titulo_impo": "APROBACION DE NORMAS PARA LA PROMOCION Y REGULACION DEL TELETRABAJO",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/19978-2021"
+ },
+ {
+  "id": "ley-19313",
+  "tipo": "Ley",
+  "numero": "19.313",
+  "anio": 2015,
+  "corto": "Ley de Trabajo Nocturno",
+  "titulo_impo": "LEY DE NOCTURNIDAD. REGULACION DEL TRABAJO NOCTURNO",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/19313-2015"
+ },
+ {
+  "id": "ley-17684",
+  "tipo": "Ley",
+  "numero": "17.684",
+  "anio": 2003,
+  "corto": "Ley del Comisionado Parlamentario Penitenciario",
+  "titulo_impo": "LEY DE CREACION DEL COMISIONADO PARLAMENTARIO",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/17684-2003"
+ },
+ {
+  "id": "ley-18831",
+  "tipo": "Ley",
+  "numero": "18.831",
+  "anio": 2011,
+  "corto": "Ley de Pretensión Punitiva del Estado",
+  "titulo_impo": "RESTABLECIMIENTO DE LA PRETENSION PUNITIVA DEL ESTADO PARA LOS DELITOS COMETIDOS EN APLICACION DEL TERRORISMO DE ESTADO HASTA EL 1° DE MARZO DE 1985",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/18831-2011"
+ },
+ {
+  "id": "ley-18596",
+  "tipo": "Ley",
+  "numero": "18.596",
+  "anio": 2009,
+  "corto": "Ley de Reparación a Víctimas",
+  "titulo_impo": "REPARACION A LAS VICTIMAS DE LA ACTUACION ILEGITIMA DEL ESTADO EN EL PERIODO COMPRENDIDO ENTRE EL 13 DE JUNIO DE 1968 Y EL 28 DE FEBRERO DE 1985",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/18596-2009"
+ },
+ {
+  "id": "ley-16011",
+  "tipo": "Ley",
+  "numero": "16.011",
+  "anio": 1988,
+  "corto": "Ley de Acción de Amparo",
+  "titulo_impo": "REGULACION DE DISPOSICIONES RELATIVA A LA ACCION DE AMPARO",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/16011-1988"
+ },
+ {
+  "id": "ley-15750",
+  "tipo": "Ley",
+  "numero": "15.750",
+  "anio": 1985,
+  "corto": "Ley Orgánica de la Judicatura",
+  "titulo_impo": "LEY ORGANICA DE LA JUDICATURA Y DE ORGANIZACION DE LOS TRIBUNALES (LOT)",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/15750-1985"
+ },
+ {
+  "id": "ley-18446",
+  "tipo": "Ley",
+  "numero": "18.446",
+  "anio": 2008,
+  "corto": "Ley de la INDDHH",
+  "titulo_impo": "CREACION INSTITUCION NACIONAL DE DERECHOS HUMANOS (INDDHH)",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/18446-2008"
+ },
+ {
+  "id": "ley-18610",
+  "tipo": "Ley",
+  "numero": "18.610",
+  "anio": 2009,
+  "corto": "Ley de Política Nacional de Aguas",
+  "titulo_impo": "LEY DE POLITICA NACIONAL DE AGUAS. PRINCIPIOS RECTORES",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/18610-2009"
+ },
+ {
+  "id": "ley-15939",
+  "tipo": "Ley",
+  "numero": "15.939",
+  "anio": 1987,
+  "corto": "Ley Forestal",
+  "titulo_impo": "LEY FORESTAL - FONDO FORESTAL - RECURSOS NATURALES",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/15939-1987"
+ },
+ {
+  "id": "ley-19175",
+  "tipo": "Ley",
+  "numero": "19.175",
+  "anio": 2013,
+  "corto": "Ley de Pesca",
+  "titulo_impo": "DECLARACION DE INTERES GENERAL. CONSERVACION, INVESTIGACION Y EL DESARROLLO SOSTENIBLE DE LOS RECURSOS HIDROBIOLOGICOS Y ECOSISTEMAS",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/19175-2013"
+ },
+ {
+  "id": "ley-18232",
+  "tipo": "Ley",
+  "numero": "18.232",
+  "anio": 2007,
+  "corto": "Ley de Radiodifusión Comunitaria",
+  "titulo_impo": "DERECHO A LIBERTAD DE EXPRESION. RADIODIFUSION COMUNITARIA",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/18232-2007"
+ },
+ {
+  "id": "ley-18650",
+  "tipo": "Ley",
+  "numero": "18.650",
+  "anio": 2010,
+  "corto": "Ley Marco de Defensa Nacional",
+  "titulo_impo": "LEY MARCO DE DEFENSA NACIONAL",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/18650-2010"
+ },
+ {
+  "id": "ley-19775",
+  "tipo": "Ley",
+  "numero": "19.775",
+  "anio": 2019,
+  "corto": "Ley Orgánica de las Fuerzas Armadas",
+  "titulo_impo": "MODIFICACION DE LA LEY ORGANICA DE LAS FUERZAS ARMADAS",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/19775-2019"
+ },
+ {
+  "id": "ley-19828",
+  "tipo": "Ley",
+  "numero": "19.828",
+  "anio": 2019,
+  "corto": "Ley del Deporte",
+  "titulo_impo": "REGIMEN DE FOMENTO Y PROTECCION DEL SISTEMA DEPORTIVO",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/19828-2019"
+ },
+ {
+  "id": "ley-18597",
+  "tipo": "Ley",
+  "numero": "18.597",
+  "anio": 2009,
+  "corto": "Ley de Uso Eficiente de la Energía",
+  "titulo_impo": "LEY DE USO EFICIENTE DE LA ENERGIA",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/18597-2009"
+ },
+ {
+  "id": "ley-16832",
+  "tipo": "Ley",
+  "numero": "16.832",
+  "anio": 1997,
+  "corto": "Ley del Marco Energético",
+  "titulo_impo": "LEY REGULADORA DEL MARCO ENERGETICO",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/16832-1997"
  }
 ]
