@@ -2,7 +2,7 @@
 
 ## Constitución - `scrape_constitucion.py`
 
-Script fijo para la Constitución (workflow `scrape.yml`). Genera
+Script fijo para la Constitución (lo corre `scrape-semanal.yml`). Genera
 `data/constitucion.jsonl` y `reports/last_run.json`.
 
 ## Códigos - `scrape_codigos.py`
@@ -14,7 +14,7 @@ genera `data/{id}.jsonl` (una línea JSON por artículo) y
 
 ```bash
 python scripts/ingest/scrape_codigos.py \
-  --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa-uy)"
+  --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 
 # un solo código:
 python scripts/ingest/scrape_codigos.py --user-agent "..." --solo codigo-civil

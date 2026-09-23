@@ -6,6 +6,7 @@ on:
 permissions:
   contents: write
   actions: write
+  pull-requests: read
 
 concurrency:
   group: publish-api
@@ -20,16 +21,29 @@ jobs:
         with:
           ref: main
           path: main
+          fetch-depth: 0
       - name: Checkout api
         uses: actions/checkout@v4
         with:
           ref: api
           path: api
+          fetch-depth: 0
       - name: Copiar datos
         run: |
           rm -rf api/data api/reports
           cp -r main/data api/data
           cp -r main/reports api/reports
+      - name: Historial de cambios
+        # Compara lo que se va a publicar con lo ya publicado en api, artículo por artículo.
+        # Solo entra lo publicado; los PRs sin publicar no aparecen.
+        working-directory: api
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          fecha="$(date -u +%Y-%m-%dT%H:%M:%S+00:00)"
+          echo "FECHA_PUBLICACION=$fecha" >> "$GITHUB_ENV"
+          python3 ../main/scripts/ingest/historial.py --main ../main --main-sha "${GITHUB_SHA::7}" \
+            --fecha "$fecha" --repo "$GITHUB_REPOSITORY"
       - name: Commit en api
         id: commit
         working-directory: api
@@ -42,7 +56,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Publicar datos desde main ${GITHUB_SHA::7}"
+          # Misma fecha que usó el historial, para que regenerarlo después dé idéntico.
+          GIT_AUTHOR_DATE="$FECHA_PUBLICACION" GIT_COMMITTER_DATE="$FECHA_PUBLICACION" \
+            git commit -m "Publicar datos desde main ${GITHUB_SHA::7}"
           git push origin api
           echo "changed=true" >> "$GITHUB_OUTPUT"
       - name: Redesplegar la web

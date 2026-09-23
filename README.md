@@ -1,8 +1,7 @@
 # Normativa Uruguay - scrapers
 
-[![Actualizar Constitución](https://github.com/lucasramosuy/normativa-uy/actions/workflows/scrape.yml/badge.svg)](https://github.com/lucasramosuy/normativa-uy/actions/workflows/scrape.yml)
-[![Actualizar códigos](https://github.com/lucasramosuy/normativa-uy/actions/workflows/scrape-codigos.yml/badge.svg)](https://github.com/lucasramosuy/normativa-uy/actions/workflows/scrape-codigos.yml)
-[![Sitio](https://img.shields.io/website?url=https%3A%2F%2Flucasramosuy.github.io%2Fnormativa-uy%2F&label=sitio)](https://lucasramosuy.github.io/normativa-uy/)
+[![Revisión semanal de IMPO](https://github.com/lucasramosuy/normativa/actions/workflows/scrape-semanal.yml/badge.svg)](https://github.com/lucasramosuy/normativa/actions/workflows/scrape-semanal.yml)
+[![Sitio](https://img.shields.io/website?url=https%3A%2F%2Flucasramos.uy%2Fnormativa%2F&label=sitio)](https://lucasramos.uy/normativa/)
 
 Scrapers de normativa uruguaya desde [IMPO](https://www.impo.com.uy). Esta rama solo genera datos.
 
@@ -11,23 +10,31 @@ Scrapers de normativa uruguaya desde [IMPO](https://www.impo.com.uy). Esta rama 
 | Rama | Contenido |
 | --- | --- |
 | `main` | Scrapers y sus workflows. Genera `data/*.jsonl` y `reports/`. |
-| `api` | Solo los datos publicados. Se actualiza a mano desde `main`. |
-| `www` | La web ([lucasramosuy.github.io/normativa-uy](https://lucasramosuy.github.io/normativa-uy/)). Lee `data/` desde `api`. |
+| `api` | Solo los datos publicados, más `historial/`. Se actualiza a mano desde `main`. |
+| `www` | La web ([lucasramos.uy/normativa](https://lucasramos.uy/normativa/)). Lee `data/` e `historial/` desde `api`. |
 
 ## Flujo
 
-1. Correr un scraper: **Actions → Actualizar Constitución desde IMPO** o **Actualizar códigos desde IMPO → Run workflow**. Solo commitea en `main` si cambian las salidas.
-2. Revisar el diff en `main`.
-3. Publicar: **Actions → Publicar datos en api → Run workflow**. Copia `data/` y `reports/` a `api` y vuelve a desplegar la web.
+1. **Revisión semanal de IMPO** corre los lunes (o a mano con *Run workflow*). Descarga la Constitución y los códigos y, si cambió el contenido, abre un PR contra `main` con el resumen de artículos modificados, agregados y eliminados.
+2. Revisar y mergear el PR.
+3. Publicar: **Actions → Publicar datos en api → Run workflow**. Copia `data/` y `reports/` a `api`, actualiza `historial/` y vuelve a desplegar la web.
+
+## Historial de cambios
+
+`scripts/ingest/historial.py` corre dentro de *Publicar datos en api*. Compara cada publicación con la anterior, artículo por artículo (sin contar `fecha_scraping` ni `hash_contenido`), y escribe en `api`:
+
+- `historial/<norma>.json`: `{norma, desde, total, entradas[]}`. Cada entrada tiene `articulo`, `tipo` (`modificado`, `agregado`, `eliminado`), `campos`, `antes`, `despues`, `publicado` (commit de api), `detectado` (commit de main que trajo el cambio), `main_sha` y `pr`.
+- `historial/index.json`: totales por norma y las últimas 300 entradas.
+
+Solo entra lo publicado en `api`. Las fechas son las de detección y publicación en Normativa, no las de vigencia.
 
 ## Estructura
 
 ```
 .github/workflows/
-  scrape.yml            # Constitución
-  scrape-codigos.yml    # códigos listados en scripts/ingest/codigos.json
-  publish-api.yml       # main -> api (manual) + redeploy de www
-scripts/ingest/         # scrapers (ver scripts/ingest/README.md)
+  scrape-semanal.yml    # Constitución + códigos, abre PR si hay cambios
+  publish-api.yml       # main -> api (manual) + historial + redeploy de www
+scripts/ingest/         # scrapers, diff_datos.py, historial.py (ver scripts/ingest/README.md)
 data/                   # un .jsonl por norma, una línea por artículo
 reports/                # last_run*.json: cobertura, validación y sha256
 requirements-scraper.txt
@@ -58,7 +65,7 @@ Una línea JSON por artículo, claves ordenadas.
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements-scraper.txt
-python scripts/ingest/scrape_codigos.py --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa-uy)"
+python scripts/ingest/scrape_codigos.py --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 ```
 
 ## Criterios
@@ -73,15 +80,12 @@ Actualizado el 23/09/2026.
 
 **Búsqueda**
 - Revisar la lentitud en las consultas cortas o muy genéricas ("6", "articulo", que coinciden con miles de páginas).
-- Mejorar el orden de resultados (por ejemplo, que "legítima defensa" muestre primero Penal art. 26). Queda en pausa por ahora.
+- Mejorar el orden de resultados (por ejemplo, que "legítima defensa" muestre primero Penal art. 26). En pausa.
 
 **Datos**
-- Historial de cambios por artículo.
 - Más normas: Código Tributario, leyes y decretos.
 
 **Sitio**
-- Proxy para Sentry y PostHog, para que los adblockers no corten los eventos. Necesita un dominio o una cuenta de Cloudflare.
-- Dominio propio y una imagen de vista previa más linda al compartir links.
+- Imagen de vista previa por artículo al compartir links (og).
 
-**API pública**
-- Documentar la rama `api` (los JSONL) y ofrecer endpoints más prolijos.
+Hecho: dominio lucasramos.uy/normativa, API v1 documentada, proxy propio para Sentry y PostHog, historial de cambios por artículo con página de cambios y feed.
