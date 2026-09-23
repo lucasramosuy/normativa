@@ -22,7 +22,7 @@ async function more(){const box=$('[data-results]');const next=results.slice(sho
     a.innerHTML=`<div class="flex gap-3 text-xs"><span class="chip">${esc((d.filters?.norma||[])[0]||'')}</span><span class="py-1.5 text-slate-500">${esc(d.meta?.title||'')}</span></div><p class="mt-4 line-clamp-3 leading-7 text-slate-700">${d.excerpt}</p>`;box.appendChild(a);}
   shown+=next.length;$('[data-more]').classList.toggle('hidden',shown>=results.length);}
 async function run(){paint();if(!q)return;$('[data-intro]').classList.add('hidden');
-  pf=pf||await import(/* @vite-ignore */ `${base}pagefind/pagefind.js`);
+  if(!pf){pf=await import(/* @vite-ignore */ `${base}pagefind/pagefind.js`);await pf.filters();}
   const m=q.match(/^art(?:i|í)culo\s+(.+)$/i);const term=m?m[1]:q;
   const filters=norma&&labels[norma]?{norma:labels[norma]}:{};
   const [res,all]=await Promise.all([pf.search(term,{filters}),pf.search(term)]);
