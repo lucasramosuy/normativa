@@ -1,6 +1,6 @@
 name: Revisión semanal de IMPO
 
-# Una vez por semana descarga la Constitución y los 6 códigos (respetando robots.txt
+# Una vez por semana descarga la Constitución, los códigos (codigos.json) y las leyes y decretos (leyes.json) (respetando robots.txt
 # y el Crawl-Delay de IMPO). Si el contenido cambió, abre un PR contra main con el
 # resumen de artículos modificados/agregados/eliminados. Si no cambió nada, no hace nada.
 # No publica en api: eso sigue siendo manual ("Publicar datos en api").
@@ -21,7 +21,7 @@ concurrency:
 jobs:
   revisar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,6 +39,13 @@ jobs:
       - name: Descargar códigos
         run: >-
           python scripts/ingest/scrape_codigos.py
+          --user-agent "normativa-uy-scraper/1.0 (+https://github.com/${{ github.repository }})"
+      - name: Descargar leyes y decretos
+        # --tolerante: si una norma falla, se conserva su versión anterior y se sigue con las demás
+        # (el error queda en reports/errores_leyes.json).
+        run: >-
+          python scripts/ingest/scrape_codigos.py --tolerante
+          --config scripts/ingest/leyes.json
           --user-agent "normativa-uy-scraper/1.0 (+https://github.com/${{ github.repository }})"
       - name: Comparar con main
         id: diff

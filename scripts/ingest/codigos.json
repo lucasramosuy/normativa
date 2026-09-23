@@ -28,5 +28,35 @@
     "id": "codigo-ninez-adolescencia",
     "documento": "Código de la Niñez y la Adolescencia",
     "url": "https://www.impo.com.uy/bases/codigo-ninez-adolescencia/17823-2004"
+  },
+  {
+    "id": "codigo-tributario",
+    "documento": "Código Tributario",
+    "url": "https://www.impo.com.uy/bases/codigo-tributario/14306-1974"
+  },
+  {
+    "id": "codigo-aduanero",
+    "documento": "Código Aduanero",
+    "url": "https://www.impo.com.uy/bases/codigo-aduanero/19276-2014"
+  },
+  {
+    "id": "codigo-rural",
+    "documento": "Código Rural",
+    "url": "https://www.impo.com.uy/bases/codigo-rural/10024-1941"
+  },
+  {
+    "id": "codigo-aguas",
+    "documento": "Código de Aguas",
+    "url": "https://www.impo.com.uy/bases/codigo-aguas/14859-1978"
+  },
+  {
+    "id": "codigo-aeronautico",
+    "documento": "Código Aeronáutico",
+    "url": "https://www.impo.com.uy/bases/codigo-aeronautico/14305-1974"
+  },
+  {
+    "id": "codigo-mineria",
+    "documento": "Código de Minería",
+    "url": "https://www.impo.com.uy/bases/codigo-mineria/15242-1982"
   }
 ]

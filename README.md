@@ -66,13 +66,16 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements-scraper.txt
 python scripts/ingest/scrape_codigos.py --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+python scripts/ingest/scrape_codigos.py --tolerante --config scripts/ingest/leyes.json --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 ```
+
+`codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma alcanza con agregarla a la lista; el sitio la muestra cuando sus datos llegan a `api`.
 
 ## Criterios
 
 - Se consulta `robots.txt` y se respeta el Crawl-Delay (mínimo 10 s).
 - User-agent identificado.
-- Validación contra el índice oficial de IMPO: sin faltantes, duplicados ni textos vacíos. Si algo no cierra, no se escribe nada.
+- Validación contra el índice oficial de IMPO: sin faltantes ni duplicados. Si algo no cierra, no se escribe nada para esa norma. Los artículos que IMPO publica sin texto (p. ej. Código Rural, art. 259) se guardan vacíos y se listan en el reporte.
 
 ## Pendientes (roadmap)
 
@@ -83,7 +86,7 @@ Actualizado el 23/09/2026.
 - Mejorar el orden de resultados (por ejemplo, que "legítima defensa" muestre primero Penal art. 26). En pausa.
 
 **Datos**
-- Más normas: Código Tributario, leyes y decretos.
+- Más leyes y decretos a pedido (se agregan en `leyes.json`).
 
 **Sitio**
 - Imagen de vista previa por artículo al compartir links (og).

@@ -124,6 +124,13 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
             continue
         display = match.group(1).rstrip("º°")
         id_norm = normalizar_id_articulo(display)
+        # IMPO a veces muestra "Artículo 176" en el título pero el ancla es "176A"
+        # (Código Rural). Manda el ancla, que es el identificador único.
+        ancla = heading.find_previous_sibling()
+        ancla_id = ancla.get("id") if isinstance(ancla, Tag) and ancla.name == "a" else None
+        if ancla_id and ancla_id != id_norm and ancla_id.startswith(id_norm) and ancla_id[len(id_norm):].isalpha():
+            display = f"{display}-{ancla_id[len(id_norm):]}"
+            id_norm = ancla_id
 
         body = heading.find_next_sibling("pre")
         if body is None or "italica" in (body.get("class") or []):
@@ -170,8 +177,11 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
             "faltantes_en_salida": missing,
             "inesperados_en_salida": unexpected,
         }, ensure_ascii=False))
-    if any(not r["texto"] for r in records):
-        raise RuntimeError(f"Hay artículos sin texto en {documento}")
+    # Algunos artículos figuran en IMPO sin texto (p. ej. Código Rural, art. 259). Se guardan
+    # vacíos y se informan en el reporte; si faltan todos, algo cambió en la página.
+    sin_texto = [r["articulo_id"] for r in records if not r["texto"]]
+    if len(sin_texto) > max(3, len(records) // 20):
+        raise RuntimeError(f"Demasiados artículos sin texto en {documento}: {sin_texto[:20]}")
 
     report = {
         "fuente": url,
@@ -182,6 +192,7 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
         "articulos_guardados": len(records),
         "duplicados": 0,
         "faltantes": 0,
+        "sin_texto_en_impo": sin_texto,
         "sha256_jsonl": None,
     }
     return records, report
@@ -204,6 +215,8 @@ def main() -> None:
     parser.add_argument("--user-agent", required=True)
     parser.add_argument("--config", default=str(Path(__file__).parent / "codigos.json"))
     parser.add_argument("--solo", default=None, help="Correr un solo código por id (ej. codigo-civil)")
+    parser.add_argument("--tolerante", action="store_true",
+                        help="Si una norma falla, conservar su archivo anterior y seguir con las demás")
     args = parser.parse_args()
     if "http" not in args.user_agent.lower():
         raise SystemExit("--user-agent debe incluir una URL de contacto identificable")
@@ -218,14 +231,31 @@ def main() -> None:
     session = requests.Session()
     session.headers.update({"User-Agent": args.user_agent, "Accept-Language": "es-UY,es;q=0.9"})
 
+    errores = []
     for norma in normas:
-        html, delay = fetch_norma(norma["url"], args.user_agent, session)
-        records, report = parse_norma(html, norma["documento"], norma["url"], scraped_at)
+        try:
+            html, delay = fetch_norma(norma["url"], args.user_agent, session)
+            records, report = parse_norma(html, norma["documento"], norma["url"], scraped_at)
+        except Exception as exc:  # noqa: BLE001
+            if not args.tolerante:
+                raise
+            # Se conserva el archivo anterior de esa norma y se sigue con las demás.
+            errores.append({"id": norma["id"], "error": str(exc)[:500]})
+            print(f"ERROR: {norma['id']}: {exc}")
+            continue
         report["crawl_delay_segundos"] = delay
         report["user_agent"] = args.user_agent
         write_outputs(records, report, Path(f"data/{norma['id']}.jsonl"),
                       Path(f"reports/last_run_{norma['id']}.json"))
         print(f"OK: {norma['id']}: {len(records)} artículos")
+
+    if errores:
+        Path("reports").mkdir(exist_ok=True)
+        nombre = Path(args.config).stem
+        Path(f"reports/errores_{nombre}.json").write_text(
+            json.dumps(errores, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        if len(errores) == len(normas):
+            raise SystemExit("Fallaron todas las normas")
 
 
 if __name__ == "__main__":
