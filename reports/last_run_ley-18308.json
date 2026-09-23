@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 88,
+  "articulos_guardados": 88,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.308",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T19:51:20Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18308-2008",
+  "sha256_jsonl": "6eed38773061b70eebe621d031648073ecb3a2a0fff0f84e6b3a9ee4ad0fe96e",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

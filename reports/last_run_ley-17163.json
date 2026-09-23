@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 33,
+  "articulos_guardados": 33,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.163",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T19:51:20Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17163-1999",
+  "sha256_jsonl": "6e326dc5709423e23a0e5b0e8a4363d6345120cdf5481d882e20d55d84ffeb81",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

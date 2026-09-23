@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 96,
+  "articulos_guardados": 96,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.651",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T19:51:20Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18651-2010",
+  "sha256_jsonl": "a2c6a65b54b9ebcab20a3e9375d59492fd3fb9fbff08aa3a21efda2d59e5f9a7",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

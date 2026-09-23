@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 3,
+  "articulos_guardados": 3,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.196",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T19:51:20Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19196-2014",
+  "sha256_jsonl": "4d4f0820c4e4050f80c71c97f495a7be6024cc34e741caea1f6502dbc81cbfd1",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

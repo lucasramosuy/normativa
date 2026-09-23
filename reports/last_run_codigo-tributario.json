@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T18:10:28Z",
+  "fecha_scraping": "2026-09-23T19:42:04Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-tributario/14306-1974",
-  "sha256_jsonl": "f96ccafc9b405e662fc2f40bd142d6d4f24f5d9b025cea512d62552afb456ed2",
+  "sha256_jsonl": "7cc7a2d6cd0fa6662885bf2ea9a979af1ae90348f468ad0fa2d5e8b1d5147566",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

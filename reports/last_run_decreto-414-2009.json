@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fecha_scraping": "2026-09-23T19:51:20Z",
   "fuente": "https://www.impo.com.uy/bases/decretos/414-2009",
-  "sha256_jsonl": "1457efb45369b9da1d0c3baa528ba9f8b8ecd480843c5c95c97e631c8b08247b",
+  "sha256_jsonl": "b2eef2752d217905133dbc8df7402bd047a9ac30c65d9b7ad405e9c9e13a6231",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
