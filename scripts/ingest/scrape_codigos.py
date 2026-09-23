@@ -63,9 +63,21 @@ def normalizar_id_articulo(raw: str) -> str:
     return raw.upper().replace("-", "").replace(" ", "").rstrip("º°")
 
 
+_robots_por_sesion: dict[int, RobotFileParser] = {}
+
+
+def robots_de(session: requests.Session) -> RobotFileParser:
+    """robots.txt de IMPO, descargado una sola vez por corrida (por sesión)."""
+    robots = _robots_por_sesion.get(id(session))
+    if robots is None:
+        robots = RobotFileParser(ROBOTS_URL)
+        robots.parse(session.get(ROBOTS_URL, timeout=30).text.splitlines())
+        _robots_por_sesion[id(session)] = robots
+    return robots
+
+
 def fetch_norma(url: str, user_agent: str, session: requests.Session) -> tuple[str, int]:
-    robots = RobotFileParser(ROBOTS_URL)
-    robots.parse(session.get(ROBOTS_URL, timeout=30).text.splitlines())
+    robots = robots_de(session)
     if not robots.can_fetch(user_agent, url):
         raise RuntimeError(f"robots.txt no permite descargar {url}")
     delay = max(10, int(robots.crawl_delay(user_agent) or robots.crawl_delay("*") or 10))
