@@ -72,7 +72,6 @@ python scripts/ingest/scrape_codigos.py --user-agent "normativa-uy-scraper/1.0 (
 Actualizado el 23/09/2026.
 
 **Búsqueda**
-- Arreglar la búsqueda por número de artículo: "artículo 6", "art 6", "6", "149 bis" y "constitución artículo 7" deberían llevar directo al artículo (o a los artículos 6 de cada norma).
 - Revisar la lentitud en las consultas cortas o muy genéricas ("6", "articulo", que coinciden con miles de páginas).
 - Mejorar el orden de resultados (por ejemplo, que "legítima defensa" muestre primero Penal art. 26). Queda en pausa por ahora.
 
@@ -83,7 +82,6 @@ Actualizado el 23/09/2026.
 **Sitio**
 - Proxy para Sentry y PostHog, para que los adblockers no corten los eventos. Necesita un dominio o una cuenta de Cloudflare.
 - Dominio propio y una imagen de vista previa más linda al compartir links.
-- Nombre del responsable legal en Privacidad y Términos, si se quiere mostrar. Hoy solo figura el mail de contacto.
 
 **API pública**
 - Documentar la rama `api` (los JSONL) y ofrecer endpoints más prolijos.
