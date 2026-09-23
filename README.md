@@ -1,45 +1,33 @@
-# Normativa UY - sitio web
+# Normativa Uruguay - sitio web
 
-Esta rama (`www`) contiene el sitio estático de prueba para consultar la Constitución de la República Oriental del Uruguay.
+[![Deploy GitHub Pages](https://github.com/lucasramosuy/normativa-uy/actions/workflows/pages.yml/badge.svg?branch=www)](https://github.com/lucasramosuy/normativa-uy/actions/workflows/pages.yml)
+[![Sitio](https://img.shields.io/website?url=https%3A%2F%2Flucasramosuy.github.io%2Fnormativa-uy%2F&label=sitio)](https://lucasramosuy.github.io/normativa-uy/)
+[![Astro](https://img.shields.io/badge/Astro-static-BC52EE?logo=astro)](https://astro.build/)
 
-## Sitio
+Sitio estático en Astro para buscar y leer normativa uruguaya. La rama `www` publica en GitHub Pages; `main` queda reservada para el scraper.
 
-La interfaz usa Tailwind CSS y carga `data/constitucion.jsonl` en el navegador. Permite:
+## Stack
 
-- buscar por número de artículo, texto, título, sección, capítulo y notas;
-- abrir enlaces directos con el formato `#articulo-N`;
-- navegar entre artículos;
-- consultar la fuente oficial de cada artículo en IMPO.
+- Astro, Tailwind CSS 4
+- Inter Variable y Source Serif 4, self-hosted con Fontsource
+- Pagefind para búsqueda estática
+- Sentry para errores y rendimiento
+- PostHog para analítica de producto
 
-No requiere compilación ni dependencias locales. Para probarlo, serví la raíz del repositorio por HTTP, por ejemplo:
+## Desarrollo
 
 ```bash
-python -m http.server 8000
+npm install
+npm run dev
+npm run build
 ```
 
-Luego abrí `http://localhost:8000`.
+Copiá `.env.example` a `.env` para activar Sentry y PostHog. Sin keys, ambas integraciones quedan apagadas.
 
 ## Publicación
 
-GitHub Pages se despliega exclusivamente desde esta rama mediante `.github/workflows/pages.yml`. El workflow corre con cada push a `www` o manualmente desde Actions.
+Cada push a `www` ejecuta el build y publica `dist/`. Para actualizar los datos, primero se valida el scraper en `main` y luego se hace un merge manual de `main` a `www`. No hay sincronización automática.
 
-En **Settings → Pages**, la fuente debe ser **GitHub Actions**. La URL prevista es:
+## Contenido legal pendiente
 
-https://lucasramosuy.github.io/normativa-uy/
-
-## Actualización de datos
-
-La rama `main` queda reservada para el scraper y genera `data/constitucion.jsonl` y `reports/last_run.json`.
-
-La actualización de la web es deliberadamente manual. Cuando se quiera publicar información nueva:
-
-1. ejecutar y validar el scraper en `main`;
-2. incorporar `main` en `www` mediante un merge revisado;
-3. resolver cualquier conflicto conservando los archivos propios del sitio (`index.html`, `app.js`, este README y el workflow de Pages);
-4. hacer push a `www`.
-
-Ese push dispara el despliegue. No hay sincronización automática desde `main` hacia `www`.
-
-## Fuente
-
-Los textos y enlaces del dataset provienen de [IMPO](https://www.impo.com.uy/bases/constitucion/1967-1967), Centro de Información Oficial de Uruguay.
+Antes de publicar Sentry/PostHog con keys reales, reemplazar `[RESPONSABLE A CONFIRMAR]` y `[CONTACTO A CONFIRMAR]` en privacidad, términos y accesibilidad.
