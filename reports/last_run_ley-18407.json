@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 224,
+  "articulos_guardados": 224,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.407",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T19:51:20Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18407-2008",
+  "sha256_jsonl": "a0a1932e8ad72f0a0aa7ae2feee0a9d5e738949d9aa1ca4bed81611564f4f06d",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
