@@ -61,7 +61,7 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
           {fecha&&<div class="flex justify-between gap-3"><dt class="text-slate-500">Consultado en IMPO</dt><dd class="font-medium">{fecha}</dd></div>}
         </dl>
       </div>
-      <a class="mt-4 flex items-center justify-between rounded-xl px-2 py-2 text-sm font-bold text-forest hover:underline" href={`${base}normas/${slug}/`}>Índice del {norma.corto}<Icon name="arrow" class="size-4"/></a>
+      <a class="mt-4 flex items-center justify-between rounded-xl px-2 py-2 text-sm font-bold text-forest hover:underline" href={`${base}normas/${slug}/`}>{norma.tipo==='Constitución'?'Índice de la Constitución':`Índice del ${norma.nombre}`}<Icon name="arrow" class="size-4"/></a>
     </aside>
   </div>
 </main>
