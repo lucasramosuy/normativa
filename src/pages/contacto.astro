@@ -1,43 +1,22 @@
 ---
-import Base from '../layouts/Base.astro';
-const base=import.meta.env.BASE_URL;
+// El formulario se mudó a lucasramos.uy/contacto/ (contacto único para todo el sitio).
 ---
-<Base title="Contacto · Normativa Uruguay" description="Consultas sobre accesibilidad, privacidad o términos de uso de Normativa Uruguay."><main class="wrap py-16"><div class="legal-copy"><p class="eyebrow">Información del sitio</p><h1 class="mt-3">Contacto</h1><p class="mt-5">Escribinos por consultas o pedidos sobre accesibilidad, privacidad o términos de uso. Los mensajes los recibe la Administración de Normativa Uruguay.</p></div>
-<form class="soft-card mt-10 max-w-[760px] space-y-6 p-6 sm:p-8" data-contact novalidate>
-<fieldset><legend class="text-sm font-bold text-ink">Tema</legend><div class="mt-3 grid gap-2 sm:grid-cols-3">
-{[['accesibilidad','Accesibilidad'],['privacidad','Privacidad'],['terminos','Términos de uso']].map(([v,l],i)=><label class="topic flex cursor-pointer items-center gap-3 rounded-lg border border-black/15 px-4 py-3 text-sm font-semibold"><input type="radio" name="categoria" value={v} checked={i===0} class="accent-forest"/>{l}</label>)}
-</div></fieldset>
-<div><label for="c-msg" class="text-sm font-bold text-ink">Mensaje</label><textarea id="c-msg" name="mensaje" required minlength="10" maxlength="4000" rows="7" class="field mt-2" placeholder="Contanos qué pasó o qué necesitás. Si es sobre una página, indicá cuál."></textarea><p class="mt-1 hidden text-sm font-semibold text-red-700" data-err-msg>Escribí al menos 10 caracteres.</p></div>
-<div class="grid gap-6 sm:grid-cols-2"><div><label for="c-name" class="text-sm font-bold text-ink">Nombre <span class="font-normal text-slate-500">(opcional)</span></label><input id="c-name" name="nombre" maxlength="120" autocomplete="name" class="field mt-2"/></div>
-<div><label for="c-email" class="text-sm font-bold text-ink">Correo para responderte <span class="font-normal text-slate-500">(opcional)</span></label><input id="c-email" name="email" type="email" maxlength="200" autocomplete="email" class="field mt-2"/><p class="mt-1 hidden text-sm font-semibold text-red-700" data-err-email>Revisá el correo.</p></div></div>
-<p class="text-sm text-slate-600">El mensaje se envía a través de Sentry, el servicio que usamos para reportes técnicos. Más detalles en <a class="font-semibold text-forest" href={`${base}privacidad/`}>Privacidad</a>.</p>
-<div class="flex flex-wrap items-center gap-4"><button type="submit" class="rounded-lg bg-forest px-5 py-3 font-bold text-white disabled:opacity-60" data-send>Enviar mensaje</button><p role="status" aria-live="polite" class="text-sm font-semibold" data-status></p></div>
-<div class="hidden rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-900" role="alert" data-blocked><b>No pudimos enviar el mensaje.</b> Es probable que un bloqueador de anuncios o de rastreo lo esté impidiendo. Desactivalo para este sitio y volvé a intentar; tu texto sigue en el formulario.</div>
-</form></main></Base>
-<style>.field{display:block;width:100%;border:1px solid #cbd0cb;border-radius:.6rem;background:#fff;padding:.7rem .85rem;font:inherit;color:#17211d}.field:focus{outline:3px solid #e7b84b;outline-offset:1px;border-color:#176b63}.topic:has(input:checked){border-color:#176b63;background:#eff8f6;color:#176b63}</style>
-<script>
-import * as Sentry from '@sentry/astro';
-const form=document.querySelector<HTMLFormElement>('[data-contact]')!;
-const $=(s:string)=>form.querySelector(s) as HTMLElement;
-const pre=new URLSearchParams(location.search).get('categoria');
-if(pre){const r=form.querySelector<HTMLInputElement>(`input[name=categoria][value="${CSS.escape(pre)}"]`);if(r)r.checked=true;}
-const withTimeout=<T,>(p:Promise<T>,ms:number)=>Promise.race([p,new Promise<T>((_,rej)=>setTimeout(()=>rej(new Error('timeout')),ms))]);
-async function viaSentry(d:{categoria:string,mensaje:string,nombre:string,email:string}){
-  if(!Sentry.getClient())throw new Error('no client');
-  return withTimeout(Sentry.withScope(()=>Sentry.sendFeedback({message:`[${d.categoria}] ${d.mensaje}`,name:d.nombre||undefined,email:d.email||undefined,tags:{categoria:d.categoria,origen:'formulario-contacto'}},{includeReplay:false})),8000);}
-async function viaPostHog(d:{categoria:string,mensaje:string,nombre:string,email:string}){
-  const key=import.meta.env.PUBLIC_POSTHOG_KEY||'phc_bJkTqARJCN4my3DJBe6JDW2QVnSTiGSQTXmVC4kjCVn';const host=location.origin+import.meta.env.BASE_URL+'_i/p';
-  const r=await withTimeout(fetch(`${host}/i/v0/e/`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({api_key:key,event:'contacto',distinct_id:'contacto-'+crypto.randomUUID(),properties:{...d,url:location.href,$process_person_profile:false}})}),8000);
-  if(!r.ok)throw new Error('posthog '+r.status);}
-form.addEventListener('submit',async e=>{e.preventDefault();
-  const fd=new FormData(form);const d={categoria:String(fd.get('categoria')||'accesibilidad'),mensaje:String(fd.get('mensaje')||'').trim(),nombre:String(fd.get('nombre')||'').trim(),email:String(fd.get('email')||'').trim()};
-  const badMsg=d.mensaje.length<10;const badEmail=!!d.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email);
-  $('[data-err-msg]').classList.toggle('hidden',!badMsg);$('[data-err-email]').classList.toggle('hidden',!badEmail);
-  if(badMsg){(form.querySelector('#c-msg') as HTMLElement).focus();return;}if(badEmail){(form.querySelector('#c-email') as HTMLElement).focus();return;}
-  const btn=$('[data-send]') as HTMLButtonElement;const st=$('[data-status]');btn.disabled=true;st.className='text-sm font-semibold text-slate-600';st.textContent='Enviando…';$('[data-blocked]').classList.add('hidden');
-  let ok=false;try{await viaSentry(d);ok=true;}catch{try{await viaPostHog(d);ok=true;}catch{}}
-  btn.disabled=false;
-  if(ok){form.reset();st.className='text-sm font-semibold text-forest';st.textContent='Mensaje enviado. Gracias.';}
-  else{st.textContent='';$('[data-blocked]').classList.remove('hidden');}
-});
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · Normativa Uruguay</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://lucasramos.uy/contacto/">
+<meta http-equiv="refresh" content="0; url=/contacto/?tema=normativa">
+<script is:inline>
+var c=new URLSearchParams(location.search).get('categoria');
+var t=c==='accesibilidad'||c==='privacidad'?c:'normativa';
+location.replace('/contacto/?tema='+t);
 </script>
+</head>
+<body>
+<p>El formulario de contacto se mudó a <a href="/contacto/?tema=normativa">lucasramos.uy/contacto</a>.</p>
+</body>
+</html>
