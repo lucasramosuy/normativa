@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 51,
+  "articulos_guardados": 51,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.331",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18331-2008",
+  "sha256_jsonl": "5a8d8f673f4c6e9ed9bc47549e905e31dfcc597e20910579f9466439e99e2f32",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 18,
+  "articulos_guardados": 18,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.228",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17228-2000",
+  "sha256_jsonl": "4303d4bcaa58be2107c93ba3ff52a1eda0ae5e6e6e9999f853a89d91a76bff63",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
