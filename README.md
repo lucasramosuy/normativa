@@ -38,6 +38,7 @@ El Worker "proxy" (ruta `lucasramos.uy/normativa*`) hace dos cosas:
 - **Ingesta propia**, para que los adblockers no corten eventos:
   - `/normativa/_i/s`: tunnel de Sentry. Solo acepta POST con envelopes de nuestro DSN (org y proyecto fijos).
   - `/normativa/_i/p/*`: reverse proxy de PostHog (`static/` y `array/` a `us-assets.i.posthog.com` con caché, el resto a `us.i.posthog.com`).
+- **Caché larga para `/normativa/_astro/*`**: esos archivos llevan un hash en el nombre y nunca cambian, así que el Worker les pone `Cache-Control: public, max-age=31536000, immutable` y el navegador no los vuelve a pedir.
 
 `worker/proxy.js` es la copia versionada del código desplegado. No se despliega solo: si se cambia, hay que pegarlo en el editor del Worker en Cloudflare (o usar `wrangler`) e implementar.
 

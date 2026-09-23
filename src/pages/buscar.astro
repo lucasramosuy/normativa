@@ -1,16 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';import Search from '../components/Search.astro';import {NORMAS,getArticles,fmt} from '../data/normas';
 const base=import.meta.env.BASE_URL;
-const normas=NORMAS.map(n=>({slug:n.slug,corto:n.corto,total:getArticles(n.slug).length}));
+const normas=NORMAS.map(n=>({slug:n.slug,corto:n.corto,tipo:n.tipo,numero:n.numero||'',anio:n.anio||'',total:getArticles(n.slug).length}));
 ---
-<Base title="Buscar · Normativa Uruguay"><Fragment slot="head"><link rel="modulepreload" href={`${base}pagefind/pagefind.js`}/><link rel="preload" href={`${base}pagefind/pagefind-entry.json`} as="fetch" crossorigin/><link rel="preload" href={`${base}pagefind/wasm.es-uy.pagefind`} as="fetch" crossorigin/></Fragment><main class="wrap py-12"><Search/><div class="mt-12 grid gap-9 lg:grid-cols-[240px_1fr]"><aside><b>Filtrar por norma</b><div class="mt-4 space-y-1.5" data-filters><button type="button" data-norma="" class="filter-btn flex w-full justify-between rounded-lg px-3 py-2 text-left text-sm">Todas <span data-count-all></span></button>{normas.map(n=><button type="button" data-norma={n.slug} data-label={n.corto} class="filter-btn flex w-full justify-between rounded-lg px-3 py-2 text-left text-sm">{n.corto} <span data-count={n.corto}></span></button>)}</div></aside>
-<section><p class="eyebrow" data-status>Escribí una búsqueda</p><h1 class="mt-2 text-5xl" data-heading>Buscar normativa</h1><div class="mt-7 hidden" data-direct></div><div class="mt-7 space-y-3" data-results></div><button type="button" class="mt-6 hidden rounded-lg border px-4 py-2 text-sm font-bold text-forest" data-more>Ver más resultados</button><div class="soft-card mt-8 hidden p-10 text-center" data-empty><h2 class="text-2xl">No encontramos resultados</h2><p class="mt-3 text-slate-600">Probá con menos palabras, otra forma de escribir o un número de artículo.</p></div>
-<div class="mt-2 grid gap-3 sm:grid-cols-2" data-intro>{normas.map(n=><a class="soft-card p-5 hover:border-forest" href={`${base}normas/${n.slug}/`}><b>{n.corto}</b><small class="mt-1 block text-slate-500">{fmt(n.total)} artículos</small></a>)}</div></section></div></main></Base>
-<style is:global>.filter-btn[aria-pressed="true"]{background:var(--color-mint,#dcefe9);color:var(--color-forest,#176b63);font-weight:700}</style>
+<Base title="Buscar · Normativa Uruguay"><Fragment slot="head"><link rel="modulepreload" href={`${base}pagefind/pagefind.js`}/><link rel="preload" href={`${base}pagefind/pagefind-entry.json`} as="fetch" crossorigin/><link rel="preload" href={`${base}pagefind/wasm.es-uy.pagefind`} as="fetch" crossorigin/></Fragment><main class="wrap py-12"><Search/><div class="mt-12 grid gap-9 lg:grid-cols-[240px_1fr]"><aside class="hidden" data-aside><details class="filter-box" data-filter-box><summary class="flex cursor-pointer items-center justify-between rounded-lg border border-black/15 bg-white px-4 py-3 text-sm font-bold lg:hidden"><span>Filtrar por norma <span class="font-normal text-slate-500" data-filter-current></span></span><span aria-hidden="true">▾</span></summary><b class="hidden lg:block">Filtrar por norma</b><div class="mt-4 space-y-1.5" data-filters><button type="button" data-norma="" class="filter-btn flex w-full justify-between rounded-lg px-3 py-2 text-left text-sm">Todas <span data-count-all></span></button>{normas.map(n=><button type="button" hidden data-norma={n.slug} data-label={n.corto} class="filter-btn flex w-full justify-between gap-3 rounded-lg px-3 py-2 text-left text-sm">{n.corto} <span data-count={n.corto}></span></button>)}</div><button type="button" hidden class="mt-2 px-3 py-1 text-sm font-bold text-forest" data-filters-more></button></details></aside>
+<section><p class="eyebrow" data-status>Escribí una búsqueda</p><h1 class="mt-2 text-5xl" data-heading>Buscar normativa</h1><p class="mt-3 hidden text-sm text-slate-600" data-fuzzy-note></p><div class="mt-7 hidden" data-norma-hit></div><div class="mt-7 hidden" data-direct></div><div class="mt-7 space-y-3" data-results></div><button type="button" class="mt-6 hidden rounded-lg border px-4 py-2 text-sm font-bold text-forest" data-more>Ver más resultados</button><div class="soft-card mt-8 hidden p-10 text-center" data-empty><h2 class="text-2xl">No encontramos resultados</h2><p class="mt-3 text-slate-600">Probá con menos palabras, otra forma de escribir o un número de artículo.</p></div>
+<div class="mt-2 grid gap-3 sm:grid-cols-2" data-intro data-normas={JSON.stringify(normas.map(n=>[n.slug,n.corto,n.tipo,n.numero,n.anio,n.total]))}>{normas.map(n=><a class="soft-card p-5 hover:border-forest" href={`${base}normas/${n.slug}/`}><b>{n.corto}</b><small class="mt-1 block text-slate-500">{fmt(n.total)} artículos</small></a>)}</div></section></div></main></Base>
+<style is:global>.filter-btn[aria-pressed="true"]{background:var(--color-mint,#dcefe9);color:var(--color-forest,#176b63);font-weight:700}.filter-box>summary{list-style:none}.filter-box>summary::-webkit-details-marker{display:none}</style>
 <script>
 const base=import.meta.env.BASE_URL;
 // Start loading the Pagefind engine and filter data immediately, in parallel with the rest of the page.
-const pfReady:Promise<any>=import(/* @vite-ignore */ `${base}pagefind/pagefind.js`).then(async(p:any)=>{await p.options?.({excerptLength:30});await p.init?.();await p.filters();return p;});
+const pfReady:Promise<any>=import(/* @vite-ignore */ `${base}pagefind/pagefind.js`).then(async(p:any)=>{await p.options?.({excerptLength:30,ranking:{termSimilarity:10}});await p.init?.();await p.filters();return p;});
 const params=new URLSearchParams(location.search);
 let q=(params.get('q')||'').trim();let norma=params.get('norma')||'';
 const $=(s:string)=>document.querySelector(s) as HTMLElement;
@@ -39,6 +39,32 @@ function findArticles(data:any,id:string,only:string){const out:{slug:string,cor
 function renderDirect(list:{slug:string,corto:string,id:string}[],id:string){const box=$('[data-direct]');box.innerHTML='';box.classList.toggle('hidden',!list.length);if(!list.length)return;
   const label=(v:string)=>v.toUpperCase().replace(/^(\d+)-(\d+)$/,'$1-$2');
   box.innerHTML=`<p class="text-xs font-bold uppercase tracking-[.12em] text-slate-500">${list.length===1?'Artículo encontrado':'Artículo '+esc(label(id))+' en cada norma'}</p><div class="mt-3 grid gap-3 sm:grid-cols-2">${list.map(x=>`<a class="soft-card flex items-center justify-between gap-4 border-forest/30 bg-mint/40 p-5 transition hover:border-forest" href="${base}normas/${x.slug}/articulo/${x.id}/"><span><span class="chip">${esc(x.corto)}</span><b class="mt-2 block font-serif text-2xl text-ink">Artículo ${esc(label(x.id))}</b></span><span class="text-xl font-bold text-forest" aria-hidden="true">→</span></a>`).join('')}</div>`;}
+// ---- Norm lookup ("ley 16060", "16.060", "decreto 500/991") ----
+const NORMAS_IDX:[string,string,string,string,number|string,number][]=JSON.parse($('[data-intro]').dataset.normas||'[]');
+const digits=(s:string)=>s.replace(/\D/g,'');
+function findNormas(raw:string){const f=fold(raw).replace(/\s+/g,' ').trim();
+  const m=f.match(/^(?:(ley|decreto[- ]ley|dl|decreto)\s*)?(?:(?:n|no|nro|numero)[.º°]?\s*)?(\d{1,3}(?:\.\d{3})+|\d{3,6})(?:\s*\/\s*(\d{2,4}))?$/);
+  if(!m)return[];const [,tipoQ,num,year]=m;
+  if(!tipoQ&&!year&&!num.includes('.')&&num.length<4)return[];
+  const want=digits(num);
+  let hits=NORMAS_IDX.filter(([, , ,numero])=>numero&&digits(numero.split('/')[0])===want&&(!year||digits(numero.split('/')[1]||'')===year||String(numero).endsWith(year)));
+  if(tipoQ){const t=tipoQ.startsWith('decreto')&&tipoQ!=='decreto'||tipoQ==='dl'?'decreto-ley':tipoQ;const same=hits.filter(h=>fold(h[2]).replace(' ','-')===t);if(same.length)hits=same;}
+  return hits;}
+function renderNormaHits(list:typeof NORMAS_IDX){const box=$('[data-norma-hit]');box.classList.toggle('hidden',!list.length);box.innerHTML=list.length?`<p class="text-xs font-bold uppercase tracking-[.12em] text-slate-500">${list.length===1?'Norma encontrada':'Normas encontradas'}</p><div class="mt-3 grid gap-3 sm:grid-cols-2">${list.map(([slug,corto,tipo,numero,anio,total])=>`<a class="soft-card flex items-center justify-between gap-4 border-forest/30 bg-mint/40 p-5 transition hover:border-forest" href="${base}normas/${slug}/"><span><span class="chip">${esc(tipo+' '+numero+(anio?' · '+anio:''))}</span><b class="mt-2 block font-serif text-2xl text-ink">${esc(corto)}</b><small class="mt-1 block text-slate-500">${total.toLocaleString('es-UY')} artículos</small></span><span class="text-xl font-bold text-forest" aria-hidden="true">→</span></a>`).join('')}</div>`:'';}
+
+// ---- Filters: only norms with results, most results first; top 8 + "ver todas" ----
+const TOP_FILTERS=8;let filtersOpen=false;
+const filterBox=document.querySelector<HTMLDetailsElement>('[data-filter-box]');const wide=matchMedia('(min-width:1024px)');
+const syncBox=()=>{if(filterBox&&wide.matches)filterBox.open=true;};syncBox();wide.addEventListener('change',syncBox);
+function paintFilters(counts:Record<string,number>){const wrap=$('[data-filters]');const btns=[...wrap.querySelectorAll<HTMLElement>('[data-norma]')].filter(b=>b.dataset.norma);
+  const withHits=btns.filter(b=>(counts[b.dataset.label!]||0)>0||b.dataset.norma===norma).sort((a,b)=>(counts[b.dataset.label!]||0)-(counts[a.dataset.label!]||0));
+  btns.forEach(b=>b.hidden=true);withHits.forEach((b,i)=>{wrap.appendChild(b);b.hidden=!filtersOpen&&i>=TOP_FILTERS&&b.dataset.norma!==norma;});
+  const more=$('[data-filters-more]');const extra=withHits.length-TOP_FILTERS;more.hidden=extra<=0;more.textContent=filtersOpen?'Ver menos':`Ver todas (${withHits.length})`;
+  $('[data-filter-current]').textContent=norma&&labels[norma]?'· '+labels[norma]:'';}
+$('[data-filters-more]').addEventListener('click',()=>{filtersOpen=!filtersOpen;run();});
+
+// ---- Exact words first; similar words ("despido" -> "despedido", "después") only on request or when there is nothing exact ----
+let fuzzy=false;
 const PAGE=10;let results:any[]=[];let shown=0;let seq=0;
 function paint(){document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.norma===norma)));}
 function syncUrl(){const u=new URL(location.href);q?u.searchParams.set('q',q):u.searchParams.delete('q');norma?u.searchParams.set('norma',norma):u.searchParams.delete('norma');history.replaceState(null,'',u);}
@@ -48,28 +74,35 @@ async function more(my=seq){const box=$('[data-results]');const next=results.sli
   await Promise.all(next.map(async(r,i)=>{const d=await r.data();if(my!==seq)return;const a=slots[i];a.href=d.url;
     a.innerHTML=`<div class="flex gap-3 text-xs"><span class="chip">${esc((d.filters?.norma||[])[0]||'')}</span><span class="py-1.5 text-slate-500">${esc(d.meta?.title||'')}</span></div><p class="mt-4 line-clamp-3 leading-7 text-slate-700">${d.excerpt}</p>`;}));}
 async function run(){paint();syncUrl();const my=++seq;
-  if(!q){renderDirect([],'');$('[data-intro]').classList.remove('hidden');$('[data-results]').innerHTML='';$('[data-more]').classList.add('hidden');$('[data-empty]').classList.add('hidden');$('[data-status]').textContent='Escribí una búsqueda';$('[data-heading]').textContent='Buscar normativa';document.querySelectorAll<HTMLElement>('[data-count],[data-count-all]').forEach(e=>e.textContent='');return;}
-  $('[data-intro]').classList.add('hidden');$('[data-status]').textContent='Buscando…';
+  if(!q){renderDirect([],'');renderNormaHits([]);$('[data-aside]').classList.add('hidden');$('[data-fuzzy-note]').classList.add('hidden');$('[data-intro]').classList.remove('hidden');$('[data-results]').innerHTML='';$('[data-more]').classList.add('hidden');$('[data-empty]').classList.add('hidden');$('[data-status]').textContent='Escribí una búsqueda';$('[data-heading]').textContent='Buscar normativa';document.querySelectorAll<HTMLElement>('[data-count],[data-count-all]').forEach(e=>e.textContent='');return;}
+  $('[data-intro]').classList.add('hidden');$('[data-aside]').classList.remove('hidden');$('[data-status]').textContent='Buscando…';
   const pf=await pfReady;if(my!==seq)return;
   const parsed=parseQuery(q);
   const ids=parsed.article?await idsReady:null;if(my!==seq)return;
   const direct=parsed.article&&ids?findArticles(ids,parsed.article,parsed.norma||(norma&&labels[norma]?norma:'')):[];
   renderDirect(direct,parsed.article);
+  const normaHits=findNormas(q);renderNormaHits(normaHits);
   const filters=norma&&labels[norma]?{norma:labels[norma]}:{};
   let res:any={results:[],filters:{},totalFilters:{}};
-  if(parsed.text){res=await pf.search(parsed.text,{filters});if(my!==seq||!res)return;}
+  let exactOnly=false;const note=$('[data-fuzzy-note]');note.classList.add('hidden');
+  if(parsed.text){const single=!/\s/.test(parsed.text)&&!/^\d/.test(parsed.text)&&parsed.text.length>=3&&!parsed.text.includes('"');
+    if(single&&!fuzzy){const ex=await pf.search(`"${parsed.text}"`,{filters});if(my!==seq)return;
+      const exTotal=Object.values(((norma?ex?.totalFilters:ex?.filters)?.norma)||{}).reduce((a:number,b:any)=>a+Number(b),0);
+      if(ex&&(ex.results.length||exTotal)){res=ex;exactOnly=true;}}
+    if(!exactOnly){res=await pf.search(parsed.text,{filters});if(my!==seq||!res)return;}
+    if(single&&(exactOnly||fuzzy)){note.classList.remove('hidden');note.innerHTML=exactOnly?'Solo palabras exactas. <button type="button" class="font-bold text-forest underline" data-fuzzy>Incluir palabras parecidas</button>':'Incluye palabras parecidas. <button type="button" class="font-bold text-forest underline" data-fuzzy>Solo palabras exactas</button>';note.querySelector('[data-fuzzy]')!.addEventListener('click',()=>{fuzzy=!fuzzy;run();});}}
   results=res.results;
   // One search gives both: totalFilters = counts ignoring the active norma filter.
   const counts:Record<string,number>={...((norma?res.totalFilters:res.filters)?.norma||{})};for(const d of direct)counts[d.corto]=(counts[d.corto]||0)+1;let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
-  $('[data-count-all]').textContent=String(total);
-  const n=results.length+direct.length;$('[data-status]').textContent=`${n} ${n===1?"resultado":"resultados"}${norma&&labels[norma]?' en '+labels[norma]:''}`;
+  $('[data-count-all]').textContent=String(total);paintFilters(counts);
+  const n=results.length+direct.length+normaHits.length;$('[data-status]').textContent=`${n} ${n===1?"resultado":"resultados"}${norma&&labels[norma]?' en '+labels[norma]:''}`;
   $('[data-heading]').textContent=`“${q}”`;document.title=`“${q}” · Normativa Uruguay`;
-  $('[data-results]').innerHTML='';shown=0;$('[data-empty]').classList.toggle('hidden',results.length+direct.length>0);await more(my);}
+  $('[data-results]').innerHTML='';shown=0;$('[data-empty]').classList.toggle('hidden',n>0);await more(my);}
 document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>b.addEventListener('click',()=>{norma=b.dataset.norma||'';run();}));
 $('[data-more]').addEventListener('click',()=>more());
 // Search in place: no page reload on submit, and results update while typing.
 let timer:any;
-form?.addEventListener('submit',e=>{e.preventDefault();clearTimeout(timer);q=(input!.value||'').trim();run();});
-input?.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{const v=input.value.trim();if(v===q)return;q=v;run();},220);});
+form?.addEventListener('submit',e=>{e.preventDefault();clearTimeout(timer);q=(input!.value||'').trim();fuzzy=false;filtersOpen=false;run();});
+input?.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{const v=input.value.trim();if(v===q)return;q=v;fuzzy=false;filtersOpen=false;run();},220);});
 run();
 </script>
