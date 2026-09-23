@@ -11,7 +11,7 @@ const label=labelOf(article);const levels=headingsOf(article).map(splitHeading);
 const {rubro,body}=splitTitle(article.texto);const blocks=toBlocks(body);
 const derogado=/^\s*\(?derogad/i.test(article.texto);
 const rubroOf=(a:any)=>splitTitle(a.texto).rubro;
-const cita=`${norma.nombre}, artículo ${label}.`;
+const cita=norma.numero?`${norma.tipo} ${norma.numero}, artículo ${label}.`:`${norma.nombre}, artículo ${label}.`;
 const fecha=(article as any).fecha_scraping?new Date((article as any).fecha_scraping).toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'}):null;
 const notas=(article.notas_oficiales||'').split(/\r?\n/).map(l=>l.trim()).filter(Boolean).reduce((acc:string[],l)=>{const prev=acc[acc.length-1];if(prev!==undefined&&!/[.,:)]$/.test(prev)&&!/^TEXTO ORIGINAL/i.test(l))acc[acc.length-1]=prev+' '+l;else acc.push(l);return acc;},[]);
 const ids=new Set(getArticles(slug).map(idOf));
@@ -34,7 +34,7 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
 
       {quitado&&<div class="mt-8 max-w-[68ch] rounded-2xl border border-red-200 bg-red-50 p-5 text-sm leading-6 text-red-900" role="note" data-pagefind-ignore><b>Este artículo ya no figura en IMPO desde el {fechaLarga(quitado)}.</b> Se muestra el último texto publicado, solo como referencia. Consultá IMPO para la situación actual.</div>}
       <div class="article-text mt-9 max-w-[68ch]">
-        {blocks.map(b=>b.type==='p'?<p>{b.text}</p>:<ol class="enum">{b.items.map(it=><li><span class="enum-mark">{it.marker}</span><span>{it.text}</span></li>)}</ol>)}
+        {!body&&<p class="text-slate-500">IMPO no muestra texto para este artículo. Revisá la fuente oficial y sus notas.</p>}{blocks.map(b=>b.type==='p'?<p>{b.text}</p>:<ol class="enum">{b.items.map(it=><li><span class="enum-mark">{it.marker}</span><span>{it.text}</span></li>)}</ol>)}
       </div>
 
       {notas.length>0&&<section class="mt-12 max-w-[68ch] rounded-2xl border border-black/10 bg-ivory/70 p-6" data-pagefind-ignore aria-labelledby="notas"><h2 id="notas" class="text-xl">Notas oficiales</h2><ul class="mt-3 grid gap-1.5 text-sm leading-6 text-slate-600">{notas.map(n=><li class={/^TEXTO ORIGINAL/i.test(n)?'mt-2 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-500':''} set:html={linkRefs(n)}/>)}</ul></section>}
@@ -61,7 +61,7 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
           {fecha&&<div class="flex justify-between gap-3"><dt class="text-slate-500">Consultado en IMPO</dt><dd class="font-medium">{fecha}</dd></div>}
         </dl>
       </div>
-      <a class="mt-4 flex items-center justify-between rounded-xl px-2 py-2 text-sm font-bold text-forest hover:underline" href={`${base}normas/${slug}/`}>{norma.tipo==='Constitución'?'Índice de la Constitución':`Índice del ${norma.nombre}`}<Icon name="arrow" class="size-4"/></a>
+      <a class="mt-4 flex items-center justify-between rounded-xl px-2 py-2 text-sm font-bold text-forest hover:underline" href={`${base}normas/${slug}/`}>{norma.tipo==='Constitución'?'Índice de la Constitución':norma.tipo==='Código'?`Índice del ${norma.nombre}`:norma.tipo==='Decreto'?'Índice del decreto':'Índice de la ley'}<Icon name="arrow" class="size-4"/></a>
     </aside>
   </div>
 </main>

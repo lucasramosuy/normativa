@@ -1,4 +1,14 @@
 ---
-import Base from '../layouts/Base.astro';import {NORMAS,getArticles,totalArticles,fmt} from '../data/normas';const base=import.meta.env.BASE_URL;
+import Base from '../layouts/Base.astro';import {NORMAS,GRUPOS,getArticles,totalArticles,fmt} from '../data/normas';const base=import.meta.env.BASE_URL;
+const grupos=GRUPOS.map(g=>({...g,normas:NORMAS.filter(n=>g.tipos.includes(n.tipo))})).filter(g=>g.normas.length);
+// Leyes: sub-agrupadas por área temática, en el orden en que aparecen en el catálogo.
+const porArea=(ns:typeof NORMAS)=>{const m=new Map<string,typeof NORMAS>();for(const n of ns){const k=n.area??'';if(!m.has(k))m.set(k,[]);m.get(k)!.push(n);}return [...m.entries()];};
 ---
-<Base title="Explorar normativa · Normativa Uruguay"><main class="wrap py-16"><p class="eyebrow">Colecciones</p><h1 class="mt-3 text-6xl">Explorá la normativa</h1><p class="mt-5 max-w-2xl text-lg text-slate-600">{NORMAS.length} normas y {fmt(totalArticles())} artículos, cada uno con enlace a su texto en IMPO.</p><div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{NORMAS.map((n,i)=><a class={`soft-card p-7 transition hover:border-forest ${i===0?"bg-mint/60":""}`} href={`${base}normas/${n.slug}/`}><span class="chip">{n.tipo}</span><h2 class="mt-10 text-3xl">{n.nombre}</h2><p class="mt-3 text-slate-600">{n.descripcion}</p><b class="mt-6 block text-sm text-forest">{fmt(getArticles(n.slug).length)} artículos →</b></a>)}</div></main></Base>
+<Base title="Explorar normativa · Normativa Uruguay"><main class="wrap py-16"><p class="eyebrow">Colecciones</p><h1 class="mt-3 text-6xl">Explorá la normativa</h1><p class="mt-5 max-w-2xl text-lg text-slate-600">{NORMAS.length} normas y {fmt(totalArticles())} artículos, cada uno con enlace a su texto en IMPO.</p>
+<nav class="mt-8 flex flex-wrap gap-2" aria-label="Grupos">{grupos.map(g=><a class="chip hover:border-forest" href={`#g-${g.tipos[0].toLowerCase()}`}>{g.titulo} · {g.normas.length}</a>)}</nav>
+{grupos.map(g=><section class="mt-14" id={`g-${g.tipos[0].toLowerCase()}`}><h2 class="border-b border-black/10 pb-3 text-3xl">{g.titulo}</h2>
+{g.tipos.includes('Código')?
+<div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{g.normas.map((n,i)=><a class={`soft-card p-7 transition hover:border-forest ${i===0?"bg-mint/60":""}`} href={`${base}normas/${n.slug}/`}><span class="chip">{n.tipo}</span><h3 class="mt-8 text-3xl">{n.nombre}</h3><p class="mt-3 text-slate-600">{n.descripcion}</p><b class="mt-6 block text-sm text-forest">{fmt(getArticles(n.slug).length)} artículos →</b></a>)}</div>
+:porArea(g.normas).map(([area,ns])=><div class="mt-8">{area&&g.normas.length>6&&<h3 class="text-xs font-bold uppercase tracking-[.12em] text-forest">{area}</h3>}<div class="mt-3 grid gap-3 md:grid-cols-2 lg:grid-cols-3">{ns.map(n=><a class="soft-card flex flex-col p-5 transition hover:border-forest" href={`${base}normas/${n.slug}/`}><span class="text-xs font-bold text-slate-500">{n.tipo} {n.numero} · {n.anio}</span><b class="mt-2 font-serif text-xl leading-snug text-ink">{n.corto}</b><small class="mt-2 line-clamp-2 text-[.7rem] uppercase leading-relaxed tracking-[.06em] text-slate-500">{n.titulo_impo}</small><span class="mt-auto pt-3 text-sm font-bold text-forest">{fmt(getArticles(n.slug).length)} artículos →</span></a>)}</div></div>)}
+</section>)}
+</main></Base>
