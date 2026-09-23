@@ -53,9 +53,10 @@ const MARKER = /^((?:[A-Za-z]|[0-9]{1,3}[°º]?|[IVXLC]{1,6})\))\s*([A-Za-zÁÉ�
 
 /** Splits the "(Legítima defensa).-" marginal title off the start of the text. */
 export function splitTitle(texto: string): { rubro: string | null; body: string } {
-  const m = texto.match(/^\s*\(([^()\n]{2,140})\)\s*\.?\s*-?\s*/);
+  // The title can wrap onto several lines in IMPO, e.g. "(Incitación al odio ... hacia determinadas\npersonas)".
+  const m = texto.match(/^\s*\(([^()]{2,200})\)\s*\.?\s*-?\s*/);
   if (!m || /^derogad/i.test(m[1])) return { rubro: null, body: texto.trim() };
-  return { rubro: m[1].trim(), body: texto.slice(m[0].length).trim() };
+  return { rubro: m[1].replace(/\s+/g, ' ').trim(), body: texto.slice(m[0].length).trim() };
 }
 
 /** Reflows IMPO hard-wrapped lines into paragraphs and enumerated lists. */
