@@ -1,0 +1,52 @@
+name: Publicar datos en api
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: publish-api
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+      - name: Checkout api
+        uses: actions/checkout@v4
+        with:
+          ref: api
+          path: api
+      - name: Copiar datos
+        run: |
+          rm -rf api/data api/reports
+          cp -r main/data api/data
+          cp -r main/reports api/reports
+      - name: Commit en api
+        id: commit
+        working-directory: api
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "api ya está al día."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publicar datos desde main ${GITHUB_SHA::7}"
+          git push origin api
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Redesplegar la web
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref www

@@ -1,79 +1,68 @@
-# Sistema Personal de Conocimiento Académico (Derecho + Sociología, Uruguay)
+# Normativa Uruguay - scrapers
 
-Corpus normativo + apuntes + bibliografía, procesado en chunks con metadata,
-indexado con embeddings para búsqueda semántica en lenguaje natural.
+[![Actualizar Constitución](https://github.com/lucasramosuy/normativa-uy/actions/workflows/scrape.yml/badge.svg)](https://github.com/lucasramosuy/normativa-uy/actions/workflows/scrape.yml)
+[![Actualizar códigos](https://github.com/lucasramosuy/normativa-uy/actions/workflows/scrape-codigos.yml/badge.svg)](https://github.com/lucasramosuy/normativa-uy/actions/workflows/scrape-codigos.yml)
+[![Sitio](https://img.shields.io/website?url=https%3A%2F%2Flucasramosuy.github.io%2Fnormativa-uy%2F&label=sitio)](https://lucasramosuy.github.io/normativa-uy/)
 
-Fuente principal: [IMPO](https://www.impo.com.uy) (Centro de Información Oficial de Uruguay).
+Scrapers de normativa uruguaya desde [IMPO](https://www.impo.com.uy). Esta rama solo genera datos.
 
-## Estructura del proyecto
+## Ramas
+
+| Rama | Contenido |
+| --- | --- |
+| `main` | Scrapers y sus workflows. Genera `data/*.jsonl` y `reports/`. |
+| `api` | Solo los datos publicados. Se actualiza a mano desde `main`. |
+| `www` | La web ([lucasramosuy.github.io/normativa-uy](https://lucasramosuy.github.io/normativa-uy/)). Lee `data/` desde `api`. |
+
+## Flujo
+
+1. Correr un scraper: **Actions → Actualizar Constitución desde IMPO** o **Actualizar códigos desde IMPO → Run workflow**. Solo commitea en `main` si cambian las salidas.
+2. Revisar el diff en `main`.
+3. Publicar: **Actions → Publicar datos en api → Run workflow**. Copia `data/` y `reports/` a `api` y vuelve a desplegar la web.
+
+## Estructura
 
 ```
-/sources_raw/          # HTML/PDF crudo, sin tocar
-/sources_processed/    # texto limpio en Markdown/JSON
-/chunks/                # fragmentos + metadata (listos para embeddings)
-/embeddings/            # vectores + índice FAISS
-/schemas/               # esquema de metadata (JSON Schema) + ejemplos
-/scripts/
-  ingest/               # scrapers por fuente (IMPO, ANEP, etc.)
-  process/              # limpieza, chunking, normalización
-  index/                # generación y actualización de embeddings/FAISS
-  query/                # búsqueda semántica sobre el índice
-/notebooks/             # prototipado en Colab
+.github/workflows/
+  scrape.yml            # Constitución
+  scrape-codigos.yml    # códigos listados en scripts/ingest/codigos.json
+  publish-api.yml       # main -> api (manual) + redeploy de www
+scripts/ingest/         # scrapers (ver scripts/ingest/README.md)
+data/                   # un .jsonl por norma, una línea por artículo
+reports/                # last_run*.json: cobertura, validación y sha256
+requirements-scraper.txt
 ```
 
-## Setup
+## Formato de `data/*.jsonl`
+
+Una línea JSON por artículo, claves ordenadas.
+
+| Campo | Descripción |
+| --- | --- |
+| `articulo` | Número de artículo (entero). |
+| `articulo_id` | Id textual, incluye sufijos y rangos (`149BIS`, `131144`). Solo códigos. |
+| `texto` | Texto del artículo. |
+| `documento` | Nombre de la norma. |
+| `titulo` | "Artículo N". |
+| `titulo_norma`, `libro`, `seccion`, `capitulo` | Ruta de encabezados vigente en IMPO (según la norma). |
+| `notas_oficiales` | Notas de IMPO (redacción, derogaciones, referencias). |
+| `estado_actual` | Vigencia según IMPO. |
+| `fecha_promulgacion`, `fecha_publicacion` | Fechas de la norma. |
+| `fecha_scraping` | Momento de la descarga. |
+| `hash_contenido` | Hash del contenido del artículo. |
+| `url_fuente` | URL oficial en IMPO. |
+
+## Setup local
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # en Windows: venv\Scripts\activate
-pip install -r requirements.txt
+source venv/bin/activate
+pip install -r requirements-scraper.txt
+python scripts/ingest/scrape_codigos.py --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa-uy)"
 ```
 
-## Esquema de metadata
+## Criterios
 
-Cada documento procesado (típicamente un artículo de una norma) debe cumplir
-`schemas/metadata_schema.json`. Ver `schemas/ejemplo_documento.json` para un caso concreto.
-
-Campos obligatorios: `id`, `fuente`, `tipo`, `titulo`, `texto`, `url_origen`, `fecha_scrapeo`, `vigente`.
-
-Convención de `id`: `{tipo}_{titulo_slug}_art_{n}` — ej. `constitucion_1967_art_7`,
-`codigo_civil_art_1245`.
-
-## Estado del roadmap
-
-- [x] Fase 0 — Setup del proyecto
-- [ ] Fase 1 — Corpus normativo estable (Constitución + Códigos)
-- [ ] Fase 2 — Pipeline de procesamiento
-- [ ] Fase 3 — Embeddings y búsqueda semántica
-- [ ] Fase 4 — Ampliar el corpus
-- [ ] Fase 5 — Automatización
-- [ ] Fase 6 — Interfaz (opcional)
-
-## Notas éticas/técnicas
-
-- Antes de scrapear IMPO: revisar `impo.com.uy/robots.txt`.
-- Respetar rate limits (delays entre requests) e identificar el user-agent.
-- No redistribuir el corpus completo públicamente salvo que el sitio lo habilite.
-
-## Constitución uruguaya desde IMPO
-
-El workflow manual genera `data/constitucion.jsonl`, una línea JSON por artículo, y `reports/last_run.json`, con cobertura y hash del dataset.
-
-Para actualizar: **Actions → Actualizar Constitución desde IMPO → Run workflow**.
-
-El proceso consulta `robots.txt`, respeta un mínimo de 10 segundos, descubre el total desde el índice oficial, valida huecos y duplicados y solo hace commit si cambian las salidas.
-
-Fuente: https://www.impo.com.uy/bases/constitucion/1967-1967
-
-## Códigos desde IMPO
-
-El workflow manual **Actions → Actualizar códigos desde IMPO → Run workflow**
-genera `data/{codigo}.jsonl` (una línea JSON por artículo) y
-`reports/last_run_{codigo}.json` para cada código listado en
-`scripts/ingest/codigos.json`: Civil, Penal, Comercio, General del Proceso,
-Proceso Penal 2017 y Niñez y Adolescencia.
-
-Mismo criterio que la Constitución: se consulta `robots.txt`, se respeta el
-Crawl-Delay (mínimo 10 s), se valida contra el índice oficial de artículos de
-IMPO (sin faltantes, duplicados ni textos vacíos) y solo se commitea si
-cambian las salidas. Ver `scripts/ingest/README.md` para el detalle.
+- Se consulta `robots.txt` y se respeta el Crawl-Delay (mínimo 10 s).
+- User-agent identificado.
+- Validación contra el índice oficial de IMPO: sin faltantes, duplicados ni textos vacíos. Si algo no cierra, no se escribe nada.

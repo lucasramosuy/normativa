@@ -1,11 +1,11 @@
 # Scrapers de IMPO
 
-## Constitución — `scrape_constitucion.py`
+## Constitución - `scrape_constitucion.py`
 
 Script fijo para la Constitución (workflow `scrape.yml`). Genera
 `data/constitucion.jsonl` y `reports/last_run.json`.
 
-## Códigos — `scrape_codigos.py`
+## Códigos - `scrape_codigos.py`
 
 Generalización del anterior para el resto de los códigos. Lee la lista de
 `codigos.json` (id, documento, URL "Toda la Norma" de IMPO) y por cada uno

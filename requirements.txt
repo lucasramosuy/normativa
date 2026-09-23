@@ -1,9 +1,0 @@
-requests
-httpx
-beautifulsoup4
-lxml
-sentence-transformers
-faiss-cpu
-pandas
-tqdm
-python-dotenv
