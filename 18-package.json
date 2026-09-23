@@ -1,0 +1,24 @@
+{
+  "name": "normativa-uy-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/source-serif-4": "^5.2.8",
+    "@sentry/astro": "^10.75.2",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^7.3.4",
+    "posthog-js": "^1.270.0",
+    "reicon": "^1.1.0",
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "pagefind": "^1.4.0"
+  }
+}

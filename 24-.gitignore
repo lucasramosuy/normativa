@@ -1,0 +1,11 @@
+# build output
+dist/
+.astro/
+# dependencies
+node_modules/
+# local secrets
+.env
+.env.*
+!.env.example
+# system
+.DS_Store
