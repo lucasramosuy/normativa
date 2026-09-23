@@ -60,7 +60,7 @@ async function run(){paint();syncUrl();const my=++seq;
   if(parsed.text){res=await pf.search(parsed.text,{filters});if(my!==seq||!res)return;}
   results=res.results;
   // One search gives both: totalFilters = counts ignoring the active norma filter.
-  const counts=(norma?res.totalFilters:res.filters)?.norma||{};let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
+  const counts:Record<string,number>={...((norma?res.totalFilters:res.filters)?.norma||{})};for(const d of direct)counts[d.corto]=(counts[d.corto]||0)+1;let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
   $('[data-count-all]').textContent=String(total);
   const n=results.length+direct.length;$('[data-status]').textContent=`${n} ${n===1?"resultado":"resultados"}${norma&&labels[norma]?' en '+labels[norma]:''}`;
   $('[data-heading]').textContent=`“${q}”`;document.title=`“${q}” · Normativa Uruguay`;
