@@ -77,7 +77,6 @@ Actualizado el 23/09/2026.
 - Mejorar el orden de resultados (por ejemplo, que "legítima defensa" muestre primero Penal art. 26). Queda en pausa por ahora.
 
 **Datos**
-- Confirmar la primera corrida completa de la revisión semanal de IMPO (workflow "Revisión semanal de IMPO").
 - Historial de cambios por artículo.
 - Más normas: Código Tributario, leyes y decretos.
 
