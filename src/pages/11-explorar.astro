@@ -1,0 +1,4 @@
+---
+import Base from '../layouts/Base.astro';const base=import.meta.env.BASE_URL;
+---
+<Base title="Explorar normativa · Normativa Uruguay"><main class="wrap py-16"><p class="eyebrow">Colecciones</p><h1 class="mt-3 text-6xl">Explorá la normativa</h1><p class="mt-5 max-w-2xl text-lg text-slate-600">El catálogo crecerá con nuevas fuentes. Cada colección indica disponibilidad y origen.</p><div class="mt-10 grid gap-4 md:grid-cols-3"><a class="soft-card bg-mint/60 p-7" href={`${base}normas/constitucion/`}><span class="chip">Disponible</span><h2 class="mt-12 text-3xl">Constitución</h2><p class="mt-3 text-slate-600">332 artículos con enlaces a IMPO.</p></a>{['Código Civil','Leyes nacionales','Decretos y reglamentos'].map(n=><article class="soft-card p-7 opacity-60"><span class="text-xs font-bold uppercase tracking-wider">Próximamente</span><h2 class="mt-12 text-3xl">{n}</h2></article>)}</div></main></Base>
