@@ -10,7 +10,10 @@ export default defineConfig({
   output: 'static',
   integrations: [
     sitemap(),
-    ...(process.env.PUBLIC_SENTRY_DSN ? [sentry({ sourceMapsUploadOptions: process.env.SENTRY_AUTH_TOKEN ? { org: 'lucass-space', project: 'normativa-uy', authToken: process.env.SENTRY_AUTH_TOKEN } : undefined })] : [])
+    sentry({
+      sourcemaps: { disable: !process.env.SENTRY_AUTH_TOKEN, filesToDeleteAfterUpload: ['./dist/**/*.map'] },
+      sourceMapsUploadOptions: { org: 'lucass-space', project: 'normativa-uy', authToken: process.env.SENTRY_AUTH_TOKEN }
+    })
   ],
-  vite: { plugins: [tailwindcss()], build: { sourcemap: true } }
+  vite: { plugins: [tailwindcss()] }
 });

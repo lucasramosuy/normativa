@@ -21,6 +21,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: www
+      - name: Checkout published data (api)
+        uses: actions/checkout@v4
+        with:
+          ref: api
+          path: _api
+          sparse-checkout: data
+      - name: Use data from api
+        run: rm -rf data && cp -r _api/data data && rm -rf _api && ls -l data
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

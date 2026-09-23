@@ -9,3 +9,5 @@ node_modules/
 !.env.example
 # system
 .DS_Store
+# datos publicados (vienen de la rama api)
+data/

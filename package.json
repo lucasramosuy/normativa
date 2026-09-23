@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "data": "git fetch origin api && rm -rf data && mkdir -p data && git archive FETCH_HEAD data | tar -x"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
