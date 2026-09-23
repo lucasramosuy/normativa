@@ -9,32 +9,43 @@ const normas=NORMAS.map(n=>({slug:n.slug,corto:n.corto,total:getArticles(n.slug)
 <style is:global>.filter-btn[aria-pressed="true"]{background:var(--color-mint,#dcefe9);color:var(--color-forest,#176b63);font-weight:700}</style>
 <script>
 const base=import.meta.env.BASE_URL;
+// Start loading the Pagefind engine and filter data immediately, in parallel with the rest of the page.
+const pfReady:Promise<any>=import(/* @vite-ignore */ `${base}pagefind/pagefind.js`).then(async(p:any)=>{await p.options?.({excerptLength:30});await p.init?.();await p.filters();return p;});
 const params=new URLSearchParams(location.search);
-const q=(params.get('q')||'').trim();let norma=params.get('norma')||'';
+let q=(params.get('q')||'').trim();let norma=params.get('norma')||'';
 const $=(s:string)=>document.querySelector(s) as HTMLElement;
-const input=document.querySelector<HTMLInputElement>('input[name="q"]');if(input)input.value=q;
+const input=document.querySelector<HTMLInputElement>('#global-search');const form=input?.closest('form');if(input)input.value=q;
 const labels:Record<string,string>={};document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>{if(b.dataset.norma)labels[b.dataset.norma]=b.dataset.label!;});
 const esc=(s:string)=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]!));
-let pf:any;let results:any[]=[];let shown=0;
+const PAGE=10;let results:any[]=[];let shown=0;let seq=0;
 function paint(){document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.norma===norma)));}
-async function more(){const box=$('[data-results]');const next=results.slice(shown,shown+20);const data=await Promise.all(next.map(r=>r.data()));
-  for(const d of data){const a=document.createElement('a');a.className='soft-card block p-6 transition hover:border-forest';a.href=d.url;
-    a.innerHTML=`<div class="flex gap-3 text-xs"><span class="chip">${esc((d.filters?.norma||[])[0]||'')}</span><span class="py-1.5 text-slate-500">${esc(d.meta?.title||'')}</span></div><p class="mt-4 line-clamp-3 leading-7 text-slate-700">${d.excerpt}</p>`;box.appendChild(a);}
-  shown+=next.length;$('[data-more]').classList.toggle('hidden',shown>=results.length);}
-async function run(){paint();if(!q)return;$('[data-intro]').classList.add('hidden');
-  if(!pf){pf=await import(/* @vite-ignore */ `${base}pagefind/pagefind.js`);await pf.filters();}
+function syncUrl(){const u=new URL(location.href);q?u.searchParams.set('q',q):u.searchParams.delete('q');norma?u.searchParams.set('norma',norma):u.searchParams.delete('norma');history.replaceState(null,'',u);}
+async function more(my=seq){const box=$('[data-results]');const next=results.slice(shown,shown+PAGE);shown+=next.length;$('[data-more]').classList.toggle('hidden',shown>=results.length);
+  // Placeholders keep order; each card fills in as soon as its own fragment arrives.
+  const slots=next.map(()=>{const a=document.createElement('a');a.className='soft-card block p-6 transition hover:border-forest';a.innerHTML='<div class="h-4 w-40 animate-pulse rounded bg-slate-100"></div><div class="mt-4 h-12 animate-pulse rounded bg-slate-50"></div>';box.appendChild(a);return a;});
+  await Promise.all(next.map(async(r,i)=>{const d=await r.data();if(my!==seq)return;const a=slots[i];a.href=d.url;
+    a.innerHTML=`<div class="flex gap-3 text-xs"><span class="chip">${esc((d.filters?.norma||[])[0]||'')}</span><span class="py-1.5 text-slate-500">${esc(d.meta?.title||'')}</span></div><p class="mt-4 line-clamp-3 leading-7 text-slate-700">${d.excerpt}</p>`;}));}
+async function run(){paint();syncUrl();const my=++seq;
+  if(!q){$('[data-intro]').classList.remove('hidden');$('[data-results]').innerHTML='';$('[data-more]').classList.add('hidden');$('[data-empty]').classList.add('hidden');$('[data-status]').textContent='Escribí una búsqueda';$('[data-heading]').textContent='Buscar normativa';document.querySelectorAll<HTMLElement>('[data-count],[data-count-all]').forEach(e=>e.textContent='');return;}
+  $('[data-intro]').classList.add('hidden');$('[data-status]').textContent='Buscando…';
+  const pf=await pfReady;if(my!==seq)return;
   const m=q.match(/^art(?:i|í)culo\s+(.+)$/i);const term=m?m[1]:q;
   const filters=norma&&labels[norma]?{norma:labels[norma]}:{};
-  const [res,all]=await Promise.all([pf.search(term,{filters}),pf.search(term)]);
+  const res=await pf.search(term,{filters});if(my!==seq||!res)return;
   results=res.results;
   const num=/^\d+[a-z-]*$/i.test(term.trim());
   if(num){const t=term.trim().toLowerCase();const exact=(r:any)=>r.url.endsWith(`/articulo/${t}/`);results=[...results.filter(exact),...results.filter((r:any)=>!exact(r))];}
-  const counts=all.filters?.norma||{};let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
+  // One search gives both: totalFilters = counts ignoring the active norma filter.
+  const counts=(norma?res.totalFilters:res.filters)?.norma||{};let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
   $('[data-count-all]').textContent=String(total);
-  $('[data-status]').textContent=`${results.length} resultados${norma&&labels[norma]?' en '+labels[norma]:''}`;
+  $('[data-status]').textContent=`${results.length} ${results.length===1?"resultado":"resultados"}${norma&&labels[norma]?' en '+labels[norma]:''}`;
   $('[data-heading]').textContent=`“${q}”`;document.title=`“${q}” · Normativa Uruguay`;
-  $('[data-results]').innerHTML='';shown=0;$('[data-empty]').classList.toggle('hidden',results.length>0);await more();}
-document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>b.addEventListener('click',()=>{norma=b.dataset.norma||'';const u=new URL(location.href);norma?u.searchParams.set('norma',norma):u.searchParams.delete('norma');history.replaceState(null,'',u);run();}));
-$('[data-more]').addEventListener('click',more);
+  $('[data-results]').innerHTML='';shown=0;$('[data-empty]').classList.toggle('hidden',results.length>0);await more(my);}
+document.querySelectorAll<HTMLElement>('[data-norma]').forEach(b=>b.addEventListener('click',()=>{norma=b.dataset.norma||'';run();}));
+$('[data-more]').addEventListener('click',()=>more());
+// Search in place: no page reload on submit, and results update while typing.
+let timer:any;
+form?.addEventListener('submit',e=>{e.preventDefault();clearTimeout(timer);q=(input!.value||'').trim();run();});
+input?.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{const v=input.value.trim();if(v===q)return;q=v;run();},220);});
 run();
 </script>
