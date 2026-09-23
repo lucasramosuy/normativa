@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import { NORMAS, getArticles } from '../data/normas';
+import { abs, RAW_JSONL } from '../lib/api';
+const base = import.meta.env.BASE_URL;
+const API = abs('api/v1/');
+const ejemploCurl = `curl ${API}normas.json
+curl ${API}codigo-penal.json
+curl ${API}codigo-penal/149-bis.json`;
+const ejemploFetch = `const res = await fetch('${API}constitucion/7.json');
+const articulo = await res.json();
+console.log(articulo.titulo, articulo.texto);`;
+const ejemploJsonl = `curl -sL ${RAW_JSONL('constitucion')} | head -n 1`;
+const campos: [string, string][] = [
+  ['norma', 'Slug de la norma, por ejemplo "codigo-penal".'],
+  ['id', 'Identificador del artículo en la URL: el número en minúsculas, con "bis", "ter" o rangos como "131-144" cuando IMPO los agrupa.'],
+  ['articulo', 'Número o etiqueta del artículo tal como la publica IMPO.'],
+  ['articulo_id', 'Identificador del artículo en IMPO (en los códigos).'],
+  ['titulo', 'Encabezado del artículo, por ejemplo "Artículo 7".'],
+  ['rubro', 'Título marginal entre paréntesis al inicio del texto, si lo tiene. Si no, null.'],
+  ['texto', 'Texto completo del artículo, con los saltos de línea de IMPO.'],
+  ['libro, titulo_norma, seccion, capitulo', 'Ubicación del artículo dentro de la norma. null si no aplica.'],
+  ['documento', 'Nombre de la norma según IMPO.'],
+  ['notas_oficiales', 'Notas de IMPO (redacciones anteriores, remisiones, leyes que lo modificaron). null si no hay.'],
+  ['fecha_promulgacion, fecha_publicacion', 'Fechas de la norma según IMPO (dd/mm/aaaa). null si IMPO no la informa.'],
+  ['estado_actual', 'Estado del documento en IMPO al momento de la descarga.'],
+  ['fecha_scraping', 'Fecha y hora (UTC) en que se descargó el artículo de IMPO.'],
+  ['hash_contenido', 'SHA-256 del contenido, útil para detectar cambios entre versiones.'],
+  ['url_fuente', 'Enlace al artículo en IMPO. Es la referencia oficial.'],
+  ['enlaces', 'URLs del artículo en JSON y HTML, de su norma, y del artículo anterior y siguiente.'],
+];
+---
+<Base title="API · Normativa Uruguay" description="API pública y gratuita de normativa uruguaya: endpoints JSON estáticos y datos completos en JSONL.">
+<main class="wrap py-16"><article class="legal-copy api-doc">
+<p class="eyebrow">Datos abiertos</p>
+<h1 class="mt-3">API</h1>
+<p>Todo lo que ves en el sitio también está disponible como JSON. Es una API estática: no pide clave, no tiene límite de uso propio y se puede llamar desde el navegador (CORS abierto). Solo lectura, con <code>GET</code>.</p>
+<p>URL base: <code>{API}</code></p>
+
+<h2>Endpoints</h2>
+<table>
+<thead><tr><th>Ruta</th><th>Qué devuelve</th></tr></thead>
+<tbody>
+<tr><td><a href={`${API}normas.json`}><code>normas.json</code></a></td><td>Todas las normas, con cantidad de artículos, fecha de última descarga y enlaces.</td></tr>
+<tr><td><a href={`${API}codigo-penal.json`}><code>{'{norma}'}.json</code></a></td><td>Datos de la norma y el índice de sus artículos (id, título, rubro, ubicación y enlaces), sin el texto.</td></tr>
+<tr><td><a href={`${API}codigo-penal/149-bis.json`}><code>{'{norma}/{articulo}'}.json</code></a></td><td>Un artículo completo, con su texto y todos los campos.</td></tr>
+</tbody>
+</table>
+<p>Normas disponibles:</p>
+<ul>{NORMAS.map(n => <li><code>{n.slug}</code>: {n.nombre} ({getArticles(n.slug).length.toLocaleString('es-UY')} artículos)</li>)}</ul>
+<p>Si el artículo o la norma no existen, la respuesta es un <code>404</code>.</p>
+
+<h2>Campos de un artículo</h2>
+<table>
+<thead><tr><th>Campo</th><th>Descripción</th></tr></thead>
+<tbody>{campos.map(([k, v]) => <tr><td><code>{k}</code></td><td>{v}</td></tr>)}</tbody>
+</table>
+<p>Todas las respuestas incluyen <code>version</code> (hoy <code>1</code>) y <code>documentacion</code>, que apunta a esta página. Si en algún momento cambia el formato de forma incompatible, va a salir como <code>/api/v2/</code> y <code>/api/v1/</code> se mantiene.</p>
+
+<h2>Ejemplos</h2>
+<p>Con curl:</p>
+<pre><code>{ejemploCurl}</code></pre>
+<p>Con JavaScript:</p>
+<pre><code>{ejemploFetch}</code></pre>
+
+<h2>Datos completos en JSONL</h2>
+<p>Para descargar una norma entera, usá los archivos JSONL de la rama <a href="https://github.com/lucasramosuy/normativa/tree/api"><code>api</code></a> del repositorio: una línea JSON por artículo, con los mismos campos que arriba (salvo <code>norma</code>, <code>id</code>, <code>rubro</code> y <code>enlaces</code>, que agrega la API).</p>
+<ul>{NORMAS.map(n => <li><a href={RAW_JSONL(n.slug)}><code>{n.slug}.jsonl</code></a></li>)}</ul>
+<pre><code>{ejemploJsonl}</code></pre>
+<p>En la carpeta <a href="https://github.com/lucasramosuy/normativa/tree/api/reports"><code>reports/</code></a> están la cobertura, la validación y el SHA-256 de cada descarga.</p>
+
+<h2>Actualización</h2>
+<p>Todos los lunes a las 06:17 (hora de Montevideo) un proceso automático revisa IMPO. Si algo cambió, se revisa y se publica a mano, así que puede haber unos días de diferencia con IMPO. El campo <code>fecha_scraping</code> y el <code>actualizado</code> de <code>normas.json</code> indican cuándo se descargó cada dato. Las respuestas se pueden cachear hasta 10 minutos.</p>
+
+<h2>Sobre IMPO y el texto oficial</h2>
+<p>Los textos vienen de <a href="https://www.impo.com.uy/">IMPO, Centro de Información Oficial</a>. Esta API no es una publicación oficial ni certifica el contenido: ante cualquier diferencia, rige el texto publicado por IMPO. Cada artículo trae su <code>url_fuente</code>, y si mostrás los datos te pedimos que enlaces a la fuente oficial.</p>
+<p>Usá esta API o los JSONL en lugar de descargar IMPO de forma masiva: así no cargamos su servidor.</p>
+
+<h2>Contacto</h2>
+<p>Errores o pedidos: <a href={`${base}contacto/`}>formulario de contacto</a> o un issue en <a href="https://github.com/lucasramosuy/normativa">GitHub</a>. Ver también los <a href={`${base}terminos-de-uso/`}>términos de uso</a>.</p>
+</article></main>
+</Base>
