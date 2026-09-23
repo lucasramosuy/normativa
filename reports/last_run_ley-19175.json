@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 92,
+  "articulos_guardados": 92,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.175",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19175-2013",
+  "sha256_jsonl": "f953b3d2d132fd989896da96f75016e82207dc8401434fa9549f8c9e6b695c98",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

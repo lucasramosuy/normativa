@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 61,
+  "articulos_guardados": 61,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.696",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16696-1995",
+  "sha256_jsonl": "58443e2f1daca2ec96d71fdbc080b7f32f7cc1d40449f5ea72ab0b7be041d6a5",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

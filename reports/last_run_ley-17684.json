@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 24,
+  "articulos_guardados": 24,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.684",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17684-2003",
+  "sha256_jsonl": "f53c188878f88d51c5f9e3c65b85636fb5126a878de1b47788e132da58a81fe9",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

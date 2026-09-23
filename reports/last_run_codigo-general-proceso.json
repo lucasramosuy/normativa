@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T19:42:04Z",
+  "fecha_scraping": "2026-09-23T22:00:33Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-general-proceso/15982-1988",
-  "sha256_jsonl": "a023cb39d9c6a577932fe772ea69f61f84ef5a32fd81e6480105f2f4c907700c",
+  "sha256_jsonl": "12f4a7989f69e794b9a7bc36f2438390d9fb47d8717957236b88c100b0ce0f50",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
