@@ -1,0 +1,42 @@
+---
+import { entradasDe, desdeDe, fechaLarga, fechaCorta, diffHtml, NOMBRE_CAMPO, TIPO } from '../data/historial';
+interface Props { slug: string; articulo: string | number }
+const { slug, articulo } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const entradas = entradasDe(slug, articulo);
+const desde = desdeDe(slug);
+const lineas = (s?: string | null) => (s || '').replace(/\r\n/g, '\n').trim();
+---
+<section id="historial" class="mt-12 max-w-[68ch]" data-pagefind-ignore aria-labelledby="historial-h">
+  <div class="flex flex-wrap items-baseline justify-between gap-2"><h2 id="historial-h" class="text-xl">Historial de cambios</h2><a class="text-sm font-semibold text-forest hover:underline" href={`${base}cambios/`}>Cambios recientes</a></div>
+  {entradas.length === 0 ? (
+    <p class="mt-3 text-sm leading-6 text-slate-600">Sin cambios detectados{desde ? <> desde el {fechaLarga(desde)}, cuando se incorporó esta versión</> : null}.</p>
+  ) : (
+    <ol class="mt-4 grid gap-3">
+      {entradas.map((e, i) => (
+        <li class="rounded-2xl border border-black/10 bg-white">
+          <details open={i === 0}>
+            <summary class="flex cursor-pointer list-none flex-wrap items-center gap-x-3 gap-y-1 p-4">
+              <span class={`chip ${e.tipo === 'eliminado' ? '!border-red-200 !bg-red-50 !text-red-800' : e.tipo === 'agregado' ? '!border-emerald-200 !bg-emerald-50 !text-emerald-800' : ''}`}>{TIPO[e.tipo]}</span>
+              <b class="font-serif text-lg">{fechaLarga(e.publicado)}</b>
+              {e.tipo === 'modificado' && <span class="text-sm text-slate-500">Cambió: {e.campos.map(c => NOMBRE_CAMPO[c] || c).join(', ')}</span>}
+            </summary>
+            <div class="border-t border-black/10 p-4 text-sm leading-6">
+              {e.tipo === 'modificado' && e.campos.includes('texto') && <div class="hist-diff" set:html={diffHtml(lineas(e.antes?.texto), lineas(e.despues?.texto))} />}
+              {e.tipo === 'modificado' && e.campos.includes('notas_oficiales') && <><p class="mt-3 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-500">Notas oficiales</p><div class="hist-diff" set:html={diffHtml(lineas(e.antes?.notas_oficiales), lineas(e.despues?.notas_oficiales))} /></>}
+              {e.tipo === 'modificado' && e.campos.filter(c => c !== 'texto' && c !== 'notas_oficiales').map(c => <p class="mt-2"><span class="text-slate-500">{NOMBRE_CAMPO[c] || c}:</span> <del>{String((e.antes as any)?.[c] ?? '—')}</del> → <ins>{String((e.despues as any)?.[c] ?? '—')}</ins></p>)}
+              {e.tipo === 'agregado' && <p>El artículo apareció en IMPO y se incorporó en esta publicación.</p>}
+              {e.tipo === 'eliminado' && <p>El artículo dejó de figurar en IMPO. Se conserva el último texto publicado.</p>}
+              <p class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
+                <span>Detectado en IMPO el {fechaCorta(e.detectado)} · publicado el {fechaCorta(e.publicado)}</span>
+                {e.pr && <a class="font-semibold text-forest hover:underline" href={e.pr.url}>PR #{e.pr.numero}</a>}
+                {(e.despues?.url_fuente || e.antes?.url_fuente) && <a class="font-semibold text-forest hover:underline" href={e.despues?.url_fuente || e.antes?.url_fuente} target="_blank" rel="noreferrer">Ver en IMPO</a>}
+              </p>
+            </div>
+          </details>
+        </li>
+      ))}
+    </ol>
+  )}
+  <p class="mt-3 text-xs leading-5 text-slate-500">Las fechas son las de detección y publicación en Normativa, no las de vigencia. La redacción vigente y su origen legal figuran en las notas oficiales de IMPO.</p>
+</section>

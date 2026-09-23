@@ -2,9 +2,11 @@
 import Base from '../../../../layouts/Base.astro';
 import Icon from '../../../../components/Icon.astro';
 import Search from '../../../../components/Search.astro';
+import Historial from '../../../../components/Historial.astro';
+import {eliminados,fechaLarga} from '../../../../data/historial';
 import {NORMAS,getArticles,getNorma,idOf,labelOf,headingsOf,splitTitle,toBlocks,splitHeading} from '../../../../data/normas';
-export function getStaticPaths(){return NORMAS.flatMap(n=>{const list=getArticles(n.slug);return list.map((a,i)=>({params:{norma:n.slug,id:idOf(a)},props:{article:a,prev:list[i-1]??null,next:list[i+1]??null}}))})}
-const {article,prev,next}=Astro.props;const slug=Astro.params.norma!;const norma=getNorma(slug);const base=import.meta.env.BASE_URL;
+export function getStaticPaths(){return NORMAS.flatMap(n=>{const list=getArticles(n.slug);return [...list.map((a,i)=>({params:{norma:n.slug,id:idOf(a)},props:{article:a,prev:list[i-1]??null,next:list[i+1]??null,quitado:null}})),...eliminados(n.slug).map(({article,entrada})=>({params:{norma:n.slug,id:idOf(article)},props:{article,prev:null,next:null,quitado:entrada.publicado}}))]})}
+const {article,prev,next,quitado}=Astro.props as any;const slug=Astro.params.norma!;const norma=getNorma(slug);const base=import.meta.env.BASE_URL;
 const label=labelOf(article);const levels=headingsOf(article).map(splitHeading);
 const {rubro,body}=splitTitle(article.texto);const blocks=toBlocks(body);
 const derogado=/^\s*\(?derogad/i.test(article.texto);
@@ -21,20 +23,23 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
   <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><nav class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500" aria-label="Ruta"><a class="hover:text-forest" href={base}>Inicio</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}explorar/`}>Explorar</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}normas/${slug}/`}>{norma.corto}</a><span aria-hidden="true">›</span><span class="text-slate-700">Artículo {label}</span></nav><div class="w-full md:max-w-md"><Search compact norma={slug} label={`Buscar en ${norma.corto}`} placeholder={`Buscar en ${norma.corto}…`}/></div></div>
 
   <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14">
-    <article data-pagefind-body>
+    <article data-pagefind-body={quitado?undefined:true}>
       <header class="border-b border-black/10 pb-8">
-        <div class="flex flex-wrap items-center gap-3"><a class="eyebrow hover:underline" href={`${base}normas/${slug}/`} data-pagefind-filter="norma">{norma.corto}</a><span class={`chip ${derogado?'!border-red-200 !bg-red-50 !text-red-800':''}`} data-pagefind-ignore>{derogado?'Derogado':'Vigente · texto actualizado'}</span></div>
+        <div class="flex flex-wrap items-center gap-3"><a class="eyebrow hover:underline" href={`${base}normas/${slug}/`} data-pagefind-filter="norma">{norma.corto}</a><span class={`chip ${derogado||quitado?'!border-red-200 !bg-red-50 !text-red-800':''}`} data-pagefind-ignore>{quitado?'Ya no figura en IMPO':derogado?'Derogado':'Vigente · texto actualizado'}</span></div>
         <h1 class="mt-4 text-5xl leading-none tracking-[-.02em] md:text-6xl" data-pagefind-meta="title">Artículo {label}</h1>
         {rubro&&<p class="mt-4 font-serif text-2xl italic text-forest md:text-[1.7rem]">{rubro}</p>}
         {levels.length>0&&<ol class="mt-7 grid gap-2 text-sm" data-pagefind-ignore>{levels.map((l,i)=><li class="flex items-baseline gap-3" style={`padding-left:${i*0.9}rem`}><span class="w-24 shrink-0 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-400">{l.level}</span><span class="line-clamp-2 text-[.8rem] uppercase tracking-[.06em] text-slate-600">{l.name||'—'}</span></li>)}</ol>}
         <div class="mt-6 flex flex-wrap gap-2 lg:hidden" data-pagefind-ignore><a class="inline-flex items-center gap-2 rounded-xl bg-forest px-4 py-2.5 text-sm font-bold text-white" href={article.url_fuente} target="_blank" rel="noreferrer">Ver en IMPO<Icon name="external" class="size-4"/></a><button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold" data-copy="link">Copiar enlace</button><button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold" data-copy={cita}>Copiar cita</button></div>
       </header>
 
+      {quitado&&<div class="mt-8 max-w-[68ch] rounded-2xl border border-red-200 bg-red-50 p-5 text-sm leading-6 text-red-900" role="note" data-pagefind-ignore><b>Este artículo ya no figura en IMPO desde el {fechaLarga(quitado)}.</b> Se muestra el último texto publicado, solo como referencia. Consultá IMPO para la situación actual.</div>}
       <div class="article-text mt-9 max-w-[68ch]">
         {blocks.map(b=>b.type==='p'?<p>{b.text}</p>:<ol class="enum">{b.items.map(it=><li><span class="enum-mark">{it.marker}</span><span>{it.text}</span></li>)}</ol>)}
       </div>
 
       {notas.length>0&&<section class="mt-12 max-w-[68ch] rounded-2xl border border-black/10 bg-ivory/70 p-6" data-pagefind-ignore aria-labelledby="notas"><h2 id="notas" class="text-xl">Notas oficiales</h2><ul class="mt-3 grid gap-1.5 text-sm leading-6 text-slate-600">{notas.map(n=><li class={/^TEXTO ORIGINAL/i.test(n)?'mt-2 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-500':''} set:html={linkRefs(n)}/>)}</ul></section>}
+
+      <Historial slug={slug} articulo={article.articulo} />
 
       <nav class="mt-12 grid gap-4 sm:grid-cols-2" aria-label="Artículos contiguos" data-pagefind-ignore>
         {prev?<a class="soft-card group p-5 transition hover:border-forest" href={`${base}normas/${slug}/articulo/${idOf(prev)}/`}><span class="text-xs font-bold uppercase tracking-[.12em] text-slate-400">← Anterior</span><b class="mt-2 block font-serif text-xl text-ink group-hover:text-forest">Artículo {labelOf(prev)}</b>{rubroOf(prev)&&<span class="mt-1 block truncate text-sm text-slate-500">{rubroOf(prev)}</span>}</a>:<span class="hidden sm:block"/>}

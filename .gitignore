@@ -10,4 +10,6 @@ node_modules/
 # system
 .DS_Store
 # datos publicados (vienen de la rama api)
-data/
+/data/
+# historial de cambios (viene de la rama api)
+/historial/

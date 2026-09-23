@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
-    "data": "git fetch origin api && rm -rf data && mkdir -p data && git archive FETCH_HEAD data | tar -x"
+    "data": "git fetch origin api && rm -rf data historial && git archive FETCH_HEAD data | tar -x && (git archive FETCH_HEAD historial 2>/dev/null | tar -x || true)"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -15,6 +15,7 @@
     "@sentry/astro": "^10.75.2",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^7.3.4",
+    "diff": "^8.0.4",
     "posthog-js": "^1.270.0",
     "reicon": "^1.1.0",
     "tailwindcss": "^4.1.13"

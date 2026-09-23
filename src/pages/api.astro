@@ -44,6 +44,8 @@ const campos: [string, string][] = [
 <tr><td><a href={`${API}normas.json`}><code>normas.json</code></a></td><td>Todas las normas, con cantidad de artículos, fecha de última descarga y enlaces.</td></tr>
 <tr><td><a href={`${API}codigo-penal.json`}><code>{'{norma}'}.json</code></a></td><td>Datos de la norma y el índice de sus artículos (id, título, rubro, ubicación y enlaces), sin el texto.</td></tr>
 <tr><td><a href={`${API}codigo-penal/149-bis.json`}><code>{'{norma}/{articulo}'}.json</code></a></td><td>Un artículo completo, con su texto y todos los campos.</td></tr>
+<tr><td><a href={`${API}historial.json`}><code>historial.json</code></a></td><td>Cambios publicados: totales por norma y los últimos 100 cambios (sin textos).</td></tr>
+<tr><td><a href={`${API}historial/codigo-penal.json`}><code>{'historial/{norma}'}.json</code></a></td><td>Todos los cambios publicados de una norma, con el texto antes y después. Ver <a href="#historial">Historial</a>.</td></tr>
 </tbody>
 </table>
 <p>Normas disponibles:</p>
@@ -68,6 +70,23 @@ const campos: [string, string][] = [
 <ul>{NORMAS.map(n => <li><a href={RAW_JSONL(n.slug)}><code>{n.slug}.jsonl</code></a></li>)}</ul>
 <pre><code>{ejemploJsonl}</code></pre>
 <p>En la carpeta <a href="https://github.com/lucasramosuy/normativa/tree/api/reports"><code>reports/</code></a> están la cobertura, la validación y el SHA-256 de cada descarga.</p>
+
+<h2 id="historial">Historial</h2>
+<p>Cada vez que se publica una actualización, se compara con la anterior artículo por artículo. <code>historial/{'{norma}'}.json</code> trae <code>desde</code> (fecha de la primera versión incorporada), <code>total</code> y <code>entradas</code>, de la más nueva a la más vieja. Cada entrada tiene:</p>
+<table>
+<thead><tr><th>Campo</th><th>Descripción</th></tr></thead>
+<tbody>
+<tr><td><code>articulo</code></td><td>Número del artículo, como en IMPO.</td></tr>
+<tr><td><code>tipo</code></td><td><code>modificado</code>, <code>agregado</code> o <code>eliminado</code> (dejó de figurar en IMPO).</td></tr>
+<tr><td><code>campos</code></td><td>Qué cambió: <code>texto</code>, <code>notas_oficiales</code>, <code>titulo</code>, <code>seccion</code>, etc.</td></tr>
+<tr><td><code>antes</code>, <code>despues</code></td><td>El artículo antes y después del cambio (<code>null</code> si no existía o ya no existe).</td></tr>
+<tr><td><code>detectado</code></td><td>Fecha en que el proceso semanal trajo el cambio de IMPO.</td></tr>
+<tr><td><code>publicado</code></td><td>Fecha en que se publicó en Normativa.</td></tr>
+<tr><td><code>pr</code></td><td>El pull request de GitHub con la revisión del cambio, si lo hubo.</td></tr>
+<tr><td><code>html</code></td><td>Página del artículo.</td></tr>
+</tbody>
+</table>
+<p>Solo figuran cambios publicados. Las fechas no son de vigencia: la redacción vigente y su origen legal están en <code>notas_oficiales</code>. Los artículos que ya no figuran en IMPO conservan su página web con un aviso, pero no tienen endpoint en <code>{'{norma}/{articulo}'}.json</code>. También hay un <a href={`${import.meta.env.BASE_URL}cambios/feed.xml`}>feed Atom</a> de los cambios.</p>
 
 <h2>Actualización</h2>
 <p>Todos los lunes a las 06:17 (hora de Montevideo) un proceso automático revisa IMPO. Si algo cambió, se revisa y se publica a mano, así que puede haber unos días de diferencia con IMPO. El campo <code>fecha_scraping</code> y el <code>actualizado</code> de <code>normas.json</code> indican cuándo se descargó cada dato. Las respuestas se pueden cachear hasta 10 minutos.</p>

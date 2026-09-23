@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { NORMAS } from '../../data/normas';
+import { recientes, desdeDe, fechaLarga, NOMBRE_CAMPO, TIPO } from '../../data/historial';
+const base = import.meta.env.BASE_URL;
+const items = recientes(200);
+const desde = NORMAS.map(n => desdeDe(n.slug)).filter(Boolean).sort()[0] as string | undefined;
+const grupos = new Map<string, typeof items>();
+for (const it of items) { const k = fechaLarga(it.e.publicado); grupos.set(k, [...(grupos.get(k) || []), it]); }
+const url = (slug: string, id: string) => `${base}normas/${slug}/articulo/${id.toLowerCase()}/`;
+---
+<Base title="Cambios recientes · Normativa Uruguay" description="Artículos modificados, agregados o quitados en IMPO, por fecha de publicación en Normativa.">
+<link slot="head" rel="alternate" type="application/atom+xml" title="Cambios recientes · Normativa Uruguay" href={`${base}cambios/feed.xml`} />
+<main class="wrap pb-20 pt-10">
+  <p class="eyebrow">Novedades</p>
+  <h1 class="mt-3 text-5xl leading-none">Cambios recientes</h1>
+  <p class="mt-5 max-w-2xl text-slate-600">Artículos que cambiaron en IMPO, del cambio más reciente al más viejo. El detalle está en la página de cada artículo. Las fechas son las de detección y publicación en Normativa, no las de vigencia.</p>
+  <p class="mt-4 flex flex-wrap gap-4 text-sm font-semibold"><a class="text-forest hover:underline" href={`${base}cambios/feed.xml`}>Suscribirse (feed Atom)</a><a class="text-forest hover:underline" href={`${base}api/#historial`}>Historial en la API</a></p>
+  {items.length === 0 ? (
+    <p class="mt-10 rounded-2xl border border-black/10 bg-ivory/70 p-6 text-slate-600">Todavía no hay cambios{desde ? <> desde el {fechaLarga(desde)}, cuando se incorporaron las normas</> : null}. IMPO se revisa todos los lunes.</p>
+  ) : (
+    <div class="mt-10 grid gap-10">
+      {[...grupos].map(([fecha, lista]) => (
+        <section>
+          <h2 class="text-2xl">{fecha}</h2>
+          <ul class="mt-4 grid gap-2">
+            {lista.map(({ norma, e }) => (
+              <li><a class="soft-card flex flex-wrap items-center gap-x-3 gap-y-1 p-4 transition hover:border-forest" href={`${url(norma.slug, e.articulo)}#historial`}>
+                <span class={`chip ${e.tipo === 'eliminado' ? '!border-red-200 !bg-red-50 !text-red-800' : e.tipo === 'agregado' ? '!border-emerald-200 !bg-emerald-50 !text-emerald-800' : ''}`}>{TIPO[e.tipo]}</span>
+                <b class="font-serif text-lg text-ink">{norma.corto}, artículo {e.articulo}</b>
+                {e.tipo === 'modificado' && <span class="text-sm text-slate-500">Cambió: {e.campos.map(c => NOMBRE_CAMPO[c] || c).join(', ')}</span>}
+              </a></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  )}
+</main>
+</Base>

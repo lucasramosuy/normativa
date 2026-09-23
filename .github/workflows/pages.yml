@@ -26,9 +26,14 @@ jobs:
         with:
           ref: api
           path: _api
-          sparse-checkout: data
+          sparse-checkout: |
+            data
+            historial
       - name: Use data from api
-        run: rm -rf data && cp -r _api/data data && rm -rf _api && ls -l data
+        run: |
+          rm -rf data historial && cp -r _api/data data && ls -l data
+          if [ -d _api/historial ]; then cp -r _api/historial historial && ls -l historial; else echo "api todavía no tiene historial/"; fi
+          rm -rf _api
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
