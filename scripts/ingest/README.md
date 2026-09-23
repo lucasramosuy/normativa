@@ -22,7 +22,8 @@ python scripts/ingest/scrape_codigos.py --user-agent "..." --solo codigo-civil
 
 Qué hace por código:
 
-1. Consulta `robots.txt`, verifica permiso y respeta el Crawl-Delay (mínimo 10 s).
+1. Consulta `robots.txt` (una sola vez por corrida), verifica permiso y respeta
+   el Crawl-Delay (mínimo 10 s) antes de cada norma.
 2. Descarga la página "Toda la Norma" completa (1 sola request por código).
 3. Parsea artículo por artículo, con la ruta de encabezados vigente
    (LIBRO / TITULO / CAPITULO / SECCION) y las notas oficiales.
