@@ -1,6 +1,7 @@
 ---
 import Base from '../../../../layouts/Base.astro';
 import Icon from '../../../../components/Icon.astro';
+import Search from '../../../../components/Search.astro';
 import {NORMAS,getArticles,getNorma,idOf,labelOf,headingsOf,splitTitle,toBlocks,splitHeading} from '../../../../data/normas';
 export function getStaticPaths(){return NORMAS.flatMap(n=>{const list=getArticles(n.slug);return list.map((a,i)=>({params:{norma:n.slug,id:idOf(a)},props:{article:a,prev:list[i-1]??null,next:list[i+1]??null}}))})}
 const {article,prev,next}=Astro.props;const slug=Astro.params.norma!;const norma=getNorma(slug);const base=import.meta.env.BASE_URL;
@@ -17,7 +18,7 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
 ---
 <Base title={`Artículo ${label}${rubro?` (${rubro})`:''} · ${norma.corto} · Normativa Uruguay`} description={desc}>
 <main class="wrap pb-20 pt-8">
-  <nav class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500" aria-label="Ruta"><a class="hover:text-forest" href={base}>Inicio</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}explorar/`}>Explorar</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}normas/${slug}/`}>{norma.corto}</a><span aria-hidden="true">›</span><span class="text-slate-700">Artículo {label}</span></nav>
+  <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><nav class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500" aria-label="Ruta"><a class="hover:text-forest" href={base}>Inicio</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}explorar/`}>Explorar</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}normas/${slug}/`}>{norma.corto}</a><span aria-hidden="true">›</span><span class="text-slate-700">Artículo {label}</span></nav><div class="w-full md:max-w-md"><Search compact norma={slug} label={`Buscar en ${norma.corto}`} placeholder={`Buscar en ${norma.corto}…`}/></div></div>
 
   <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14">
     <article data-pagefind-body>
