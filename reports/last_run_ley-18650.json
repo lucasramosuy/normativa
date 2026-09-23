@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 33,
+  "articulos_guardados": 33,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.650",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18650-2010",
+  "sha256_jsonl": "84acd045803666443827eadc9c5f79ec5753a0b08842545194593e6c0462ed8f",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

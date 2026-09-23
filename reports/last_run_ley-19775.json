@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 174,
+  "articulos_guardados": 174,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.775",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19775-2019",
+  "sha256_jsonl": "9e80abf857d9098129af8dd178a107dd6029bc54565c179b8d4dff0adfa7a8cd",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

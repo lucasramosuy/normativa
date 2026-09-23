@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 64,
+  "articulos_guardados": 64,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 15.921",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/15921-1987",
+  "sha256_jsonl": "8e09df5eb623de0f089030e16aac31e9e9b2cb1bdd1fc0e964c513ebcb7228ee",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

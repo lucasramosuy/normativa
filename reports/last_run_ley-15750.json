@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 173,
+  "articulos_guardados": 173,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 15.750",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/15750-1985",
+  "sha256_jsonl": "fe6def60e0693ae5439e3b47078f96aef9ef4991dfede8949e3f6b49011b388d",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
