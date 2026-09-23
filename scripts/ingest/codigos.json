@@ -1,0 +1,32 @@
+[
+  {
+    "id": "codigo-civil",
+    "documento": "Código Civil",
+    "url": "https://www.impo.com.uy/bases/codigo-civil/16603-1994"
+  },
+  {
+    "id": "codigo-penal",
+    "documento": "Código Penal",
+    "url": "https://www.impo.com.uy/bases/codigo-penal/9155-1933"
+  },
+  {
+    "id": "codigo-comercio",
+    "documento": "Código de Comercio",
+    "url": "https://www.impo.com.uy/bases/codigo-comercio/817-1865"
+  },
+  {
+    "id": "codigo-general-proceso",
+    "documento": "Código General del Proceso",
+    "url": "https://www.impo.com.uy/bases/codigo-general-proceso/15982-1988"
+  },
+  {
+    "id": "codigo-proceso-penal-2017",
+    "documento": "Código del Proceso Penal 2017",
+    "url": "https://www.impo.com.uy/bases/codigo-proceso-penal-2017/19293-2014"
+  },
+  {
+    "id": "codigo-ninez-adolescencia",
+    "documento": "Código de la Niñez y la Adolescencia",
+    "url": "https://www.impo.com.uy/bases/codigo-ninez-adolescencia/17823-2004"
+  }
+]

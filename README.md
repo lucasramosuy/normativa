@@ -64,3 +64,16 @@ Para actualizar: **Actions → Actualizar Constitución desde IMPO → Run workf
 El proceso consulta `robots.txt`, respeta un mínimo de 10 segundos, descubre el total desde el índice oficial, valida huecos y duplicados y solo hace commit si cambian las salidas.
 
 Fuente: https://www.impo.com.uy/bases/constitucion/1967-1967
+
+## Códigos desde IMPO
+
+El workflow manual **Actions → Actualizar códigos desde IMPO → Run workflow**
+genera `data/{codigo}.jsonl` (una línea JSON por artículo) y
+`reports/last_run_{codigo}.json` para cada código listado en
+`scripts/ingest/codigos.json`: Civil, Penal, Comercio, General del Proceso,
+Proceso Penal 2017 y Niñez y Adolescencia.
+
+Mismo criterio que la Constitución: se consulta `robots.txt`, se respeta el
+Crawl-Delay (mínimo 10 s), se valida contra el índice oficial de artículos de
+IMPO (sin faltantes, duplicados ni textos vacíos) y solo se commitea si
+cambian las salidas. Ver `scripts/ingest/README.md` para el detalle.

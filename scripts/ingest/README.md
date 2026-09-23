@@ -1,64 +1,46 @@
-# Scraper de IMPO
+# Scrapers de IMPO
 
-## Uso
+## Constitución — `scrape_constitucion.py`
+
+Script fijo para la Constitución (workflow `scrape.yml`). Genera
+`data/constitucion.jsonl` y `reports/last_run.json`.
+
+## Códigos — `scrape_codigos.py`
+
+Generalización del anterior para el resto de los códigos. Lee la lista de
+`codigos.json` (id, documento, URL "Toda la Norma" de IMPO) y por cada uno
+genera `data/{id}.jsonl` (una línea JSON por artículo) y
+`reports/last_run_{id}.json` (cobertura, validación y hash).
 
 ```bash
-cd scripts/ingest
-python impo_scraper.py --debug
+python scripts/ingest/scrape_codigos.py \
+  --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa-uy)"
+
+# un solo código:
+python scripts/ingest/scrape_codigos.py --user-agent "..." --solo codigo-civil
 ```
 
-`--debug` imprime cada artículo y sección/capítulo detectado a medida que
-parsea — usalo la primera vez para confirmar que está funcionando bien
-antes de dejarlo correr sin supervisión.
+Qué hace por código:
 
-## Qué hace
+1. Consulta `robots.txt`, verifica permiso y respeta el Crawl-Delay (mínimo 10 s).
+2. Descarga la página "Toda la Norma" completa (1 sola request por código).
+3. Parsea artículo por artículo, con la ruta de encabezados vigente
+   (LIBRO / TITULO / CAPITULO / SECCION) y las notas oficiales.
+4. Valida contra el índice oficial de IMPO (las anclas de la página):
+   sin faltantes, sin duplicados, sin artículos inesperados, sin textos
+   vacíos. Si algo no cierra, falla y no escribe nada.
+5. Escribe el JSONL (claves ordenadas) y el reporte con el sha256 del dataset.
 
-1. Lee `normas_config.json` (lista de normas a scrapear: tipo, título, id, URL).
-2. Para cada norma:
-   - Descarga la página "Toda la Norma" completa (1 sola request).
-   - Guarda el HTML crudo en `/sources_raw/{tipo}/{id_norma}.html`.
-   - Parsea artículo por artículo y guarda el JSON en
-     `/sources_processed/{tipo}/{id_norma}.json`.
-   - Espera 10 segundos (Crawl-Delay de robots.txt) antes de pasar a la
-     siguiente norma.
+Casos especiales soportados:
 
-## Si falla el parseo (`No se detectó ningún artículo`)
+- Artículos con sufijo: "Artículo 149-BIS" (`articulo_id` "149BIS").
+- Rangos agrupados: "Artículo 131-144" (`articulo_id` "131144"), típico en
+  series derogadas del Código Civil.
+- El nivel TITULO se guarda en `titulo_norma` para no chocar con el campo
+  `titulo` (que es "Artículo N").
 
-Esto significa que la estructura HTML real de IMPO no coincide con lo que
-asumió el script (headings h1-h6 para "Artículo N" y secciones, bloques
-`<pre>` para el cuerpo del artículo y las notas). Para diagnosticar:
+## Agregar otra norma
 
-```python
-from bs4 import BeautifulSoup
-html = open("../../sources_raw/constitucion/1967-1967.html", encoding="utf-8").read()
-soup = BeautifulSoup(html, "html.parser")
-# Mirar qué tags rodean realmente a un "Artículo 1"
-print(soup.find(string=lambda s: s and "rt" in s and "culo 1" in s).parent)
-```
-
-Y ajustar `PATRON_ARTICULO` / `PATRON_SECCION` o la lógica de
-`parse_articulos` en `impo_scraper.py` según lo que aparezca.
-
-## Agregar más normas
-
-Sumá entradas a `normas_config.json`. Para encontrar la URL "Toda la Norma"
-de un Código: buscarlo en impo.com.uy, entrar a cualquier artículo, y
-clickear el link "Toda la Norma" — la URL sin el número de artículo al
-final es la que va en `normas_config.json`.
-
-Ejemplo (verificar la URL real antes de usarla, puede variar el slug):
-```json
-{
-  "tipo": "codigo",
-  "titulo": "Código Civil",
-  "id_norma": "codigo-civil-1994",
-  "url": "https://www.impo.com.uy/bases/codigo-civil/16603-1994/"
-}
-```
-
-## Próximo paso (Fase 2 del roadmap)
-
-Este script deja el corpus en `/sources_processed/{tipo}/{id_norma}.json`,
-un artículo por objeto. El siguiente paso es la limpieza/chunking (ya viene
-casi listo porque el chunking es "por artículo"), y unificar todo en el
-formato de "documento procesado" antes de pasar a embeddings.
+Sumar una entrada a `codigos.json` con el `id` (slug para nombres de
+archivo), el `documento` (nombre oficial) y la URL "Toda la Norma" de IMPO.
+Antes de commitear, correr con `--solo` y revisar el reporte.
