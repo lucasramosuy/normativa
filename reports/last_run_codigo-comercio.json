@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T19:42:04Z",
+  "fecha_scraping": "2026-09-23T22:00:33Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-comercio/817-1865",
-  "sha256_jsonl": "15a149e9da4303a9cbc998e3fa878ef721652ef3626786520e7b7adfc81dbbdf",
+  "sha256_jsonl": "7cf76d68f6242b0a0daf765c1384ed0ab290ea5b4421b0ebb7d96990b35f2d6f",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

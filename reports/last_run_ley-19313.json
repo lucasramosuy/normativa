@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 5,
+  "articulos_guardados": 5,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.313",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19313-2015",
+  "sha256_jsonl": "f9a66f5cf8caba23526fae6ab7d0f5b1387a40c2fbf60c551428ac4ec6e6e05a",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

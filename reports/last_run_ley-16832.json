@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 27,
+  "articulos_guardados": 27,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.832",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16832-1997",
+  "sha256_jsonl": "823836e2be5a684e3669c1a3301a614eac3a522ace2b833d7c143f6cf1bb4bfa",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

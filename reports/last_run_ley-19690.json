@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 14,
+  "articulos_guardados": 14,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.690",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19690-2018",
+  "sha256_jsonl": "070a60757c83963704d42b41559b088be49be2398cf4bfa0c5aa7718729906ee",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

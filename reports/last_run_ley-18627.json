@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 139,
+  "articulos_guardados": 139,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.627",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18627-2009",
+  "sha256_jsonl": "144c29ef3f71d46b0e2eb6df37f93a46cbcc4d6aabb9ed822974d75449aad24b",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
