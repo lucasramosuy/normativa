@@ -68,6 +68,10 @@ export default {
         upstreamReq.headers.delete('cookie');
         const res = await fetch(upstreamReq, { redirect: 'manual' });
         const out = new Response(res.body, res);
+        // Archivos con hash en el nombre (/normativa/_astro/*): nunca cambian, el navegador los guarda un año.
+        if (res.ok && url.pathname.startsWith(prefix + '/_astro/')) {
+          out.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+        }
         const loc = out.headers.get('location');
         if (loc) {
           const up = new URL(upstream);
