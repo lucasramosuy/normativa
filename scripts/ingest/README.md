@@ -44,3 +44,12 @@ Casos especiales soportados:
 Sumar una entrada a `codigos.json` con el `id` (slug para nombres de
 archivo), el `documento` (nombre oficial) y la URL "Toda la Norma" de IMPO.
 Antes de commitear, correr con `--solo` y revisar el reporte.
+
+## Revisión semanal - `scrape-semanal.yml` + `diff_datos.py`
+
+Todos los lunes (06:17 de Montevideo, o a mano con "Run workflow") el workflow
+"Revisión semanal de IMPO" corre los dos scrapers y compara el resultado con lo
+que hay en `main`, ignorando `fecha_scraping`. Si no cambió ningún artículo no
+hace nada. Si cambió algo, abre un PR contra `main` con el resumen de artículos
+modificados, agregados y eliminados (con el diff del texto). No publica en
+`api`: después de mergear, publicar sigue siendo el workflow "Publicar datos en api".
