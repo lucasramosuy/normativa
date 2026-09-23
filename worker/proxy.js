@@ -1,6 +1,9 @@
-// Router for lucasramos.uy: /<proyecto>/* -> upstream. Everything else passes through to the origin (Netlify).
+// Router for lucasramos.uy: /<proyecto>/* -> upstream. Everything else goes to Cloudflare Pages (repo www).
+const ROOT_ORIGIN = 'https://www-7r1.pages.dev';
+
 const ROUTES = {
   '/normativa': 'https://lucasramosuy.github.io/normativa',
+  '/profe': 'https://lucasramosuy.github.io/profe',
 };
 
 // First-party ingest for Normativa, so adblockers don't drop errors and analytics.
@@ -76,6 +79,10 @@ export default {
         return out;
       }
     }
-    return fetch(request);
+    // Root and everything else: Cloudflare Pages (repo www, project 'www').
+    const target = new URL(url.pathname + url.search, ROOT_ORIGIN);
+    const upstreamReq = new Request(target, request);
+    upstreamReq.headers.delete('cookie');
+    return fetch(upstreamReq);
   },
 };
