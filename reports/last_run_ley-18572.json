@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 32,
+  "articulos_guardados": 32,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.572",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18572-2009",
+  "sha256_jsonl": "e1fb862ea4664b2a16690701009013e97f4fe070c8b4e6842a77e9c5fba14896",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

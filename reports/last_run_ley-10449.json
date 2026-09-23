@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 39,
+  "articulos_guardados": 39,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 10.449",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/10449-1943",
+  "sha256_jsonl": "c9df181d7436c88893e42f3cef69f160e17be429147a9c4675da68afde430dea",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

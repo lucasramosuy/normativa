@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 110,
+  "articulos_guardados": 110,
+  "crawl_delay_segundos": 10,
+  "documento": "Decreto-ley 15.524",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/decretos-ley/15524-1984",
+  "sha256_jsonl": "b56495801743798546d1a74a6c23c978bdb14c1da8866d70b2ff70f36d8828a6",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

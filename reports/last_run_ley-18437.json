@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 120,
+  "articulos_guardados": 120,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.437",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18437-2008",
+  "sha256_jsonl": "20f0fa7d037f27cc0bfbb01af5e5a5e77fba6f84543fca932b61132b982fc0b6",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 200,
+  "articulos_guardados": 200,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.713",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16713-1995",
+  "sha256_jsonl": "34e0cf6923be516bbefd0f08139fef6ea01de918a8f9af62463e2c6d4f241282",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

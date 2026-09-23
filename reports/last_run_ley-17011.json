@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 108,
+  "articulos_guardados": 108,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.011",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T18:18:30Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17011-1998",
+  "sha256_jsonl": "df2d3a1896e585faa0243790943c77441d45b9887a7cbb936362da98a64f680d",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
