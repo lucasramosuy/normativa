@@ -20,3 +20,24 @@
 .hist-diff { white-space: pre-wrap; font-family: var(--font-serif, Georgia, serif); font-size: 1rem; line-height: 1.7; color: #334155; }
 .hist-diff ins, section#historial ins { background: #d9f2e6; color: #0f5132; text-decoration: none; border-radius: 3px; padding: 0 .1em; }
 .hist-diff del, section#historial del { background: #fbe1dc; color: #8a2c1c; border-radius: 3px; padding: 0 .1em; }
+
+/* Ficha: botón "+ Ficha" y versión impresa (A4) */
+.ficha-btn{border:1px solid rgba(0,0,0,.1);background:#fff;border-radius:.75rem;padding:.625rem .75rem;font-size:.875rem;font-weight:600;color:#17211d;transition:border-color .15s,color .15s,background .15s;white-space:nowrap}.ficha-btn:hover{border-color:#176b63;color:#176b63}.ficha-btn[aria-pressed=true]{border-color:#b7d7d0;background:#eff8f6;color:#176b63}.ficha-btn-sm{padding:.35rem .65rem;font-size:.78rem;border-radius:.6rem}
+.ficha-ctl{border:1px solid rgba(0,0,0,.1);background:#fff;border-radius:.6rem;min-width:2.1rem;padding:.3rem .55rem;font-size:.8rem;font-weight:600;color:#4f5954}.ficha-ctl:hover:not(:disabled){border-color:#176b63;color:#176b63}.ficha-ctl:disabled{opacity:.35;cursor:default}
+.ficha-title{font-size:2.4rem;line-height:1.1;margin:0 0 1.5rem}
+@page{size:A4;margin:18mm 17mm 20mm}
+@media print{
+  body:has([data-ficha-page]){background:#fff}
+  body:has([data-ficha-page])>header,body:has([data-ficha-page])>footer{display:none!important}
+  [data-ficha-page]{width:auto;padding:0!important;margin:0}
+  .ficha-doc{margin:0}
+  .ficha-title{font-size:20pt;margin:0 0 7mm;padding-bottom:4mm;border-bottom:1pt solid #176b63}
+  .ficha-doc [data-ficha-list]>*+*{margin-top:0}
+  .ficha-item{border:0;border-radius:0;box-shadow:none;background:none;padding:0 0 5mm!important;margin:0 0 6mm;border-bottom:.5pt solid #cfcac0;break-inside:avoid}
+  .ficha-item:last-child{border-bottom:0}
+  .ficha-item h2{font-size:14pt;margin-top:1mm}.ficha-item .eyebrow{font-size:7.5pt}.ficha-item h2+p{font-size:12pt}
+  .ficha-link{text-decoration:none;color:inherit}
+  .ficha-text{margin-top:3mm;max-width:none;font-size:11pt;line-height:1.5;color:#000}.ficha-text p{margin:0 0 2.5mm}.ficha-text .enum{gap:1.5mm;margin-bottom:2.5mm}.ficha-text .enum li{grid-template-columns:2.2rem 1fr}
+  .ficha-cita{font-size:9.5pt;margin-top:1mm;color:#333}
+  .ficha-fuente{font-size:8.5pt;margin-top:4mm;color:#555}
+}
