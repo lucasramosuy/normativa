@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 32,
+  "articulos_guardados": 32,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.211",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16211-1991",
+  "sha256_jsonl": "9ca367fb759eb50a9311330d05618743b36750bc4a3c643f4b44674d46dc5dc1",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

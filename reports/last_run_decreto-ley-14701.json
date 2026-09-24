@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-24T15:57:16Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/14701-1977",
-  "sha256_jsonl": "a473408c3a3086157cf1ee676dda9a272715feef7a422f82d528d4395514ca7a",
+  "sha256_jsonl": "66051feba0b23dd0ea51a2b29ea6170b68b57baf795ebac7a83860cb2b35a9fd",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

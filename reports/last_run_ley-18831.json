@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-24T15:57:16Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/18831-2011",
-  "sha256_jsonl": "03f0d63b4da01b372c00c15941dbfde4eec3adbc1fa3d8d1a6bb17f21762acbb",
+  "sha256_jsonl": "6565b01612ba166523f13ecf35fdbf2a1dcadb8b656fbe0ede4302cebfb249e1",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

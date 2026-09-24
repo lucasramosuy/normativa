@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-24T15:57:16Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/14219-1974",
-  "sha256_jsonl": "ac0ca226cf10afd42ebf35718347b8832eb432e7ae2775d320ecb63838de3648",
+  "sha256_jsonl": "de82f01f958ce088c19ac8ea704d399cb8afd9b18138d4ea56f21b08a1268e26",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

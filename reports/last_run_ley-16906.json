@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-24T15:57:16Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/16906-1998",
-  "sha256_jsonl": "f4974fbdb4d7c8e0e59af77bc13eab9c594e0afb2ad917c5f2175d16b5db545d",
+  "sha256_jsonl": "fdf36a3fa3d28e3e48a9d1cac21e6df933b67f37b2d6a66c1431706a5dbca7de",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
