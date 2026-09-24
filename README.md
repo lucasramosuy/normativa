@@ -15,7 +15,7 @@ Scrapers de normativa uruguaya desde [IMPO](https://www.impo.com.uy). Esta rama 
 
 ## Flujo
 
-1. **Revisión semanal de IMPO** corre los lunes (o a mano con *Run workflow*). Descarga la Constitución y los códigos y, si cambió el contenido, abre un PR contra `main` con el resumen de artículos modificados, agregados y eliminados.
+1. **Revisión semanal de IMPO** corre los lunes a las 06:17 de Montevideo (o a mano con *Run workflow*). Descarga la Constitución, los códigos (`codigos.json`) y las leyes y decretos (`leyes.json`) y, si cambió el contenido, abre un PR contra `main` con el resumen de artículos modificados, agregados y eliminados. Si una ley falla (por ejemplo, IMPO devuelve 504), se conserva su versión anterior y el error queda en `reports/errores_leyes.json`; la corrida siguiente la vuelve a intentar.
 2. Revisar y mergear el PR.
 3. Publicar: **Actions → Publicar datos en api → Run workflow**. Copia `data/` y `reports/` a `api`, actualiza `historial/` y vuelve a desplegar la web.
 
@@ -32,7 +32,7 @@ Solo entra lo publicado en `api`. Las fechas son las de detección y publicació
 
 ```
 .github/workflows/
-  scrape-semanal.yml    # Constitución + códigos, abre PR si hay cambios
+  scrape-semanal.yml    # Constitución + códigos + leyes, abre PR si hay cambios
   publish-api.yml       # main -> api (manual) + historial + redeploy de www
 scripts/ingest/         # scrapers, diff_datos.py, historial.py (ver scripts/ingest/README.md)
 data/                   # un .jsonl por norma, una línea por artículo
@@ -47,7 +47,7 @@ Una línea JSON por artículo, claves ordenadas.
 | Campo | Descripción |
 | --- | --- |
 | `articulo` | Número de artículo (entero). |
-| `articulo_id` | Id textual, incluye sufijos y rangos (`149BIS`, `131144`). Solo códigos. |
+| `articulo_id` | Id textual, incluye sufijos y rangos (`149BIS`, `131144`). |
 | `texto` | Texto del artículo. |
 | `documento` | Nombre de la norma. |
 | `titulo` | "Artículo N". |
@@ -69,26 +69,32 @@ python scripts/ingest/scrape_codigos.py --user-agent "normativa-uy-scraper/1.0 (
 python scripts/ingest/scrape_codigos.py --tolerante --config scripts/ingest/leyes.json --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 ```
 
-`codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma alcanza con agregarla a la lista; el sitio la muestra cuando sus datos llegan a `api`.
+`codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma alcanza con agregarla a la lista (y a `src/data/leyes.json` en la rama `www`); el sitio la muestra cuando sus datos llegan a `api`. Las leyes se suman por tandas, una tanda por PR de datos.
+
+Al 24/09/2026: la Constitución, 12 códigos y 181 leyes y decretos en `leyes.json`. En `api` hay 149 publicadas; el resto entra con los próximos PR de datos.
+
+Tiempo: cada ley o decreto lleva unos 15 s (Crawl-Delay de 10 s más la respuesta de IMPO) y los códigos unos 8 min. El workflow tiene un límite de 240 min, que alcanza para unas 900 normas. Si la lista se acerca a eso, hay que partir la revisión en varios días.
 
 ## Criterios
 
-- Se consulta `robots.txt` y se respeta el Crawl-Delay (mínimo 10 s).
+- Se consulta `robots.txt` una sola vez por corrida y se respeta el Crawl-Delay (mínimo 10 s).
 - User-agent identificado.
-- Validación contra el índice oficial de IMPO: sin faltantes ni duplicados. Si algo no cierra, no se escribe nada para esa norma. Los artículos que IMPO publica sin texto (p. ej. Código Rural, art. 259) se guardan vacíos y se listan en el reporte.
+- Validación contra el índice oficial de IMPO: sin faltantes ni duplicados. Si algo no cierra, no se escribe nada para esa norma. Los artículos que IMPO publica sin texto (p. ej. Código Rural, art. 259) o solo con su nota (p. ej. Ley 5.350, art. 6) se guardan vacíos, con la nota si la hay, y se listan en el reporte.
+- Casos especiales y detalles de cada scraper: `scripts/ingest/README.md`.
 
 ## Pendientes (roadmap)
 
-Actualizado el 23/09/2026.
+Actualizado el 24/09/2026.
 
 **Búsqueda**
 - Revisar la lentitud en las consultas cortas o muy genéricas ("6", "articulo", que coinciden con miles de páginas).
 - Mejorar el orden de resultados (por ejemplo, que "legítima defensa" muestre primero Penal art. 26). En pausa.
 
 **Datos**
-- Más leyes y decretos a pedido (se agregan en `leyes.json`).
+- Más leyes y decretos por tandas (se agregan en `leyes.json`).
+- Ley 5.350 y demás leyes anteriores a 1925: la página de IMPO solo muestra los artículos modificados (PR #11 las completa con los datos abiertos).
 
 **Sitio**
 - Imagen de vista previa por artículo al compartir links (og).
 
-Hecho: dominio lucasramos.uy/normativa, API v1 documentada, proxy propio para Sentry y PostHog, historial de cambios por artículo con página de cambios y feed.
+Hecho: dominio lucasramos.uy/normativa, API v1 documentada, proxy propio para Sentry y PostHog, historial de cambios por artículo con página de cambios y feed, leyes y decretos en la revisión semanal, página 404 propia y caché larga para `/_astro/`.
