@@ -8,6 +8,7 @@ const normas=NORMAS.map(n=>({slug:n.slug,corto:n.corto,tipo:n.tipo,numero:n.nume
 <div class="mt-2 grid gap-3 sm:grid-cols-2" data-intro data-normas={JSON.stringify(normas.map(n=>[n.slug,n.corto,n.tipo,n.numero,n.anio,n.total]))}>{normas.map(n=><a class="soft-card p-5 hover:border-forest" href={`${base}normas/${n.slug}/`}><b>{n.corto}</b><small class="mt-1 block text-slate-500">{fmt(n.total)} artículos</small></a>)}</div></section></div></main></Base>
 <style is:global>.filter-btn[aria-pressed="true"]{background:var(--color-mint,#dcefe9);color:var(--color-forest,#176b63);font-weight:700}.filter-box>summary{list-style:none}.filter-box>summary::-webkit-details-marker{display:none}</style>
 <script>
+import {wireFichaButtons} from '../lib/ficha';
 const base=import.meta.env.BASE_URL;
 // Start loading the Pagefind engine and filter data immediately, in parallel with the rest of the page.
 const pfReady:Promise<any>=import(/* @vite-ignore */ `${base}pagefind/pagefind.js`).then(async(p:any)=>{await p.options?.({excerptLength:30,ranking:{termSimilarity:10}});await p.init?.();await p.filters();return p;});
@@ -27,7 +28,7 @@ function parseQuery(raw:string){let f=fold(raw).replace(/[,;]/g,' ').replace(/\s
   for(const [re,slug] of ALIASES){if(re.test(f)){nm=slug;f=f.replace(re,' ').replace(/\s+/g,' ').trim();break;}}
   const rest=f.replace(/\b(?:codigo|de|del|la|el|nro|n|no|numero)\b\.?/g,' ').replace(/\s+/g,' ').trim();
   const m=rest.match(new RegExp(`^(?:art(?:iculo)?s?\\.?\\s*)?(\\d{1,4})(?:\\s*[-\\s]?\\s*(${SUF}))?$`));
-  if(m){const bare=/^\d{3,}$/.test(rest)&&!m[2]&&!nm;return{article:m[1]+(m[2]?'-'+m[2]:''),norma:nm,text:bare?m[1]:''};}
+  if(m)return{article:m[1]+(m[2]?'-'+m[2]:''),norma:nm,text:''};
   // Free text: drop "artículo"/"art", 1-char terms, and join "149 bis" -> "149-bis".
   const words=fold(raw).replace(new RegExp(`\\b(\\d+)\\s+(${SUF})\\b`,'g'),'$1-$2').split(/\s+/).filter(w=>w&&!/^(?:art(?:iculo)?s?\.?)$/.test(w)&&w.length>1);
   return{article:'',norma:'',text:words.join(' ')};}
@@ -38,7 +39,7 @@ function findArticles(data:any,id:string,only:string){const out:{slug:string,cor
   return out;}
 function renderDirect(list:{slug:string,corto:string,id:string}[],id:string){const box=$('[data-direct]');box.innerHTML='';box.classList.toggle('hidden',!list.length);if(!list.length)return;
   const label=(v:string)=>v.toUpperCase().replace(/^(\d+)-(\d+)$/,'$1-$2');
-  box.innerHTML=`<p class="text-xs font-bold uppercase tracking-[.12em] text-slate-500">${list.length===1?'Artículo encontrado':'Artículo '+esc(label(id))+' en cada norma'}</p><div class="mt-3 grid gap-3 sm:grid-cols-2">${list.map(x=>`<a class="soft-card flex items-center justify-between gap-4 border-forest/30 bg-mint/40 p-5 transition hover:border-forest" href="${base}normas/${x.slug}/articulo/${x.id}/"><span><span class="chip">${esc(x.corto)}</span><b class="mt-2 block font-serif text-2xl text-ink">Artículo ${esc(label(x.id))}</b></span><span class="text-xl font-bold text-forest" aria-hidden="true">→</span></a>`).join('')}</div>`;}
+  box.innerHTML=`<p class="text-xs font-bold uppercase tracking-[.12em] text-slate-500">${list.length===1?'Artículo encontrado':'Artículo '+esc(label(id))+' en cada norma'}</p><div class="mt-3 grid gap-3 sm:grid-cols-2">${list.map(x=>`<div class="relative"><a class="soft-card flex h-full items-end justify-between gap-4 border-forest/30 bg-mint/40 p-5 transition hover:border-forest" href="${base}normas/${x.slug}/articulo/${x.id}/"><span><span class="chip">${esc(x.corto)}</span><b class="mt-2 block font-serif text-2xl text-ink">Artículo ${esc(label(x.id))}</b></span><span class="text-xl font-bold text-forest" aria-hidden="true">→</span></a><button type="button" class="ficha-btn ficha-btn-sm absolute right-4 top-4" data-ficha="${x.slug}/${x.id}">+ Ficha</button></div>`).join('')}</div>`;wireFichaButtons(box);}
 // ---- Norm lookup ("ley 16060", "16.060", "decreto 500/991") ----
 const NORMAS_IDX:[string,string,string,string,number|string,number][]=JSON.parse($('[data-intro]').dataset.normas||'[]');
 const digits=(s:string)=>s.replace(/\D/g,'');
@@ -70,9 +71,11 @@ function paint(){document.querySelectorAll<HTMLElement>('[data-norma]').forEach(
 function syncUrl(){const u=new URL(location.href);q?u.searchParams.set('q',q):u.searchParams.delete('q');norma?u.searchParams.set('norma',norma):u.searchParams.delete('norma');history.replaceState(null,'',u);}
 async function more(my=seq){const box=$('[data-results]');const next=results.slice(shown,shown+PAGE);shown+=next.length;$('[data-more]').classList.toggle('hidden',shown>=results.length);
   // Placeholders keep order; each card fills in as soon as its own fragment arrives.
-  const slots=next.map(()=>{const a=document.createElement('a');a.className='soft-card block p-6 transition hover:border-forest';a.innerHTML='<div class="h-4 w-40 animate-pulse rounded bg-slate-100"></div><div class="mt-4 h-12 animate-pulse rounded bg-slate-50"></div>';box.appendChild(a);return a;});
+  const slots=next.map(()=>{const w=document.createElement('div');w.className='relative';const a=document.createElement('a');a.className='soft-card block p-6 transition hover:border-forest';a.innerHTML='<div class="h-4 w-40 animate-pulse rounded bg-slate-100"></div><div class="mt-4 h-12 animate-pulse rounded bg-slate-50"></div>';w.appendChild(a);box.appendChild(w);return a;});
   await Promise.all(next.map(async(r,i)=>{const d=await r.data();if(my!==seq)return;const a=slots[i];a.href=d.url;
-    a.innerHTML=`<div class="flex gap-3 text-xs"><span class="chip">${esc((d.filters?.norma||[])[0]||'')}</span><span class="py-1.5 text-slate-500">${esc(d.meta?.title||'')}</span></div><p class="mt-4 line-clamp-3 leading-7 text-slate-700">${d.excerpt}</p>`;}));}
+    a.innerHTML=`<div class="flex gap-3 text-xs"><span class="chip">${esc((d.filters?.norma||[])[0]||'')}</span><span class="py-1.5 text-slate-500">${esc(d.meta?.title||'')}</span></div><p class="mt-4 line-clamp-3 leading-7 text-slate-700">${d.excerpt}</p>`;
+      // +Ficha sits next to the link, not inside it.
+      const art=String(d.url).match(/\/normas\/([^/]+)\/articulo\/([^/]+)\/$/);if(art){a.firstElementChild!.classList.add('pr-28');const b=document.createElement('button');b.type='button';b.className='ficha-btn ficha-btn-sm absolute right-5 top-5';b.dataset.ficha=`${art[1]}/${art[2]}`;a.parentElement!.appendChild(b);wireFichaButtons(a.parentElement!);}}));}
 async function run(){paint();syncUrl();const my=++seq;
   if(!q){renderDirect([],'');renderNormaHits([]);$('[data-aside]').classList.add('hidden');$('[data-fuzzy-note]').classList.add('hidden');$('[data-intro]').classList.remove('hidden');$('[data-results]').innerHTML='';$('[data-more]').classList.add('hidden');$('[data-empty]').classList.add('hidden');$('[data-status]').textContent='Escribí una búsqueda';$('[data-heading]').textContent='Buscar normativa';document.querySelectorAll<HTMLElement>('[data-count],[data-count-all]').forEach(e=>e.textContent='');return;}
   $('[data-intro]').classList.add('hidden');$('[data-aside]').classList.remove('hidden');$('[data-status]').textContent='Buscando…';
@@ -85,23 +88,15 @@ async function run(){paint();syncUrl();const my=++seq;
   const filters=norma&&labels[norma]?{norma:labels[norma]}:{};
   let res:any={results:[],filters:{},totalFilters:{}};
   let exactOnly=false;const note=$('[data-fuzzy-note]');note.classList.add('hidden');
-  if(parsed.text){const num=/^\d{3,}$/.test(parsed.text);const single=!num&&!/\s/.test(parsed.text)&&!/^\d/.test(parsed.text)&&parsed.text.length>=3&&!parsed.text.includes('"');
-    if(num){res=await pf.search(`"${parsed.text}"`,{filters});if(my!==seq||!res)return;}
-    if(!num&&single&&!fuzzy){const ex=await pf.search(`"${parsed.text}"`,{filters});if(my!==seq)return;
+  if(parsed.text){const single=!/\s/.test(parsed.text)&&!/^\d/.test(parsed.text)&&parsed.text.length>=3&&!parsed.text.includes('"');
+    if(single&&!fuzzy){const ex=await pf.search(`"${parsed.text}"`,{filters});if(my!==seq)return;
       const exTotal=Object.values(((norma?ex?.totalFilters:ex?.filters)?.norma)||{}).reduce((a:number,b:any)=>a+Number(b),0);
       if(ex&&(ex.results.length||exTotal)){res=ex;exactOnly=true;}}
-    if(!num&&!exactOnly){res=await pf.search(parsed.text,{filters});if(my!==seq||!res)return;}
+    if(!exactOnly){res=await pf.search(parsed.text,{filters});if(my!==seq||!res)return;}
     if(single&&(exactOnly||fuzzy)){note.classList.remove('hidden');note.innerHTML=exactOnly?'Solo palabras exactas. <button type="button" class="font-bold text-forest underline" data-fuzzy>Incluir palabras parecidas</button>':'Incluye palabras parecidas. <button type="button" class="font-bold text-forest underline" data-fuzzy>Solo palabras exactas</button>';note.querySelector('[data-fuzzy]')!.addEventListener('click',()=>{fuzzy=!fuzzy;run();});}}
   results=res.results;
   // One search gives both: totalFilters = counts ignoring the active norma filter.
-  const counts:Record<string,number>={...((norma?res.totalFilters:res.filters)?.norma||{})};
-  // Dedupe: pages already shown as article cards don't appear again as text hits.
-  if(direct.length&&parsed.text){const cards=new Set(direct.map(d=>`${base}normas/${d.slug}/articulo/${d.id}/`));const kept:any[]=[];
-    for(const r of results){const d=await r.data().catch(()=>null);if(my!==seq)return;
-      if(d&&cards.has(d.url)){const lbl=(d.filters?.norma||[])[0];if(lbl&&counts[lbl])counts[lbl]--;continue;}
-      kept.push(d?{data:async()=>d}:r);}
-    results=kept;}
-  for(const d of direct)counts[d.corto]=(counts[d.corto]||0)+1;let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
+  const counts:Record<string,number>={...((norma?res.totalFilters:res.filters)?.norma||{})};for(const d of direct)counts[d.corto]=(counts[d.corto]||0)+1;let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
   $('[data-count-all]').textContent=String(total);paintFilters(counts);
   const n=results.length+direct.length+normaHits.length;$('[data-status]').textContent=`${n} ${n===1?"resultado":"resultados"}${norma&&labels[norma]?' en '+labels[norma]:''}`;
   $('[data-heading]').textContent=`“${q}”`;document.title=`“${q}” · Normativa Uruguay`;
