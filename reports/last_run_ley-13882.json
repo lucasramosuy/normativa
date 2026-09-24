@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 24,
+  "articulos_guardados": 24,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 13.882",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/13882-1970",
+  "sha256_jsonl": "20f4c644fe609a81cbde3df70fbcfb227d12b3a27707f6277ae5d4bedb3fe48b",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

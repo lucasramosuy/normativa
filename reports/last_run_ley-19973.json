@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 53,
+  "articulos_guardados": 53,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.973",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19973-2021",
+  "sha256_jsonl": "ed782ea918e83c77531edeb2b76131fd6a26a133662ce95e9d288b30f1da8b4d",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

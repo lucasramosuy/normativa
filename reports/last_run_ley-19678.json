@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 135,
+  "articulos_guardados": 135,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.678",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19678-2018",
+  "sha256_jsonl": "7c6b68ad842d3a6df0504ee616a1ae60f881b05bf91ae63dfce11c2d6db879b5",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 56,
+  "articulos_guardados": 56,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.485",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18485-2009",
+  "sha256_jsonl": "9c609d37d7e66bd549ed1d878170ef630fd55886a9b3848b91c4df7e222d0f17",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

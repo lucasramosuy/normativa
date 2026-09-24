@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 28,
+  "articulos_guardados": 28,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.567",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18567-2009",
+  "sha256_jsonl": "a0fb45a5e34f21c70d02549dc7730703c1d3f47b991cc734109d0c178fc5467b",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

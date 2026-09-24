@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 7,
+  "articulos_guardados": 7,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.957",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17957-2006",
+  "sha256_jsonl": "aa747f3395ee55c649f5fd8f6e31bb37a9fe66d37bb514662d2fb895170a8867",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 12,
+  "articulos_guardados": 12,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.849",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17849-2004",
+  "sha256_jsonl": "1a630783af3818ccdb115f706a8cee31a762f69324b88aba5d5883f2060733f5",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
