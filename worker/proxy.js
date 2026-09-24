@@ -72,6 +72,10 @@ export default {
         if (res.ok && url.pathname.startsWith(prefix + '/_astro/')) {
           out.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
         }
+        // Fuentes de Profe (nombre fijo): un mes.
+        if (res.ok && url.pathname.startsWith('/profe/fonts/')) {
+          out.headers.set('Cache-Control', 'public, max-age=2592000');
+        }
         const loc = out.headers.get('location');
         if (loc) {
           const up = new URL(upstream);
