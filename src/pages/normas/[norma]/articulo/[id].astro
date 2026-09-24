@@ -4,6 +4,7 @@ import Icon from '../../../../components/Icon.astro';
 import Search from '../../../../components/Search.astro';
 import Historial from '../../../../components/Historial.astro';
 import {eliminados,fechaLarga} from '../../../../data/historial';
+import {citadoPor,enlazarNota,lineasNotas,articuloDe} from '../../../../lib/citas';
 import {NORMAS,getArticles,getNorma,idOf,labelOf,headingsOf,splitTitle,toBlocks,splitHeading} from '../../../../data/normas';
 export function getStaticPaths(){return NORMAS.flatMap(n=>{const list=getArticles(n.slug);return [...list.map((a,i)=>({params:{norma:n.slug,id:idOf(a)},props:{article:a,prev:list[i-1]??null,next:list[i+1]??null,quitado:null}})),...eliminados(n.slug).map(({article,entrada})=>({params:{norma:n.slug,id:idOf(article)},props:{article,prev:null,next:null,quitado:entrada.publicado}}))]})}
 const {article,prev,next,quitado}=Astro.props as any;const slug=Astro.params.norma!;const norma=getNorma(slug);const base=import.meta.env.BASE_URL;
@@ -13,9 +14,12 @@ const derogado=/^\s*\(?derogad/i.test(article.texto);
 const rubroOf=(a:any)=>splitTitle(a.texto).rubro;
 const cita=norma.numero?`${norma.tipo} ${norma.numero}, artículo ${label}.`:`${norma.nombre}, artículo ${label}.`;
 const fecha=(article as any).fecha_scraping?new Date((article as any).fecha_scraping).toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'}):null;
-const notas=(article.notas_oficiales||'').split(/\r?\n/).map(l=>l.trim()).filter(Boolean).reduce((acc:string[],l)=>{const prev=acc[acc.length-1];if(prev!==undefined&&!/[.,:)]$/.test(prev)&&!/^TEXTO ORIGINAL/i.test(l))acc[acc.length-1]=prev+' '+l;else acc.push(l);return acc;},[]);
-const ids=new Set(getArticles(slug).map(idOf));
-const linkRefs=(line:string)=>/^Ver en esta norma/i.test(line)?line.replace(/\b(\d+(?:-[a-z]+)?)\b(?=\s*[,y.(]|\s*$)/gi,(m)=>ids.has(m.toLowerCase())?`<a href="${base}normas/${slug}/articulo/${m.toLowerCase()}/">${m}</a>`:m):line.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const notas=lineasNotas(article.notas_oficiales);
+const linkRefs=(line:string)=>enlazarNota(line,slug,base,idOf(article));
+const citas=quitado?[]:citadoPor(slug,idOf(article));
+const citaLabel=(c:{slug:string,id:string})=>{const a=articuloDe(c.slug,c.id);const l=a?labelOf(a):c.id;return c.slug===slug?`Artículo ${l}`:`${getNorma(c.slug).corto}, art. ${l}`;};
+const citaRubro=(c:{slug:string,id:string})=>{const a=articuloDe(c.slug,c.id);return a?rubroOf(a):'';};
+const VIA={texto:'en el texto',notas:'en notas de IMPO',ambos:'texto y notas'} as const;
 const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
 ---
 <Base title={`Artículo ${label}${rubro?` (${rubro})`:''} · ${norma.corto} · Normativa Uruguay`} description={desc}>
@@ -37,7 +41,9 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
         {!body&&<p class="text-slate-500">IMPO no muestra texto para este artículo. Revisá la fuente oficial y sus notas.</p>}{blocks.map(b=>b.type==='p'?<p>{b.text}</p>:<ol class="enum">{b.items.map(it=><li><span class="enum-mark">{it.marker}</span><span>{it.text}</span></li>)}</ol>)}
       </div>
 
-      {notas.length>0&&<section class="mt-12 max-w-[68ch] rounded-2xl border border-black/10 bg-ivory/70 p-6" data-pagefind-ignore aria-labelledby="notas"><h2 id="notas" class="text-xl">Notas oficiales</h2><ul class="mt-3 grid gap-1.5 text-sm leading-6 text-slate-600">{notas.map(n=><li class={/^TEXTO ORIGINAL/i.test(n)?'mt-2 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-500':''} set:html={linkRefs(n)}/>)}</ul></section>}
+      {notas.length>0&&<section class="mt-12 max-w-[68ch] rounded-2xl border border-black/10 bg-ivory/70 p-6" data-pagefind-ignore aria-labelledby="notas"><h2 id="notas" class="text-xl">Notas oficiales</h2><ul class="notas-list mt-3 grid gap-1.5 text-sm leading-6 text-slate-600">{notas.map(n=><li class={/^TEXTO ORIGINAL/i.test(n)?'mt-2 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-500':''} set:html={linkRefs(n)}/>)}</ul></section>}
+
+      {citas.length>0&&<section class={`${notas.length>0?'mt-6':'mt-12'} max-w-[68ch] rounded-2xl border border-black/10 bg-ivory/70`} data-pagefind-ignore aria-labelledby="citado-por"><details class="cita-box"><summary class="cita-summary"><h2 id="citado-por" class="text-xl">Citado por <span class="text-base font-normal text-slate-500">({citas.length})</span></h2><span class="cita-toggle"><span class="cita-ver">Ver</span><span class="cita-ocultar">Ocultar</span><Icon name="arrow" class="cita-chevron size-4"/></span></summary><div class="px-6 pb-6"><ul class="cita-list">{citas.map(c=><li><a class="cita-link group" href={`${base}normas/${c.slug}/articulo/${c.id}/`}><span class="font-semibold text-ink group-hover:text-forest">{citaLabel(c)}</span>{citaRubro(c)&&<span class="cita-rubro">{citaRubro(c)}</span>}<span class="cita-via">{VIA[c.via]}</span></a></li>)}</ul><p class="mt-4 text-xs leading-5 text-slate-500">Generado a partir del texto y las notas de IMPO. Puede no estar completo.</p></div></details></section>}
 
       <Historial slug={slug} articulo={article.articulo} />
 
