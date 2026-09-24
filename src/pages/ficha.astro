@@ -48,7 +48,7 @@ const esc=(s:string)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','
 const cache=new Map<string,Promise<any>>();
 const load=(key:string)=>{if(!cache.has(key))cache.set(key,fetch(`${base}api/v1/${key}.json`).then(r=>r.ok?r.json():null).catch(()=>null));return cache.get(key)!;};
 const hoy=new Date().toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'});
-const fuente=`Fuente: IMPO, vía lucasramos.uy/normativa. Consultado el ${hoy}.`;
+const fuente=`Fuente: IMPO. Consultado el ${hoy}.`;
 
 function itemHtml(key:string,a:any,i:number,n:number){
   const [slug]=key.split('/');const norma=NORMAS[slug];
