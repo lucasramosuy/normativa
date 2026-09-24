@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import {NORMAS} from '../data/normas';
+const base=import.meta.env.BASE_URL;
+// Same citation as the article page: "Ley 19580, artículo 3." / "Código Civil, artículo 39."
+const normas=Object.fromEntries(NORMAS.map(n=>[n.slug,{corto:n.corto,cita:n.numero?`${n.tipo} ${n.numero}`:n.nombre}]));
+---
+<Base title="Ficha · Normativa Uruguay" description="Armá una ficha imprimible con los artículos que elegiste."><Fragment slot="head"><meta name="robots" content="noindex"/></Fragment>
+<main class="wrap py-12" data-ficha-page>
+  <div class="print:hidden">
+    <p class="eyebrow">Armar ficha</p>
+    <h1 class="mt-2 text-5xl">Ficha</h1>
+    <p class="mt-3 max-w-[62ch] leading-7 text-slate-600">Marcá artículos con <b class="font-semibold text-ink">+ Ficha</b> mientras buscás o navegás. Acá los ordenás, le ponés un título e imprimís. Para Canva, elegí "Guardar como PDF" en el diálogo de impresión. La selección queda guardada en este navegador.</p>
+  </div>
+
+  <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center print:hidden" data-ficha-toolbar hidden>
+    <label class="sr-only" for="ficha-titulo">Título de la ficha</label>
+    <input id="ficha-titulo" class="min-w-0 flex-1 rounded-xl border border-black/15 bg-white px-4 py-3 font-serif text-xl outline-none focus:border-forest" placeholder="Título de la ficha (opcional)" maxlength="120" data-ficha-titulo/>
+    <div class="flex gap-2">
+      <button type="button" class="inline-flex items-center rounded-xl bg-forest px-4 py-3 text-sm font-bold text-white transition hover:bg-[#12564f]" data-ficha-print>Imprimir</button>
+      <button type="button" class="rounded-xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:border-red-300 hover:text-red-800" data-ficha-clear>Vaciar</button>
+    </div>
+  </div>
+
+  <div class="mt-10 soft-card p-8 text-center print:hidden" data-ficha-empty hidden>
+    <p class="font-serif text-2xl">La ficha está vacía</p>
+    <p class="mt-2 text-slate-600">Buscá un tema y tocá <b class="font-semibold text-ink">+ Ficha</b> en los artículos que quieras.</p>
+    <a class="mt-5 inline-flex rounded-xl bg-forest px-4 py-2.5 text-sm font-bold text-white" href={`${base}buscar/`}>Ir al buscador</a>
+  </div>
+
+  <article class="ficha-doc mt-8" data-ficha-doc hidden>
+    <h1 class="ficha-title hidden" data-ficha-print-title></h1><!-- print only: on screen the title lives in the input -->
+    <div class="space-y-4" data-ficha-list></div>
+    <!-- On paper the source line goes inside the last article so it never ends up alone on a blank page. -->
+    <p class="mt-8 text-sm text-slate-500 print:hidden" data-ficha-fuente></p>
+  </article>
+</main>
+<script type="application/json" id="ficha-normas" set:html={JSON.stringify(normas)}></script>
+</Base>
+
+<script>
+import {getFicha,saveFicha,onFichaChange} from '../lib/ficha';
+import {splitTitle,toBlocks} from '../lib/texto';
+const base=import.meta.env.BASE_URL;
+const NORMAS:Record<string,{corto:string,cita:string}>=JSON.parse(document.getElementById('ficha-normas')!.textContent||'{}');
+const $=<T extends HTMLElement=HTMLElement>(s:string)=>document.querySelector<T>(s)!;
+const esc=(s:string)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
+const cache=new Map<string,Promise<any>>();
+const load=(key:string)=>{if(!cache.has(key))cache.set(key,fetch(`${base}api/v1/${key}.json`).then(r=>r.ok?r.json():null).catch(()=>null));return cache.get(key)!;};
+const hoy=new Date().toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'});
+const fuente=`Fuente: IMPO, vía lucasramos.uy/normativa. Consultado el ${hoy}.`;
+
+function itemHtml(key:string,a:any,i:number,n:number){
+  const [slug]=key.split('/');const norma=NORMAS[slug];
+  const controls=`<div class="order-first flex shrink-0 gap-1.5 self-end select-none sm:order-none sm:self-auto print:hidden"><button type="button" class="ficha-ctl" data-move="-1" data-i="${i}" ${i===0?'disabled':''} aria-label="Subir">↑</button><button type="button" class="ficha-ctl" data-move="1" data-i="${i}" ${i===n-1?'disabled':''} aria-label="Bajar">↓</button><button type="button" class="ficha-ctl" data-remove="${i}">Quitar</button></div>`;
+  if(!a||!norma)return `<section class="ficha-item soft-card p-6 print:hidden"><div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between"><p class="text-slate-600">No se encontró <b>${esc(key)}</b>. Puede que ya no figure en IMPO.</p>${controls}</div></section>`;
+  const label=String(a.articulo);const {rubro,body}=splitTitle(a.texto||'');
+  const blocks=toBlocks(body).map(b=>b.type==='p'?`<p>${esc(b.text)}</p>`:`<ol class="enum">${b.items.map(it=>`<li><span class="enum-mark">${esc(it.marker)}</span><span>${esc(it.text)}</span></li>`).join('')}</ol>`).join('');
+  const cita=`${norma.cita}, artículo ${label}.`;
+  return `<section class="ficha-item soft-card p-6 md:p-8"><div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between"><div><p class="eyebrow">${esc(norma.corto)}</p><h2 class="mt-1 text-3xl leading-tight"><a class="ficha-link hover:text-forest" href="${base}normas/${key}/">Artículo ${esc(label)}</a></h2>${rubro?`<p class="mt-1 font-serif text-xl italic text-forest">${esc(rubro)}</p>`:''}</div>${controls}</div><div class="article-text ficha-text mt-5 max-w-[68ch]">${blocks||'<p>IMPO no muestra texto para este artículo.</p>'}</div><p class="ficha-cita mt-2 font-serif text-[.95rem] text-slate-600">${esc(cita)}</p>${i===n-1?`<p class="ficha-fuente hidden print:block">${esc(fuente)}</p>`:''}</section>`;
+}
+
+let seq=0;
+async function render(){
+  const my=++seq;const f=getFicha();const n=f.items.length;
+  $('[data-ficha-empty]').hidden=n>0;$('[data-ficha-toolbar]').hidden=!n;$('[data-ficha-doc]').hidden=!n;
+  const input=$<HTMLInputElement>('[data-ficha-titulo]');if(document.activeElement!==input)input.value=f.titulo;
+  paintTitle(f.titulo);
+  if(!n){$('[data-ficha-list]').innerHTML='';return;}
+  const data=await Promise.all(f.items.map(load));if(my!==seq)return;
+  $('[data-ficha-list]').innerHTML=f.items.map((k,i)=>itemHtml(k,data[i],i,n)).join('');
+  $('[data-ficha-fuente]').textContent=fuente;
+}
+function paintTitle(t:string){const h=$('[data-ficha-print-title]');h.textContent=t.trim();h.classList.toggle('print:block',!!t.trim());}
+
+$('[data-ficha-list]').addEventListener('click',e=>{
+  const b=(e.target as HTMLElement).closest<HTMLButtonElement>('button');if(!b)return;const f=getFicha();
+  if(b.dataset.remove!==undefined)f.items.splice(Number(b.dataset.remove),1);
+  else if(b.dataset.move){const i=Number(b.dataset.i),j=i+Number(b.dataset.move);if(j<0||j>=f.items.length)return;[f.items[i],f.items[j]]=[f.items[j],f.items[i]];}
+  else return;
+  saveFicha(f);
+});
+$('[data-ficha-titulo]').addEventListener('input',e=>{const f=getFicha();f.titulo=(e.target as HTMLInputElement).value;saveFicha(f);});
+$('[data-ficha-print]').addEventListener('click',()=>window.print());
+$('[data-ficha-clear]').addEventListener('click',()=>{if(confirm('¿Vaciar la ficha? Se quitan todos los artículos.'))saveFicha({titulo:'',items:[]});});
+onFichaChange(render);
+render();
+</script>
