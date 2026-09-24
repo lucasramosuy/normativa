@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 6,
+  "articulos_guardados": 6,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.021",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16021-1989",
+  "sha256_jsonl": "021bbc95323c42a6c9dcccdc8c29d23c16c36a25251d8310c017a0cdb93e2735",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

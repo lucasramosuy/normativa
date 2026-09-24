@@ -126,12 +126,17 @@
    "ultimo": null
   },
   "ley-10489": {
-   "desde": "2026-09-24T11:48:32+00:00",
+   "desde": "2026-09-24T11:48:32Z",
    "total": 0,
    "ultimo": null
   },
   "ley-10751": {
    "desde": "2026-09-23T20:55:48Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-11029": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -146,12 +151,17 @@
    "ultimo": null
   },
   "ley-12597": {
-   "desde": "2026-09-24T11:48:32+00:00",
+   "desde": "2026-09-24T11:48:32Z",
    "total": 0,
    "ultimo": null
   },
   "ley-12840": {
-   "desde": "2026-09-24T11:48:32+00:00",
+   "desde": "2026-09-24T11:48:32Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-13728": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -160,8 +170,23 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-14005": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-14040": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-15750": {
    "desde": "2026-09-23T22:45:39Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-15848": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -176,12 +201,17 @@
    "ultimo": null
   },
   "ley-15996": {
-   "desde": "2026-09-24T11:48:32+00:00",
+   "desde": "2026-09-24T11:48:32Z",
    "total": 0,
    "ultimo": null
   },
   "ley-16011": {
    "desde": "2026-09-23T22:45:39Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-16021": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -197,6 +227,16 @@
   },
   "ley-16074": {
    "desde": "2026-09-23T19:08:58Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-16211": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-16246": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -266,7 +306,7 @@
    "ultimo": null
   },
   "ley-17215": {
-   "desde": "2026-09-24T11:48:32+00:00",
+   "desde": "2026-09-24T11:48:32Z",
    "total": 0,
    "ultimo": null
   },
@@ -305,6 +345,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-17598": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-17613": {
    "desde": "2026-09-24T00:38:43Z",
    "total": 0,
@@ -320,6 +365,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-17738": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-17815": {
    "desde": "2026-09-23T20:55:48Z",
    "total": 0,
@@ -330,6 +380,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-17829": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-17838": {
    "desde": "2026-09-23T20:55:48Z",
    "total": 0,
@@ -337,6 +392,11 @@
   },
   "ley-17849": {
    "desde": "2026-09-24T00:38:43Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-17894": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -357,6 +417,11 @@
   },
   "ley-18026": {
    "desde": "2026-09-23T20:55:48Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-18033": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -390,6 +455,16 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-18125": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-18131": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-18159": {
    "desde": "2026-09-23T22:45:39Z",
    "total": 0,
@@ -407,6 +482,11 @@
   },
   "ley-18212": {
    "desde": "2026-09-23T19:08:58Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-18220": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -472,6 +552,16 @@
   },
   "ley-18395": {
    "desde": "2026-09-24T00:38:43Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-18396": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-18405": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -555,6 +645,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-18591": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-18596": {
    "desde": "2026-09-23T22:45:39Z",
    "total": 0,
@@ -572,6 +667,11 @@
   },
   "ley-18610": {
    "desde": "2026-09-23T22:45:39Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-18617": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -685,8 +785,18 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-19253": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-19272": {
    "desde": "2026-09-23T19:08:58Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-19286": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -721,7 +831,7 @@
    "ultimo": null
   },
   "ley-19530": {
-   "desde": "2026-09-24T11:48:32+00:00",
+   "desde": "2026-09-24T11:48:32Z",
    "total": 0,
    "ultimo": null
   },
@@ -732,6 +842,11 @@
   },
   "ley-19580": {
    "desde": "2026-09-23T19:08:58Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-19590": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -762,6 +877,11 @@
   },
   "ley-19691": {
    "desde": "2026-09-23T22:45:39Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-19695": {
+   "desde": "2026-09-24T16:43:01+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -800,6 +920,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-19969": {
+   "desde": "2026-09-24T16:43:01+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-19973": {
    "desde": "2026-09-24T00:38:43Z",
    "total": 0,
@@ -816,7 +941,7 @@
    "ultimo": null
   },
   "ley-5350": {
-   "desde": "2026-09-24T11:48:32+00:00",
+   "desde": "2026-09-24T11:48:32Z",
    "total": 0,
    "ultimo": null
   },

@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T00:57:56Z",
+  "fecha_scraping": "2026-09-24T15:49:18Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-ninez-adolescencia/17823-2004",
-  "sha256_jsonl": "fa02c8b1ccd7c0e3ffea0e2935bcf8b8af078439b1d385d3546b07e716b1c413",
+  "sha256_jsonl": "47b6fa8fe36fd3cee62ec5292bae8606cc3df4e6b85132764f06b6259ac0b15c",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

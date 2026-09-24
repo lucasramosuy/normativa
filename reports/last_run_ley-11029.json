@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 156,
+  "articulos_guardados": 156,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 11.029",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/11029-1948",
+  "sha256_jsonl": "194f35ac088652bd3fe527349f86470c4c901eed59401c5eb0d74ca29dcdcc1a",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-24T15:57:16Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17815-2004",
-  "sha256_jsonl": "869c8e0a1db114274de0d9872e6d2fcad428514025920ce35e401d4a10edfe4c",
+  "sha256_jsonl": "8876b9e2501a736f1bbe1aee9b2e931c9b8dc75afa312382fcbeb53c546de7f5",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
