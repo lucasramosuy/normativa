@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fecha_scraping": "2026-09-24T01:06:11Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/15322-1982",
-  "sha256_jsonl": "fde7a20edd4db43a9b85bea158e079d308906d4d2f2eb291ef45f7291bab1d60",
+  "sha256_jsonl": "aa222d100f551f69684a9358e0eecd78c353f79b8b80e6146f096a251b292b3d",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

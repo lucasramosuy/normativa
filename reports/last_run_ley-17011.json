@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fecha_scraping": "2026-09-24T01:06:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17011-1998",
-  "sha256_jsonl": "d3a0ae80484c0a7e266717419cd01600189b5685349872a6897e80e1b41273a3",
+  "sha256_jsonl": "a5a4583ad34ce05b19bb3f8657f5b54bb8b24025ab8aed2f63ba476236094760",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fecha_scraping": "2026-09-24T01:06:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/19829-2019",
-  "sha256_jsonl": "ca010944f1af58f4e820abe754cb12629d4efd6088261c176b83d3896e8e0588",
+  "sha256_jsonl": "510d3f9d4cb846ee96b4933f6837f084ea8aa4393a9d311c681db7c4dd059f08",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
