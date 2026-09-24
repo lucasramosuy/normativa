@@ -1498,5 +1498,315 @@
   "titulo_impo": "LEY DEL FORTALECIMIENTO DEL SISTEMA DE PREVENCION Y CONTROL DEL LAVADO DE ACTIVOS Y FINANCIAMIENTO DEL TERRORISMO. MODIFICACION",
   "area": "Penal",
   "url": "https://www.impo.com.uy/bases/leyes/18494-2009"
+ },
+ {
+  "id": "ley-12840",
+  "tipo": "Ley",
+  "numero": "12.840",
+  "anio": 1960,
+  "corto": "Ley de Aguinaldo",
+  "titulo_impo": "DETERMINACION DEL AGUINALDO PARA LA ACTIVIDAD PRIVADA",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/12840-1960"
+ },
+ {
+  "id": "ley-10489",
+  "tipo": "Ley",
+  "numero": "10.489",
+  "anio": 1944,
+  "corto": "Ley de Régimen Horario del Comercio",
+  "titulo_impo": "COMERCIO. REGIMEN HORARIO. FIJACION",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/10489-1944"
+ },
+ {
+  "id": "ley-12597",
+  "tipo": "Ley",
+  "numero": "12.597",
+  "anio": 1958,
+  "corto": "Ley de Despido de Trabajadores a Jornal y Servicio Doméstico",
+  "titulo_impo": "INDEMNIZACIONES POR DESPIDO. TRABAJADORES A JORNAL O DESTAJO. SERVICIO DOMESTICO",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/12597-1958"
+ },
+ {
+  "id": "ley-15996",
+  "tipo": "Ley",
+  "numero": "15.996",
+  "anio": 1988,
+  "corto": "Ley de Horas Extras",
+  "titulo_impo": "LEY DE HORAS EXTRAS",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/15996-1988"
+ },
+ {
+  "id": "ley-17215",
+  "tipo": "Ley",
+  "numero": "17.215",
+  "anio": 1999,
+  "corto": "Ley de Cambio de Tareas por Embarazo o Lactancia",
+  "titulo_impo": "TRABAJADORAS EN ESTADO DE GRAVIDEZ O EN PERIODO DE LACTANCIA. DERECHO A OBTENER UN CAMBIO TEMPORARIO DE LAS ACTIVIDADES",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/17215-1999"
+ },
+ {
+  "id": "ley-19530",
+  "tipo": "Ley",
+  "numero": "19.530",
+  "anio": 2017,
+  "corto": "Ley de Salas de Lactancia",
+  "titulo_impo": "APROBACION DE LA INSTALACION DE SALAS DE LACTANCIA MATERNA",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/19530-2017"
+ },
+ {
+  "id": "ley-17738",
+  "tipo": "Ley",
+  "numero": "17.738",
+  "anio": 2004,
+  "corto": "Ley de la Caja de Profesionales Universitarios",
+  "titulo_impo": "APROBACION DE LA ESTRUCTURA ORGANICA DE LA CAJA DE JUBILACIONES Y PENSIONES DE PROFESIONALES UNIVERSITARIOS",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/17738-2004"
+ },
+ {
+  "id": "ley-18396",
+  "tipo": "Ley",
+  "numero": "18.396",
+  "anio": 2008,
+  "corto": "Ley de la Caja Bancaria",
+  "titulo_impo": "MODIFICACION DEL REGIMEN DE LA CAJA DE JUBILACIONES Y PENSIONES BANCARIAS",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/18396-2008"
+ },
+ {
+  "id": "ley-18405",
+  "tipo": "Ley",
+  "numero": "18.405",
+  "anio": 2008,
+  "corto": "Ley de Retiros y Pensiones Policiales",
+  "titulo_impo": "SEGURIDAD SOCIAL. REFORMA DEL REGIMEN DEL SERVICIO DE RETIROS Y PENSIONES POLICIALES",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/18405-2008"
+ },
+ {
+  "id": "ley-19590",
+  "tipo": "Ley",
+  "numero": "19.590",
+  "anio": 2017,
+  "corto": "Ley de los Cincuentones",
+  "titulo_impo": "MODIFICACION DEL REGIMEN JUBILATORIO PREVISTO POR LA LEY 16.713. LEY DE LOS CINCUENTONES",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/19590-2017"
+ },
+ {
+  "id": "ley-19695",
+  "tipo": "Ley",
+  "numero": "19.695",
+  "anio": 2018,
+  "corto": "Ley de Previsión Social Militar",
+  "titulo_impo": "APROBACION DE LAS MODIFICACIONES AL SISTEMA DE PREVISION SOCIAL MILITAR",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/19695-2018"
+ },
+ {
+  "id": "ley-19286",
+  "tipo": "Ley",
+  "numero": "19.286",
+  "anio": 2014,
+  "corto": "Código de Ética Médica",
+  "titulo_impo": "APROBACION DEL CODIGO DE ETICA MEDICA",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/19286-2014"
+ },
+ {
+  "id": "ley-18591",
+  "tipo": "Ley",
+  "numero": "18.591",
+  "anio": 2009,
+  "corto": "Ley del Colegio Médico",
+  "titulo_impo": "CREACION DEL COLEGIO MEDICO DEL URUGUAY",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/18591-2009"
+ },
+ {
+  "id": "ley-18131",
+  "tipo": "Ley",
+  "numero": "18.131",
+  "anio": 2007,
+  "corto": "Ley del FONASA",
+  "titulo_impo": "CREACION DEL FONDO NACIONAL DE SALUD (FONASA)",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/18131-2007"
+ },
+ {
+  "id": "ley-14005",
+  "tipo": "Ley",
+  "numero": "14.005",
+  "anio": 1971,
+  "corto": "Ley de Donación de Órganos y Tejidos",
+  "titulo_impo": "DONACION PARA USO CON FINES CIENTIFICOS Y TERAPEUTICOS DEL CUERPO U ORGANOS Y TEJIDOS. REGISTRO NACIONAL DE DONANTES DE ORGANOS Y TEJIDOS",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/14005-1971"
+ },
+ {
+  "id": "ley-18617",
+  "tipo": "Ley",
+  "numero": "18.617",
+  "anio": 2009,
+  "corto": "Ley del INAM (Adulto Mayor)",
+  "titulo_impo": "CREACION DEL INSTITUTO NACIONAL DEL ADULTO MAYOR (INAM) EN LA ORBITA DEL MINISTERIO DE DESARROLLO SOCIAL",
+  "area": "Familia y derechos de las personas",
+  "url": "https://www.impo.com.uy/bases/leyes/18617-2009"
+ },
+ {
+  "id": "ley-16246",
+  "tipo": "Ley",
+  "numero": "16.246",
+  "anio": 1992,
+  "corto": "Ley de Puertos",
+  "titulo_impo": "LEY DE PUERTOS",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/16246-1992"
+ },
+ {
+  "id": "ley-16211",
+  "tipo": "Ley",
+  "numero": "16.211",
+  "anio": 1991,
+  "corto": "Ley de Empresas Públicas",
+  "titulo_impo": "LEY DE EMPRESAS PUBLICAS",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/16211-1991"
+ },
+ {
+  "id": "ley-17598",
+  "tipo": "Ley",
+  "numero": "17.598",
+  "anio": 2002,
+  "corto": "Ley de la URSEA",
+  "titulo_impo": "COMPETENCIAS DE LA UNIDAD REGULADORA DE SERVICIOS DE ENERGIA Y AGUA",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/17598-2002"
+ },
+ {
+  "id": "ley-18220",
+  "tipo": "Ley",
+  "numero": "18.220",
+  "anio": 2007,
+  "corto": "Ley del Sistema Nacional de Archivos",
+  "titulo_impo": "SISTEMA NACIONAL DE ARCHIVOS. REGULACION DE LA FUNCION ARCHIVISTICA. CONSERVACION Y ORGANIZACION DEL PATRIMONIO DOCUMENTAL DE LA NACION",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/18220-2007"
+ },
+ {
+  "id": "ley-16021",
+  "tipo": "Ley",
+  "numero": "16.021",
+  "anio": 1989,
+  "corto": "Ley de Ciudadanía Natural",
+  "titulo_impo": "CONSIDERACION DE CIUDADANIA NATURAL. INTERPRETACION DEL ART. 74 DE LA CONSTITUCION",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/16021-1989"
+ },
+ {
+  "id": "ley-14040",
+  "tipo": "Ley",
+  "numero": "14.040",
+  "anio": 1971,
+  "corto": "Ley de Patrimonio Histórico, Artístico y Cultural",
+  "titulo_impo": "CREACION DE LA COMISION DEL PATRIMONIO HISTORICO, ARTISTICO Y CULTURAL DE LA NACION",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/14040-1971"
+ },
+ {
+  "id": "ley-11029",
+  "tipo": "Ley",
+  "numero": "11.029",
+  "anio": 1948,
+  "corto": "Ley del Instituto Nacional de Colonización",
+  "titulo_impo": "INSTITUTO NACIONAL DE COLONIZACION. CREACION. COLONIZACION DE TIERRAS",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/11029-1948"
+ },
+ {
+  "id": "ley-13728",
+  "tipo": "Ley",
+  "numero": "13.728",
+  "anio": 1968,
+  "corto": "Plan Nacional de Viviendas",
+  "titulo_impo": "PLAN NACIONAL DE VIVIENDAS",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/13728-1968"
+ },
+ {
+  "id": "ley-18125",
+  "tipo": "Ley",
+  "numero": "18.125",
+  "anio": 2007,
+  "corto": "Carta Orgánica del BHU",
+  "titulo_impo": "MODIFICACION A LA CARTA ORGANICA DEL BANCO HIPOTECARIO DEL URUGUAY",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/18125-2007"
+ },
+ {
+  "id": "ley-19253",
+  "tipo": "Ley",
+  "numero": "19.253",
+  "anio": 2014,
+  "corto": "Ley de Turismo",
+  "titulo_impo": "REGULACION DE LA ACTIVIDAD TURISTICA",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/19253-2014"
+ },
+ {
+  "id": "ley-15848",
+  "tipo": "Ley",
+  "numero": "15.848",
+  "anio": 1986,
+  "corto": "Ley de Caducidad",
+  "titulo_impo": "LEY DE CADUCIDAD DE LA PRETENSION PUNITIVA DEL ESTADO",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/15848-1986"
+ },
+ {
+  "id": "ley-17894",
+  "tipo": "Ley",
+  "numero": "17.894",
+  "anio": 2005,
+  "corto": "Ley de Ausencia por Desaparición Forzada",
+  "titulo_impo": "DECLARACION DE AUSENCIA POR CAUSA DE DESAPARICION FORZADA. APERTURA LEGAL DE LA SUCESION DEL AUSENTE",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/17894-2005"
+ },
+ {
+  "id": "ley-18033",
+  "tipo": "Ley",
+  "numero": "18.033",
+  "anio": 2006,
+  "corto": "Ley de Pensión Especial Reparatoria",
+  "titulo_impo": "SEGURIDAD SOCIAL. EMPLEADOS PRIVADOS. DESTITUIDOS. BENEFICIO DE LA PENSION ESPECIAL REPARATORIA",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/18033-2006"
+ },
+ {
+  "id": "ley-17829",
+  "tipo": "Ley",
+  "numero": "17.829",
+  "anio": 2004,
+  "corto": "Ley de Retenciones sobre Salarios y Pasividades",
+  "titulo_impo": "REGIMEN DE RETENCIONES A LOS SALARIOS Y PASIVIDADES",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/17829-2004"
+ },
+ {
+  "id": "ley-19969",
+  "tipo": "Ley",
+  "numero": "19.969",
+  "anio": 2021,
+  "corto": "Ley de Sociedades BIC",
+  "titulo_impo": "CREACION DE LAS SOCIEDADES DE BENEFICIO E INTERES COLECTIVO (BIC)",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/19969-2021"
  }
 ]
