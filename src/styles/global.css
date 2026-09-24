@@ -41,3 +41,5 @@
   .ficha-cita{font-size:9.5pt;margin-top:1mm;color:#333}
   .ficha-fuente{font-size:8.5pt;margin-top:4mm;color:#555}
 }
+.ficha-editable{border-radius:.6rem;margin-inline:-.6rem;padding:.35rem .6rem;outline:none;transition:background .15s,box-shadow .15s;cursor:text}.ficha-editable:hover{background:#fbfaf7}.ficha-editable:focus,.ficha-editable:focus-visible{outline:none;background:#fbfaf7;box-shadow:0 0 0 2px #b7d7d0}
+@media print{.ficha-editable{margin:3mm 0 0;padding:0;background:none!important;box-shadow:none!important}}
