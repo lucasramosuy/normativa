@@ -47,7 +47,7 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
 
       <Historial slug={slug} articulo={article.articulo} />
 
-      <nav class="mt-12 grid gap-4 sm:grid-cols-2" aria-label="Artículos contiguos" data-pagefind-ignore>
+      <nav class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label="Artículos contiguos" data-pagefind-ignore>
         {prev?<a class="soft-card group p-5 transition hover:border-forest" href={`${base}normas/${slug}/articulo/${idOf(prev)}/`}><span class="text-xs font-bold uppercase tracking-[.12em] text-slate-500">← Anterior</span><b class="mt-2 block font-serif text-xl text-ink group-hover:text-forest">Artículo {labelOf(prev)}</b>{rubroOf(prev)&&<span class="mt-1 block truncate text-sm text-slate-500">{rubroOf(prev)}</span>}</a>:<span class="hidden sm:block"/>}
         {next&&<a class="soft-card group p-5 text-right transition hover:border-forest" href={`${base}normas/${slug}/articulo/${idOf(next)}/`}><span class="text-xs font-bold uppercase tracking-[.12em] text-slate-500">Siguiente →</span><b class="mt-2 block font-serif text-xl text-ink group-hover:text-forest">Artículo {labelOf(next)}</b>{rubroOf(next)&&<span class="mt-1 block truncate text-sm text-slate-500">{rubroOf(next)}</span>}</a>}
       </nav>
