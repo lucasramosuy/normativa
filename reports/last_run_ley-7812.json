@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fecha_scraping": "2026-09-24T01:06:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/7812-1925",
-  "sha256_jsonl": "3d57addb480caf7b83c5bc74b0e567d371e75415f3e043a2c6c7c1aa3b80df8c",
+  "sha256_jsonl": "4dc3eb7c3346b9f58f291152d1a950854c87e7d0ae1b572119f2f74653789875",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 9,
+  "articulos_guardados": 9,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 12.840",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/12840-1960",
+  "sha256_jsonl": "7c06977c3ae82c8a89f2593b4a2c2be71c31966919b37470d84df7e328868baf",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

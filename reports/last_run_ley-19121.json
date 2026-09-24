@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fecha_scraping": "2026-09-24T01:06:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/19121-2013",
-  "sha256_jsonl": "299a2a497ac9c822909436c98d79443305d4c3cad3e5ac25e9aa8abc5845a4a7",
+  "sha256_jsonl": "739bdc60b878b625b724a476f129755c786b4927a65fcaff42bee23721f7c5f6",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

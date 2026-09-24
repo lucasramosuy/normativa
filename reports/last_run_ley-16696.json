@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fecha_scraping": "2026-09-24T01:06:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/16696-1995",
-  "sha256_jsonl": "f21d9a406817aff7d8f83753643f8c59142685401cb5818a7e8456340064d9e0",
+  "sha256_jsonl": "7a20edd7d2fc0908ae9fe5e1e94126dfc054bf5a370ddc85351dc0c45a2fbc5d",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

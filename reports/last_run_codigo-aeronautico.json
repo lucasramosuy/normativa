@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:48:20Z",
+  "fecha_scraping": "2026-09-24T00:57:56Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-aeronautico/14305-1974",
-  "sha256_jsonl": "bcfa763c6a0ebd71c7a59052cb7230c95f2be464025380da71d08e406ef244ca",
+  "sha256_jsonl": "f530dfbe733bb4ce9ee339a6b8957f2bec223599a354aa1ae98233efc1b8e39b",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

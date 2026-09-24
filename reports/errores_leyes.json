@@ -1,6 +1,102 @@
 [
   {
-    "id": "ley-5350",
-    "error": "No se encontró texto para el artículo 6 de Ley 5.350"
+    "id": "ley-17738",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/17738-2004"
+  },
+  {
+    "id": "ley-18396",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/18396-2008"
+  },
+  {
+    "id": "ley-18405",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/18405-2008"
+  },
+  {
+    "id": "ley-19590",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/19590-2017"
+  },
+  {
+    "id": "ley-19695",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/19695-2018"
+  },
+  {
+    "id": "ley-19286",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/19286-2014"
+  },
+  {
+    "id": "ley-18591",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/18591-2009"
+  },
+  {
+    "id": "ley-18131",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/18131-2007"
+  },
+  {
+    "id": "ley-14005",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/14005-1971"
+  },
+  {
+    "id": "ley-18617",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/18617-2009"
+  },
+  {
+    "id": "ley-16246",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/16246-1992"
+  },
+  {
+    "id": "ley-16211",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/16211-1991"
+  },
+  {
+    "id": "ley-17598",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/17598-2002"
+  },
+  {
+    "id": "ley-18220",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/18220-2007"
+  },
+  {
+    "id": "ley-16021",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/16021-1989"
+  },
+  {
+    "id": "ley-14040",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/14040-1971"
+  },
+  {
+    "id": "ley-11029",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/11029-1948"
+  },
+  {
+    "id": "ley-13728",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/13728-1968"
+  },
+  {
+    "id": "ley-18125",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/18125-2007"
+  },
+  {
+    "id": "ley-19253",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/19253-2014"
+  },
+  {
+    "id": "ley-15848",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/15848-1986"
+  },
+  {
+    "id": "ley-17894",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/17894-2005"
+  },
+  {
+    "id": "ley-18033",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/18033-2006"
+  },
+  {
+    "id": "ley-17829",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/17829-2004"
+  },
+  {
+    "id": "ley-19969",
+    "error": "504 Server Error: Gateway Time-out for url: https://www.impo.com.uy/bases/leyes/19969-2021"
   }
 ]
