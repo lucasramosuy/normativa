@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 31,
+  "articulos_guardados": 31,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.406",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18406-2008",
+  "sha256_jsonl": "7738e61b2969b1fc4f31d7ccf99d1c032273abd5f8b7dc0b096c69a6c537fbf8",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

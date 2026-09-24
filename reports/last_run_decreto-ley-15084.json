@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 24,
+  "articulos_guardados": 24,
+  "crawl_delay_segundos": 10,
+  "documento": "Decreto-ley 15.084",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/decretos-ley/15084-1980",
+  "sha256_jsonl": "81dfd3b7908c4082485b847503d77a0397a7796b05a12ba715b7f72ba987d167",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

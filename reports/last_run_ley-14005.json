@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fecha_scraping": "2026-09-24T16:55:28Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/14005-1971",
-  "sha256_jsonl": "674cb76143ab568cdd7521911c0cdce08a4799367bc5455b858fbcc033d23759",
+  "sha256_jsonl": "e96a59ec9227b0888312aa055b6003e89ce003d5da799b56cfd3b54762ded529",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

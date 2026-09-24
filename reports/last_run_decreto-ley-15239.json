@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 15,
+  "articulos_guardados": 15,
+  "crawl_delay_segundos": 10,
+  "documento": "Decreto-ley 15.239",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/decretos-ley/15239-1981",
+  "sha256_jsonl": "baa90ee072c950d9ad808c9dd0b6c60310cb5481fc1d05a747dacbc56361b96a",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

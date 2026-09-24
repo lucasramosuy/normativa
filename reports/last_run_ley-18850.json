@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 18,
+  "articulos_guardados": 18,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.850",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18850-2011",
+  "sha256_jsonl": "89b1b8248d312e5ac536c771fc3971adb10c9f4fac15daa0cc4f36e35fc0519a",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

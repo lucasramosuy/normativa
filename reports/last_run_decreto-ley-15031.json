@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 24,
+  "articulos_guardados": 24,
+  "crawl_delay_segundos": 10,
+  "documento": "Decreto-ley 15.031",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/decretos-ley/15031-1980",
+  "sha256_jsonl": "d1e18b54f4b466a4b4747807eb22f557694abb467858bc1fdd029b5f49f0c112",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
