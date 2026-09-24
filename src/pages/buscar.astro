@@ -27,7 +27,7 @@ function parseQuery(raw:string){let f=fold(raw).replace(/[,;]/g,' ').replace(/\s
   for(const [re,slug] of ALIASES){if(re.test(f)){nm=slug;f=f.replace(re,' ').replace(/\s+/g,' ').trim();break;}}
   const rest=f.replace(/\b(?:codigo|de|del|la|el|nro|n|no|numero)\b\.?/g,' ').replace(/\s+/g,' ').trim();
   const m=rest.match(new RegExp(`^(?:art(?:iculo)?s?\\.?\\s*)?(\\d{1,4})(?:\\s*[-\\s]?\\s*(${SUF}))?$`));
-  if(m)return{article:m[1]+(m[2]?'-'+m[2]:''),norma:nm,text:''};
+  if(m){const bare=/^\d{3,}$/.test(rest)&&!m[2]&&!nm;return{article:m[1]+(m[2]?'-'+m[2]:''),norma:nm,text:bare?m[1]:''};}
   // Free text: drop "artículo"/"art", 1-char terms, and join "149 bis" -> "149-bis".
   const words=fold(raw).replace(new RegExp(`\\b(\\d+)\\s+(${SUF})\\b`,'g'),'$1-$2').split(/\s+/).filter(w=>w&&!/^(?:art(?:iculo)?s?\.?)$/.test(w)&&w.length>1);
   return{article:'',norma:'',text:words.join(' ')};}
@@ -85,15 +85,23 @@ async function run(){paint();syncUrl();const my=++seq;
   const filters=norma&&labels[norma]?{norma:labels[norma]}:{};
   let res:any={results:[],filters:{},totalFilters:{}};
   let exactOnly=false;const note=$('[data-fuzzy-note]');note.classList.add('hidden');
-  if(parsed.text){const single=!/\s/.test(parsed.text)&&!/^\d/.test(parsed.text)&&parsed.text.length>=3&&!parsed.text.includes('"');
-    if(single&&!fuzzy){const ex=await pf.search(`"${parsed.text}"`,{filters});if(my!==seq)return;
+  if(parsed.text){const num=/^\d{3,}$/.test(parsed.text);const single=!num&&!/\s/.test(parsed.text)&&!/^\d/.test(parsed.text)&&parsed.text.length>=3&&!parsed.text.includes('"');
+    if(num){res=await pf.search(`"${parsed.text}"`,{filters});if(my!==seq||!res)return;}
+    if(!num&&single&&!fuzzy){const ex=await pf.search(`"${parsed.text}"`,{filters});if(my!==seq)return;
       const exTotal=Object.values(((norma?ex?.totalFilters:ex?.filters)?.norma)||{}).reduce((a:number,b:any)=>a+Number(b),0);
       if(ex&&(ex.results.length||exTotal)){res=ex;exactOnly=true;}}
-    if(!exactOnly){res=await pf.search(parsed.text,{filters});if(my!==seq||!res)return;}
+    if(!num&&!exactOnly){res=await pf.search(parsed.text,{filters});if(my!==seq||!res)return;}
     if(single&&(exactOnly||fuzzy)){note.classList.remove('hidden');note.innerHTML=exactOnly?'Solo palabras exactas. <button type="button" class="font-bold text-forest underline" data-fuzzy>Incluir palabras parecidas</button>':'Incluye palabras parecidas. <button type="button" class="font-bold text-forest underline" data-fuzzy>Solo palabras exactas</button>';note.querySelector('[data-fuzzy]')!.addEventListener('click',()=>{fuzzy=!fuzzy;run();});}}
   results=res.results;
   // One search gives both: totalFilters = counts ignoring the active norma filter.
-  const counts:Record<string,number>={...((norma?res.totalFilters:res.filters)?.norma||{})};for(const d of direct)counts[d.corto]=(counts[d.corto]||0)+1;let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
+  const counts:Record<string,number>={...((norma?res.totalFilters:res.filters)?.norma||{})};
+  // Dedupe: pages already shown as article cards don't appear again as text hits.
+  if(direct.length&&parsed.text){const cards=new Set(direct.map(d=>`${base}normas/${d.slug}/articulo/${d.id}/`));const kept:any[]=[];
+    for(const r of results){const d=await r.data().catch(()=>null);if(my!==seq)return;
+      if(d&&cards.has(d.url)){const lbl=(d.filters?.norma||[])[0];if(lbl&&counts[lbl])counts[lbl]--;continue;}
+      kept.push(d?{data:async()=>d}:r);}
+    results=kept;}
+  for(const d of direct)counts[d.corto]=(counts[d.corto]||0)+1;let total=0;document.querySelectorAll<HTMLElement>('[data-count]').forEach(e=>{const n=counts[e.dataset.count!]||0;total+=n;e.textContent=n?String(n):'';});
   $('[data-count-all]').textContent=String(total);paintFilters(counts);
   const n=results.length+direct.length+normaHits.length;$('[data-status]').textContent=`${n} ${n===1?"resultado":"resultados"}${norma&&labels[norma]?' en '+labels[norma]:''}`;
   $('[data-heading]').textContent=`“${q}”`;document.title=`“${q}” · Normativa Uruguay`;
