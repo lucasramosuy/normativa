@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 3,
+  "articulos_guardados": 3,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.242",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17242-2000",
+  "sha256_jsonl": "500b208e7c12d218c1cc8553434f5ee8eaacc366b360b2fdf68014be1fa946d5",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

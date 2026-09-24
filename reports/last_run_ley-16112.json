@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 17,
+  "articulos_guardados": 17,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.112",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16112-1990",
+  "sha256_jsonl": "0d8205683cde78c50d80d1e903d0c95ac7383353b3ed83c29f1f5274abd6d3e7",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

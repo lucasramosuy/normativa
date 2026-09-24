@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 28,
+  "articulos_guardados": 28,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 15.737",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/15737-1985",
+  "sha256_jsonl": "c1b86ece4e322e4084e31d9d746b886010934edcd0198da6e6b4be5d90905bb3",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

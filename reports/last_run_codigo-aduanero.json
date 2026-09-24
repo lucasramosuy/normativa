@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T15:49:18Z",
+  "fecha_scraping": "2026-09-24T16:48:19Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-aduanero/19276-2014",
-  "sha256_jsonl": "3cc9fa62e7d74ee9459f0ee6b1763cbc84e2a86dd2b81f2b5f9372f2f18f1283",
+  "sha256_jsonl": "98cacb0f925aaf5cc0109cafcf23ef6341b51bec4e55c4c6f781b1c45dee0b94",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

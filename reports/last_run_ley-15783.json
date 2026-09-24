@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 50,
+  "articulos_guardados": 50,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 15.783",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/15783-1985",
+  "sha256_jsonl": "49d8702d0c814e13d1db1e8e135718f1fecca51917d6c9db725a23d972e64063",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

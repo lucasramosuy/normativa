@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 19,
+  "articulos_guardados": 19,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.866",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17866-2005",
+  "sha256_jsonl": "ec8542b6ab11c7de52e447bd9b428436f89880736c0a5e4dd669fb6514829743",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
