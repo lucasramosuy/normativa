@@ -18,7 +18,7 @@ El repo se llamaba `normativa-uy`; ahora es `lucasramosuy/normativa`. La URL vie
 
 ## Cómo llegan los datos
 
-1. **Revisión semanal de IMPO** (`main`, lunes 06:17 de Montevideo, o a mano) descarga la Constitución y los códigos. Si cambió el contenido, abre un PR contra `main` con el resumen.
+1. **Revisión semanal de IMPO** (`main`, lunes 06:17 de Montevideo, o a mano) descarga la Constitución, los códigos y las leyes y decretos. Si cambió el contenido, abre un PR contra `main` con el resumen.
 2. Se revisa y se mergea el PR.
 3. **Publicar datos en api** (`main`, a mano) copia los datos a `api`, actualiza `historial/` y dispara el deploy de `www`.
 
@@ -26,19 +26,22 @@ Los workflows manuales viejos (`scrape.yml`, `scrape-codigos.yml`), que commitea
 
 ## Qué hay en el sitio
 
+- La Constitución, 12 códigos y las leyes y decretos de `src/data/leyes.json` (181 al 24/09/2026; una norma aparece cuando sus datos llegan a `api`, hoy 149). La lista tiene que coincidir con `scripts/ingest/leyes.json` de `main`.
 - Buscador (Pagefind), índice por norma y una página por artículo.
+- Página 404 propia (`src/pages/404.astro`).
+- Contacto: `/normativa/contacto/` redirige al formulario único de `lucasramos.uy/contacto/?tema=normativa` (repo `www`).
 - Historial de cambios en cada artículo, página [/cambios/](https://lucasramos.uy/normativa/cambios/) y feed Atom (`/cambios/feed.xml`). Solo cambios publicados. Los artículos que dejan de figurar en IMPO conservan su página con un aviso.
 - API estática v1 en `/api/v1/` (`normas.json`, `{norma}.json`, `{norma}/{articulo}.json`, `historial.json`, `historial/{norma}.json`). Documentación: https://lucasramos.uy/normativa/api/
 
 ## Worker de Cloudflare (`worker/proxy.js`)
 
-El Worker "proxy" (ruta `lucasramos.uy/normativa*`) hace dos cosas:
+El Worker "proxy" está delante de `lucasramos.uy` y hace esto:
 
-- **Router**: `/normativa/*` se sirve desde `lucasramosuy.github.io/normativa`. El resto de `lucasramos.uy` sigue yendo al origen.
+- **Router**: `/normativa/*` se sirve desde `lucasramosuy.github.io/normativa` y `/profe/*` desde `lucasramosuy.github.io/profe`. `/normativa` y `/profe` sin barra redirigen (301) a la versión con barra. Todo lo demás, incluida la portada, va a Cloudflare Pages (repo `www`, `www-7r1.pages.dev`). Las cookies no se reenvían.
 - **Ingesta propia**, para que los adblockers no corten eventos:
   - `/normativa/_i/s`: tunnel de Sentry. Solo acepta POST con envelopes de nuestro DSN (org y proyecto fijos).
   - `/normativa/_i/p/*`: reverse proxy de PostHog (`static/` y `array/` a `us-assets.i.posthog.com` con caché, el resto a `us.i.posthog.com`).
-- **Caché larga para `/normativa/_astro/*`**: esos archivos llevan un hash en el nombre y nunca cambian, así que el Worker les pone `Cache-Control: public, max-age=31536000, immutable` y el navegador no los vuelve a pedir.
+- **Caché larga para `/<proyecto>/_astro/*`** (en la práctica, `/normativa/_astro/*`): esos archivos llevan un hash en el nombre y nunca cambian, así que el Worker les pone `Cache-Control: public, max-age=31536000, immutable` y el navegador no los vuelve a pedir.
 
 `worker/proxy.js` es la copia versionada del código desplegado. No se despliega solo: si se cambia, hay que pegarlo en el editor del Worker en Cloudflare (o usar `wrangler`) e implementar.
 
@@ -49,7 +52,7 @@ El Worker "proxy" (ruta `lucasramos.uy/normativa*`) hace dos cosas:
 - Íconos de [Reicon](https://reicon.dev/)
 - Pagefind para búsqueda estática
 - Sentry para errores y rendimiento (por el tunnel `/normativa/_i/s`; source maps con `SENTRY_AUTH_TOKEN`)
-- PostHog para analítica de producto (por el proxy `/normativa/_i/p`)
+- PostHog para analítica de producto (por el proxy `/normativa/_i/p`), sin grabaciones de sesión ni encuestas (`disable_session_recording`, `disable_surveys`), perfiles solo para usuarios identificados y persistencia en `localStorage` (sin cookies)
 
 ## Configuración en GitHub
 
