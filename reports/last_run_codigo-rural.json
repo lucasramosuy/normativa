@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T00:57:56Z",
+  "fecha_scraping": "2026-09-24T15:49:18Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-rural/10024-1941",
-  "sha256_jsonl": "6d44fa472b40a3882f95692c3ce0d710080f1a04e4c62197f5df240334200820",
+  "sha256_jsonl": "72b3c168b3622b2477e0a65c5f3ad363c8678c9851ab40d39965e4cb9c308c9c",
   "sin_texto_en_impo": [
     "259"
   ],

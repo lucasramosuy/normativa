@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 21,
+  "articulos_guardados": 21,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.033",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18033-2006",
+  "sha256_jsonl": "0a417d74bc1b71d6313ec80f2920e9ffa20f39ded990a0c047e4bb1e39fb73fa",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

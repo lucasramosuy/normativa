@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-24T15:57:16Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/16466-1994",
-  "sha256_jsonl": "f8b699379135531f3d6186f7635e21d225e20830723d683d5c2b3c98c6ef1639",
+  "sha256_jsonl": "860bd9453263db66f4d235bb65e04c407b8715e58dad4750d5dc98d54c9bb135",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

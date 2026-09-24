@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-24T15:57:16Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/18473-2009",
-  "sha256_jsonl": "d8c9907ca4520b9283880714cfcee2024cffe912a624cbe1eb8661c5d2c3e8ef",
+  "sha256_jsonl": "1b890733c2ccc0108587191025a666281024b069ad395884bbb4745667e49d2c",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

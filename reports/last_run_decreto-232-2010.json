@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-24T15:57:16Z",
   "fuente": "https://www.impo.com.uy/bases/decretos/232-2010",
-  "sha256_jsonl": "0fe1fa288134cf8153b81f72a4e3ff7886cc7e1eeece442db43a83b28b6ce5f3",
+  "sha256_jsonl": "12c861f03453b2f34272c60a24823053dcc0d7be23777f0bbab97969557f0864",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

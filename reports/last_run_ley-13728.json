@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 217,
+  "articulos_guardados": 217,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 13.728",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/13728-1968",
+  "sha256_jsonl": "c23d0885c14c89b6cde584c533b26009b3aaab754980a7c5d2fc93ee0e8c9792",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

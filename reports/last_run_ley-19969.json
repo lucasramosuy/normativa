@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 8,
+  "articulos_guardados": 8,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.969",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19969-2021",
+  "sha256_jsonl": "22111c403eafd6bf0b4b4119f5f037bd29e11964c739bb1a46b51571d6e18c40",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
