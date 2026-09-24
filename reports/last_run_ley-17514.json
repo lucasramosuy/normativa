@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fecha_scraping": "2026-09-23T23:56:22Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17514-2002",
-  "sha256_jsonl": "4fdaaa820ae0361a6d070d44a941dbf52ee7240016330b95a35a5cd223562584",
+  "sha256_jsonl": "f03f2b11e87fd2502e7afaca89562dd33304c4086d6760f7fc29592a0ffe339a",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

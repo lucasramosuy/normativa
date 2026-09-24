@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 75,
+  "articulos_guardados": 75,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 12.549",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/12549-1958",
+  "sha256_jsonl": "308fd5c42847f6745ea63483f7d70fb4965806cfc6e360bba72a105ad3de48a8",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

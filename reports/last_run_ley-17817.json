@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fecha_scraping": "2026-09-23T23:56:22Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17817-2004",
-  "sha256_jsonl": "bcf1b56f8670d156ccbc5ccc4cd08a4e29789e09b2e2e07584e0d39d828c3257",
+  "sha256_jsonl": "43a3f4bb4ce85443e639d9d0bdb07cb631da767f7c2707497011e16a1a8e5cef",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

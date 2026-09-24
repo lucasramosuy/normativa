@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 25,
+  "articulos_guardados": 25,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.256",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18256-2008",
+  "sha256_jsonl": "391cfeaebaf0701003413b12a984f934d64fd1341a9e92939c8fce6175d740ff",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

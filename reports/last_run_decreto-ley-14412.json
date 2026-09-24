@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fecha_scraping": "2026-09-23T23:56:22Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/14412-1975",
-  "sha256_jsonl": "9a27ac6f525ccf1c2adc9e97569530a492dbb3b617b45aba984f55fcdd08a884",
+  "sha256_jsonl": "f0764ca4c86d3824899d4001282fb755b58e0aa62b4dc17c43ddff93e8e5daf7",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

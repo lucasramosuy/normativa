@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fecha_scraping": "2026-09-23T23:56:22Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/14294-1974",
-  "sha256_jsonl": "75ccf00350b21351ccbea5a57d0b9abe4d26f3d34be5f99883a82df263521e94",
+  "sha256_jsonl": "fa27a741f7148b999f68e086b5e185cee1c56497b1ff5c8ccb4d5a38d6fd509f",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

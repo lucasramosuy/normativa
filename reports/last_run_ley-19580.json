@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fecha_scraping": "2026-09-23T23:56:22Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/19580-2017",
-  "sha256_jsonl": "f33e61f037daecbc4168da86b6fb3f44ac468c730b75b8b05faa2439bedb007a",
+  "sha256_jsonl": "74dcffab5609ff7d12a3db63e535e4673fc78cbafca2022e55cd4f8593ca7b25",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
