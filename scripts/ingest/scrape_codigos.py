@@ -144,9 +144,16 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
             display = f"{display}-{ancla_id[len(id_norm):]}"
             id_norm = ancla_id
 
-        body = heading.find_next_sibling("pre")
-        if body is None or "italica" in (body.get("class") or []):
-            raise RuntimeError(f"No se encontró texto para el artículo {display} de {documento}")
+        # El texto es el primer <pre> sin clase "italica" antes del próximo título. Algunos
+        # artículos en IMPO solo tienen la nota de modificación (p. ej. Ley 5.350, art. 6):
+        # se guardan con texto vacío y la nota, y quedan en sin_texto_en_impo del reporte.
+        body = None
+        for sibling in heading.next_siblings:
+            if isinstance(sibling, Tag) and sibling.name in {"h3", "h4"}:
+                break
+            if isinstance(sibling, Tag) and sibling.name == "pre" and "italica" not in (sibling.get("class") or []):
+                body = sibling
+                break
 
         notes = []
         for sibling in heading.next_siblings:
@@ -158,7 +165,7 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
                 if note:
                     notes.append(note)
 
-        text = clean_text(body.get_text("\n"))
+        text = clean_text(body.get_text("\n")) if body is not None else ""
         records.append({
             "documento": documento,
             "articulo": int(display) if display.isdigit() else display,
