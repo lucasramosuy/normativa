@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 62,
+  "articulos_guardados": 62,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.613",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17613-2002",
+  "sha256_jsonl": "dffbf187d34989bb99b1746c2634290318383e5d7848e50d82f95278f926f79a",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

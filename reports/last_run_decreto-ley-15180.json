@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T22:07:36Z",
+  "fecha_scraping": "2026-09-23T23:56:22Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/15180-1981",
-  "sha256_jsonl": "74622eee8f1604cee3a0217db989480fcc7be5f162d88ef6341c840be1879388",
+  "sha256_jsonl": "4d0d2640f8593c7ebe10bfb7f389b2c3b398790c0c1aee86e93533859c996b03",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
