@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { curiosidades } from '../lib/curiosidades';
+import { fmt, numeroOf } from '../data/normas';
+const base = import.meta.env.BASE_URL;
+const c = curiosidades();
+const art = (x: { n: { slug: string }; id: string }) => `${base}normas/${x.n.slug}/articulo/${x.id}/`;
+const norma = (x: { n: { slug: string } }) => `${base}normas/${x.n.slug}/`;
+const num = (n: Parameters<typeof numeroOf>[0]) => numeroOf(n) ? `${numeroOf(n)} · ` : '';
+const sufijo = (id: string) => id.replace(/-/g, ' ');
+const tarjetas = [
+  { eti: 'La norma más larga', titulo: c.normaMasLarga.n.corto, dato: `${fmt(c.normaMasLarga.arts)} artículos`, href: norma(c.normaMasLarga) },
+  { eti: 'La ley más larga', titulo: c.leyMasLarga.n.corto, dato: `${num(c.leyMasLarga.n)}${fmt(c.leyMasLarga.arts)} artículos`, href: norma(c.leyMasLarga) },
+  { eti: 'La ley más corta', titulo: c.leyMasCorta.n.corto, dato: `${num(c.leyMasCorta.n)}${c.leyMasCorta.arts} artículos`, href: norma(c.leyMasCorta) },
+  { eti: 'La norma más antigua', titulo: c.masAntigua.n.corto, dato: `Promulgada el ${c.masAntigua.f!.txt}`, href: norma(c.masAntigua) },
+  { eti: 'La ley más antigua', titulo: c.leyMasAntigua.n.corto, dato: `${num(c.leyMasAntigua.n)}${c.leyMasAntigua.f!.txt}${c.leyMasAntigua.chars === 0 ? ' · IMPO no publica su texto' : ''}`, href: norma(c.leyMasAntigua) },
+  { eti: 'La más reciente', titulo: c.masReciente.n.corto, dato: `${num(c.masReciente.n)}promulgada el ${c.masReciente.f!.txt}`, href: norma(c.masReciente) },
+  { eti: 'El artículo más largo', titulo: `${c.artMasLargo.n.corto}, art. ${c.artMasLargo.label}`, dato: `${fmt(c.artMasLargo.cuerpo.length)} caracteres · ${fmt(c.artMasLargo.cuerpo.split(/\s+/).length)} palabras`, href: art(c.artMasLargo) },
+  { eti: 'Más notas de IMPO', titulo: `${c.masNotas.n.corto}, art. ${c.masNotas.label}`, dato: `${fmt((c.masNotas.a.notas_oficiales || '').length)} caracteres de notas`, href: art(c.masNotas) },
+  { eti: 'El número más largo', titulo: `${c.nombreLargo.n.corto}, art. ${sufijo(c.nombreLargo.id)}`, dato: `Uno de los ${c.sufijos} artículos con bis, ter, quater…`, href: art(c.nombreLargo) },
+];
+---
+<Base title="Curiosidades · Normativa Uruguay" description="Récords y rarezas de las normas del sitio."><Fragment slot="head"><meta name="robots" content="noindex"/></Fragment>
+<main class="wrap py-16" data-pagefind-ignore="all">
+  <p class="eyebrow">El corpus en números</p>
+  <h1 class="mt-3 text-5xl sm:text-6xl">Curiosidades</h1>
+  <p class="mt-5 max-w-2xl text-lg text-slate-600">Récords y rarezas de las normas del sitio. Todo sale de los mismos datos, y se recalcula cada vez que se actualiza.</p>
+
+  <dl class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+    {[[fmt(c.total.normas), 'normas'], [fmt(c.total.articulos), 'artículos'], [fmt(c.total.palabras), 'palabras'], [`${c.total.horas} h`, 'para leerlo todo de corrido']].map(([v, l]) => <div class="soft-card p-5"><dt class="sr-only">{l}</dt><dd class="font-serif text-3xl text-ink sm:text-4xl">{v}</dd><dd class="mt-1 text-sm text-slate-600">{l}</dd></div>)}
+  </dl>
+
+  <section class="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14">
+    <div class="min-w-0">
+      <h2 class="text-3xl">El artículo más citado</h2>
+      <a class="soft-card mt-6 block bg-mint/60 p-7 transition hover:border-forest" href={art(c.masCitados[0])}>
+        <span class="eyebrow">{c.masCitados[0].n.corto} · art. {c.masCitados[0].label}</span>
+        <p class="mt-4 font-serif text-5xl text-forest">{c.masCitados[0].citas}</p>
+        <p class="text-sm text-slate-600">artículos lo citan</p>
+        <p class="mt-5 line-clamp-3 font-serif text-lg text-ink">{c.masCitados[0].cuerpo.split('\n')[0]}</p>
+      </a>
+      <ol class="mt-5 grid gap-2 text-sm" start="2">{c.masCitados.slice(1).map((x, i) => <li><a class="group grid grid-cols-[1.5rem_minmax(0,1fr)_auto] items-baseline gap-x-3 rounded-lg px-2 py-1.5 hover:bg-white" href={art(x)}><span class="font-semibold text-slate-400">{i + 2}</span><span class="truncate"><b class="font-semibold text-ink group-hover:text-forest">{x.n.corto}, art. {x.label}</b></span><span class="text-slate-600">{x.citas}</span></a></li>)}</ol>
+    </div>
+    <div class="min-w-0">
+      <h2 class="text-3xl">El artículo más corto</h2>
+      <a class="soft-card mt-6 block p-7 transition hover:border-forest" href={art(c.artMasCorto)}>
+        <span class="eyebrow">{c.artMasCorto.n.corto} · art. {c.artMasCorto.label}</span>
+        <p class="mt-4 font-serif text-4xl leading-tight text-ink">"{c.artMasCorto.cuerpo}"</p>
+        <p class="mt-3 text-sm text-slate-600">{c.artMasCorto.cuerpo.length} caracteres</p>
+      </a>
+      <p class="mt-5 text-sm leading-6 text-slate-600">Sin contar las fórmulas de cierre: <span class="font-serif text-base text-ink">"Comuníquese, etc."</span> es el artículo entero en {c.formula.length} normas, como el <a class="font-semibold text-forest" href={art(c.formula[0])}>art. {c.formula[0].label} del {c.formula[0].n.corto}</a>.</p>
+    </div>
+  </section>
+
+  <h2 class="mt-16 text-3xl">Récords</h2>
+  <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{tarjetas.map(t => <a class="soft-card min-w-0 p-6 transition hover:border-forest" href={t.href}><span class="eyebrow">{t.eti}</span><h3 class="mt-3 text-2xl leading-snug">{t.titulo}</h3><p class="mt-2 text-sm text-slate-600">{t.dato}</p></a>)}</div>
+
+  <p class="mt-12 max-w-2xl text-sm leading-6 text-slate-500">Las citas son las de "Citado por" en cada artículo. Las fechas son las de promulgación que informa IMPO. Tiempo de lectura a 250 palabras por minuto.</p>
+</main>
+</Base>
