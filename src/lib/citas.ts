@@ -194,4 +194,4 @@ let porId: Map<string, Map<string, import('../data/normas').Article>> | null = n
 export function articuloDe(slug: string, id: string) {
   if (!porId) { porId = new Map(); for (const n of NORMAS) porId.set(n.slug, new Map(getArticles(n.slug).map(a => [idOf(a), a]))); }
   return porId.get(slug)?.get(id);
-  }
+}
