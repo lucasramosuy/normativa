@@ -39,6 +39,15 @@ Casos especiales soportados:
   series derogadas del Código Civil.
 - El nivel TITULO se guarda en `titulo_norma` para no chocar con el campo
   `titulo` (que es "Artículo N").
+- Leyes de 1830-1924 (`anio` < 1925 en `leyes.json`): la página de IMPO solo
+  muestra los artículos modificados o derogados. Para esas leyes se baja también
+  el JSON de datos abiertos (`?json=true`) y, si trae más artículos, se agregan
+  los que faltan. El reporte los lista en `articulos_desde_datos_abiertos`.
+
+Si IMPO se cae a mitad de corrida: tras 3 errores seguidos (5xx, timeout o
+conexión) el script espera `--pausa-minutos` (10 por defecto) y reintenta esas
+normas, hasta `--max-pausas` veces (3 por defecto). Después de eso, con
+`--tolerante` sigue como antes: conserva el archivo anterior y anota el error.
 
 ## Agregar otra norma
 
