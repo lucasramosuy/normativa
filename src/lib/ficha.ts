@@ -1,26 +1,31 @@
-/** "Armar ficha": the selection lives only in this browser (localStorage). Items are "norma/articulo" keys. */
-export type Ficha = { titulo: string; items: string[] };
+/** "Armar ficha": the selection lives only in this browser (localStorage). Items are "norma/articulo" keys.
+ * textos holds the teacher's edited version of an article (sanitized HTML), keyed the same way; only /ficha/ reads it. */
+export type Ficha = { titulo: string; items: string[]; textos: Record<string, string> };
 const KEY = 'normativa-ficha';
 const EVENT = 'ficha-change';
 
 export function getFicha(): Ficha {
   try {
     const f = JSON.parse(localStorage.getItem(KEY) || 'null');
-    if (f && Array.isArray(f.items)) return { titulo: String(f.titulo || ''), items: f.items.filter((x: unknown) => typeof x === 'string') };
+    if (f && Array.isArray(f.items)) {
+      const textos = f.textos && typeof f.textos === 'object' ? Object.fromEntries(Object.entries(f.textos).filter(([, v]) => typeof v === 'string')) as Record<string, string> : {};
+      return { titulo: String(f.titulo || ''), items: f.items.filter((x: unknown) => typeof x === 'string'), textos };
+    }
   } catch {}
-  return { titulo: '', items: [] };
+  return { titulo: '', items: [], textos: {} };
 }
 
-export function saveFicha(f: Ficha) {
+/** quiet=true stores without repainting this tab (used while typing inside an article). */
+export function saveFicha(f: Ficha, quiet = false) {
   try { localStorage.setItem(KEY, JSON.stringify(f)); } catch {}
-  window.dispatchEvent(new Event(EVENT));
+  if (!quiet) window.dispatchEvent(new Event(EVENT));
 }
 
 export const inFicha = (key: string) => getFicha().items.includes(key);
 
 export function toggleFicha(key: string) {
   const f = getFicha();
-  f.items = f.items.includes(key) ? f.items.filter(k => k !== key) : [...f.items, key];
+  if (f.items.includes(key)) { f.items = f.items.filter(k => k !== key); delete f.textos[key]; } else f.items = [...f.items, key];
   saveFicha(f);
 }
 
