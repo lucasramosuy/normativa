@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 44,
+  "articulos_guardados": 44,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 11.907",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/11907-1952",
+  "sha256_jsonl": "f9d82796ef67112f6c1770b471c9d1838e64592ed43f45abfb46562de9f719a2",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

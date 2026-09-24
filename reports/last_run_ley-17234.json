@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fecha_scraping": "2026-09-24T16:55:28Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17234-2000",
-  "sha256_jsonl": "40d2a964bee979cd6c86d0df04c0617f6acc977bbd0bcfcf967ed8d11fa1f6ac",
+  "sha256_jsonl": "cab0f3de0c753ab04edff1ccb48d826fd40d7d24c63286dd1f6589013be85f6a",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fecha_scraping": "2026-09-24T16:55:28Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/13728-1968",
-  "sha256_jsonl": "c23d0885c14c89b6cde584c533b26009b3aaab754980a7c5d2fc93ee0e8c9792",
+  "sha256_jsonl": "0cdb7146ac32b3e94151457ceadb540ec3d173b5e532fbf0ada4733a75d7aa8a",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

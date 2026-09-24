@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 7,
+  "articulos_guardados": 7,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.378",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17378-2001",
+  "sha256_jsonl": "b10174ac4c06864c7010b3f71a06c6e54d13f95f373f560eb48b5e0b93fd5c16",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

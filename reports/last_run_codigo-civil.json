@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T15:49:18Z",
+  "fecha_scraping": "2026-09-24T16:48:19Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-civil/16603-1994",
-  "sha256_jsonl": "19e5edb6c6c5c16e1d15875da97c510cffc546a2acd0697c66d1467954e1fc8b",
+  "sha256_jsonl": "95c65cb0f36bf50069856e10e1ee0acc3a94023e5c63de72d450995762be8929",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

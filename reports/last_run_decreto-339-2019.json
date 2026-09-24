@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fecha_scraping": "2026-09-24T16:55:28Z",
   "fuente": "https://www.impo.com.uy/bases/decretos/339-2019",
-  "sha256_jsonl": "ecb6c75a2645bd64c0f01b6d76cd3e329b115798b8ae991faf5774ad4768672f",
+  "sha256_jsonl": "8e614490e565495132b79163a249ddad4472c22b9ed65deaea8618cf8bff7526",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

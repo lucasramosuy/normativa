@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 19,
+  "articulos_guardados": 19,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.446",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19446-2016",
+  "sha256_jsonl": "c44191d3f162f5e9754ee8be171004a1d4887023923b1f0fadac8ca27820f26e",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 39,
+  "articulos_guardados": 39,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.099",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16099-1989",
+  "sha256_jsonl": "2d43041e6170e254db2e6397e4ee3736327832b19f1e7f281b08b0b608d6d110",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

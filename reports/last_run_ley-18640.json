@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 24,
+  "articulos_guardados": 24,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.640",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18640-2010",
+  "sha256_jsonl": "abab6c8948e9e187772b06b4c7127249d26a6b9ed433e26b4a4227db14d1b729",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

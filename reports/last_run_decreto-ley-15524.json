@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T15:57:16Z",
+  "fecha_scraping": "2026-09-24T16:55:28Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/15524-1984",
-  "sha256_jsonl": "f1047f104a994a83dc685e5a7301f05fb3a7305534f70effba55989ed2906427",
+  "sha256_jsonl": "032e85099396e461c0479cc1d472c37ecd403dd4f2ef76af029619bce388a7a7",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
