@@ -1,6 +1,7 @@
 {
   "name": "normativa-uy-web",
   "private": true,
+  "packageManager": "pnpm@12.6.0",
   "type": "module",
   "scripts": {
     "dev": "astro dev",

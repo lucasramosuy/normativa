@@ -34,15 +34,17 @@ jobs:
           rm -rf data historial && cp -r _api/data data && ls -l data
           if [ -d _api/historial ]; then cp -r _api/historial historial && ls -l historial; else echo "api todavía no tiene historial/"; fi
           rm -rf _api
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
       - name: Install
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Build
-        run: npm run build
+        run: pnpm run build
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           PUBLIC_SENTRY_DSN: ${{ vars.PUBLIC_SENTRY_DSN }}

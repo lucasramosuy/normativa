@@ -68,10 +68,10 @@ El Worker "proxy" está delante de `lucasramos.uy` y hace esto:
 ## Desarrollo
 
 ```bash
-npm install
-npm run data   # baja data/ e historial/ desde la rama api
-npm run dev
-npm run build
+pnpm install
+pnpm run data   # baja data/ e historial/ desde la rama api
+pnpm run dev
+pnpm run build
 ```
 
 ## Publicación
