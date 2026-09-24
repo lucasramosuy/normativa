@@ -122,7 +122,8 @@ def html_a_texto(value: str | None) -> str:
 
 
 def completar_con_datos_abiertos(records: list[dict], report: dict, datos: dict,
-                                 documento: str, url: str) -> tuple[list[dict], dict]:
+                                 documento: str, url: str,
+                                 sin_texto_en_impo: bool = False) -> tuple[list[dict], dict]:
     """Agrega los artículos que la página no muestra, tomándolos del JSON de IMPO.
     Los que sí están en la página se conservan tal cual (misma fuente que el resto)."""
     articulos = datos.get("articulos") or []
@@ -171,7 +172,9 @@ def completar_con_datos_abiertos(records: list[dict], report: dict, datos: dict,
             "en_pagina_pero_no_en_json": solo_en_pagina,
         }, ensure_ascii=False))
     sin_texto = [r["articulo_id"] for r in salida if not r["texto"]]
-    if len(sin_texto) > max(3, len(salida) // 20):
+    # sin_texto_en_impo (en leyes.json): IMPO no publica el texto de esa ley (solo la
+    # imagen del Diario Oficial). Se guardan los artículos vacíos, con sus notas.
+    if not sin_texto_en_impo and len(sin_texto) > max(3, len(salida) // 20):
         raise RuntimeError(f"Demasiados artículos sin texto en {documento}: {sin_texto[:20]}")
 
     report = dict(report)
@@ -371,7 +374,8 @@ def main() -> None:
                 datos = fetch_datos_abiertos(norma["url"], args.user_agent, session)
                 if len(datos.get("articulos") or []) > len(records):
                     records, report = completar_con_datos_abiertos(
-                        records, report, datos, norma["documento"], norma["url"])
+                        records, report, datos, norma["documento"], norma["url"],
+                        norma.get("sin_texto_en_impo", False))
         except Exception as exc:  # noqa: BLE001
             transitorio = es_error_transitorio(exc)
             if transitorio:
