@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import { mapa, LADO } from '../lib/mapa';
+import { fmt } from '../data/normas';
+const base = import.meta.env.BASE_URL;
+const { nodos, enlaces, aisladas } = mapa();
+const pos = new Map(nodos.map((n, i) => [n.n.slug, i]));
+const vecinos = nodos.map(() => new Set<number>());
+for (const e of enlaces) { const a = pos.get(e.a)!, b = pos.get(e.b)!; vecinos[a].add(b); vecinos[b].add(a); }
+const color = (t: string) => t === 'Código' || t === 'Constitución' ? '#176b63' : t === 'Decreto' ? '#e7b84b' : '#8fc3b9';
+// Etiquetas: las más citadas primero; se saltea la que pisaría a otra ya puesta.
+// Dos juegos: uno para pantalla ancha y otro, con letra más grande y menos nombres, para celular.
+function etiquetar(cuantas: number, fs: number, conNodos = true): { x: number; y: number; t: string; ancla: string }[] {
+  const puestas: [number, number, number, number][] = [], out: { x: number; y: number; t: string; ancla: string }[] = [];
+  const cajasNodos = nodos.map(n => [n.x - n.r, n.y - n.r, n.x + n.r, n.y + n.r]);
+  for (const n of [...nodos].sort((a, b) => b.citada - a.citada).slice(0, cuantas * 2)) {
+    if (out.length >= cuantas) break;
+    const w = n.n.corto.length * fs * 0.56 + 6, h = fs * 1.15, g = fs * 0.35;
+    const opciones: [number, number, string][] = [[n.x, n.y - n.r - g, 'middle'], [n.x, n.y + n.r + h, 'middle'], [n.x + n.r + g, n.y + fs * 0.35, 'start'], [n.x - n.r - g, n.y + fs * 0.35, 'end']];
+    for (const [x, y, ancla] of opciones) {
+      const x0 = ancla === 'middle' ? x - w / 2 : ancla === 'start' ? x : x - w, caja: [number, number, number, number] = [x0, y - h + 3, x0 + w, y + 3];
+      if (caja[0] < 0 || caja[2] > LADO || caja[1] < 0 || caja[3] > LADO) continue;
+      const pisa = (p: number[]) => caja[0] < p[2] && caja[2] > p[0] && caja[1] < p[3] && caja[3] > p[1];
+      if (puestas.some(pisa) || (conNodos && cajasNodos.some((c, i) => nodos[i].r > 9 && pisa(c)))) continue;
+      puestas.push(caja); out.push({ x, y, t: n.n.corto, ancla }); break;
+    }
+    // Las tres más citadas llevan nombre sí o sí, aunque roce otro punto.
+    if (conNodos && out.at(-1)?.t !== n.n.corto && nodos.filter(m => m.citada > n.citada).length < 3) {
+      const [e] = etiquetarUna(n, fs, puestas); if (e) out.push(e);
+    }
+  }
+  return out;
+}
+function etiquetarUna(n: typeof nodos[number], fs: number, puestas: [number, number, number, number][]) {
+  const w = n.n.corto.length * fs * 0.56 + 6, h = fs * 1.15, g = fs * 0.35;
+  for (const [x, y, ancla] of [[n.x + n.r + g, n.y + fs * 0.35, 'start'], [n.x - n.r - g, n.y + fs * 0.35, 'end'], [n.x, n.y - n.r - g, 'middle'], [n.x, n.y + n.r + h, 'middle']] as [number, number, string][]) {
+    const x0 = ancla === 'middle' ? x - w / 2 : ancla === 'start' ? x : x - w, caja: [number, number, number, number] = [x0, y - h + 3, x0 + w, y + 3];
+    if (caja[0] < 0 || caja[2] > LADO || puestas.some(p => caja[0] < p[2] && caja[2] > p[0] && caja[1] < p[3] && caja[3] > p[1])) continue;
+    puestas.push(caja); return [{ x, y, t: n.n.corto, ancla }];
+  }
+  return [];
+}
+const etAncho = etiquetar(12, 15), etCelu = etiquetar(6, 30);
+const ranking = [...nodos].sort((a, b) => b.citada - a.citada).slice(0, 10);
+const max = ranking[0].citada;
+---
+<Base title="Mapa de citas · Normativa Uruguay" description="Qué normas del sitio citan a cuáles, en un solo dibujo."><Fragment slot="head"><meta name="robots" content="noindex"/></Fragment>
+<main class="wrap py-16" data-pagefind-ignore="all">
+  <p class="eyebrow">Referencias cruzadas</p>
+  <h1 class="mt-3 text-5xl sm:text-6xl">Mapa de citas</h1>
+  <p class="mt-5 max-w-2xl text-lg text-slate-600">Cada punto es una norma del sitio y cada línea une dos normas cuando los artículos de una citan a los de la otra. Cuanto más grande el punto, más veces la citan. El Código Civil queda en el medio.</p>
+
+  <figure class="soft-card mt-10 overflow-hidden p-2 sm:p-4">
+    <svg id="mapa" viewBox={`0 0 ${LADO} ${LADO}`} class="mx-auto block h-auto w-full max-w-[820px]" role="img" aria-labelledby="mapa-desc">
+      <desc id="mapa-desc">{nodos.length} normas conectadas por citas. Las más citadas: {ranking.slice(0, 5).map(n => n.n.corto).join(', ')}.</desc>
+      <g class="enlaces" stroke="#176b63" stroke-linecap="round">{enlaces.map(e => { const a = nodos[pos.get(e.a)!], b = nodos[pos.get(e.b)!]; return <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} data-a={pos.get(e.a)} data-b={pos.get(e.b)} stroke-opacity={Math.min(0.55, 0.1 + Math.log(e.w) / 12).toFixed(2)} stroke-width={Math.min(4, 0.7 + Math.log(e.w) / 2).toFixed(1)}/>; })}</g>
+      <g class="nodos">{nodos.map((n, i) => <a href={`${base}normas/${n.n.slug}/`} data-i={i} data-v={[...vecinos[i]].join(' ')} data-nombre={n.n.nombre} data-info={`Citada ${fmt(n.citada)} ${n.citada === 1 ? 'vez' : 'veces'} desde ${n.citan} ${n.citan === 1 ? 'norma' : 'normas'} · cita a ${n.cita} ${n.cita === 1 ? 'norma' : 'normas'}`}><title>{n.n.corto}</title><circle cx={n.x} cy={n.y} r={Math.max(n.r + 6, 14)} fill="transparent" class="toque"/><circle cx={n.x} cy={n.y} r={n.r} fill={color(n.n.tipo)} stroke="#fff" stroke-width="1.5"/></a>)}</g>
+      <g class="etiquetas" font-family="Inter Variable, sans-serif" font-weight="650" fill="#17211d" stroke="#fff" stroke-width="4" paint-order="stroke" pointer-events="none"><g class="et-ancho">{etAncho.map(e => <text x={e.x} y={e.y} text-anchor={e.ancla}>{e.t}</text>)}</g><g class="et-celu">{etCelu.map(e => <text x={e.x} y={e.y} text-anchor={e.ancla}>{e.t}</text>)}</g></g>
+    </svg>
+    <figcaption class="flex flex-col gap-3 border-t border-black/10 px-3 pb-2 pt-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
+      <p id="mapa-info" aria-live="polite" class="min-w-0">Tocá un punto para ver con qué normas se conecta.</p>
+      <ul class="flex shrink-0 flex-wrap gap-x-4 gap-y-1"><li class="flex items-center gap-1.5"><span class="inline-block size-3 rounded-full bg-forest"></span>Constitución y códigos</li><li class="flex items-center gap-1.5"><span class="inline-block size-3 rounded-full bg-[#8fc3b9]"></span>Leyes</li><li class="flex items-center gap-1.5"><span class="inline-block size-3 rounded-full bg-ceibo"></span>Decretos</li></ul>
+    </figcaption>
+  </figure>
+
+  <section class="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-14">
+    <div>
+      <h2 class="text-3xl">Las más citadas desde otras normas</h2>
+      <ol class="mt-6 grid gap-3">{ranking.map((n, i) => <li><a class="group grid grid-cols-[1.5rem_minmax(0,1fr)_auto] items-baseline gap-x-3" href={`${base}normas/${n.n.slug}/`}><span class="text-sm font-semibold text-slate-400">{i + 1}</span><span class="truncate font-serif text-lg group-hover:text-forest">{n.n.corto}</span><span class="text-sm text-slate-600">{fmt(n.citada)}</span><span></span><span class="col-span-2 mt-1 block h-1.5 rounded-full bg-mint"><span class="block h-full rounded-full bg-forest" style={`width:${Math.max(2, (n.citada / max) * 100).toFixed(1)}%`}></span></span></a></li>)}</ol>
+    </div>
+    <aside class="soft-card self-start p-6 text-sm leading-6 text-slate-600">
+      <h2 class="text-xl text-ink">Cómo se arma</h2>
+      <p class="mt-3">Sale de las mismas referencias cruzadas que ves en cada artículo ("Citado por"): menciones explícitas en el texto y remisiones de las notas oficiales de IMPO. Los números cuentan artículos citados.</p>
+      <p class="mt-3">{aisladas.length} normas no aparecen porque no citan ni son citadas por otras del sitio (o solo se citan entre ellas).</p>
+      <details class="mt-3"><summary class="cursor-pointer font-semibold text-forest">Ver cuáles</summary><ul class="mt-2 grid gap-1">{aisladas.map(n => <li><a class="hover:text-forest" href={`${base}normas/${n.slug}/`}>{n.corto}</a></li>)}</ul></details>
+    </aside>
+  </section>
+</main>
+<style>
+  #mapa .et-ancho text{font-size:15px}
+  #mapa .et-celu{display:none}
+  #mapa .et-celu text{font-size:30px;stroke-width:7}
+  #mapa a{cursor:pointer}
+  #mapa a:focus-visible circle{stroke:#e7b84b;stroke-width:4}
+  #mapa.sel line{stroke-opacity:.04}
+  #mapa.sel line.on{stroke-opacity:.8}
+  #mapa.sel circle{opacity:.25}
+  #mapa circle.toque{opacity:0!important}
+  #mapa.sel a.on circle{opacity:1}
+  #mapa.sel a.yo circle{stroke:#17211d;stroke-width:2.5}
+  @media (max-width:640px){#mapa .et-ancho{display:none}#mapa .et-celu{display:inline}}
+</style>
+<script>
+  const svg = document.getElementById('mapa')!, info = document.getElementById('mapa-info')!;
+  const nodos = [...svg.querySelectorAll<SVGAElement>('.nodos a')], lineas = [...svg.querySelectorAll<SVGLineElement>('.enlaces line')];
+  const texto = info.innerHTML; let actual = -1;
+  function limpiar() { svg.classList.remove('sel'); svg.querySelectorAll('.on,.yo').forEach(e => e.classList.remove('on', 'yo')); info.innerHTML = texto; actual = -1; }
+  nodos.forEach((a, i) => a.addEventListener('click', ev => {
+    if (actual === i) return; // segundo toque: va a la norma
+    ev.preventDefault(); limpiar(); actual = i; svg.classList.add('sel');
+    a.classList.add('on', 'yo'); (a.dataset.v || '').split(' ').filter(Boolean).forEach(v => nodos[+v].classList.add('on'));
+    lineas.forEach(l => { if (+l.dataset.a! === i || +l.dataset.b! === i) l.classList.add('on'); });
+    const link = document.createElement('a'); link.href = a.getAttribute('href')!; link.className = 'font-semibold text-forest'; link.textContent = 'Ver norma →';
+    info.replaceChildren(Object.assign(document.createElement('b'), { className: 'text-ink', textContent: a.dataset.nombre }), document.createElement('br'), document.createTextNode(a.dataset.info + ' · '), link);
+  }));
+  svg.addEventListener('click', ev => { if (!(ev.target as Element).closest('a')) limpiar(); });
+</script>
+</Base>
