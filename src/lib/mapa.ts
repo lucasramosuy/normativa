@@ -97,4 +97,4 @@ export function mapa() {
   }));
   cache = { nodos, enlaces, aisladas };
   return cache;
-  }
+}
