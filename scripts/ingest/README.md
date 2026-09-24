@@ -45,6 +45,9 @@ Casos especiales soportados:
   muestra los artículos modificados o derogados. Para esas leyes se baja también
   el JSON de datos abiertos (`?json=true`) y, si trae más artículos, se agregan
   los que faltan. El reporte los lista en `articulos_desde_datos_abiertos`.
+  Si IMPO no publica el texto de una ley (solo la imagen del Diario Oficial,
+  como la 5.350), se marca con `"sin_texto_en_impo": true` en `leyes.json` y se
+  guardan sus artículos vacíos, con las notas.
 
 Si IMPO se cae a mitad de corrida: tras 3 errores seguidos (5xx, timeout o
 conexión) el script espera `--pausa-minutos` (10 por defecto) y reintenta esas
