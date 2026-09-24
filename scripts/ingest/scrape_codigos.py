@@ -20,6 +20,7 @@ Salida por código:
 from __future__ import annotations
 
 import argparse
+import collections
 import hashlib
 import json
 import re
@@ -37,6 +38,17 @@ ARTICLE_RE = re.compile(r"^Artículo\s+(\S+)$", re.IGNORECASE)
 SPACE_RE = re.compile(r"[ \t]+")
 ANCHOR_RE = re.compile(r"^\d")  # ids de ancla que empiezan con dígito (excluye "TITULO")
 FECHA_RE = re.compile(r"(\d{2}/\d{2}/\d{4})")
+NOTA_PREFIJO_RE = re.compile(r"^\(\*\)\s*Notas:\s*", re.IGNORECASE)
+
+# Para leyes de 1830-1924 la página de IMPO "detalla únicamente los artículos con impactos
+# de derogación o modificación" (ayudaDocumentos.html); el texto completo está en los
+# datos abiertos (?json=true). Solo se consulta el JSON para esas leyes, para no duplicar
+# requests (y Crawl-Delay) en todas las demás.
+ANIO_PAGINA_PARCIAL = 1925
+
+# Resiliencia ante caídas de IMPO: tras FALLAS_SEGUIDAS errores transitorios seguidos
+# (5xx, timeout, conexión) se pausa y se reintentan esas normas.
+FALLAS_SEGUIDAS = 3
 
 # Jerarquía de encabezados de los códigos, de mayor a menor nivel.
 NIVELES = ["parte", "libro", "titulo_norma", "capitulo", "seccion"]
@@ -86,6 +98,97 @@ def fetch_norma(url: str, user_agent: str, session: requests.Session) -> tuple[s
     response.raise_for_status()
     response.encoding = response.encoding or "ISO-8859-1"
     return response.text, delay
+
+
+def fetch_datos_abiertos(url: str, user_agent: str, session: requests.Session) -> dict:
+    """JSON de datos abiertos de IMPO (misma URL + ?json=true). Viene en ISO-8859-1 y con
+    saltos de línea crudos dentro de los strings, por eso strict=False."""
+    json_url = f"{url}?json=true"
+    robots = robots_de(session)
+    if not robots.can_fetch(user_agent, json_url):
+        raise RuntimeError(f"robots.txt no permite descargar {json_url}")
+    delay = max(10, int(robots.crawl_delay(user_agent) or robots.crawl_delay("*") or 10))
+    time.sleep(delay)
+    response = session.get(json_url, timeout=(30, 120))
+    response.raise_for_status()
+    return json.loads(response.content.decode(response.encoding or "ISO-8859-1"), strict=False)
+
+
+def html_a_texto(value: str | None) -> str:
+    if not value:
+        return ""
+    return clean_text(BeautifulSoup(value.replace("<br>", "\n").replace("<br/>", "\n"),
+                                    "html.parser").get_text())
+
+
+def completar_con_datos_abiertos(records: list[dict], report: dict, datos: dict,
+                                 documento: str, url: str) -> tuple[list[dict], dict]:
+    """Agrega los artículos que la página no muestra, tomándolos del JSON de IMPO.
+    Los que sí están en la página se conservan tal cual (misma fuente que el resto)."""
+    articulos = datos.get("articulos") or []
+    por_id = {r["articulo_id"]: r for r in records}
+    base = records[0] if records else {}
+    ids_json = []
+    salida = []
+    for art in articulos:
+        display = str(art.get("nroArticulo", "")).strip().rstrip("º°")
+        if not display:
+            raise RuntimeError(f"Artículo sin número en el JSON de IMPO de {documento}")
+        id_norm = normalizar_id_articulo(display)
+        ids_json.append(id_norm)
+        if id_norm in por_id:
+            salida.append(por_id[id_norm])
+            continue
+        text = html_a_texto(art.get("textoArticulo"))
+        # En el JSON, "(*)" marca que el artículo tiene notas; en la página no forma parte del texto.
+        text = re.sub(r"\s*\(\*\)\s*$", "", text).strip()
+        nota = NOTA_PREFIJO_RE.sub("", html_a_texto(art.get("notasArticulo")))
+        salida.append({
+            "documento": documento,
+            "articulo": int(display) if display.isdigit() else display,
+            "articulo_id": id_norm,
+            "titulo": f"Artículo {display}",
+            "libro": None,
+            "titulo_norma": None,
+            "capitulo": None,
+            "seccion": None,
+            "texto": text,
+            "notas_oficiales": nota or None,
+            "url_fuente": f"{url}/{id_norm}",
+            "fecha_promulgacion": base.get("fecha_promulgacion"),
+            "fecha_publicacion": base.get("fecha_publicacion"),
+            "fecha_scraping": report["fecha_scraping"],
+            "estado_actual": report["estado_actual"],
+            "hash_contenido": hashlib.sha256(text.encode("utf-8")).hexdigest(),
+        })
+
+    duplicados = sorted({i for i in ids_json if ids_json.count(i) > 1})
+    solo_en_pagina = sorted(set(por_id) - set(ids_json))
+    if duplicados or solo_en_pagina:
+        raise RuntimeError(json.dumps({
+            "documento": documento,
+            "duplicados_en_json": duplicados,
+            "en_pagina_pero_no_en_json": solo_en_pagina,
+        }, ensure_ascii=False))
+    sin_texto = [r["articulo_id"] for r in salida if not r["texto"]]
+    if len(sin_texto) > max(3, len(salida) // 20):
+        raise RuntimeError(f"Demasiados artículos sin texto en {documento}: {sin_texto[:20]}")
+
+    report = dict(report)
+    report["articulos_esperados_segun_impo"] = len(salida)
+    report["articulos_guardados"] = len(salida)
+    report["sin_texto_en_impo"] = sin_texto
+    report["articulos_desde_datos_abiertos"] = [i for i in ids_json if i not in por_id]
+    return salida, report
+
+
+def es_error_transitorio(exc: Exception) -> bool:
+    """Caída o sobrecarga de IMPO (no un cambio en la página)."""
+    if isinstance(exc, (requests.Timeout, requests.ConnectionError)):
+        return True
+    if isinstance(exc, requests.HTTPError) and exc.response is not None:
+        return exc.response.status_code >= 500
+    return False
 
 
 def actualizar_niveles(niveles: dict, heading_text: str) -> None:
@@ -236,6 +339,10 @@ def main() -> None:
     parser.add_argument("--solo", default=None, help="Correr un solo código por id (ej. codigo-civil)")
     parser.add_argument("--tolerante", action="store_true",
                         help="Si una norma falla, conservar su archivo anterior y seguir con las demás")
+    parser.add_argument("--pausa-minutos", type=float, default=10,
+                        help=f"Espera tras {FALLAS_SEGUIDAS} errores seguidos de IMPO (5xx/timeout) antes de reintentar")
+    parser.add_argument("--max-pausas", type=int, default=3,
+                        help="Máximo de pausas por corrida (para no pasarse del timeout del workflow)")
     args = parser.parse_args()
     if "http" not in args.user_agent.lower():
         raise SystemExit("--user-agent debe incluir una URL de contacto identificable")
@@ -251,23 +358,55 @@ def main() -> None:
     session.headers.update({"User-Agent": args.user_agent, "Accept-Language": "es-UY,es;q=0.9"})
 
     errores = []
-    for norma in normas:
+    errores_por_id: dict[str, str] = {}
+    racha: list[dict] = []  # normas con error transitorio seguidas, pendientes de reintento
+    pausas = 0
+    pendientes = collections.deque(normas)
+    while pendientes:
+        norma = pendientes.popleft()
         try:
             html, delay = fetch_norma(norma["url"], args.user_agent, session)
             records, report = parse_norma(html, norma["documento"], norma["url"], scraped_at)
+            if (norma.get("anio") or ANIO_PAGINA_PARCIAL) < ANIO_PAGINA_PARCIAL:
+                datos = fetch_datos_abiertos(norma["url"], args.user_agent, session)
+                if len(datos.get("articulos") or []) > len(records):
+                    records, report = completar_con_datos_abiertos(
+                        records, report, datos, norma["documento"], norma["url"])
         except Exception as exc:  # noqa: BLE001
+            transitorio = es_error_transitorio(exc)
+            if transitorio:
+                racha.append(norma)
+            if transitorio and pausas < args.max_pausas and (
+                    len(racha) >= FALLAS_SEGUIDAS or not args.tolerante):
+                # IMPO parece caído: esperar y reintentar las normas de la racha.
+                pausas += 1
+                print(f"PAUSA {pausas}/{args.max_pausas}: {len(racha)} fallas seguidas de IMPO "
+                      f"({exc}); reintento en {args.pausa_minutos} min")
+                time.sleep(args.pausa_minutos * 60)
+                pendientes.extendleft(reversed(racha))
+                racha.clear()
+                continue
             if not args.tolerante:
                 raise
             # Se conserva el archivo anterior de esa norma y se sigue con las demás.
-            errores.append({"id": norma["id"], "error": str(exc)[:500]})
+            if not transitorio:
+                errores.append({"id": norma["id"], "error": str(exc)[:500]})
+            errores_por_id[norma["id"]] = str(exc)[:500]
             print(f"ERROR: {norma['id']}: {exc}")
             continue
+        for fallida in racha:  # fallas sueltas: IMPO respondió después, no se reintentan
+            errores.append({"id": fallida["id"], "error": errores_por_id[fallida["id"]]})
+        racha.clear()
         report["crawl_delay_segundos"] = delay
         report["user_agent"] = args.user_agent
         write_outputs(records, report, Path(f"data/{norma['id']}.jsonl"),
                       Path(f"reports/last_run_{norma['id']}.json"))
-        print(f"OK: {norma['id']}: {len(records)} artículos")
+        extra = report.get("articulos_desde_datos_abiertos")
+        print(f"OK: {norma['id']}: {len(records)} artículos"
+              + (f" ({len(extra)} desde datos abiertos)" if extra else ""))
 
+    for fallida in racha:
+        errores.append({"id": fallida["id"], "error": errores_por_id[fallida["id"]]})
     if errores:
         Path("reports").mkdir(exist_ok=True)
         nombre = Path(args.config).stem
