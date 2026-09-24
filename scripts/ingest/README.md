@@ -28,8 +28,10 @@ Qué hace por código:
 3. Parsea artículo por artículo, con la ruta de encabezados vigente
    (LIBRO / TITULO / CAPITULO / SECCION) y las notas oficiales.
 4. Valida contra el índice oficial de IMPO (las anclas de la página):
-   sin faltantes, sin duplicados, sin artículos inesperados, sin textos
-   vacíos. Si algo no cierra, falla y no escribe nada.
+   sin faltantes, sin duplicados, sin artículos inesperados. Si algo no
+   cierra, falla y no escribe nada. Los artículos que IMPO publica sin texto
+   o solo con su nota se guardan vacíos (con la nota) y se listan en
+   `sin_texto_en_impo`; si son demasiados, falla.
 5. Escribe el JSONL (claves ordenadas) y el reporte con el sha256 del dataset.
 
 Casos especiales soportados:
@@ -55,10 +57,15 @@ Sumar una entrada a `codigos.json` con el `id` (slug para nombres de
 archivo), el `documento` (nombre oficial) y la URL "Toda la Norma" de IMPO.
 Antes de commitear, correr con `--solo` y revisar el reporte.
 
+Las leyes y decretos van en `leyes.json` (mismos campos, más `tipo`, `numero`,
+`anio`, `corto`, `titulo_impo` y `area`), una entrada por línea. `anio` también
+decide si se consultan los datos abiertos (leyes anteriores a 1925). Cada ley
+suma unos 15 s a la revisión semanal, que tiene un límite de 240 min.
+
 ## Revisión semanal - `scrape-semanal.yml` + `diff_datos.py`
 
 Todos los lunes (06:17 de Montevideo, o a mano con "Run workflow") el workflow
-"Revisión semanal de IMPO" corre los dos scrapers y compara el resultado con lo
+"Revisión semanal de IMPO" corre los scrapers (Constitución, códigos y, con `--tolerante`, las leyes de `leyes.json`) y compara el resultado con lo
 que hay en `main`, ignorando `fecha_scraping`. Si no cambió ningún artículo no
 hace nada. Si cambió algo, abre un PR contra `main` con el resumen de artículos
 modificados, agregados y eliminados (con el diff del texto). No publica en
