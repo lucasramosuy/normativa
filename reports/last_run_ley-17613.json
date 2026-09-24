@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fecha_scraping": "2026-09-24T01:06:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17613-2002",
-  "sha256_jsonl": "dffbf187d34989bb99b1746c2634290318383e5d7848e50d82f95278f926f79a",
+  "sha256_jsonl": "c66afa5a286234d176d00449b4a596d5b82207bdb02c091c0a6e80d5f06fdfff",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

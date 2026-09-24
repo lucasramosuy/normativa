@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-23T23:56:22Z",
+  "fecha_scraping": "2026-09-24T01:06:11Z",
   "fuente": "https://www.impo.com.uy/bases/decretos/500-1991",
-  "sha256_jsonl": "74056c983509f2a67cfca162555cd1c33ba87e51ba840bd0fbd01e824dbf403c",
+  "sha256_jsonl": "5e3fef94e53813864f381b965879db184ef666e5274faa9c56208f4c0e2fe7de",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
