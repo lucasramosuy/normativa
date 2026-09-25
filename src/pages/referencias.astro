@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+const base=import.meta.env.BASE_URL;
+---
+<Base title="Mis referencias · Normativa Uruguay" description="Reuní y exportá referencias de normas uruguayas para tu actividad."><Fragment slot="head"><meta name="robots" content="noindex"/></Fragment>
+<main class="wrap py-12"><p class="eyebrow">Mesa de lectura</p><h1 class="mt-2 text-4xl md:text-5xl">Mis referencias</h1><p class="mt-4 max-w-[64ch] leading-7 text-slate-600">Guardadas solo en este navegador. Revisá cada norma y sus datos en IMPO antes de entregar la actividad. Formato jurídico híbrido APA/Bluebook adaptado a Uruguay.</p>
+<div class="mt-7 flex flex-wrap gap-2"><button type="button" data-copy-all class="rounded-xl bg-forest px-4 py-2.5 text-sm font-bold text-white">Copiar lista</button><button type="button" data-export class="rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm font-semibold">Exportar .txt</button><a href={`${base}buscar/`} class="rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm font-semibold">Buscar otro artículo</a></div>
+<p data-empty class="soft-card mt-8 p-6 text-slate-600">Todavía no guardaste referencias. Abrí un artículo y elegí “+ Mis referencias”.</p><ol data-list class="mt-7 grid gap-3"></ol><p class="mt-7 text-xs text-slate-500">Las referencias guardadas son una copia local; podrían quedar desactualizadas si cambia el texto oficial. Abrí cada artículo para cotejarlo y volver a guardarlo.</p></main>
+<script>
+import {getRefs,setRefs} from '../lib/mesa';
+const base=import.meta.env.BASE_URL;
+const list=document.querySelector<HTMLOListElement>('[data-list]')!;
+const escape=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
+const exportText=()=>getRefs().map(x=>x.texto).join('\n\n');
+function render(){const arr=getRefs();document.querySelector<HTMLElement>('[data-empty]')!.hidden=arr.length>0;
+list.replaceChildren();arr.forEach(item=>{const li=document.createElement('li');li.className='soft-card p-5';const title=document.createElement('a');title.className='text-sm font-semibold text-forest hover:underline';const [slug,id]=item.key.split('/');title.href=`${base}normas/${slug}/articulo/${id}/`;title.textContent=item.label;const p=document.createElement('p');p.className='mt-2 font-serif leading-7 break-words';p.textContent=item.texto;const note=document.createElement('p');note.className='mt-2 text-xs text-slate-600';note.textContent='Cita en texto: '+item.enTexto;const warning=document.createElement('p');warning.className='mt-2 text-xs text-amber-900';warning.textContent=item.avisos?.join(' ')||'';const b=document.createElement('button');b.type='button';b.className='mt-3 text-xs font-semibold text-forest';b.textContent='Quitar';b.setAttribute('aria-label',`Quitar ${item.label}`);b.onclick=()=>{setRefs(getRefs().filter(x=>x.key!==item.key));render()};li.append(title,p,note,warning,b);list.append(li)})}
+document.querySelector<HTMLButtonElement>('[data-copy-all]')!.onclick=async e=>{const button=e.currentTarget as HTMLButtonElement;try{await navigator.clipboard.writeText(exportText());button.textContent='Copiado ✓';setTimeout(()=>button.textContent='Copiar lista',1800)}catch{button.textContent='No se pudo copiar'}};
+document.querySelector<HTMLButtonElement>('[data-export]')!.onclick=()=>{const blob=new Blob([exportText()+'\n'],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='normativa-referencias.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000)};
+window.addEventListener('storage',render);render();
+</script>
+</Base>
