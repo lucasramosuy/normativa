@@ -1,5 +1,6 @@
 ---
 import Base from '../../../../layouts/Base.astro';
+import {referenciaLegal} from '../../../../lib/referencias';
 import Icon from '../../../../components/Icon.astro';
 import Search from '../../../../components/Search.astro';
 import Historial from '../../../../components/Historial.astro';
@@ -12,6 +13,7 @@ const label=labelOf(article);const levels=headingsOf(article).map(splitHeading);
 const {rubro,body}=splitTitle(article.texto);const blocks=toBlocks(body);
 const derogado=/^\s*\(?derogad/i.test(article.texto);
 const rubroOf=(a:any)=>splitTitle(a.texto).rubro;
+const legal=referenciaLegal(norma,article);
 const cita=norma.numero?`${norma.tipo} ${norma.numero}, artículo ${label}.`:`${norma.nombre}, artículo ${label}.`;
 const fecha=(article as any).fecha_scraping?new Date((article as any).fecha_scraping).toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'}):null;
 const notas=lineasNotas(article.notas_oficiales);
@@ -26,14 +28,19 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
 <main class="wrap pb-20 pt-8">
   <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><nav class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500" aria-label="Ruta"><a class="hover:text-forest" href={base}>Inicio</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}explorar/`}>Explorar</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}normas/${slug}/`}>{norma.corto}</a><span aria-hidden="true">›</span><span class="text-slate-700">Artículo {label}</span></nav><div class="w-full md:max-w-md"><Search compact norma={slug} label={`Buscar en ${norma.corto}`} placeholder={`Buscar en ${norma.corto}…`}/></div></div>
 
-  <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14">
-    <article data-pagefind-body={quitado?undefined:true}>
+  <nav class="mesa-rail mt-7" data-pagefind-ignore aria-label="Mesa de lectura" data-mesa-rail data-key={`${slug}/${idOf(article)}`} data-label={`${norma.corto} · art. ${label}`}>
+    <span class="mesa-rail-title">ABIERTOS · <span data-mesa-count>1</span></span><div class="mesa-tabs" data-mesa-tabs></div>
+    <button type="button" class="mesa-add" data-mesa-add>+ Abrir artículo</button>
+  </nav>
+  <div class="mt-8 grid min-w-0 gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14">
+    <article class="min-w-0" data-pagefind-body={quitado?undefined:true}>
       <header class="border-b border-black/10 pb-8">
         <div class="flex flex-wrap items-center gap-3"><a class="eyebrow hover:underline" href={`${base}normas/${slug}/`} data-pagefind-filter="norma">{norma.corto}</a><span class={`chip ${derogado||quitado?'!border-red-200 !bg-red-50 !text-red-800':''}`} data-pagefind-ignore>{quitado?'Ya no figura en IMPO':derogado?'Derogado':'Vigente · texto actualizado'}</span></div>
         <h1 class="mt-4 text-5xl leading-none tracking-[-.02em] md:text-6xl" data-pagefind-meta="title">Artículo {label}</h1>
         {rubro&&<p class="mt-4 font-serif text-2xl italic text-forest md:text-[1.7rem]">{rubro}</p>}
         {levels.length>0&&<ol class="mt-7 grid gap-2 text-sm" data-pagefind-ignore>{levels.map((l,i)=><li class="flex items-baseline gap-3" style={`padding-left:${i*0.9}rem`}><span class="w-24 shrink-0 text-[.7rem] font-bold uppercase tracking-[.12em] text-slate-500">{l.level}</span><span class="line-clamp-2 text-[.8rem] uppercase tracking-[.06em] text-slate-600">{l.name||'—'}</span></li>)}</ol>}
-        <div class="mt-6 flex flex-wrap gap-2 lg:hidden" data-pagefind-ignore><a class="inline-flex items-center gap-2 rounded-xl bg-forest px-4 py-2.5 text-sm font-bold text-white" href={article.url_fuente} target="_blank" rel="noreferrer">Ver en IMPO<Icon name="external" class="size-4"/></a><button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold" data-copy="link">Copiar enlace</button><button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold" data-copy={cita}>Copiar cita</button>{!quitado&&<button type="button" class="ficha-btn" data-ficha={`${slug}/${idOf(article)}`}>+ Ficha</button>}</div>
+        <div class="mt-6 flex flex-wrap gap-2 lg:hidden" data-pagefind-ignore><a class="inline-flex items-center gap-2 rounded-xl bg-forest px-4 py-2.5 text-sm font-bold text-white" href={article.url_fuente} target="_blank" rel="noreferrer">Ver en IMPO<Icon name="external" class="size-4"/></a><button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold" data-copy="link">Copiar enlace</button><button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold" data-copy={legal.enTexto}>Copiar cita en texto</button>{!quitado&&<button type="button" class="ficha-btn" data-ficha={`${slug}/${idOf(article)}`}>+ Ficha</button>}</div>
+        <div class="lg:hidden mt-4 rounded-xl border border-black/10 bg-white p-4" data-pagefind-ignore><h2 class="font-serif text-xl">Citar este artículo</h2><p class="legal-ref-text mt-2 rounded-lg bg-ivory p-3 font-serif text-sm leading-6">{legal.texto}</p><p class="mt-2 text-xs text-slate-600">Cita en texto: {legal.enTexto}</p><div class="mt-3 flex flex-wrap gap-2"><button type="button" class="copy-btn rounded-xl bg-forest px-3 py-2 text-xs font-semibold text-white" data-copy={legal.texto}>Copiar referencia</button><button type="button" class="ref-add rounded-xl border border-black/10 bg-white px-3 py-2 text-xs font-semibold" data-legal-key={`${slug}/${idOf(article)}`} data-legal-label={`${norma.corto} · art. ${label}`} data-legal-texto={legal.texto} data-legal-en-texto={legal.enTexto} data-legal-avisos={JSON.stringify(legal.avisos)} data-legal-fuente={legal.fuente}>+ Mis referencias</button><a class="rounded-xl border border-black/10 px-3 py-2 text-xs font-semibold text-forest" href={`${base}referencias/`}>Ver referencias · <span data-refs-count>0</span></a></div>{legal.avisos.length>0&&<p class="mt-2 text-xs text-slate-600">Datos por verificar: {legal.avisos.join(' ')}</p>}</div>
       </header>
 
       {quitado&&<div class="mt-8 max-w-[68ch] rounded-2xl border border-red-200 bg-red-50 p-5 text-sm leading-6 text-red-900" role="note" data-pagefind-ignore><b>Este artículo ya no figura en IMPO desde el {fechaLarga(quitado)}.</b> Se muestra el último texto publicado, solo como referencia. Consultá IMPO para la situación actual.</div>}
@@ -58,10 +65,18 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
         <a class="flex items-center justify-between gap-3 rounded-xl bg-forest px-4 py-3.5 font-bold text-white transition hover:bg-[#12564f]" href={article.url_fuente} target="_blank" rel="noreferrer"><span><small class="block text-[.7rem] font-semibold uppercase tracking-[.12em] text-white/70">Fuente oficial</small>Ver en IMPO</span><Icon name="external" class="size-5"/></a>
         <div class="mt-3 grid grid-cols-2 gap-2">
           <button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold text-ink transition hover:border-forest hover:text-forest" data-copy="link">Copiar enlace</button>
-          <button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold text-ink transition hover:border-forest hover:text-forest" data-copy={cita}>Copiar cita</button>
+          <button type="button" class="copy-btn rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold text-ink transition hover:border-forest hover:text-forest" data-copy={legal.enTexto}>Copiar cita en texto</button>
           {!quitado&&<button type="button" class="ficha-btn col-span-2" data-ficha={`${slug}/${idOf(article)}`}>+ Ficha</button>}
         </div>
-        <p class="mt-4 rounded-lg bg-ivory px-3 py-2 font-serif text-[.95rem] leading-6 text-slate-700">{cita}</p>
+        <section class="legal-ref mt-5" aria-label="Referencia jurídica" data-legal-key={`${slug}/${idOf(article)}`} data-legal-label={`${norma.corto} · art. ${label}`} data-legal-texto={legal.texto} data-legal-en-texto={legal.enTexto} data-legal-avisos={JSON.stringify(legal.avisos)} data-legal-fuente={legal.fuente}>
+          <h2 class="font-serif text-xl">Citar este artículo</h2><p class="mt-1 text-xs leading-5 text-slate-500">Referencia jurídica adaptada para trabajo en formato APA 7</p>
+          <p class="legal-ref-text mt-3 rounded-lg bg-ivory p-3 font-serif text-sm leading-6" data-ref-preview>{legal.texto}</p>
+          <div class="mt-3 grid grid-cols-2 gap-2"><button type="button" class="copy-btn rounded-xl bg-forest px-2 py-2.5 text-xs font-bold text-white" data-copy={legal.texto}>Copiar referencia</button><button type="button" class="ref-add rounded-xl border border-black/10 bg-white px-2 py-2.5 text-xs font-semibold">+ Mis referencias</button></div>
+          <p class="mt-3 text-xs text-slate-600">Cita en texto: {legal.enTexto}</p>
+          <p class="mt-4 text-xs text-slate-600"><a class="font-semibold text-forest hover:underline" href={`${base}referencias/`}>Mis referencias · <span data-refs-count>0</span> ↗</a></p>
+          {legal.avisos.length>0&&<details class="mt-3 text-xs leading-5 text-slate-600"><summary class="cursor-pointer font-semibold">Datos a verificar ({legal.avisos.length})</summary><ul class="mt-2 list-disc pl-4">{legal.avisos.map(x=><li>{x}</li>)}</ul></details>}
+          <p class="mt-3 text-[.7rem] leading-4 text-slate-500">Formato legal híbrido APA/Bluebook. Revisá fecha, versión y origen en IMPO antes de entregar.</p>
+        </section>
         <dl class="mt-4 grid gap-2 border-t border-black/10 pt-4 text-sm">
           {article.fecha_promulgacion&&<div class="flex justify-between gap-3"><dt class="text-slate-500">Promulgación</dt><dd class="font-medium">{article.fecha_promulgacion}</dd></div>}
           {article.fecha_publicacion&&<div class="flex justify-between gap-3"><dt class="text-slate-500">Publicación</dt><dd class="font-medium">{article.fecha_publicacion}</dd></div>}
@@ -73,7 +88,23 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
   </div>
 </main>
 <script>
-import {wireFichaButtons} from '../../../../lib/ficha';wireFichaButtons();
+import {wireFichaButtons} from '../../../../lib/ficha';
+import {addMesa,getMesa,setMesa,getRefs,addRef} from '../../../../lib/mesa';
+wireFichaButtons();
+const rail=document.querySelector<HTMLElement>('[data-mesa-rail]')!;
+const key=rail.dataset.key!,title=rail.dataset.label!,base=import.meta.env.BASE_URL;
+addMesa({key,label:title});
+function paintMesa(){const arr=getMesa();rail.querySelector<HTMLElement>('[data-mesa-count]')!.textContent=String(arr.length);
+  const list=rail.querySelector<HTMLElement>('[data-mesa-tabs]')!;list.replaceChildren();
+  arr.forEach(item=>{const row=document.createElement('span');row.className='mesa-tab'+(item.key===key?' active':'');const link=document.createElement('a');link.href=`${base}normas/${item.key}/`;link.textContent=item.label;link.setAttribute('aria-current',item.key===key?'page':'false');row.append(link);
+  const close=document.createElement('button');close.type='button';close.textContent='×';close.setAttribute('aria-label',`Cerrar ${item.label}`);close.onclick=()=>{setMesa(getMesa().filter(x=>x.key!==item.key));paintMesa()};row.append(close);list.append(row)});
+}
+paintMesa();
+rail.querySelector<HTMLButtonElement>('[data-mesa-add]')!.onclick=()=>{location.href=`${base}buscar/`};
+// Clicking any article link keeps its original URL while adding it to this browser's reading rail.
+document.addEventListener('click',e=>{const link=(e.target as Element).closest<HTMLAnchorElement>('a[href]');if(!link)return;const url=new URL(link.href);if(url.origin!==location.origin)return;const m=url.pathname.match(/\/normativa\/normas\/([a-z0-9-]+)\/articulo\/([a-z0-9-]+)\/?$/);if(m)addMesa({key:`${m[1]}/${m[2]}`,label:link.textContent?.trim().slice(0,65)||`Artículo ${m[2]}`})},true);
+function paintRefs(){document.querySelectorAll<HTMLElement>('[data-refs-count]').forEach(el=>el.textContent=String(getRefs().length))}
+paintRefs();document.querySelectorAll<HTMLButtonElement>('.ref-add').forEach(btn=>btn.onclick=()=>{const node=btn.closest<HTMLElement>('[data-legal-key]')!;const k=node.dataset.legalKey!;addRef({key:k,label:node.dataset.legalLabel!,texto:node.dataset.legalTexto!,enTexto:node.dataset.legalEnTexto!,avisos:JSON.parse(node.dataset.legalAvisos||'[]'),fuente:node.dataset.legalFuente||''});btn.textContent='✓ En mis referencias';paintRefs()});
 document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach(btn=>{const orig=btn.textContent;btn.addEventListener('click',async()=>{const v=btn.dataset.copy==='link'?location.href.split('#')[0]:btn.dataset.copy||'';try{await navigator.clipboard.writeText(v);btn.textContent='Copiado ✓';}catch{btn.textContent='No se pudo copiar';}setTimeout(()=>btn.textContent=orig,1800);});});
 </script>
 </Base>
