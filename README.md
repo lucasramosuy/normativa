@@ -71,7 +71,7 @@ python scripts/ingest/scrape_codigos.py --tolerante --config scripts/ingest/leye
 
 `codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma alcanza con agregarla a la lista (y a `src/data/leyes.json` en la rama `www`); el sitio la muestra cuando sus datos llegan a `api`. Las leyes se suman por tandas, una tanda por PR de datos.
 
-Al 24/09/2026: la Constitución, 12 códigos y 181 leyes y decretos en `leyes.json`. En `api` hay 149 publicadas; el resto entra con los próximos PR de datos.
+Al 27/09/2026: la Constitución, 12 códigos y 208 leyes y decretos en `leyes.json`, todos publicados en `api` (221 normas en total).
 
 Tiempo: cada ley o decreto lleva unos 15 s (Crawl-Delay de 10 s más la respuesta de IMPO) y los códigos unos 8 min. El workflow tiene un límite de 240 min, que alcanza para unas 900 normas. Si la lista se acerca a eso, hay que partir la revisión en varios días.
 
@@ -84,7 +84,7 @@ Tiempo: cada ley o decreto lleva unos 15 s (Crawl-Delay de 10 s más la respuest
 
 ## Pendientes (roadmap)
 
-Actualizado el 24/09/2026.
+Actualizado el 27/09/2026.
 
 **Búsqueda**
 - Revisar la lentitud en las consultas cortas o muy genéricas ("6", "articulo", que coinciden con miles de páginas).
@@ -92,9 +92,9 @@ Actualizado el 24/09/2026.
 
 **Datos**
 - Más leyes y decretos por tandas (se agregan en `leyes.json`).
-- Ley 5.350 y demás leyes anteriores a 1925: la página de IMPO solo muestra los artículos modificados (PR #11 las completa con los datos abiertos).
 
 **Sitio**
 - Imagen de vista previa por artículo al compartir links (og).
 
-Hecho: dominio lucasramos.uy/normativa, API v1 documentada, proxy propio para Sentry y PostHog, historial de cambios por artículo con página de cambios y feed, leyes y decretos en la revisión semanal, página 404 propia y caché larga para `/_astro/`.
+Hecho: dominio lucasramos.uy/normativa, leyes anteriores a 1925 completadas con los datos abiertos de IMPO (la Ley 5.350 quedó publicada marcada como sin texto en IMPO), API v1 documentada, proxy propio para Sentry y PostHog, historial de cambios por artículo con página de cambios y feed, leyes y decretos en la revisión semanal, página 404 propia y caché larga para `/_astro/`.
+
