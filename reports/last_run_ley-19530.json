@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fecha_scraping": "2026-09-28T15:14:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/19530-2017",
-  "sha256_jsonl": "0f0d37426563ec8cbd4f35c8ffebeef2c8b79a7e672056db4d7d53b5f2c6fbbd",
+  "sha256_jsonl": "209470c8df46c3b1bee90055f9d1e6a90201fb25f617cba847fc161112fa2f6c",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

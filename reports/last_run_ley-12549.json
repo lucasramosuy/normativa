@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fecha_scraping": "2026-09-28T15:14:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/12549-1958",
-  "sha256_jsonl": "17f10d07f306b610f5ac003e49e3473c76d322a304bc8af05bb843ba0a2b9144",
+  "sha256_jsonl": "1c89e87b310a304b774206a08d3acbe7598a4923b7bf750c5edb66c01244a9fa",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

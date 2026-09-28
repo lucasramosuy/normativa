@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fecha_scraping": "2026-09-28T15:14:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17894-2005",
-  "sha256_jsonl": "d90863eb0d700ac3321c44208a42f95199e240e8a0cd9b52ea96b7674611774f",
+  "sha256_jsonl": "2b70fa2255f649d899808c3745bf0aaed02437e398c75182bd83340ba6232c48",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
