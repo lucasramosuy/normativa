@@ -1,6 +1,139 @@
 {
  "norma": "ley-5350",
  "desde": "2026-09-24T11:48:32Z",
- "total": 0,
- "entradas": []
+ "total": 6,
+ "entradas": [
+  {
+   "articulo": "1",
+   "tipo": "agregado",
+   "campos": [],
+   "antes": null,
+   "despues": {
+    "texto": "",
+    "titulo": "Artículo 1",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/5350-1915/1",
+    "articulo": 1,
+    "documento": "Ley 5.350"
+   },
+   "publicado": "2026-09-28T16:09:43+00:00",
+   "detectado": "2026-09-28T16:00:13Z",
+   "main_sha": "1eb361a",
+   "pr": {
+    "numero": 30,
+    "url": "https://github.com/lucasramosuy/normativa/pull/30",
+    "titulo": "Cambios en IMPO detectados el 2026-09-28"
+   }
+  },
+  {
+   "articulo": "2",
+   "tipo": "agregado",
+   "campos": [],
+   "antes": null,
+   "despues": {
+    "texto": "",
+    "titulo": "Artículo 2",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/5350-1915/2",
+    "articulo": 2,
+    "documento": "Ley 5.350"
+   },
+   "publicado": "2026-09-28T16:09:43+00:00",
+   "detectado": "2026-09-28T16:00:13Z",
+   "main_sha": "1eb361a",
+   "pr": {
+    "numero": 30,
+    "url": "https://github.com/lucasramosuy/normativa/pull/30",
+    "titulo": "Cambios en IMPO detectados el 2026-09-28"
+   }
+  },
+  {
+   "articulo": "3",
+   "tipo": "agregado",
+   "campos": [],
+   "antes": null,
+   "despues": {
+    "texto": "",
+    "titulo": "Artículo 3",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/5350-1915/3",
+    "articulo": 3,
+    "documento": "Ley 5.350"
+   },
+   "publicado": "2026-09-28T16:09:43+00:00",
+   "detectado": "2026-09-28T16:00:13Z",
+   "main_sha": "1eb361a",
+   "pr": {
+    "numero": 30,
+    "url": "https://github.com/lucasramosuy/normativa/pull/30",
+    "titulo": "Cambios en IMPO detectados el 2026-09-28"
+   }
+  },
+  {
+   "articulo": "4",
+   "tipo": "agregado",
+   "campos": [],
+   "antes": null,
+   "despues": {
+    "texto": "",
+    "titulo": "Artículo 4",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/5350-1915/4",
+    "articulo": 4,
+    "documento": "Ley 5.350"
+   },
+   "publicado": "2026-09-28T16:09:43+00:00",
+   "detectado": "2026-09-28T16:00:13Z",
+   "main_sha": "1eb361a",
+   "pr": {
+    "numero": 30,
+    "url": "https://github.com/lucasramosuy/normativa/pull/30",
+    "titulo": "Cambios en IMPO detectados el 2026-09-28"
+   }
+  },
+  {
+   "articulo": "5",
+   "tipo": "agregado",
+   "campos": [],
+   "antes": null,
+   "despues": {
+    "texto": "",
+    "titulo": "Artículo 5",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/5350-1915/5",
+    "articulo": 5,
+    "documento": "Ley 5.350"
+   },
+   "publicado": "2026-09-28T16:09:43+00:00",
+   "detectado": "2026-09-28T16:00:13Z",
+   "main_sha": "1eb361a",
+   "pr": {
+    "numero": 30,
+    "url": "https://github.com/lucasramosuy/normativa/pull/30",
+    "titulo": "Cambios en IMPO detectados el 2026-09-28"
+   }
+  },
+  {
+   "articulo": "7",
+   "tipo": "agregado",
+   "campos": [],
+   "antes": null,
+   "despues": {
+    "texto": "",
+    "titulo": "Artículo 7",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/5350-1915/7",
+    "articulo": 7,
+    "documento": "Ley 5.350"
+   },
+   "publicado": "2026-09-28T16:09:43+00:00",
+   "detectado": "2026-09-28T16:00:13Z",
+   "main_sha": "1eb361a",
+   "pr": {
+    "numero": 30,
+    "url": "https://github.com/lucasramosuy/normativa/pull/30",
+    "titulo": "Cambios en IMPO detectados el 2026-09-28"
+   }
+  }
+ ]
 }

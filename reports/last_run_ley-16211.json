@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fecha_scraping": "2026-09-28T15:14:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/16211-1991",
-  "sha256_jsonl": "341080797adb372d7a57507a42329afa67ccc4e2136044ef5df767ef8f3abbf0",
+  "sha256_jsonl": "13e6d07b35c3cb55907e4f6efcfb0882a752e2b9bdbf4ec486236b6f71e73a86",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

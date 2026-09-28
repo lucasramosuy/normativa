@@ -5,10 +5,10 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T16:47:58Z",
+  "fecha_scraping": "2026-09-28T15:05:37Z",
   "fuente": "https://www.impo.com.uy/bases/constitucion/1967-1967",
   "primer_articulo": 1,
-  "sha256_jsonl": "ee67e19e212976cf33675a567a1c3437f9f7f194ab16e257af88b08dbcf974a6",
+  "sha256_jsonl": "4dfc6dd1612333958189d9c44b863fd764ff03db34eaf2e02c8b4770910f14aa",
   "ultimo_articulo": 332,
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

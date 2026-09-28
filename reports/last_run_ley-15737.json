@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fecha_scraping": "2026-09-28T15:14:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/15737-1985",
-  "sha256_jsonl": "c1b86ece4e322e4084e31d9d746b886010934edcd0198da6e6b4be5d90905bb3",
+  "sha256_jsonl": "f9ccc318123d2a735364832a278632fa5ec59f0e19a59613f4ba4c695dadb6ce",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

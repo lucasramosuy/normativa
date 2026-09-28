@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T16:55:28Z",
+  "fecha_scraping": "2026-09-28T15:14:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/18084-2006",
-  "sha256_jsonl": "91c66bc8d457c72d4ddf6bfb167a1ee4d7d51cfd351b61e4f6b186c7b69b2dbe",
+  "sha256_jsonl": "ecc07514563e9c31aba3a50a086f5e7d1dc2ea8365fe967d73eeac01413703c8",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
