@@ -1,16 +1,30 @@
 {
-  "articulos_esperados_segun_impo": 1,
-  "articulos_guardados": 1,
+  "articulos_desde_datos_abiertos": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "7"
+  ],
+  "articulos_esperados_segun_impo": 7,
+  "articulos_guardados": 7,
   "crawl_delay_segundos": 10,
   "documento": "Ley 5.350",
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-24T01:06:11Z",
+  "fecha_scraping": "2026-09-28T15:14:11Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/5350-1915",
-  "sha256_jsonl": "1b4b10f881bef946282a63dbc558d6483f33bef256d728a7470eb3e2ecde585f",
+  "sha256_jsonl": "777037565b945319ab037a5f71d88d1668745525ca3fd381daa34c40fa5434f1",
   "sin_texto_en_impo": [
-    "6"
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
   ],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
