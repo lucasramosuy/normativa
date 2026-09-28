@@ -7,7 +7,7 @@ name: Revisión semanal de IMPO
 
 on:
   schedule:
-    - cron: "17 9 * * 1" # lunes 06:17 (Montevideo)
+    - cron: "43 3 * * 2" # martes 00:43 (Montevideo)
   workflow_dispatch:
 
 permissions:
