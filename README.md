@@ -26,8 +26,13 @@ Los workflows manuales viejos (`scrape.yml`, `scrape-codigos.yml`), que commitea
 
 ## Qué hay en el sitio
 
-- La Constitución, 12 códigos y las leyes y decretos de `src/data/leyes.json` (181 al 24/09/2026; una norma aparece cuando sus datos llegan a `api`, hoy 149). La lista tiene que coincidir con `scripts/ingest/leyes.json` de `main`.
-- Buscador (Pagefind), índice por norma y una página por artículo.
+- La Constitución, 12 códigos y las leyes y decretos de `src/data/leyes.json` (208 normas al 28/09/2026; una norma aparece cuando sus datos llegan a `api`, que hoy publica 221 conjuntos de datos). La lista tiene que coincidir con `scripts/ingest/leyes.json` de `main`.
+- Buscador (Pagefind), índice por norma y una página por artículo. Un número solo salta al artículo; con 3+ dígitos también lista menciones en el texto.
+- Ficha (`/ficha/`): marcá artículos con «+ Ficha», editalos para adaptarlos a clase (los cambios quedan en el navegador) e imprimí o guardá un A4 limpio.
+- Citado por: cada artículo enlaza las normas que lo citan, desde las concordancias de IMPO y las citas del texto.
+- Mapa de citas (`/mapa-de-citas/`) y Curiosidades (`/curiosidades/`): el grafo de normas y los récords del corpus.
+- Mesa de lectura y citas APA: varios artículos abiertos como pestañas dentro de la app, «citar en APA» por norma/artículo/código y «Mis referencias» para juntar y exportar la lista.
+- Leydle (`/leydle/`): el juego diario de términos jurídicos, repo [`lucasramosuy/leydle`](https://github.com/lucasramosuy/leydle).
 - Página 404 propia (`src/pages/404.astro`).
 - Contacto: `/normativa/contacto/` redirige al formulario único de `lucasramos.uy/contacto/?tema=normativa` (repo `www`).
 - Historial de cambios en cada artículo, página [/cambios/](https://lucasramos.uy/normativa/cambios/) y feed Atom (`/cambios/feed.xml`). Solo cambios publicados. Los artículos que dejan de figurar en IMPO conservan su página con un aviso.
