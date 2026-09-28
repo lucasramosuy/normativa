@@ -10,16 +10,17 @@ const normas=Object.fromEntries(NORMAS.map(n=>[n.slug,{corto:n.corto,cita:n.nume
   <div class="print:hidden">
     <p class="eyebrow">Armar ficha</p>
     <h1 class="mt-2 text-5xl">Ficha</h1>
-    <p class="mt-3 max-w-[62ch] leading-7 text-slate-600">Marcá artículos con <b class="font-semibold text-ink">+ Ficha</b> mientras buscás o navegás. Acá los ordenás, le ponés un título e imprimís. Podés tocar el texto de cada artículo para adaptarlo; la cita queda igual. Para Canva, elegí "Guardar como PDF" en el diálogo de impresión. La selección queda guardada en este navegador.</p>
+    <p class="mt-3 max-w-[62ch] leading-7 text-slate-600">Marcá artículos con <b class="font-semibold text-ink">+ Ficha</b> mientras buscás o navegás. Acá los ordenás, le ponés un título e imprimís. Podés tocar el texto de cada artículo para adaptarlo; la cita queda igual. También podés descargar un PDF real para Canva sin pasar por el diálogo de impresión. La selección queda guardada en este navegador.</p>
   </div>
 
   <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center print:hidden" data-ficha-toolbar hidden>
     <label class="sr-only" for="ficha-titulo">Título de la ficha</label>
     <input id="ficha-titulo" class="min-w-0 flex-1 rounded-xl border border-black/15 bg-white px-4 py-3 font-serif text-xl outline-none focus:border-forest" placeholder="Título de la ficha (opcional)" maxlength="120" data-ficha-titulo/>
     <div class="flex gap-2">
-      <button type="button" class="inline-flex items-center rounded-xl bg-forest px-4 py-3 text-sm font-bold text-white transition hover:bg-[#12564f]" data-ficha-print>Imprimir</button>
+      <button type="button" class="inline-flex items-center rounded-xl bg-forest px-4 py-3 text-sm font-bold text-white transition hover:bg-[#12564f]" data-ficha-pdf>Descargar PDF ↓</button><button type="button" class="rounded-xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:border-forest" data-ficha-print>Imprimir</button>
       <button type="button" class="rounded-xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:border-red-300 hover:text-red-800" data-ficha-clear>Vaciar</button>
     </div>
+    <p class="hidden text-sm text-red-800" role="alert" data-ficha-pdf-error></p>
   </div>
 
   <div class="mt-10 soft-card p-8 text-center print:hidden" data-ficha-empty hidden>
@@ -41,6 +42,7 @@ const normas=Object.fromEntries(NORMAS.map(n=>[n.slug,{corto:n.corto,cita:n.nume
 <script>
 import {getFicha,saveFicha,onFichaChange} from '../lib/ficha';
 import {splitTitle,toBlocks} from '../lib/texto';
+import {downloadFichaPdf} from '../lib/ficha-pdf';
 const base=import.meta.env.BASE_URL;
 const NORMAS:Record<string,{corto:string,cita:string}>=JSON.parse(document.getElementById('ficha-normas')!.textContent||'{}');
 const $=<T extends HTMLElement=HTMLElement>(s:string)=>document.querySelector<T>(s)!;
@@ -113,6 +115,22 @@ $('[data-ficha-list]').addEventListener('paste',e=>{
   document.execCommand('insertText',false,e.clipboardData?.getData('text/plain')||'');
 });
 $('[data-ficha-print]').addEventListener('click',()=>window.print());
+$<HTMLButtonElement>('[data-ficha-pdf]').addEventListener('click',async()=>{
+  const button=$<HTMLButtonElement>('[data-ficha-pdf]'),error=$('[data-ficha-pdf-error]');error.hidden=true;button.disabled=true;button.textContent='Generando PDF…';
+  try{
+    const items=[...document.querySelectorAll<HTMLElement>('[data-ficha-list] .ficha-item')].filter(el=>!!el.querySelector('[data-edit]'));
+    if(items.length!==getFicha().items.length)throw Error('Todavía no cargaron todos los artículos. Revisá la ficha e intentá de nuevo.');
+    const articles=items.map(el=>({
+      short:el.querySelector('.eyebrow')?.textContent?.trim()||'',
+      heading:el.querySelector('h2')?.textContent?.trim()||'',
+      rubric:el.querySelector('h2 + p')?.textContent?.trim()||'',
+      blocks:[...el.querySelector<HTMLElement>('[data-edit]')!.children].flatMap(child=>child.tagName==='OL'?[...child.querySelectorAll('li')].map(li=>({marker:li.querySelector('.enum-mark')?.textContent?.trim()||'',text:li.querySelector('span:last-child')?.textContent?.trim()||''})):([{text:child.textContent?.trim()||''}])),
+      citation:el.querySelector('.ficha-cita')?.textContent?.trim()||''
+    }));
+    await downloadFichaPdf($<HTMLInputElement>('[data-ficha-titulo]').value,articles,fuente);
+  }catch(e){error.textContent=e instanceof Error?e.message:'No se pudo generar el PDF.';error.hidden=false}
+  finally{button.disabled=false;button.textContent='Descargar PDF ↓'}
+});
 $('[data-ficha-clear]').addEventListener('click',()=>{if(confirm('¿Vaciar la ficha? Se quitan todos los artículos.'))saveFicha({titulo:'',items:[],textos:{}});});
 onFichaChange(render);
 render();
