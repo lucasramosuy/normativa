@@ -25,14 +25,11 @@ export function mapa() {
     citada.set(b, (citada.get(b) ?? 0) + v); citan.set(b, (citan.get(b) ?? 0) + 1); cita.set(a, (cita.get(a) ?? 0) + 1);
     const p = a < b ? `${a}|${b}` : `${b}|${a}`; par.set(p, (par.get(p) ?? 0) + v);
   }
-  // Solo el grupo conectado principal: las normas sueltas (o pares que solo se citan entre sí) van aparte.
-  const vecinos = new Map<string, string[]>();
-  for (const k of par.keys()) { const [a, b] = k.split('|'); (vecinos.get(a) ?? vecinos.set(a, []).get(a)!).push(b); (vecinos.get(b) ?? vecinos.set(b, []).get(b)!).push(a); }
-  const grupo = new Set<string>(['codigo-civil']);
-  for (const q = ['codigo-civil']; q.length;) for (const v of vecinos.get(q.pop()!) ?? []) if (!grupo.has(v)) { grupo.add(v); q.push(v); }
-  const conectadas = NORMAS.filter(n => grupo.has(n.slug));
-  const aisladas = NORMAS.filter(n => !grupo.has(n.slug));
-  const enlaces: Enlace[] = [...par].map(([k, w]) => { const [a, b] = k.split('|'); return { a, b, w }; }).filter(e => grupo.has(e.a));
+  // Todas las normas publicadas, también componentes pequeños y puntos sin conexiones.
+  // No se agregan citas artificiales para conectarlas al Código Civil.
+  const conectadas = NORMAS;
+  const aisladas = NORMAS.filter(n => !citada.has(n.slug) && !cita.has(n.slug));
+  const enlaces: Enlace[] = [...par].map(([k, w]) => { const [a, b] = k.split('|'); return { a, b, w }; });
 
   const idx = new Map(conectadas.map((n, i) => [n.slug, i]));
   const N = conectadas.length, C = LADO / 2;

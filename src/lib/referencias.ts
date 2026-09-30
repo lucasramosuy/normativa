@@ -15,26 +15,30 @@ export function fechaLegal(value?:string):string|null {
 }
 export function referenciaLegal(n:Norma,a:Article):RefLegal {
   const art=String(a.articulo_id||a.articulo);
-  const fecha=fechaLegal(a.fecha_promulgacion);
-  const ano=shortYear(a.fecha_promulgacion)||n.anio?.toString()||'s. f.';
+  const promulgacion=fechaLegal(a.fecha_promulgacion);
+  const publicacion=fechaLegal(a.fecha_publicacion);
+  const fecha=promulgacion || (publicacion ? `Publicación: ${publicacion}` : 'Fecha legal por verificar');
+  const ano=(promulgacion ? shortYear(a.fecha_promulgacion) : publicacion ? shortYear(a.fecha_publicacion) : null)||n.anio?.toString()||'s. f.';
   const avisos:string[]=[];
-  if(!fecha)avisos.push('Fecha de promulgación no verificada en estos datos: revisá IMPO antes de entregar la cita.');
+  if(!promulgacion)avisos.push(publicacion
+    ? 'Se usa la fecha de publicación oficial; no acredita una fecha de promulgación.'
+    : 'Sin fecha de promulgación ni de publicación verificada: revisá IMPO antes de entregar la cita.');
   const fuente=/^https:\/\/www\.impo\.com\.uy\//.test(a.url_fuente||'')?a.url_fuente:'';
   if(!fuente)avisos.push('Falta el enlace oficial de este artículo.');
   let nombre='';
   if(n.tipo==='Constitución') {
-    nombre=`${n.nombre} [Const.]. Art. ${art}. ${fecha||'Fecha de promulgación por verificar'} (Uruguay).`;
+    nombre=`${n.nombre} [Const.]. Art. ${art}. ${fecha} (Uruguay).`;
   } else if(n.tipo==='Código') {
     // La ley de origen no consta como campo estructurado para todos los códigos.
     avisos.push('Ley de origen del código por verificar en IMPO; no se deduce del número de URL.');
-    nombre=`${n.nombre}. Art. ${art}. ${fecha||'Fecha de promulgación por verificar'} (Uruguay).`;
+    nombre=`${n.nombre}. Art. ${art}. ${fecha} (Uruguay).`;
   } else {
     const numero=n.numero?`${n.tipo} ${n.numero} de ${n.anio||ano}`:`${n.tipo} (número por verificar)`;
     if(!n.numero)avisos.push('Número de norma no verificado.');
     const asunto=n.titulo_impo&&n.titulo_impo.trim()?`. ${n.titulo_impo.trim().replace(/\.$/,'')}`:'';
     if(!asunto)avisos.push('Asunto oficial no disponible en estos datos.');
-    nombre=`${numero}. Art. ${art}${asunto}. ${fecha||'Fecha de promulgación por verificar'} (Uruguay).`;
-    if(!a.fecha_publicacion)avisos.push('Publicación oficial no verificada: no se agrega un número de Diario Oficial.');
+    nombre=`${numero}. Art. ${art}${asunto}. ${fecha} (Uruguay).`;
+    if(!publicacion)avisos.push('Publicación oficial no verificada: no se agrega un número de Diario Oficial.');
   }
   const cita=n.tipo==='Constitución'?`${n.corto}, ${ano}, art. ${art}`:n.tipo==='Código'?`${n.nombre}, ${ano}, art. ${art}`:`${n.tipo} ${n.numero||''}, ${ano}, art. ${art}`;
   return {texto:`${nombre}${fuente?' '+fuente:''}`,enTexto:`(${cita})`,avisos,fuente};
