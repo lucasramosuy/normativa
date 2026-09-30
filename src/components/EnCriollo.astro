@@ -1,0 +1,15 @@
+---
+const { resultado }=Astro.props;
+const r=resultado.registro;
+---
+{r ? <section class="criollo-panel" id="en-criollo" aria-labelledby="criollo-titulo" data-pagefind-ignore>
+  <div class="criollo-cabecera"><span class="eyebrow">Para entenderlo</span>{resultado.estado==='borrador'&&<span class="chip">Borrador · sin revisar</span>}</div>
+  <h2 id="criollo-titulo">En criollo</h2>
+  <p class="criollo-resumen">{r.resumen}</p>
+  <div class="criollo-importante"><h3>La parte importante</h3><p>{r.importante}</p></div>
+  {r.termino&&<p class="criollo-termino">{r.termino}</p>}
+  <footer><p>Ayuda para estudiar. No es texto oficial ni asesoramiento jurídico.</p>{resultado.estado==='borrador'?<p><strong>Pendiente de revisión de fondo por Lucas. No se publica para estudiantes.</strong></p>:<p>Revisión: {r.revision.responsable} · {r.revision.fecha}</p>}</footer>
+</section> : resultado.estado==='desactualizado' ? <p class="criollo-aviso" data-pagefind-ignore>El texto legal o una referencia cambió. La explicación en criollo está en revisión.</p> : resultado.estado==='pendiente' ? <p class="criollo-aviso" data-pagefind-ignore>La explicación en criollo de este artículo está pendiente de revisión.</p> : null}
+<style is:global>
+.criollo-layout{display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,1fr);gap:3rem;align-items:start;margin-top:2rem}.criollo-layout>.article-text{margin-top:0}.criollo-panel{background:#eff6f3;border:1px solid #b7d7d0;border-top:3px solid #176b63;border-radius:1rem;padding:1.5rem 1.6rem;color:#17211d;min-width:0;scroll-margin-top:6rem}.criollo-cabecera{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}.criollo-panel h2{font-size:2.1rem;line-height:1.2;margin:.7rem 0 1.15rem}.criollo-panel p{font-size:1rem;line-height:1.75;margin:0}.criollo-panel .criollo-resumen{font-size:1.12rem;line-height:1.75}.criollo-importante{margin:1.25rem 0;padding-top:1rem;border-top:1px solid #b7d7d0}.criollo-importante h3{font-family:var(--font-sans);color:#176b63;font-size:.85rem;font-weight:700;margin:0 0 .5rem}.criollo-panel .criollo-termino{font-size:.9rem}.criollo-panel footer{margin-top:1.25rem;padding-top:.9rem;border-top:1px solid #b7d7d0}.criollo-panel footer p{font-size:.75rem;color:#52615b;line-height:1.6}.criollo-panel footer p+p{margin-top:.5rem}.criollo-aviso{margin-top:1.5rem;color:#52615b;font-size:.9rem;line-height:1.6}.criollo-salto{display:inline-block;margin-top:1rem;font-size:.85rem;color:#176b63;font-weight:700}.con-criollo{grid-template-columns:minmax(0,1fr)!important}.con-criollo>aside{position:static;max-width:760px}.con-criollo .article-text{max-width:none!important}@media(max-width:900px){.criollo-layout{grid-template-columns:minmax(0,1fr);gap:1.5rem}.criollo-panel{padding:1.25rem}.criollo-panel h2{font-size:1.9rem}.criollo-panel .criollo-resumen{font-size:1rem}}
+</style>
