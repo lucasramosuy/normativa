@@ -246,6 +246,12 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
         # (Código Rural). Manda el ancla, que es el identificador único.
         ancla = heading.find_previous_sibling()
         ancla_id = ancla.get("id") if isinstance(ancla, Tag) and ancla.name == "a" else None
+        # En leyes de artículo único, el rótulo es "Unico" pero el índice
+        # oficial y la URL usan el número 1. Preservar el título de IMPO.
+        titulo_articulo = f"Artículo {display}"
+        if sin_acentos(id_norm) == "UNICO" and ancla_id and ancla_id.isdigit():
+            display = ancla_id
+            id_norm = ancla_id
         if ancla_id and ancla_id != id_norm and ancla_id.startswith(id_norm) and ancla_id[len(id_norm):].isalpha():
             display = f"{display}-{ancla_id[len(id_norm):]}"
             id_norm = ancla_id
@@ -276,7 +282,7 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
             "documento": documento,
             "articulo": int(display) if display.isdigit() else display,
             "articulo_id": id_norm,
-            "titulo": f"Artículo {display}",
+            "titulo": titulo_articulo if sin_acentos(match.group(1)).upper() == "UNICO" else f"Artículo {display}",
             "libro": niveles["libro"],
             "titulo_norma": niveles["titulo_norma"],
             "capitulo": niveles["capitulo"],
