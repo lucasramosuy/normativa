@@ -30,8 +30,8 @@ Los workflows manuales viejos (`scrape.yml`, `scrape-codigos.yml`), que commitea
 - Buscador (Pagefind), índice por norma y una página por artículo. Un número solo salta al artículo; con 3+ dígitos también lista menciones en el texto.
 - Ficha (`/ficha/`): marcá artículos con «+ Ficha», editalos para adaptarlos a clase (los cambios quedan en el navegador) e imprimí o guardá un A4 limpio.
 - Citado por: cada artículo enlaza las normas que lo citan, desde las concordancias de IMPO y las citas del texto.
-- Mapa de citas (`/mapa-de-citas/`) y Curiosidades (`/curiosidades/`): el grafo de normas y los récords del corpus.
-- Mesa de lectura y citas APA: varios artículos abiertos como pestañas dentro de la app, «citar en APA» por norma/artículo/código y «Mis referencias» para juntar y exportar la lista.
+- Mapa de citas (`/mapa-de-citas/`) y Curiosidades (`/curiosidades/`): el grafo incluye todas las normas publicadas, incluso componentes separados y puntos sin citas detectadas; el tamaño indica citas, no importancia jurídica. Curiosidades muestra los récords del corpus.
+- Mesa de lectura y citas APA: varios artículos abiertos como pestañas dentro de la app, «citar en APA» por norma/artículo/código y «Mis referencias» para juntar y exportar la lista. Las citas usan promulgación cuando consta; si solo consta publicación, la muestran con esa etiqueta sin confundir ambas fechas.
 - Leydle (`/leydle/`): el juego diario de términos jurídicos, repo [`lucasramosuy/leydle`](https://github.com/lucasramosuy/leydle).
 - Página 404 propia (`src/pages/404.astro`).
 - Contacto: `/normativa/contacto/` redirige al formulario único de `lucasramos.uy/contacto/?tema=normativa` (repo `www`).
