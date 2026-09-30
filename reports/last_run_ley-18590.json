@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 4,
+  "articulos_guardados": 4,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.590",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-30T23:29:48Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18590-2009",
+  "sha256_jsonl": "1721a5bc7e82140b11bf0988ce15fedb0098f9dc9537fcd72d476dc8e17ebf44",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

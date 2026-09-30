@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 12,
+  "articulos_guardados": 12,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.885",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-30T23:30:40Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17885-2005",
+  "sha256_jsonl": "2c82876bc9160ec01b5a2fcda4035db8824bd65cfa7885cc2b822e1c4a8cba03",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 2,
+  "articulos_guardados": 2,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.362",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-30T23:31:20Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19362-2015",
+  "sha256_jsonl": "1417278e2fc81b61a6d3a891a9351f3fd6c533fd002774532015626e10d9b085",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

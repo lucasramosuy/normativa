@@ -470,6 +470,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-17885": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-17894": {
    "desde": "2026-09-24T16:43:01Z",
    "total": 0,
@@ -482,6 +487,11 @@
   },
   "ley-17940": {
    "desde": "2026-09-23T19:08:58Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-17951": {
+   "desde": "2026-09-30T23:53:54+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -567,6 +577,11 @@
   },
   "ley-18212": {
    "desde": "2026-09-23T19:08:58Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-18214": {
+   "desde": "2026-09-30T23:53:54+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -745,6 +760,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-18590": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-18591": {
    "desde": "2026-09-24T16:43:01Z",
    "total": 0,
@@ -840,6 +860,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-19092": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-19120": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 0,
@@ -885,6 +910,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-19179": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-19196": {
    "desde": "2026-09-23T20:55:48Z",
    "total": 0,
@@ -927,6 +957,16 @@
   },
   "ley-19353": {
    "desde": "2026-09-23T22:45:39Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-19362": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-19430": {
+   "desde": "2026-09-30T23:53:54+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -985,6 +1025,11 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-19682": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-19684": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 0,
@@ -1005,8 +1050,23 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-19717": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-19747": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-19775": {
    "desde": "2026-09-23T22:45:39Z",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-19791": {
+   "desde": "2026-09-30T23:53:54+00:00",
    "total": 0,
    "ultimo": null
   },
@@ -1040,6 +1100,16 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-19849": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-19855": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-19889": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 0,
@@ -1065,10 +1135,30 @@
    "total": 0,
    "ultimo": null
   },
+  "ley-20141": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-20235": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-20327": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
+  "ley-20383": {
+   "desde": "2026-09-30T23:53:54+00:00",
+   "total": 0,
+   "ultimo": null
+  },
   "ley-5350": {
    "desde": "2026-09-24T11:48:32Z",
    "total": 6,
-   "ultimo": "2026-09-28T16:09:43+00:00"
+   "ultimo": "2026-09-28T16:09:43Z"
   },
   "ley-7690": {
    "desde": "2026-09-24T00:38:43Z",
@@ -1112,7 +1202,7 @@
    "articulo": "1",
    "tipo": "agregado",
    "campos": [],
-   "publicado": "2026-09-28T16:09:43+00:00",
+   "publicado": "2026-09-28T16:09:43Z",
    "detectado": "2026-09-28T16:00:13Z",
    "pr": {
     "numero": 30,
@@ -1125,7 +1215,7 @@
    "articulo": "2",
    "tipo": "agregado",
    "campos": [],
-   "publicado": "2026-09-28T16:09:43+00:00",
+   "publicado": "2026-09-28T16:09:43Z",
    "detectado": "2026-09-28T16:00:13Z",
    "pr": {
     "numero": 30,
@@ -1138,7 +1228,7 @@
    "articulo": "3",
    "tipo": "agregado",
    "campos": [],
-   "publicado": "2026-09-28T16:09:43+00:00",
+   "publicado": "2026-09-28T16:09:43Z",
    "detectado": "2026-09-28T16:00:13Z",
    "pr": {
     "numero": 30,
@@ -1151,7 +1241,7 @@
    "articulo": "4",
    "tipo": "agregado",
    "campos": [],
-   "publicado": "2026-09-28T16:09:43+00:00",
+   "publicado": "2026-09-28T16:09:43Z",
    "detectado": "2026-09-28T16:00:13Z",
    "pr": {
     "numero": 30,
@@ -1164,7 +1254,7 @@
    "articulo": "5",
    "tipo": "agregado",
    "campos": [],
-   "publicado": "2026-09-28T16:09:43+00:00",
+   "publicado": "2026-09-28T16:09:43Z",
    "detectado": "2026-09-28T16:00:13Z",
    "pr": {
     "numero": 30,
@@ -1177,7 +1267,7 @@
    "articulo": "7",
    "tipo": "agregado",
    "campos": [],
-   "publicado": "2026-09-28T16:09:43+00:00",
+   "publicado": "2026-09-28T16:09:43Z",
    "detectado": "2026-09-28T16:00:13Z",
    "pr": {
     "numero": 30,

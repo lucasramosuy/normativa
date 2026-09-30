@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 3,
+  "articulos_guardados": 3,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 20.235",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-30T23:29:15Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/20235-2023",
+  "sha256_jsonl": "fd5d5f8732237741b35629e0efc77fb0151bd4a0fbb4cde82ed1dbd4f12830cd",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

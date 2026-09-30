@@ -1,0 +1,133 @@
+{
+  "normas_nuevas": 18,
+  "articulos_nuevos": 284,
+  "validacion": "Índice oficial, texto completo de cada pre, unicidad, SHA256, URLs de anclas y crawl-delay; sin faltantes ni artículos vacíos.",
+  "normas": [
+    {
+      "id": "ley-20327",
+      "corto": "Ley de Ciberdelincuencia",
+      "articulos": 11,
+      "fuente": "https://www.impo.com.uy/bases/leyes/20327-2024",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-20235",
+      "corto": "Semana de Prevención de la Violencia y el Acoso Escolar",
+      "articulos": 3,
+      "fuente": "https://www.impo.com.uy/bases/leyes/20235-2023",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19747",
+      "corto": "Protección de Derechos de Niños y Adolescentes",
+      "articulos": 9,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19747-2019",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19092",
+      "corto": "Adopciones y Derecho a Conocer los Orígenes",
+      "articulos": 13,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19092-2013",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-18590",
+      "corto": "Régimen de Adopciones",
+      "articulos": 4,
+      "fuente": "https://www.impo.com.uy/bases/leyes/18590-2009",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-20141",
+      "corto": "Corresponsabilidad en la Crianza",
+      "articulos": 15,
+      "fuente": "https://www.impo.com.uy/bases/leyes/20141-2023",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-18214",
+      "corto": "Prohibición del Castigo Físico y el Trato Humillante",
+      "articulos": 3,
+      "fuente": "https://www.impo.com.uy/bases/leyes/18214-2007",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19791",
+      "corto": "Prevención del Abuso en Instituciones",
+      "articulos": 4,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19791-2019",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-17885",
+      "corto": "Ley de Voluntariado Social",
+      "articulos": 12,
+      "fuente": "https://www.impo.com.uy/bases/leyes/17885-2005",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-17951",
+      "corto": "Ley contra la Violencia en el Deporte",
+      "articulos": 16,
+      "fuente": "https://www.impo.com.uy/bases/leyes/17951-2006",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-20383",
+      "corto": "Ley de Servicios de Difusión de Contenido Audiovisual",
+      "articulos": 96,
+      "fuente": "https://www.impo.com.uy/bases/leyes/20383-2024",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19362",
+      "corto": "Ciudadanía Natural de Descendientes en el Exterior",
+      "articulos": 2,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19362-2015",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19855",
+      "corto": "Regulación del Consumo de Bebidas Alcohólicas",
+      "articulos": 39,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19855-2019",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19179",
+      "corto": "Software Libre y Formatos Abiertos en el Estado",
+      "articulos": 5,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19179-2013",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19717",
+      "corto": "Ley de Fomento de la Agroecología",
+      "articulos": 10,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19717-2018",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19682",
+      "corto": "Reconocimiento y Protección de Personas Apátridas",
+      "articulos": 40,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19682-2018",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19430",
+      "corto": "Convención sobre Derechos de las Personas Mayores",
+      "articulos": 1,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19430-2016",
+      "sin_texto": []
+    },
+    {
+      "id": "ley-19849",
+      "corto": "Convenio OIT 190 sobre Violencia y Acoso en el Trabajo",
+      "articulos": 1,
+      "fuente": "https://www.impo.com.uy/bases/leyes/19849-2019",
+      "sin_texto": []
+    }
+  ]
+}

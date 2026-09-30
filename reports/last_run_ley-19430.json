@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 1,
+  "articulos_guardados": 1,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.430",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-30T23:32:54Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19430-2016",
+  "sha256_jsonl": "288c813e8a369d01eb91535d1d7398b942e9e1a6baf2952258a8593228296d90",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 10,
+  "articulos_guardados": 10,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.717",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-30T23:32:00Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19717-2018",
+  "sha256_jsonl": "0c7057cbf0942172e8167d3989aad8150d8072b20f41b68f8496e63adb93c616",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
