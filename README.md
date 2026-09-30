@@ -86,11 +86,16 @@ Cada push a `www`, o cada publicación en `api`, ejecuta el build y publica `dis
 
 ## Piloto: En criollo
 
-30 borradores: Constitución (12), Ley General de Educación (10), Niñez y Adolescencia (8). Las explicaciones están en `explicaciones/{slug}.jsonl`, separadas de IMPO. **No están aprobadas ni se muestran a estudiantes.** El build normal solo muestra el aviso de revisión pendiente. `CRIOLLO_PREVIEW=true pnpm build` permite inspeccionar los borradores localmente; no activar esa variable en producción.
+30 explicaciones: Constitución (12), Ley General de Educación (10), Niñez y Adolescencia (8). Están en `explicaciones/{slug}.jsonl`, separadas de IMPO. El piloto quedó autorizado para publicar después de verificar los textos vigentes y contrastarlos con obras jurídicas. No se atribuye revisión jurídica a Lucas ni a un abogado.
 
-Publicar una explicación requiere revisar su fondo y cambiar `estado` a `aprobado`, con `revision: {responsable, fecha}` reales. El hash incluye texto legal, notas y estado, además de las dependencias registradas; si cambian, se oculta hasta nueva revisión. Los hashes no cubren todo cambio de contexto jurídico: revisar periódicamente reformas y remisiones. Artículos retirados, sin texto o con texto de derogación no presentan explicación.
+### Política de contenido
 
-`node --test tests/criollo.test.mjs` verifica el cierre editorial y la invalidación. La lectura es HTML estático, sin llamadas de IA ni nueva base de datos. Desktop muestra legal/explicación en dos columnas; mobile conserva el texto legal primero. Citas y fuente siguen disponibles. El panel no entra al índice legal de Pagefind.
-### Comprobar el contrato de la API
+Toda explicación futura debe verificarse contra el texto vigente y contrastarse con un libro u obra jurídica antes de publicarse. No publicar una paráfrasis sin ese control. Registrar obra, URL, pasaje, fecha, método y nivel de respaldo por artículo. Distinguir doctrina específica, marco general y reproducción normativa: un anexo de ley no es comentario doctrinal. Si una edición es antigua, la vigencia se controla con IMPO actual. No afirmar revisión jurídica definitiva.
 
-Después de `pnpm build`, ejecutá `node tests/openapi.mjs`. Contrasta todas las respuestas JSON construidas con los esquemas, verifica parámetros/slugs/404 y prueba cambios sintéticos con antes/después nulos. No necesita dependencias nuevas. El explorador muestra solo respuestas solicitadas, con errores de red/HTTP, timeout de 15 s y copiar JSON/cURL.
+El piloto usa el Manual de derechos humanos de Mariana Blengio Valdés (versión docente Udelar), el estudio de Felipe Rotondo Tornaría sobre el sistema educativo (Revista de Derecho UM, 2009) y la Guía legislativa de Gustavo Daniel Conde (UNICEF/PNUD, 2007). El alcance exacto está en `revision` de cada registro. Constitución 11/30/44 y CNA 1/4/5 tienen respaldo doctrinal limitado; las condiciones exactas se verificaron en IMPO. CNA 8 conserva garantías procesales cotejadas con la norma, sin comentario exhaustivo de la guía.
+
+El build normal muestra solo `estado: aprobado` con responsable y fecha reales. `CRIOLLO_PREVIEW=true` sirve únicamente para inspeccionar borradores localmente. La revisión documental no es asesoramiento jurídico profesional.
+
+El hash incluye texto legal, notas y estado, además de dependencias registradas; si cambian, oculta la explicación hasta nueva revisión. Los hashes no cubren todo cambio de contexto: revisar reformas y remisiones periódicamente. Artículos retirados, sin texto o con derogación no presentan explicación.
+
+`node --test tests/criollo.test.mjs` verifica publicación e invalidación. Lectura HTML estática, sin IA en vivo ni nueva base de datos. Desktop muestra legal/explicación en dos columnas; mobile: texto legal, criollo, acciones/cita, notas. Subrayado inline suave en condiciones jurídicas. El panel no entra al índice legal de Pagefind.
