@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 3,
+  "articulos_guardados": 3,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.214",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-30T23:30:15Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18214-2007",
+  "sha256_jsonl": "d03b8685cf772aa08022a185eabbbdc2d0fd3ad8ba85e8d547b6290e450f536d",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

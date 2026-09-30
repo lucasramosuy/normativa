@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 1,
+  "articulos_guardados": 1,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.849",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-09-30T23:33:09Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19849-2019",
+  "sha256_jsonl": "df5a234f3a678fe1c3654c8e4132f7af33be05322b8d532696fc736d25cc627f",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

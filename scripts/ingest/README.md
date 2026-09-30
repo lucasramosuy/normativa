@@ -36,6 +36,8 @@ Qué hace por código:
 
 Casos especiales soportados:
 
+- Artículo único: conservar el rótulo "Artículo Unico" y usar el ancla oficial numérica
+  para `articulo_id`, `articulo` y URL (p. ej. Ley 19.430, artículo 1).
 - Artículos con sufijo: "Artículo 149-BIS" (`articulo_id` "149BIS").
 - Rangos agrupados: "Artículo 131-144" (`articulo_id` "131144"), típico en
   series derogadas del Código Civil.
