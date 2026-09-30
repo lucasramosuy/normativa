@@ -86,7 +86,7 @@ Cada push a `www`, o cada publicación en `api`, ejecuta el build y publica `dis
 
 ## Piloto: En criollo
 
-30 explicaciones: Constitución (12), Ley General de Educación (10), Niñez y Adolescencia (8). Están en `explicaciones/{slug}.jsonl`, separadas de IMPO. El piloto quedó autorizado para publicar después de verificar los textos vigentes y contrastarlos con obras jurídicas. No se atribuye revisión jurídica a Lucas ni a un abogado.
+80 explicaciones: Constitución (37), Ley General de Educación (21), Niñez y Adolescencia (22). Primera tanda de 30 y segunda de 50 derechos y principios, sin completar las normas enteras. Están en `explicaciones/{slug}.jsonl`, separadas de IMPO. El piloto quedó autorizado para publicar después de verificar los textos vigentes y contrastarlos con obras jurídicas. No se atribuye revisión jurídica a Lucas ni a un abogado.
 
 ### Política de contenido
 
@@ -99,3 +99,10 @@ El build normal muestra solo `estado: aprobado` con responsable y fecha reales. 
 El hash incluye texto legal, notas y estado, además de dependencias registradas; si cambian, oculta la explicación hasta nueva revisión. Los hashes no cubren todo cambio de contexto: revisar reformas y remisiones periódicamente. Artículos retirados, sin texto o con derogación no presentan explicación.
 
 `node --test tests/criollo.test.mjs` verifica publicación e invalidación. Lectura HTML estática, sin IA en vivo ni nueva base de datos. Desktop muestra legal/explicación en dos columnas; mobile: texto legal, criollo, acciones/cita, notas. Subrayado inline suave en condiciones jurídicas. El panel no entra al índice legal de Pagefind.
+
+### Tanda 2: 50 derechos y principios
+25 de Constitución, 11 de Educación y 14 de Niñez. Comparación por artículo registrada en `revision`, con obra, pasaje, nivel de respaldo y criterio. Se agregan Piñeyro (UNICEF, 2017), Galusso/Saravia (UNICEF/MIDES, 2023) y el Manual para la defensa jurídica de los derechos humanos de la infancia (2012).
+
+El respaldo varía: hay comentario directo, mención breve y marco general. No se atribuye comentario exhaustivo a una fuente que no lo contiene. Las ediciones antiguas no prueban la vigencia; Educación 11, 14 y 72 se cotejan con la redacción reformada en IMPO. Constitución 32 incorpora la excepción de los artículos 231-232; 22 distingue pesquisa secreta de reserva legal de investigación; 37 evita convertir lenguaje antiguo en regla de discriminación. Hay dependencias con hash para estas remisiones y para CNA 21 y Educación 73.
+
+El estado interno `aprobado` significa habilitado para el build después de contraste documental asistido, no aprobación humana ni revisión jurídica profesional. La tanda se prepara en #34, sin merge ni despliegue; Lucas decide el merge.
