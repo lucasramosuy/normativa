@@ -36,6 +36,7 @@ Los workflows manuales viejos (`scrape.yml`, `scrape-codigos.yml`), que commitea
 - Página 404 propia (`src/pages/404.astro`).
 - Contacto: `/normativa/contacto/` redirige al formulario único de `lucasramos.uy/contacto/?tema=normativa` (repo `www`).
 - Historial de cambios en cada artículo, página [/cambios/](https://lucasramos.uy/normativa/cambios/) y feed Atom (`/cambios/feed.xml`). Solo cambios publicados. Los artículos que dejan de figurar en IMPO conservan su página con un aviso.
+- Explorador interactivo en `/api/probar/` y contrato OpenAPI 3.0.3 en `/api/openapi.json`, ambos estáticos y self-hosted. Las cinco consultas salen del contrato y los slugs se generan con el catálogo publicado. Sin librería de UI adicional ni CDN.
 - API estática v1 en `/api/v1/` (`normas.json`, `{norma}.json`, `{norma}/{articulo}.json`, `historial.json`, `historial/{norma}.json`). Documentación: https://lucasramos.uy/normativa/api/
 
 ## Worker de Cloudflare (`worker/proxy.js`)
@@ -90,3 +91,6 @@ Cada push a `www`, o cada publicación en `api`, ejecuta el build y publica `dis
 Publicar una explicación requiere revisar su fondo y cambiar `estado` a `aprobado`, con `revision: {responsable, fecha}` reales. El hash incluye texto legal, notas y estado, además de las dependencias registradas; si cambian, se oculta hasta nueva revisión. Los hashes no cubren todo cambio de contexto jurídico: revisar periódicamente reformas y remisiones. Artículos retirados, sin texto o con texto de derogación no presentan explicación.
 
 `node --test tests/criollo.test.mjs` verifica el cierre editorial y la invalidación. La lectura es HTML estático, sin llamadas de IA ni nueva base de datos. Desktop muestra legal/explicación en dos columnas; mobile conserva el texto legal primero. Citas y fuente siguen disponibles. El panel no entra al índice legal de Pagefind.
+### Comprobar el contrato de la API
+
+Después de `pnpm build`, ejecutá `node tests/openapi.mjs`. Contrasta todas las respuestas JSON construidas con los esquemas, verifica parámetros/slugs/404 y prueba cambios sintéticos con antes/después nulos. No necesita dependencias nuevas. El explorador muestra solo respuestas solicitadas, con errores de red/HTTP, timeout de 15 s y copiar JSON/cURL.
