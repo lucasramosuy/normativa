@@ -82,3 +82,11 @@ pnpm run build
 ## Publicación
 
 Cada push a `www`, o cada publicación en `api`, ejecuta el build y publica `dist/`.
+
+## Piloto: En criollo
+
+30 borradores: Constitución (12), Ley General de Educación (10), Niñez y Adolescencia (8). Las explicaciones están en `explicaciones/{slug}.jsonl`, separadas de IMPO. **No están aprobadas ni se muestran a estudiantes.** El build normal solo muestra el aviso de revisión pendiente. `CRIOLLO_PREVIEW=true pnpm build` permite inspeccionar los borradores localmente; no activar esa variable en producción.
+
+Publicar una explicación requiere revisar su fondo y cambiar `estado` a `aprobado`, con `revision: {responsable, fecha}` reales. El hash incluye texto legal, notas y estado, además de las dependencias registradas; si cambian, se oculta hasta nueva revisión. Los hashes no cubren todo cambio de contexto jurídico: revisar periódicamente reformas y remisiones. Artículos retirados, sin texto o con texto de derogación no presentan explicación.
+
+`node --test tests/criollo.test.mjs` verifica el cierre editorial y la invalidación. La lectura es HTML estático, sin llamadas de IA ni nueva base de datos. Desktop muestra legal/explicación en dos columnas; mobile conserva el texto legal primero. Citas y fuente siguen disponibles. El panel no entra al índice legal de Pagefind.
