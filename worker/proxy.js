@@ -2,10 +2,14 @@
 const ROOT_ORIGIN = 'https://www-7r1.pages.dev';
 
 const ROUTES = {
-  '/normativa': 'https://lucasramosuy.github.io/normativa',
+  '/simuladores': 'https://simuladores.lucas-space.workers.dev/simuladores',
+      '/2048': 'https://2048-5iz.pages.dev',
+      '/normativa/leydle': 'https://leydle.pages.dev',
+          '/snake': 'https://snake-czg.pages.dev',
+          '/normativa': 'https://lucasramosuy.github.io/normativa',
   '/profe': 'https://lucasramosuy.github.io/profe',
   '/amargometro': 'https://lucasramosuy.github.io/amargometro',
-  '/edicion': 'https://lucasramosuy.github.io/edicion',
+'/edicion': 'https://lucasramosuy.github.io/edicion',
 };
 
 // First-party ingest for Normativa, so adblockers don't drop errors and analytics.
