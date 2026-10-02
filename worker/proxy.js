@@ -10,6 +10,7 @@ const ROUTES = {
   '/profe': 'https://lucasramosuy.github.io/profe',
   '/amargometro': 'https://lucasramosuy.github.io/amargometro',
 '/edicion': 'https://lucasramosuy.github.io/edicion',
+'/rebote': 'https://rebote-a9c.pages.dev',
 };
 
 // First-party ingest for Normativa, so adblockers don't drop errors and analytics.
