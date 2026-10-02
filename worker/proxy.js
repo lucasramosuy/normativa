@@ -59,6 +59,31 @@ async function posthogProxy(request, path, ctx) {
   });
 }
 
+// Proyectos nuevos: si el root (Pages "www") no tiene la ruta (404), se prueba https://p-<nombre>.pages.dev.
+// Solo el primer segmento ([a-z0-9-], hasta 39), solo GET/HEAD. Si ese proyecto no existe o responde 404, vale el 404 del root.
+async function fetchWithFallback(rootReq) {
+  const rootRes = await fetch(rootReq);
+  const url = new URL(rootReq.url);
+  const m = url.pathname.match(/^\/([a-z0-9][a-z0-9-]{0,38})(\/.*)?$/);
+  if (rootRes.status !== 404 || !m || (rootReq.method !== 'GET' && rootReq.method !== 'HEAD')) return rootRes;
+  const upstream = 'https://p-' + m[1] + '.pages.dev';
+  let res;
+  try {
+    res = await fetch(new Request(upstream + (m[2] || '/') + url.search, rootReq), { redirect: 'manual' });
+  } catch (e) {
+    return rootRes;
+  }
+  if (res.status === 404 || res.status === 530) return rootRes;
+  if (!m[2]) return new Response(null, { status: 301, headers: { location: '/' + m[1] + '/' + url.search } });
+  const out = new Response(res.body, res);
+  const loc = out.headers.get('location');
+  if (loc) {
+    const l = new URL(loc, upstream);
+    if (l.origin === upstream) out.headers.set('location', l.pathname + l.search);
+  }
+  return out;
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -98,6 +123,6 @@ export default {
     const target = new URL(url.pathname + url.search, ROOT_ORIGIN);
     const upstreamReq = new Request(target, request);
     upstreamReq.headers.delete('cookie');
-    return fetch(upstreamReq);
+    return fetchWithFallback(upstreamReq);
   },
 };
