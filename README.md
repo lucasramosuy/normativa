@@ -26,7 +26,7 @@ Los workflows manuales viejos (`scrape.yml`, `scrape-codigos.yml`), que commitea
 
 ## Qué hay en el sitio
 
-- La Constitución, 12 códigos y las leyes y decretos de `src/data/leyes.json` (208 normas al 28/09/2026; una norma aparece cuando sus datos llegan a `api`, que hoy publica 221 conjuntos de datos). La lista tiene que coincidir con `scripts/ingest/leyes.json` de `main`.
+- La Constitución, 12 códigos y las leyes y decretos de `src/data/leyes.json` (240 normas al 03/10/2026; una norma aparece cuando sus datos llegan a `api`, que hoy publica 221 conjuntos de datos). La lista tiene que coincidir con `scripts/ingest/leyes.json` de `main`.
 - Buscador (Pagefind), índice por norma y una página por artículo. Un número solo salta al artículo; con 3+ dígitos también lista menciones en el texto.
 - Ficha (`/ficha/`): marcá artículos con «+ Ficha», editalos para adaptarlos a clase (los cambios quedan en el navegador) e imprimí o guardá un A4 limpio.
 - Citado por: cada artículo enlaza las normas que lo citan, desde las concordancias de IMPO y las citas del texto.
