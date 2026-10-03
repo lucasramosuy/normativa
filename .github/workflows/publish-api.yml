@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
   actions: write
-  pull-requests: read
+  pull-requests: write
 
 concurrency:
   group: publish-api
@@ -61,6 +61,44 @@ jobs:
             git commit -m "Publicar datos desde main ${GITHUB_SHA::7}"
           git push origin api
           echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Checkout www
+        uses: actions/checkout@v4
+        with:
+          ref: www
+          path: www
+          fetch-depth: 0
+      - name: Regenerar catálogo de www
+        # Catálogo (src/data/leyes.json) y línea de conteo del README, calculados desde
+        # main y api. Si no hay nada que cambiar, no hace nada.
+        id: catalogo
+        run: |
+          python3 main/scripts/ingest/sync_catalogo.py --main main --api api --www www | tee catalogo.log
+          echo "$(grep '^cambios=' catalogo.log)" >> "$GITHUB_OUTPUT"
+          echo "resumen=$(grep '^catalogo=' catalogo.log)" >> "$GITHUB_OUTPUT"
+      - name: Abrir PR de catálogo contra www
+        # Solo abre o actualiza el PR; lo mergea Lucas a mano. Rama fija: una corrida
+        # nueva actualiza el PR abierto en vez de abrir otro.
+        if: steps.catalogo.outputs.cambios == 'true'
+        working-directory: www
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESUMEN: ${{ steps.catalogo.outputs.resumen }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B catalogo/auto
+          git add src/data/leyes.json README.md
+          git commit -m "Catálogo: sincronizar con los datos publicados (main ${GITHUB_SHA::7})"
+          git push --force origin catalogo/auto
+          if [ -n "$(gh pr list --repo "$GITHUB_REPOSITORY" --head catalogo/auto --base www --state open --json number --jq '.[0].number')" ]; then
+            echo "Ya hay un PR de catálogo abierto; se actualizó con el push."
+            exit 0
+          fi
+          gh pr create --repo "$GITHUB_REPOSITORY" --base www --head catalogo/auto \
+            --title "Catálogo: sincronizar con los datos publicados" \
+            --body "Generado por **Publicar datos en api** desde main ${GITHUB_SHA::7}.
+
+          Regenera \`src/data/leyes.json\` desde \`scripts/ingest/leyes.json\` y la línea de conteo del README. Los números salen de los datos (${RESUMEN}). No hay que tocar nada a mano: mergear este PR alcanza."
       - name: Redesplegar la web
         if: steps.commit.outputs.changed == 'true'
         env:
