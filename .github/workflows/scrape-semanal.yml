@@ -3,7 +3,7 @@ name: Revisión semanal de IMPO
 # Una vez por semana descarga la Constitución, los códigos (codigos.json) y las leyes y decretos (leyes.json) (respetando robots.txt
 # y el Crawl-Delay de IMPO). Si el contenido cambió, abre un PR contra main con el
 # resumen de artículos modificados/agregados/eliminados. Si no cambió nada, no hace nada.
-# No publica en api: eso sigue siendo manual ("Publicar datos en api").
+# No publica en api: al mergear su PR de datos, "Publicar datos en api" corre solo.
 
 on:
   schedule:

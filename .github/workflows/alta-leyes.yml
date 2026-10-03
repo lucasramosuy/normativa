@@ -1,0 +1,72 @@
+name: Alta de leyes
+
+# Flujo: Lucas mergea a main una entrada mínima en scripts/ingest/leyes.json
+# (solo `url` de IMPO, `corto` y `area`). Este workflow la completa desde IMPO,
+# descarga solo esas normas y abre un PR de datos contra main (leyes.json completo,
+# data/*.jsonl y reports/). Si no hay entradas nuevas, no hace nada. Si una entrada
+# es inválida o IMPO no la tiene, el workflow falla.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/ingest/leyes.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: alta-leyes
+  cancel-in-progress: false
+
+jobs:
+  alta:
+    runs-on: ubuntu-latest
+    # ~15 s por norma (Crawl-Delay de 10 s + respuesta de IMPO).
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-scraper.txt
+      - run: pip install -r requirements-scraper.txt
+      - name: Completar y descargar las normas nuevas
+        id: alta
+        run: |
+          python scripts/ingest/alta_leyes.py \
+            --user-agent "normativa-uy-scraper/1.0 (+https://github.com/${{ github.repository }})" | tee alta.log
+          echo "$(grep '^cambios=' alta.log)" >> "$GITHUB_OUTPUT"
+          echo "resumen=$(grep '^alta=' alta.log)" >> "$GITHUB_OUTPUT"
+      - name: Sin entradas nuevas
+        if: steps.alta.outputs.cambios != 'true'
+        run: echo "No hay entradas nuevas en leyes.json. No se abre PR." >> "$GITHUB_STEP_SUMMARY"
+      - name: Abrir PR de datos contra main
+        # Rama fija: una corrida nueva actualiza el PR abierto en vez de abrir otro.
+        # Lo mergea Lucas a mano; ese merge dispara "Publicar datos en api".
+        if: steps.alta.outputs.cambios == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESUMEN: ${{ steps.alta.outputs.resumen }}
+        run: |
+          rm -f alta.log
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B datos/auto
+          git add scripts/ingest/leyes.json data reports README.md
+          git commit -m "Alta de leyes: completar y descargar las entradas nuevas (main ${GITHUB_SHA::7})"
+          git push --force origin datos/auto
+          if [ -n "$(gh pr list --repo "$GITHUB_REPOSITORY" --head datos/auto --base main --state open --json number --jq '.[0].number')" ]; then
+            echo "Ya hay un PR de alta abierto; se actualizó con el push."
+            exit 0
+          fi
+          gh pr create --repo "$GITHUB_REPOSITORY" --base main --head datos/auto \
+            --title "Alta de leyes: datos de las entradas nuevas" \
+            --body "Generado por **Alta de leyes** desde main ${GITHUB_SHA::7} (${RESUMEN}).
+
+          Completa las entradas mínimas de \`scripts/ingest/leyes.json\` con los datos de IMPO (id, documento, tipo, número, año, título), agrega \`data/*.jsonl\` y \`reports/\` de las normas nuevas y actualiza la línea de conteo del README. Al mergearlo, **Publicar datos en api** corre solo."

@@ -1,6 +1,11 @@
 name: Publicar datos en api
 
 on:
+  # Corre solo cuando cambian los datos en main (al mergear un PR de datos) y a mano.
+  push:
+    branches: [main]
+    paths:
+      - data/**
   workflow_dispatch:
 
 permissions:
