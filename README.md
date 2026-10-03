@@ -69,7 +69,7 @@ python scripts/ingest/scrape_codigos.py --user-agent "normativa-uy-scraper/1.0 (
 python scripts/ingest/scrape_codigos.py --tolerante --config scripts/ingest/leyes.json --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 ```
 
-`codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma alcanza con agregarla a la lista (y a `src/data/leyes.json` en la rama `www`); el sitio la muestra cuando sus datos llegan a `api`. Las leyes se suman por tandas, una tanda por PR de datos.
+`codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma se agrega a la lista de `scripts/ingest/leyes.json` en un PR de datos (con sus `data/*.jsonl` y `reports/`). Después, **Publicar datos en api** copia los datos a `api` y abre solo el PR de catálogo contra `www`, que se mergea a mano; `src/data/leyes.json` de `www` no se edita a mano. El sitio muestra la norma cuando sus datos llegan a `api`. Las leyes se suman por tandas, una tanda por PR de datos.
 
 Al 03/10/2026: la Constitución, 12 códigos y 240 leyes y decretos en `leyes.json`
 (253 normas en `main`, 18.622 artículos). La tanda 8 agrega 14 leyes y 267
