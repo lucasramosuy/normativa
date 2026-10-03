@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 58,
+  "articulos_guardados": 58,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.824",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-03T15:39:02Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19824-2019",
+  "sha256_jsonl": "176d759bc2f5bed4152c9bb95c9c06af27f79b242ce5395dd401d1e54f079b8a",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

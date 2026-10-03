@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 10,
+  "articulos_guardados": 10,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 18.632",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-03T15:39:02Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/18632-2009",
+  "sha256_jsonl": "a28b2e8dc6dc9b159c9289297568b5e7033b3a1253e73ba72baa74a4b19b86ea",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

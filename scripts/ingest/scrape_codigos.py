@@ -71,8 +71,16 @@ def sin_acentos(value: str) -> str:
 
 
 def normalizar_id_articulo(raw: str) -> str:
-    """'149-BIS' -> '149BIS'; '131-144' -> '131144' (formato del ancla IMPO)."""
-    return raw.upper().replace("-", "").replace(" ", "").rstrip("º°")
+    """'149-BIS' -> '149BIS'; '131-144' -> '131144' (formato del ancla IMPO).
+
+    Excepción: '26-BIS-A' -> '26BIS-A'. IMPO conserva el guion antes de la letra
+    final de un bis/ter/quater/quinquies.
+    """
+    limpio = raw.upper().replace(" ", "").rstrip("º°")
+    m = re.fullmatch(r"(\d+)-?(BIS|TER|QUATER|QUINQUIES)-([A-Z])", limpio)
+    if m:
+        return f"{m.group(1)}{m.group(2)}-{m.group(3)}"
+    return limpio.replace("-", "")
 
 
 _robots_por_sesion: dict[int, RobotFileParser] = {}

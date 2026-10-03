@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 8,
+  "articulos_guardados": 8,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.903",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-03T15:39:02Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19903-2020",
+  "sha256_jsonl": "ee33d112acbcd9aa05cb43d01d70169105c974fdaafed4c658104e5cc5116f8b",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

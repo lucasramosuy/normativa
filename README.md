@@ -71,8 +71,8 @@ python scripts/ingest/scrape_codigos.py --tolerante --config scripts/ingest/leye
 
 `codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma alcanza con agregarla a la lista (y a `src/data/leyes.json` en la rama `www`); el sitio la muestra cuando sus datos llegan a `api`. Las leyes se suman por tandas, una tanda por PR de datos.
 
-Al 30/09/2026: la Constitución, 12 códigos y 226 leyes y decretos en `leyes.json`
-(239 normas en `main`, 18.355 artículos). La tanda 7 agrega 18 leyes y 284
+Al 03/10/2026: la Constitución, 12 códigos y 240 leyes y decretos en `leyes.json`
+(253 normas en `main`, 18.622 artículos). La tanda 8 agrega 14 leyes y 267
 artículos; su publicación en `api` sigue siendo manual. El último corpus
 publicado antes de esta tanda tiene 221 normas y 18.071 artículos.
 
