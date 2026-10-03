@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 21,
+  "articulos_guardados": 21,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 20.376",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-03T15:39:02Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/20376-2024",
+  "sha256_jsonl": "90339ac31fc4a973e00bd3678cb647d936a31235146a0bee52be15a8edebd15d",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

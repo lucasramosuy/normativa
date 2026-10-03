@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 48,
+  "articulos_guardados": 48,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.721",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-03T15:39:02Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19721-2018",
+  "sha256_jsonl": "3571ec8cf262bc149c07f616f011b76bd5962dd2ac1e87747a8fc580ff4ed20d",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
