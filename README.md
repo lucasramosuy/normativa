@@ -69,12 +69,18 @@ python scripts/ingest/scrape_codigos.py --user-agent "normativa-uy-scraper/1.0 (
 python scripts/ingest/scrape_codigos.py --tolerante --config scripts/ingest/leyes.json --user-agent "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 ```
 
-`codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma se agrega a la lista de `scripts/ingest/leyes.json` en un PR de datos (con sus `data/*.jsonl` y `reports/`). Después, **Publicar datos en api** copia los datos a `api` y abre solo el PR de catálogo contra `www`, que se mergea a mano; `src/data/leyes.json` de `www` no se edita a mano. El sitio muestra la norma cuando sus datos llegan a `api`. Las leyes se suman por tandas, una tanda por PR de datos.
+`codigos.json` lista los códigos y `leyes.json` las leyes, decretos-ley y decretos (con nombre corto, número, año, área y el título de IMPO). Para sumar una norma:
 
+1. Se abre un PR a `main` que agrega a `scripts/ingest/leyes.json` una entrada mínima: `url` de IMPO, `corto` y `area` (por ejemplo `{"url": "https://www.impo.com.uy/bases/leyes/20376-2024", "corto": "Nombre corto", "area": "Penal"}`). Se mergea a mano.
+2. **Alta de leyes** corre sola al llegar ese cambio a `main`: completa la entrada desde IMPO (id, número, año, título), descarga solo las normas nuevas y abre un PR de datos (`leyes.json` completo, `data/*.jsonl`, `reports/` y el conteo de abajo). Si una entrada es inválida o IMPO no la tiene, el workflow falla. Sin entradas nuevas no hace nada.
+3. Al mergear a mano ese PR de datos, **Publicar datos en api** corre solo: copia los datos a `api` y abre el PR de catálogo contra `www`, que también se mergea a mano; `src/data/leyes.json` de `www` no se edita a mano. El sitio muestra la norma cuando sus datos llegan a `api`.
+
+Los PRs de la revisión semanal de IMPO que cambian `data/` también publican en `api` al mergearse. **Publicar datos en api** sigue pudiendo correrse a mano.
+
+<!-- conteo:inicio -->
 Al 03/10/2026: la Constitución, 12 códigos y 240 leyes y decretos en `leyes.json`
-(253 normas en `main`, 18.622 artículos). La tanda 8 agrega 14 leyes y 267
-artículos; su publicación en `api` sigue siendo manual. El último corpus
-publicado antes de esta tanda tiene 221 normas y 18.071 artículos.
+(253 normas con datos en `main`, 18.622 artículos).
+<!-- conteo:fin -->
 
 Tiempo: cada ley o decreto lleva unos 15 s (Crawl-Delay de 10 s más la respuesta de IMPO) y los códigos unos 8 min. El workflow tiene un límite de 240 min, que alcanza para unas 900 normas. Si la lista se acerca a eso, hay que partir la revisión en varios días.
 
