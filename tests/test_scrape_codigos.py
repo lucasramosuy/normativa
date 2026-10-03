@@ -27,6 +27,11 @@ class ArticuloUnicoTest(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             scraper.parse_norma('<h4>Artículo Unico</h4><pre>Texto</pre>', 'Ley de prueba', 'https://example.invalid', '2026-09-30')
 
+    def test_normalizar_id_conserva_guion_antes_de_letra_final(self):
+        self.assertEqual(scraper.normalizar_id_articulo("26-BIS-A"), "26BIS-A")
+        self.assertEqual(scraper.normalizar_id_articulo("149-BIS"), "149BIS")
+        self.assertEqual(scraper.normalizar_id_articulo("131-144"), "131144")
+
 
 if __name__ == "__main__":
     unittest.main()
