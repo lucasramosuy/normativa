@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 13,
+  "articulos_guardados": 13,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.655",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-03T15:39:02Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19655-2018",
+  "sha256_jsonl": "bb2a194b1cd57d0429cdd1ce3276213fef48eaecc1d304ec21a811f4180615e8",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 18,
+  "articulos_guardados": 18,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.066",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-03T15:39:02Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17066-1998",
+  "sha256_jsonl": "353a244beb5154818cb17f58cd922df48f63a8ff1df88e1d5bd0987e218975f4",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

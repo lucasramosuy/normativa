@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 16,
+  "articulos_guardados": 16,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 20.177",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-03T15:39:02Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/20177-2023",
+  "sha256_jsonl": "f14e90b352690b7f50d1694eb59564ba40b2e29df1333c0bd290975dafbf29c1",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
