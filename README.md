@@ -17,7 +17,7 @@ Scrapers de normativa uruguaya desde [IMPO](https://www.impo.com.uy). Esta rama 
 
 1. **Revisión semanal de IMPO** corre los lunes a las 06:17 de Montevideo (o a mano con *Run workflow*). Descarga la Constitución, los códigos (`codigos.json`) y las leyes y decretos (`leyes.json`) y, si cambió el contenido, abre un PR contra `main` con el resumen de artículos modificados, agregados y eliminados. Si una ley falla (por ejemplo, IMPO devuelve 504), se conserva su versión anterior y el error queda en `reports/errores_leyes.json`; la corrida siguiente la vuelve a intentar.
 2. Revisar y mergear el PR.
-3. Publicar: **Actions → Publicar datos en api → Run workflow**. Copia `data/` y `reports/` a `api`, actualiza `historial/` y vuelve a desplegar la web.
+3. Publicar: **Actions → Publicar datos en api → Run workflow**. Copia `data/` y `reports/` a `api`, actualiza `historial/`, vuelve a desplegar la web y, si el catálogo de `www` quedó desactualizado, abre (o actualiza) un PR contra `www` desde la rama `catalogo/auto` con `src/data/leyes.json` y la línea de conteo del README, generados por `scripts/ingest/sync_catalogo.py`. Ese PR se mergea a mano.
 
 ## Historial de cambios
 
