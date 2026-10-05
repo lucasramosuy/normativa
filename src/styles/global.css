@@ -55,4 +55,8 @@
   header .wrap>a,footer a{display:inline-flex;align-items:center;min-height:44px}
   #mobile-nav a{display:flex;align-items:center;min-height:44px}
   header small{font-size:11px}
+  .search-control{min-height:44px;padding-block:.3rem}
+  .search-control input{min-height:44px;font-size:16px}
+  .search-control button{min-height:44px}
+  a.rounded-full.border,.leydle-copy a{display:inline-flex;align-items:center;min-height:44px}
 }
