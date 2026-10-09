@@ -2,6 +2,7 @@
 const ROOT_ORIGIN = 'https://www-7r1.pages.dev';
 
 const ROUTES = {
+  '/intemperie': 'https://lucasramosuy.github.io/intemperie',
   '/simuladores': 'https://simuladores.lucas-space.workers.dev/simuladores',
       '/2048': 'https://2048-5iz.pages.dev',
       '/normativa/leydle': 'https://leydle.pages.dev',
