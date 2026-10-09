@@ -54,7 +54,7 @@ El Worker "proxy" está delante de `lucasramos.uy` y hace esto:
 ## Stack
 
 - Astro, Tailwind CSS 4
-- Inter Variable y Source Serif 4, self-hosted con Fontsource
+- Space Grotesk y Source Serif 4, self-hosted con Fontsource
 - Íconos de [Reicon](https://reicon.dev/)
 - Pagefind para búsqueda estática
 - Sentry para errores y rendimiento (por el tunnel `/normativa/_i/s`; source maps con `SENTRY_AUTH_TOKEN`)
