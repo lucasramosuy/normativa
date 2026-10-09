@@ -52,7 +52,7 @@
 /* Touch targets: expand the hit area, not the icon or label; desktop stays unchanged. */
 @media (pointer:coarse){
  .mesa-rail .mesa-tab button,.mesa-rail .mesa-add,.criollo-salto,.copy-btn,.ref-add,.ficha-btn,
- nav[aria-label="Ruta"] a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+ nav[aria-label="Ruta"] a,[data-pagefind-filter="norma"]{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
  .mesa-rail .mesa-tab button{min-width:44px;padding:0 .7rem}
  .mesa-rail .mesa-add{padding:.35rem .8rem}
  .criollo-salto{padding-block:11px;margin-top:0}
