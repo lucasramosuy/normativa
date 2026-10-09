@@ -31,10 +31,13 @@ const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
 <main class="wrap pb-20 pt-8">
   <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><nav class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500" aria-label="Ruta"><a class="hover:text-forest" href={base}>Inicio</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}explorar/`}>Explorar</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}normas/${slug}/`}>{norma.corto}</a><span aria-hidden="true">›</span><span class="text-slate-700">Artículo {label}</span></nav><div class="w-full md:max-w-md"><Search compact norma={slug} label={`Buscar en ${norma.corto}`} placeholder={`Buscar en ${norma.corto}…`}/></div></div>
 
-  <nav class="mesa-rail mt-7" data-pagefind-ignore aria-label="Mesa de lectura" data-mesa-rail data-key={`${slug}/${idOf(article)}`} data-label={`${norma.corto} · art. ${label}`}>
-    <span class="mesa-rail-title">ABIERTOS · <span data-mesa-count>1</span></span><div class="mesa-tabs" data-mesa-tabs></div>
-    <button type="button" class="mesa-add" data-mesa-add>+ Abrir artículo</button>
-  </nav>
+  <details class="mesa-shell mt-5" data-pagefind-ignore data-mesa-shell>
+    <summary class="mesa-summary" aria-label="Mesa de lectura, artículos abiertos"><span class="mesa-rail-title">MESA DE LECTURA · <span data-mesa-count>1</span> abiertos</span><span class="mesa-summary-action" aria-hidden="true">Ver artículos <span class="mesa-chevron">⌄</span></span></summary>
+    <nav class="mesa-rail" aria-label="Mesa de lectura" data-mesa-rail data-key={`${slug}/${idOf(article)}`} data-label={`${norma.corto} · art. ${label}`}>
+      <span class="mesa-rail-title">ABIERTOS · <span data-mesa-count-list>1</span></span><div class="mesa-tabs" data-mesa-tabs></div>
+      <button type="button" class="mesa-add" data-mesa-add>+ Abrir artículo</button>
+    </nav>
+  </details>
   <div class:list={["mt-8 grid min-w-0 gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14",{"con-criollo":!!criollo.registro}]}>
     <article class="min-w-0" data-pagefind-body={quitado?undefined:true}>
       <header class="border-b border-black/10 pb-8">
@@ -105,8 +108,9 @@ wireFichaButtons();
 const rail=document.querySelector<HTMLElement>('[data-mesa-rail]')!;
 const key=rail.dataset.key!,title=rail.dataset.label!,base=import.meta.env.BASE_URL;
 addMesa({key,label:title});
-function paintMesa(){const arr=getMesa();rail.querySelector<HTMLElement>('[data-mesa-count]')!.textContent=String(arr.length);
+function paintMesa(){const arr=getMesa();document.querySelectorAll<HTMLElement>('[data-mesa-count]').forEach(el=>el.textContent=String(arr.length));
   const list=rail.querySelector<HTMLElement>('[data-mesa-tabs]')!;list.replaceChildren();
+  rail.querySelector<HTMLElement>('[data-mesa-count-list]')!.textContent=String(arr.length);
   arr.forEach(item=>{const row=document.createElement('span');row.className='mesa-tab'+(item.key===key?' active':'');const link=document.createElement('a');link.href=`${base}normas/${item.key}/`;link.textContent=item.label;link.setAttribute('aria-current',item.key===key?'page':'false');row.append(link);
   const close=document.createElement('button');close.type='button';close.textContent='×';close.setAttribute('aria-label',`Cerrar ${item.label}`);close.onclick=()=>{setMesa(getMesa().filter(x=>x.key!==item.key));paintMesa()};row.append(close);list.append(row)});
 }

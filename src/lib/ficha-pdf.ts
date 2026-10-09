@@ -1,7 +1,7 @@
 import {PDFDocument, rgb} from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit';
-import interUrl from './inter-400-pdf.ttf?url';
-import interBoldUrl from './inter-700-pdf.ttf?url';
+import sansUrl from './space-grotesk-400-pdf.ttf?url';
+import sansBoldUrl from './space-grotesk-700-pdf.ttf?url';
 import serifUrl from './source-serif-400-pdf.ttf?url';
 import serifBoldUrl from './source-serif-700-pdf.ttf?url';
 
@@ -27,8 +27,8 @@ type Article={short:string;heading:string;rubric:string;blocks:{text:string;mark
 export async function downloadFichaPdf(title:string,articles:Article[],source:string){
   if(!articles.length)throw Error('No hay artículos disponibles para exportar.');
   const pdf=await PDFDocument.create();pdf.registerFontkit(fontkit);
-  const [i,ib,s,sb]=await Promise.all([interUrl,interBoldUrl,serifUrl,serifBoldUrl].map(fontBytes));
-  const fonts={inter:await pdf.embedFont(i),interBold:await pdf.embedFont(ib),serif:await pdf.embedFont(s),serifBold:await pdf.embedFont(sb)};
+  const [i,ib,s,sb]=await Promise.all([sansUrl,sansBoldUrl,serifUrl,serifBoldUrl].map(fontBytes));
+  const fonts={sans:await pdf.embedFont(i),sansBold:await pdf.embedFont(ib),serif:await pdf.embedFont(s),serifBold:await pdf.embedFont(sb)};
   pdf.setTitle(title.trim()||'Ficha de artículos - Normativa Uruguay');pdf.setCreator('Normativa Uruguay');
   let page=pdf.addPage([WIDTH,HEIGHT]),y=TOP;
   const next=()=>{page=pdf.addPage([WIDTH,HEIGHT]);y=TOP};
@@ -45,19 +45,19 @@ export async function downloadFichaPdf(title:string,articles:Article[],source:st
   }
   for(let index=0;index<articles.length;index++){
     const a=articles[index];need(90); // Keep heading and first lines together.
-    line(a.short.toUpperCase(),fonts.interBold,8,15,colors.forest);
+    line(a.short.toUpperCase(),fonts.sansBold,8,15,colors.forest);
     paragraph(a.heading,fonts.serifBold,16,20);if(a.rubric)paragraph(a.rubric,fonts.serif,12,17,CONTENT,LEFT,colors.forest);
     need(7);y+=7;
     for(const block of a.blocks){
       if(!block.text.trim()&&!block.marker)continue;
-      if(block.marker){const markerWidth=37;need(32);const start=y,current=page;paragraph(block.text,fonts.serif,11,16,CONTENT-markerWidth,LEFT+markerWidth);current.drawText(block.marker,{x:LEFT,y:HEIGHT-start-9,font:fonts.interBold,size:8.5,color:colors.forest});}
+      if(block.marker){const markerWidth=37;need(32);const start=y,current=page;paragraph(block.text,fonts.serif,11,16,CONTENT-markerWidth,LEFT+markerWidth);current.drawText(block.marker,{x:LEFT,y:HEIGHT-start-9,font:fonts.sansBold,size:8.5,color:colors.forest});}
       else paragraph(block.text,fonts.serif,11,16);
       need(8);y+=8;
     }
     paragraph(a.citation,fonts.serif,9.5,14,CONTENT,LEFT,colors.muted);
     if(index<articles.length-1){need(23);y+=10;page.drawLine({start:{x:LEFT,y:HEIGHT-y},end:{x:WIDTH-RIGHT,y:HEIGHT-y},thickness:.5,color:colors.rule});y+=13}
   }
-  need(32);y+=17;paragraph(source,fonts.inter,8.5,12,CONTENT,LEFT,colors.muted);
+  need(32);y+=17;paragraph(source,fonts.sans,8.5,12,CONTENT,LEFT,colors.muted);
   const bytes=await pdf.save();const url=URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}));
   const a=document.createElement('a');a.href=url;a.download='normativa-ficha.pdf';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);
 }
