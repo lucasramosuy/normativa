@@ -24,7 +24,7 @@ const changeProperties = {
 const normaParameter = { name: 'norma', in: 'path', required: true, description: 'Slug del catálogo publicado, no el número de la ley.', schema: { type: 'string', enum: NORMAS.map(n => n.slug) }, example: 'constitucion' };
 const articleParameter = { name: 'articulo', in: 'path', required: true, description: 'Usá el id del índice de la norma, en minúsculas. Admite bis, ter y rangos.', schema: str, example: '7' };
 const operation = (operationId: string, summary: string, description: string, schema: string, parameters: object[] = []) => ({
-  get: { operationId, summary, description, tags: [schema.startsWith('Historial') ? 'Historial' : 'Normas'], parameters,
+  get: { operationId, summary, description, tags: [schema.startsWith('Historial') ? 'Historial' : (schema === 'CitasNorma' || schema === 'Busqueda') ? 'Citas' : 'Normas'], parameters,
     responses: { '200': { description: 'JSON publicado. Los metadatos y el texto no certifican la vigencia jurídica.', content: { 'application/json': { schema: ref(schema) } } },
       '404': { description: 'Recurso no publicado. El servidor estático puede responder HTML, no un objeto JSON de error.', content: { 'text/html': { schema: str } } } },
   },
@@ -34,12 +34,14 @@ export const openapi = {
   openapi: '3.0.3',
   info: { title: 'Normativa Uruguay · API', version: '1.0.0', description: 'API estática, pública y de solo lectura. Sin clave ni paginación. Solo cambios publicados; las fechas de descarga y publicación del historial no son fechas de vigencia. Los textos provienen de IMPO: ante diferencias, rige la fuente oficial. La publicación de datos es manual.' },
   servers: [{ url: abs('api/v1'), description: 'API pública v1' }],
-  tags: [{ name: 'Normas', description: 'Catálogo, índices y texto legal.' }, { name: 'Historial', description: 'Cambios publicados, no cambios pendientes del scraper.' }],
+  tags: [{ name: 'Normas', description: 'Catálogo, índices y texto legal.' }, { name: 'Historial', description: 'Cambios publicados, no cambios pendientes del scraper.' }, { name: 'Citas', description: 'Referencias cruzadas entre artículos y búsqueda del lado del cliente.' }],
   paths: {
     '/normas.json': operation('listarNormas', 'Todas las normas', 'Catálogo completo con conteos y enlaces. Sin texto de artículos.', 'Catalogo'),
     '/{norma}.json': operation('indiceNorma', 'Artículos de una norma', 'Metadatos e índice completo. Los ids de este índice sirven para consultar el texto.', 'IndiceNorma', [normaParameter]),
     '/{norma}/{articulo}.json': operation('leerArticulo', 'Texto de un artículo', 'Registro completo con enlaces anterior y siguiente (null en los extremos). Los artículos eliminados conservan HTML pero no este endpoint.', 'Articulo', [normaParameter, articleParameter]),
     '/historial.json': operation('historialGlobal', 'Cambios recientes', 'Totales por norma y hasta 100 cambios recientes, sin textos antes/después.', 'HistorialGlobal'),
+    '/citas/{norma}.json': operation('citasNorma', 'Citado por, de una norma', 'Por cada artículo de la norma que otros artículos del sitio citan, la lista de quiénes lo citan. Los artículos sin citas no aparecen. Se calcula desde el texto y las notas oficiales de IMPO; deja afuera las referencias ambiguas y las normas que no están en el sitio.', 'CitasNorma', [normaParameter]),
+    '/busqueda.json': operation('indiceBusqueda', 'Índice para buscar', 'Índice liviano de todos los artículos (norma, id y rubro, sin texto) para buscar del lado del cliente. Para leer el texto, usar {norma}/{articulo}.json.', 'Busqueda'),
     '/historial/{norma}.json': operation('historialNorma', 'Historial de una norma', 'Todos los cambios publicados, más nuevos primero, con textos antes/después. Una norma sin cambios devuelve total 0 y entradas vacías.', 'HistorialNorma', [normaParameter]),
   },
   components: { schemas: {
@@ -55,6 +57,11 @@ export const openapi = {
     ResumenHistorial: object({ norma: str, desde: maybeDate, total: { type: 'integer', minimum: 0 }, ultimo: maybeDate, json: uri }),
     CambioReciente: object({ norma: str, ...changeProperties }),
     Cambio: object({ ...changeProperties, main_sha: nullable, antes: { ...object(articleProperties, []), nullable: true }, despues: { ...object(articleProperties, []), nullable: true } }),
+    CitaArticulo: object({ norma: str, id: str, via: { type: 'string', enum: ['texto', 'notas', 'ambos'] }, ...linkProperties }, ['norma','id','via','json','html']),
+    ArticuloCitado: object({ ...linkProperties, total: { type: 'integer', minimum: 1 }, citado_por: array(ref('CitaArticulo')) }),
+    CitasNorma: object({ ...envelope, norma: str, total_articulos_citados: { type: 'integer', minimum: 0 }, articulos: array(ref('ArticuloCitado')) }),
+    Busqueda: object({ ...envelope, normas: array(object({ slug: str, corto: str, tipo: str })), columnas: array(str), total: { type: 'integer', minimum: 0 },
+      filas: { type: 'array', description: 'Cada fila es [índice en normas, id del artículo, rubro o null].', items: { type: 'array', items: { oneOf: [{ type: 'integer' }, nullable] }, minItems: 3, maxItems: 3 } } }),
     HistorialGlobal: object({ ...envelope, normas: array(ref('ResumenHistorial')), recientes: array(ref('CambioReciente')) }),
     HistorialNorma: object({ ...envelope, norma: str, desde: maybeDate, total: { type: 'integer', minimum: 0 }, entradas: array(ref('Cambio')) }),
   } },
