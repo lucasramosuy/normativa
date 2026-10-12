@@ -37,7 +37,7 @@ Los workflows manuales viejos (`scrape.yml`, `scrape-codigos.yml`), que commitea
 - Contacto: `/normativa/contacto/` redirige al formulario único de `lucasramos.uy/contacto/?tema=normativa` (repo `www`).
 - Historial de cambios en cada artículo, página [/cambios/](https://lucasramos.uy/normativa/cambios/) y feed Atom (`/cambios/feed.xml`). Solo cambios publicados. Los artículos que dejan de figurar en IMPO conservan su página con un aviso.
 - Explorador interactivo en `/api/probar/` y contrato OpenAPI 3.0.3 en `/api/openapi.json`, ambos estáticos y self-hosted. Las cinco consultas salen del contrato y los slugs se generan con el catálogo publicado. Sin librería de UI adicional ni CDN.
-- API estática v1 en `/api/v1/` (`normas.json`, `{norma}.json`, `{norma}/{articulo}.json`, `historial.json`, `historial/{norma}.json`). Documentación: https://lucasramos.uy/normativa/api/
+- API estática v1 en `/api/v1/` (`normas.json`, `{norma}.json`, `{norma}/{articulo}.json`, `historial.json`, `historial/{norma}.json`, `citas/{norma}.json`, `busqueda.json`). Documentación: https://lucasramos.uy/normativa/api/
 
 ## Worker de Cloudflare (`worker/proxy.js`)
 
