@@ -49,6 +49,8 @@ const campos: [string, string][] = [
 <tr><td><a href={`${API}codigo-penal.json`}><code>{'{norma}'}.json</code></a></td><td>Datos de la norma y el índice de sus artículos (id, título, rubro, ubicación y enlaces), sin el texto.</td></tr>
 <tr><td><a href={`${API}codigo-penal/149-bis.json`}><code>{'{norma}/{articulo}'}.json</code></a></td><td>Un artículo completo, con su texto y todos los campos.</td></tr>
 <tr><td><a href={`${API}historial.json`}><code>historial.json</code></a></td><td>Cambios publicados: totales por norma y los últimos 100 cambios (sin textos).</td></tr>
+<tr><td><a href={`${API}citas/codigo-penal.json`}><code>{'citas/{norma}'}.json</code></a></td><td>Por cada artículo de la norma que otros artículos citan, quiénes lo citan. Ver <a href="#citas">Citas y búsqueda</a>.</td></tr>
+<tr><td><a href={`${API}busqueda.json`}><code>busqueda.json</code></a></td><td>Índice liviano de todos los artículos (norma, id y rubro, sin texto) para buscar del lado del cliente.</td></tr>
 <tr><td><a href={`${API}historial/codigo-penal.json`}><code>{'historial/{norma}'}.json</code></a></td><td>Todos los cambios publicados de una norma, con el texto antes y después. Ver <a href="#historial">Historial</a>.</td></tr>
 </tbody>
 </table>
@@ -75,6 +77,9 @@ const campos: [string, string][] = [
 <pre><code>{ejemploJsonl}</code></pre>
 <p>En la carpeta <a href="https://github.com/lucasramosuy/normativa/tree/api/reports"><code>reports/</code></a> están la cobertura, la validación y el SHA-256 de cada descarga.</p>
 
+<h2 id="citas">Citas y búsqueda</h2>
+<p><code>citas/{'{norma}'}.json</code> trae <code>total_articulos_citados</code> y <code>articulos</code>: solo los artículos de la norma que otros artículos del sitio citan, cada uno con <code>total</code> y <code>citado_por</code> (norma, id, <code>via</code> y enlaces). <code>via</code> indica si la cita sale del texto, de las notas oficiales de IMPO o de ambos. Se calcula al publicar el sitio; deja afuera lo ambiguo ("el artículo anterior") y las normas que no están publicadas.</p>
+<p><code>busqueda.json</code> no trae texto: <code>normas</code> es la lista de normas y cada fila de <code>filas</code> es <code>[índice en normas, id del artículo, rubro o null]</code>. Sirve para armar un buscador propio; el texto se lee con <code>{'{norma}'}/{'{articulo}'}.json</code>.</p>
 <h2 id="historial">Historial</h2>
 <p>Cada vez que se publica una actualización, se compara con la anterior artículo por artículo. <code>historial/{'{norma}'}.json</code> trae <code>desde</code> (fecha de la primera versión incorporada), <code>total</code> y <code>entradas</code>, de la más nueva a la más vieja. Cada entrada tiene:</p>
 <table>
