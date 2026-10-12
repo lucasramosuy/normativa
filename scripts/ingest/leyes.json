@@ -238,5 +238,19 @@
   {"id": "ley-12072", "documento": "Ley 12.072", "tipo": "Ley", "numero": "12.072", "anio": 1953, "corto": "Servicio Nacional de Sangre", "titulo_impo": "SERVICIO NACIONAL DE SANGRE. CREACION", "area": "Público y administrativo", "url": "https://www.impo.com.uy/bases/leyes/12072-1953"},
   {"id": "ley-15913", "documento": "Ley 15.913", "tipo": "Ley", "numero": "15.913", "anio": 1987, "corto": "Ley del Libro", "titulo_impo": "LEY DEL LIBRO. DECLARACION DE INTERES NACIONAL", "area": "Público y administrativo", "url": "https://www.impo.com.uy/bases/leyes/15913-1987"},
   {"id": "ley-18632", "documento": "Ley 18.632", "tipo": "Ley", "numero": "18.632", "anio": 2009, "corto": "Servicios Bibliotecarios", "titulo_impo": "DECLARACION DE INTERES PUBLICO. SERVICIOS BIBLIOTECARIOS", "area": "Público y administrativo", "url": "https://www.impo.com.uy/bases/leyes/18632-2009"},
-  {"id": "ley-19721", "documento": "Ley 19.721", "tipo": "Ley", "numero": "19.721", "anio": 2018, "corto": "Trabajo en Seguridad Privada", "titulo_impo": "REGULACION DEL TRABAJO EN LA SEGURIDAD PRIVADA", "area": "Laboral y seguridad social", "url": "https://www.impo.com.uy/bases/leyes/19721-2018"}
+  {"id": "ley-19721", "documento": "Ley 19.721", "tipo": "Ley", "numero": "19.721", "anio": 2018, "corto": "Trabajo en Seguridad Privada", "titulo_impo": "REGULACION DEL TRABAJO EN LA SEGURIDAD PRIVADA", "area": "Laboral y seguridad social", "url": "https://www.impo.com.uy/bases/leyes/19721-2018"},
+  {"url": "https://www.impo.com.uy/bases/leyes/19538-2017", "corto": "Femicidio y Discriminación", "area": "Penal"},
+  {"url": "https://www.impo.com.uy/bases/leyes/19247-2014", "corto": "Tipificación de Delitos y Tenencia de Armas", "area": "Penal"},
+  {"url": "https://www.impo.com.uy/bases/leyes/17016-1998", "corto": "Ley de Estupefacientes", "area": "Penal"},
+  {"url": "https://www.impo.com.uy/bases/decretos-ley/14470-1975", "corto": "Reclusión Carcelaria", "area": "Penal"},
+  {"url": "https://www.impo.com.uy/bases/leyes/18401-2008", "corto": "Carta Orgánica del BCU", "area": "Civil y comercial"},
+  {"url": "https://www.impo.com.uy/bases/leyes/16426-1993", "corto": "Ley de Seguros", "area": "Civil y comercial"},
+  {"url": "https://www.impo.com.uy/bases/decretos-ley/14261-1974", "corto": "Propiedad Horizontal (Incorporación)", "area": "Civil y comercial"},
+  {"url": "https://www.impo.com.uy/bases/decretos-ley/14560-1976", "corto": "Propiedad Horizontal (Modificaciones)", "area": "Civil y comercial"},
+  {"url": "https://www.impo.com.uy/bases/leyes/13738-1969", "corto": "Arrendamientos y Desalojo", "area": "Civil y comercial"},
+  {"url": "https://www.impo.com.uy/bases/decretos-ley/9000-1933", "corto": "Licencia y Feriados de Trabajadores", "area": "Laboral y seguridad social"},
+  {"url": "https://www.impo.com.uy/bases/leyes/12996-1961", "corto": "Jubilaciones y Pensiones Civiles y Rurales", "area": "Laboral y seguridad social"},
+  {"url": "https://www.impo.com.uy/bases/leyes/20506-2026", "corto": "Trabajo Digno y Decente", "area": "Laboral y seguridad social"},
+  {"url": "https://www.impo.com.uy/bases/decretos-ley/14977-1979", "corto": "Feriados Nacionales (1979)", "area": "Público y administrativo"},
+  {"url": "https://www.impo.com.uy/bases/leyes/16805-1996", "corto": "Feriados Nacionales (1996)", "area": "Público y administrativo"}
 ]
