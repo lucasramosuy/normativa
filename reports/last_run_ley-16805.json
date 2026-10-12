@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 3,
+  "articulos_guardados": 3,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 16.805",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/16805-1996",
+  "sha256_jsonl": "c23d172f02318c373704462eae14e368df72409bc605d16ef3aac90254ef16c5",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

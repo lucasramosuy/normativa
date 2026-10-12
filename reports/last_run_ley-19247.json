@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 15,
+  "articulos_guardados": 15,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.247",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19247-2014",
+  "sha256_jsonl": "a39b1876c4cbe2ceac3844b9fa227e3cc494f11e76c1264c8b21527c00fa7590",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

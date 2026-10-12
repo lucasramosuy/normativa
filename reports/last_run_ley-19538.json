@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 3,
+  "articulos_guardados": 3,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 19.538",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/19538-2017",
+  "sha256_jsonl": "96b1d6ceef790f44016bd26b5a4600b38b5b63a990ceef7bec37c66c73a70d8a",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
