@@ -4,7 +4,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 const spec = JSON.parse(fs.readFileSync('dist/api/openapi.json', 'utf8'));
 assert.equal(spec.openapi, '3.0.3');
-assert.equal(Object.keys(spec.paths).length, 5);
+assert.equal(Object.keys(spec.paths).length, 7);
 assert.equal(spec.servers[0].url, 'https://lucasramos.uy/normativa/api/v1');
 const resolve = s => s.$ref ? spec.components.schemas[s.$ref.split('/').at(-1)] : s;
 // Los tipos de este contrato: objetos, arrays, strings, integers, nullables y oneOf.
@@ -37,7 +37,7 @@ const root = path.join('dist', 'api', 'v1');
 let count = 0;
 for (const file of walk(root)) {
   const rel = path.relative(root, file);
-  const name = rel === 'normas.json' ? 'Catalogo' : rel === 'historial.json' ? 'HistorialGlobal' : rel.startsWith('historial/') ? 'HistorialNorma' : rel.includes('/') ? 'Articulo' : 'IndiceNorma';
+  const name = rel === 'normas.json' ? 'Catalogo' : rel === 'historial.json' ? 'HistorialGlobal' : rel === 'busqueda.json' ? 'Busqueda' : rel.startsWith('citas/') ? 'CitasNorma' : rel.startsWith('historial/') ? 'HistorialNorma' : rel.includes('/') ? 'Articulo' : 'IndiceNorma';
   validate(JSON.parse(fs.readFileSync(file, 'utf8')), spec.components.schemas[name], rel); count++;
 }
 const envelope = { version: 1, documentacion: 'https://lucasramos.uy/normativa/api/' };
@@ -51,4 +51,4 @@ for (const [route, op] of Object.entries(spec.paths)) {
   for (const name of route.matchAll(/\{([^}]+)\}/g)) assert.ok(op.get.parameters.some(p => p.name === name[1] && p.required));
   assert.ok(op.get.responses['404'].content['text/html']);
 }
-console.log(`OpenAPI: ${count} respuestas publicadas y 3 cambios sintéticos conformes; 5 GET, parámetros, slugs y errores verificados.`);
+console.log(`OpenAPI: ${count} respuestas publicadas y 3 cambios sintéticos conformes; 7 GET, parámetros, slugs y errores verificados.`);
