@@ -263,6 +263,11 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
         if ancla_id and ancla_id != id_norm and ancla_id.startswith(id_norm) and ancla_id[len(id_norm):].isalpha():
             display = f"{display}-{ancla_id[len(id_norm):]}"
             id_norm = ancla_id
+        # Rangos como "Artículo 9-12": IMPO conserva el guion en el ancla ("9-12"), mientras que
+        # en otras normas lo quita ("131144"). Manda el ancla.
+        elif ancla_id and ancla_id != id_norm and "-" in ancla_id and ancla_id.replace("-", "") == id_norm:
+            display = ancla_id
+            id_norm = ancla_id
 
         # El texto es el primer <pre> sin clase "italica" antes del próximo título. Algunos
         # artículos en IMPO solo tienen la nota de modificación (p. ej. Ley 5.350, art. 6):

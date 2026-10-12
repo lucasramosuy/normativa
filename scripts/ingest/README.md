@@ -39,6 +39,7 @@ Casos especiales soportados:
 - Artículo único: conservar el rótulo "Artículo Unico" y usar el ancla oficial numérica
   para `articulo_id`, `articulo` y URL (p. ej. Ley 19.430, artículo 1).
 - Artículos con sufijo: "Artículo 149-BIS" (`articulo_id` "149BIS").
+- Rangos con guion en el ancla: si IMPO ancla "Artículo 9-12" como "9-12" (Ley 17.835), manda el ancla y `articulo_id` queda "9-12"; si la ancla no tiene guion ("131144"), queda sin guion.
 - Rangos agrupados: "Artículo 131-144" (`articulo_id` "131144"), típico en
   series derogadas del Código Civil.
 - El nivel TITULO se guarda en `titulo_norma` para no chocar con el campo
