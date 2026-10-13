@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 19,
+  "articulos_guardados": 19,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 13.738",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/13738-1969",
+  "sha256_jsonl": "b34ba636b3af6d890c6fa26789f40cada0b990a39f6556153d7c9196186133e0",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

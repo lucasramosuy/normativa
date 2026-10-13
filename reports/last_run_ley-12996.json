@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 90,
+  "articulos_guardados": 90,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 12.996",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/12996-1961",
+  "sha256_jsonl": "b1b8b17da0c225a870923e66873aa975df03c76067b4f3c8ec0f30faa60d1c54",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

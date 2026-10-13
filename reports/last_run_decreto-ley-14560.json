@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 18,
+  "articulos_guardados": 18,
+  "crawl_delay_segundos": 10,
+  "documento": "Decreto-ley 14.560",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fuente": "https://www.impo.com.uy/bases/decretos-ley/14560-1976",
+  "sha256_jsonl": "dfc7559c851974844cd8e728774967ad31c48d047223e098ac2386766d227632",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}

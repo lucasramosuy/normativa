@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 22,
+  "articulos_guardados": 22,
+  "crawl_delay_segundos": 10,
+  "documento": "Ley 17.835",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fuente": "https://www.impo.com.uy/bases/leyes/17835-2004",
+  "sha256_jsonl": "02957cb81f61167916a77d71742fb9aba7a2ba16bcf25090a45785f313de35ac",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
