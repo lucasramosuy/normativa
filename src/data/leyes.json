@@ -150,6 +150,16 @@
   "url": "https://www.impo.com.uy/bases/leyes/19574-2017"
  },
  {
+  "id": "ley-17835",
+  "tipo": "Ley",
+  "numero": "17.835",
+  "anio": 2004,
+  "corto": "Lavado de Activos",
+  "titulo_impo": "LEY DEL FORTALECIMIENTO DEL SISTEMA DE PREVENCION Y CONTROL DEL LAVADO DE ACTIVOS Y FINANCIAMIENTO DEL TERRORISMO",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/17835-2004"
+ },
+ {
   "id": "ley-18099",
   "tipo": "Ley",
   "numero": "18.099",
@@ -2261,7 +2271,6 @@
  },
  {
   "id": "ley-20376",
-  "documento": "Ley 20.376",
   "tipo": "Ley",
   "numero": "20.376",
   "anio": 2024,
@@ -2272,7 +2281,6 @@
  },
  {
   "id": "ley-20431",
-  "documento": "Ley 20.431",
   "tipo": "Ley",
   "numero": "20.431",
   "anio": 2025,
@@ -2283,7 +2291,6 @@
  },
  {
   "id": "ley-19824",
-  "documento": "Ley 19.824",
   "tipo": "Ley",
   "numero": "19.824",
   "anio": 2019,
@@ -2294,7 +2301,6 @@
  },
  {
   "id": "ley-19979",
-  "documento": "Ley 19.979",
   "tipo": "Ley",
   "numero": "19.979",
   "anio": 2021,
@@ -2305,7 +2311,6 @@
  },
  {
   "id": "ley-19903",
-  "documento": "Ley 19.903",
   "tipo": "Ley",
   "numero": "19.903",
   "anio": 2020,
@@ -2316,7 +2321,6 @@
  },
  {
   "id": "ley-20246",
-  "documento": "Ley 20.246",
   "tipo": "Ley",
   "numero": "20.246",
   "anio": 2023,
@@ -2327,7 +2331,6 @@
  },
  {
   "id": "ley-19655",
-  "documento": "Ley 19.655",
   "tipo": "Ley",
   "numero": "19.655",
   "anio": 2018,
@@ -2338,7 +2341,6 @@
  },
  {
   "id": "ley-20156",
-  "documento": "Ley 20.156",
   "tipo": "Ley",
   "numero": "20.156",
   "anio": 2023,
@@ -2349,7 +2351,6 @@
  },
  {
   "id": "ley-17066",
-  "documento": "Ley 17.066",
   "tipo": "Ley",
   "numero": "17.066",
   "anio": 1998,
@@ -2360,7 +2361,6 @@
  },
  {
   "id": "ley-20177",
-  "documento": "Ley 20.177",
   "tipo": "Ley",
   "numero": "20.177",
   "anio": 2023,
@@ -2371,7 +2371,6 @@
  },
  {
   "id": "ley-12072",
-  "documento": "Ley 12.072",
   "tipo": "Ley",
   "numero": "12.072",
   "anio": 1953,
@@ -2382,7 +2381,6 @@
  },
  {
   "id": "ley-15913",
-  "documento": "Ley 15.913",
   "tipo": "Ley",
   "numero": "15.913",
   "anio": 1987,
@@ -2393,7 +2391,6 @@
  },
  {
   "id": "ley-18632",
-  "documento": "Ley 18.632",
   "tipo": "Ley",
   "numero": "18.632",
   "anio": 2009,
@@ -2404,7 +2401,6 @@
  },
  {
   "id": "ley-19721",
-  "documento": "Ley 19.721",
   "tipo": "Ley",
   "numero": "19.721",
   "anio": 2018,
@@ -2412,5 +2408,145 @@
   "titulo_impo": "REGULACION DEL TRABAJO EN LA SEGURIDAD PRIVADA",
   "area": "Laboral y seguridad social",
   "url": "https://www.impo.com.uy/bases/leyes/19721-2018"
+ },
+ {
+  "id": "ley-19538",
+  "tipo": "Ley",
+  "numero": "19.538",
+  "anio": 2017,
+  "corto": "Femicidio y Discriminación",
+  "titulo_impo": "MODIFICACION DE LOS ART. 311 Y 312 DEL CODIGO PENAL, RELACIONADOS CON ACTOS DE DISCRIMINACION Y FEMICIDIO",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/19538-2017"
+ },
+ {
+  "id": "ley-19247",
+  "tipo": "Ley",
+  "numero": "19.247",
+  "anio": 2014,
+  "corto": "Tipificación de Delitos y Tenencia de Armas",
+  "titulo_impo": "TIPIFICACION DE DELITOS Y MODIFICACION DEL CODIGO PENAL",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/19247-2014"
+ },
+ {
+  "id": "ley-17016",
+  "tipo": "Ley",
+  "numero": "17.016",
+  "anio": 1998,
+  "corto": "Ley de Estupefacientes",
+  "titulo_impo": "ESTUPEFACIENTES",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/leyes/17016-1998"
+ },
+ {
+  "id": "decreto-ley-14470",
+  "tipo": "Decreto-ley",
+  "numero": "14.470",
+  "anio": 1975,
+  "corto": "Reclusión Carcelaria",
+  "titulo_impo": "NORMAS SOBRE RECLUSION CARCELARIA Y PERSONAL PENITENCIARIO",
+  "area": "Penal",
+  "url": "https://www.impo.com.uy/bases/decretos-ley/14470-1975"
+ },
+ {
+  "id": "ley-18401",
+  "tipo": "Ley",
+  "numero": "18.401",
+  "anio": 2008,
+  "corto": "Carta Orgánica del BCU",
+  "titulo_impo": "CARTA ORGANICA DEL BANCO CENTRAL DEL URUGUAY. MODIFICACION",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/18401-2008"
+ },
+ {
+  "id": "ley-16426",
+  "tipo": "Ley",
+  "numero": "16.426",
+  "anio": 1993,
+  "corto": "Ley de Seguros",
+  "titulo_impo": "SEGUROS",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/16426-1993"
+ },
+ {
+  "id": "decreto-ley-14261",
+  "tipo": "Decreto-ley",
+  "numero": "14.261",
+  "anio": 1974,
+  "corto": "Propiedad Horizontal (Incorporación)",
+  "titulo_impo": "LEY DE INCORPORACION AL REGIMEN DE PROPIEDAD HORIZONTAL DE BIENES INMUEBLES",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/decretos-ley/14261-1974"
+ },
+ {
+  "id": "decreto-ley-14560",
+  "tipo": "Decreto-ley",
+  "numero": "14.560",
+  "anio": 1976,
+  "corto": "Propiedad Horizontal (Modificaciones)",
+  "titulo_impo": "MODIFICACIONES DE LA LEY 10.751, RELATIVA AL REGIMEN DE PROPIEDAD HORIZONTAL",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/decretos-ley/14560-1976"
+ },
+ {
+  "id": "ley-13738",
+  "tipo": "Ley",
+  "numero": "13.738",
+  "anio": 1969,
+  "corto": "Arrendamientos y Desalojo",
+  "titulo_impo": "ARRENDAMIENTOS. REGIMEN DE PLAZOS. JUICIO DE DESALOJO",
+  "area": "Civil y comercial",
+  "url": "https://www.impo.com.uy/bases/leyes/13738-1969"
+ },
+ {
+  "id": "decreto-ley-9000",
+  "tipo": "Decreto-ley",
+  "numero": "9.000",
+  "anio": 1933,
+  "corto": "Licencia y Feriados de Trabajadores",
+  "titulo_impo": "TRABAJADORES. LICENCIA. REGIMEN DE FERIADOS",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/decretos-ley/9000-1933"
+ },
+ {
+  "id": "ley-12996",
+  "tipo": "Ley",
+  "numero": "12.996",
+  "anio": 1961,
+  "corto": "Jubilaciones y Pensiones Civiles y Rurales",
+  "titulo_impo": "SEGURIDAD SOCIAL. JUBILACIONES Y PENSIONES CIVILES Y ESCOLARES, RURALES Y DOMESTICOS, INDUSTRIA Y COMERCIO",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/12996-1961"
+ },
+ {
+  "id": "ley-20506",
+  "tipo": "Ley",
+  "numero": "20.506",
+  "anio": 2026,
+  "corto": "Trabajo Digno y Decente",
+  "titulo_impo": "PROMOCION DEL TRABAJO DIGNO Y DECENTE DE LAS PERSONAS QUE ENFRENTAN MAYORES OBSTACULOS O RESTRICCIONES PARA ACCEDER AL MERCADO LABORAL. DEROGACION DE LOS ARTS. 1° AL 28, 36 AL 50 DE LA LEY N° 19.973 Y ARTS. 11 Y 13 DE LA LEY N° 19.689",
+  "area": "Laboral y seguridad social",
+  "url": "https://www.impo.com.uy/bases/leyes/20506-2026"
+ },
+ {
+  "id": "decreto-ley-14977",
+  "tipo": "Decreto-ley",
+  "numero": "14.977",
+  "anio": 1979,
+  "corto": "Feriados Nacionales (1979)",
+  "titulo_impo": "FERIADOS NACIONALES",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/decretos-ley/14977-1979"
+ },
+ {
+  "id": "ley-16805",
+  "tipo": "Ley",
+  "numero": "16.805",
+  "anio": 1996,
+  "corto": "Feriados Nacionales (1996)",
+  "titulo_impo": "FERIADOS NACIONALES",
+  "area": "Público y administrativo",
+  "url": "https://www.impo.com.uy/bases/leyes/16805-1996"
  }
 ]
