@@ -78,8 +78,7 @@ python scripts/ingest/scrape_codigos.py --tolerante --config scripts/ingest/leye
 Los PRs de la revisión semanal de IMPO que cambian `data/` también publican en `api` al mergearse. **Publicar datos en api** sigue pudiendo correrse a mano.
 
 <!-- conteo:inicio -->
-Al 03/10/2026: la Constitución, 12 códigos y 240 leyes y decretos en `leyes.json`
-(253 normas con datos en `main`, 18.622 artículos).
+Al 12/10/2026: la Constitución, 12 códigos y 255 leyes y decretos en `leyes.json` (268 normas con datos en `main`, 19.043 artículos).
 <!-- conteo:fin -->
 
 Tiempo: cada ley o decreto lleva unos 15 s (Crawl-Delay de 10 s más la respuesta de IMPO) y los códigos unos 8 min. El workflow tiene un límite de 240 min, que alcanza para unas 900 normas. Si la lista se acerca a eso, hay que partir la revisión en varios días.

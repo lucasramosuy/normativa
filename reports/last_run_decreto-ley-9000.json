@@ -1,0 +1,14 @@
+{
+  "articulos_esperados_segun_impo": 6,
+  "articulos_guardados": 6,
+  "crawl_delay_segundos": 10,
+  "documento": "Decreto-ley 9.000",
+  "duplicados": 0,
+  "estado_actual": "documento_actualizado",
+  "faltantes": 0,
+  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fuente": "https://www.impo.com.uy/bases/decretos-ley/9000-1933",
+  "sha256_jsonl": "9b060fef956b074a307f56b9965c4d9b29b9d5553df14c00d98ae2b8e486edab",
+  "sin_texto_en_impo": [],
+  "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
+}
