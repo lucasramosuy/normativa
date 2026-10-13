@@ -202,6 +202,27 @@ def es_error_transitorio(exc: Exception) -> bool:
     return False
 
 
+def preparar_normas(normas: list, tolerante: bool) -> list[dict]:
+    """Valida el mínimo que necesita el scraper y omite altas aún incompletas
+    solo en modo tolerante (la revisión semanal comparte leyes.json con Alta de leyes).
+    """
+    preparadas = []
+    for indice, norma in enumerate(normas, start=1):
+        requeridos = ("id", "documento", "url")
+        faltantes = [
+            campo for campo in requeridos
+            if not isinstance(norma, dict) or not isinstance(norma.get(campo), str) or not norma[campo].strip()
+        ]
+        if faltantes:
+            detalle = f"entrada {indice}: faltan campos {', '.join(faltantes)}"
+            if not tolerante:
+                raise SystemExit(f"Configuración inválida en la norma: {detalle}")
+            print(f"OMITIDA: {detalle}; queda pendiente de completar por Alta de leyes")
+            continue
+        preparadas.append(norma)
+    return preparadas
+
+
 def actualizar_niveles(niveles: dict, heading_text: str) -> None:
     """Actualiza la ruta LIBRO/TITULO/CAPITULO/SECCION vigente con las líneas
     de un h3.resultado. Una línea puede ser solo el número del nivel
@@ -371,10 +392,11 @@ def main() -> None:
 
     normas = json.loads(Path(args.config).read_text(encoding="utf-8"))
     if args.solo:
-        normas = [n for n in normas if n["id"] == args.solo]
+        normas = [n for n in normas if isinstance(n, dict) and n.get("id") == args.solo]
         if not normas:
             raise SystemExit(f"id desconocido en {args.config}: {args.solo}")
 
+    normas = preparar_normas(normas, args.tolerante)
     scraped_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     session = requests.Session()
     session.headers.update({"User-Agent": args.user_agent, "Accept-Language": "es-UY,es;q=0.9"})

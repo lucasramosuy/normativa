@@ -9,6 +9,23 @@ scraper = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(scraper)
 
 
+class PrepararNormasTest(unittest.TestCase):
+    def test_tolerante_omite_placeholder_y_conserva_normas_completas(self):
+        normas = [
+            {"url": "https://www.impo.com.uy/bases/leyes/123-2020", "corto": "Pendiente", "area": "Civil"},
+            {"id": "ley-123", "documento": "Ley 123", "url": "https://www.impo.com.uy/bases/leyes/123-2020"},
+        ]
+        self.assertEqual(scraper.preparar_normas(normas, tolerante=True), [normas[1]])
+
+    def test_estricto_rechaza_placeholder_con_diagnostico(self):
+        with self.assertRaisesRegex(SystemExit, "faltan campos id, documento"):
+            scraper.preparar_normas([{"url": "https://example.invalid"}], tolerante=False)
+
+    def test_tolerante_omite_entrada_no_objeto_sin_romper(self):
+        norma = {"id": "ley-123", "documento": "Ley 123", "url": "https://example.invalid"}
+        self.assertEqual(scraper.preparar_normas([None, norma], tolerante=True), [norma])
+
+
 class ArticuloUnicoTest(unittest.TestCase):
     def test_articulo_unico_respeta_ancla_y_titulo(self):
         html = (ROOT / "tests/fixtures/articulo-unico.html").read_text(encoding="utf-8")
