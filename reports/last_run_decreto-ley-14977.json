@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fecha_scraping": "2026-10-13T15:51:17Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/14977-1979",
-  "sha256_jsonl": "6db4401da8a2915324f671a0b517f88ce2b52f71c207b7e45be74640022c43c3",
+  "sha256_jsonl": "946a5706fc080ceffd1dc02bd2cf901bb07f71ba8347cbdafe1fe609e88953be",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

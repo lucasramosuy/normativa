@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-13T15:51:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/19978-2021",
-  "sha256_jsonl": "3c6478a83c5b0027d811e7bdda9a7b581789b3e48e24bedcdd6c8ff0932bad2d",
+  "sha256_jsonl": "270505e7012a172daa2fda20bad8c8188bc3e4ba1568b60290db28c7e6c3aedc",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

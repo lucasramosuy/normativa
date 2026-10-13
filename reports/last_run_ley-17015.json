@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-13T15:51:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17015-1998",
-  "sha256_jsonl": "99b705c20e20e61fcae787a32701f396294e9cc8c444c52fd90b754d90954bda",
+  "sha256_jsonl": "6e5030aa029f12d500a43fabc85b4fd85c7750272f34a4206194af8f5bb593e7",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

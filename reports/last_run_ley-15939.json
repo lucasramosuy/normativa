@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-13T15:51:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/15939-1987",
-  "sha256_jsonl": "25bf7b594b3ff315553832d15ad8cbefd6fb1717d97a1f2792761e6a101df59b",
+  "sha256_jsonl": "0cba5939686c94cc959a967f5b732741cc510bb12de86e1e811c557767199a5a",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
