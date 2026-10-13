@@ -56,6 +56,10 @@ Si IMPO se cae a mitad de corrida: tras 3 errores seguidos (5xx, timeout o
 conexión) el script espera `--pausa-minutos` (10 por defecto) y reintenta esas
 normas, hasta `--max-pausas` veces (3 por defecto). Después de eso, con
 `--tolerante` sigue como antes: conserva el archivo anterior y anota el error.
+La revisión semanal también usa `--tolerante` mientras `Alta de leyes` completa
+las entradas mínimas nuevas de `leyes.json`; esas entradas, que todavía no tienen
+`id` ni `documento`, se omiten con un aviso hasta que el PR de datos las complete.
+En modo estricto una entrada incompleta sigue siendo un error de configuración.
 
 ## Agregar otra norma
 
