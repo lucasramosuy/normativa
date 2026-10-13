@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fecha_scraping": "2026-10-13T15:51:17Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/14560-1976",
-  "sha256_jsonl": "dfc7559c851974844cd8e728774967ad31c48d047223e098ac2386766d227632",
+  "sha256_jsonl": "31246b3ae413c43de33b8e7f56faa56e74dcd06cd8f7a44721c7e12c95f0369c",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

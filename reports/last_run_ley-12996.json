@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fecha_scraping": "2026-10-13T15:51:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/12996-1961",
-  "sha256_jsonl": "b1b8b17da0c225a870923e66873aa975df03c76067b4f3c8ec0f30faa60d1c54",
+  "sha256_jsonl": "419cac56c99e0c6d505b79b84da380e055886d14f8bf8cc4c980f3f787afc6e4",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

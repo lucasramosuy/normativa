@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:05:59Z",
+  "fecha_scraping": "2026-10-13T15:43:34Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-aguas/14859-1978",
-  "sha256_jsonl": "595c6716ddf1e4d5ad8ca0780b31d8c061d12dcb36318215959208aaf487c1e2",
+  "sha256_jsonl": "341d440f864b8b74f02fab92479efce7faabce6b5db1bdaaea1955422366ccde",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

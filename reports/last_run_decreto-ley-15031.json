@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-13T15:51:17Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/15031-1980",
-  "sha256_jsonl": "4b8fd112e8271661a3071b6eddcb847fe7a3713af4e4badfc260f2ddcda4b355",
+  "sha256_jsonl": "c4b0869f9b0eff61595e4a6db0f3e814e679419d03b5e80f825358a4b3eb6d27",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

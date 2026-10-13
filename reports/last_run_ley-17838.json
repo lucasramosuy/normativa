@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-13T15:51:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17838-2004",
-  "sha256_jsonl": "abb8785d3ed04b7b647c13ff0dfbcfb40d24c4eb8e12ed9cfc73ff9d14d073bd",
+  "sha256_jsonl": "c55752b2d9e3db8352750e3498f03c73dc3e9946f5cb215a3848666766586d4a",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
