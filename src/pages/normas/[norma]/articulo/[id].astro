@@ -111,7 +111,7 @@ addMesa({key,label:title});
 function paintMesa(){const arr=getMesa();document.querySelectorAll<HTMLElement>('[data-mesa-count]').forEach(el=>el.textContent=String(arr.length));
   const list=rail.querySelector<HTMLElement>('[data-mesa-tabs]')!;list.replaceChildren();
   rail.querySelector<HTMLElement>('[data-mesa-count-list]')!.textContent=String(arr.length);
-  arr.forEach(item=>{const row=document.createElement('span');row.className='mesa-tab'+(item.key===key?' active':'');const link=document.createElement('a');link.href=`${base}normas/${item.key}/`;link.textContent=item.label;link.setAttribute('aria-current',item.key===key?'page':'false');row.append(link);
+  arr.forEach(item=>{const row=document.createElement('span');row.className='mesa-tab'+(item.key===key?' active':'');const link=document.createElement('a');{const [ns,aid]=item.key.split("/");link.href=`${base}normas/${ns}/articulo/${aid}/`};link.textContent=item.label;link.setAttribute('aria-current',item.key===key?'page':'false');row.append(link);
   const close=document.createElement('button');close.type='button';close.textContent='×';close.setAttribute('aria-label',`Cerrar ${item.label}`);close.onclick=()=>{setMesa(getMesa().filter(x=>x.key!==item.key));paintMesa()};row.append(close);list.append(row)});
 }
 paintMesa();
