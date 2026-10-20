@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/15084-1980",
-  "sha256_jsonl": "f089027ea2b751d0852eca0ffc0c153f39b757bee3cd7633f1541f626d8b7b14",
+  "sha256_jsonl": "7753736d4bc2b70307dd6c6379d59ecfa7518b2b90c960f08104968ba82d51bb",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/15977-1988",
-  "sha256_jsonl": "dc990e6a857820d72e97cab79494e3fd6642fc145e31bf616f89197df1292034",
+  "sha256_jsonl": "c9b9b813df61fd1f67c1ad0323e4b97db38d233b940ac25336622a39b9c658f7",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

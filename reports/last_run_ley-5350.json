@@ -14,9 +14,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/5350-1915",
-  "sha256_jsonl": "777037565b945319ab037a5f71d88d1668745525ca3fd381daa34c40fa5434f1",
+  "sha256_jsonl": "3aeb092310d7f12051e380cbd524abda0027edb95cda4770e975133b22657191",
   "sin_texto_en_impo": [
     "1",
     "2",
