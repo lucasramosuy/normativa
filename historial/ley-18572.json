@@ -1,6 +1,42 @@
 {
  "norma": "ley-18572",
  "desde": "2026-09-23T19:08:58Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "17",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Apelación y segunda instancia).- El plazo para interponer el recurso de apelación contra la sentencia definitiva de primera instancia será de 10 (diez) días. Si la sentencia se dictare en audiencia, el recurso deberá ser anunciado en la misma audiencia disponiendo de 10 (diez) días para expresar y fundar por escrito los agravios. Si la sentencia se dictare fuera de audiencia, el recurso será interpuesto por escrito fundado en el que se expresarán los agravios y sus fundamentos.\nDel recurso de apelación se dará traslado a la contraparte por el término de 10 (diez) días. Evacuado el traslado o vencido el término para\nhacerlo, se elevará el expediente ante el Tribunal que corresponda en un plazo no mayor a los 5 (cinco) días.\nEl superior dictará sentencia dentro de los 30 (treinta) días contados desde que los autos hayan ingresado al Tribunal; en caso de discordia dicho plazo se extenderá proporcionalmente. Recibidos los autos por el Tribunal, en un plazo de 48 (cuarenta y ocho) horas se señalará la fecha del acuerdo dejándose constancia y serán pasados a estudio simultáneo durante 7 (siete) días corridos. Finalizado el estudio se considerará en el acuerdo y, acordada sentencia, será dictada en un plazo de 10 (diez) días. En caso de discordia, en el mismo acuerdo se sorteará la\nintegración y, reunidos los votos necesarios, se dictará sentencia en el mismo plazo. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 18.847 de 25/11/2011 artículo 6 .\nVer en esta norma, artículo: 18 .\nTEXTO ORIGINAL: Ley Nº 18.572 de 13/09/2009 artículo 17 .",
+    "titulo": "Artículo 17",
+    "capitulo": "CAPITULO IV - PROCESO LABORAL ORDINARIO",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18572-2009/17",
+    "articulo": 17,
+    "documento": "Ley 18.572"
+   },
+   "despues": {
+    "texto": "(Apelación y segunda instancia).- El plazo para interponer el recurso de apelación contra la sentencia definitiva de primera instancia será de 10 (diez) días. Si la sentencia se dictare en audiencia, el recurso deberá ser anunciado en la misma audiencia disponiendo de 10 (diez) días para expresar y fundar por escrito los agravios. Si la sentencia se dictare fuera de audiencia, el recurso será interpuesto por escrito fundado en el que se expresarán los agravios y sus fundamentos.\nDel recurso de apelación se dará traslado a la contraparte por el término de 10 (diez) días. Evacuado el traslado o vencido el término para\nhacerlo, se elevará el expediente ante el Tribunal que corresponda en un plazo no mayor a los 5 (cinco) días.\nEl superior dictará sentencia dentro de los 30 (treinta) días contados desde que los autos hayan ingresado al Tribunal; en caso de discordia dicho plazo se extenderá proporcionalmente. Recibidos los autos por el Tribunal, en un plazo de 48 (cuarenta y ocho) horas se señalará la fecha del acuerdo dejándose constancia y serán pasados a estudio simultáneo durante 7 (siete) días corridos. Finalizado el estudio se considerará en el acuerdo y, acordada sentencia, será dictada en un plazo de 10 (diez) días. En caso de discordia, en el mismo acuerdo se sorteará la\nintegración y, reunidos los votos necesarios, se dictará sentencia en el mismo plazo. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 18.847 de 25/11/2011 artículo 6 .\nInciso 3º) ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 261 .\nVer en esta norma, artículo: 18 .\nTEXTO ORIGINAL: Ley Nº 18.572 de 13/09/2009 artículo 17 .",
+    "titulo": "Artículo 17",
+    "capitulo": "CAPITULO IV - PROCESO LABORAL ORDINARIO",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18572-2009/17",
+    "articulo": 17,
+    "documento": "Ley 18.572"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

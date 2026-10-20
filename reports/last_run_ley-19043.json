@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/19043-2012",
-  "sha256_jsonl": "f67afe5d4baac00c95b3594971c79cf59e73d0c12c4742427d35fad1be45bf25",
+  "sha256_jsonl": "e8c3184a8f71aa84e95c21e70cf3c56cc973bb78b39113b2d611741ffb9808d8",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

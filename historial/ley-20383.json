@@ -1,6 +1,221 @@
 {
  "norma": "ley-20383",
  "desde": "2026-09-30T23:53:54Z",
- "total": 0,
- "entradas": []
+ "total": 6,
+ "entradas": [
+  {
+   "articulo": "7",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Autorización de uso de espectro radioeléctrico y asignación de canales radioeléctricos).- Los servicios de difusión de contenido audiovisual que utilicen espectro radioeléctrico, sean gratuitos u onerosos, deberán contar, además de la licencia para la prestación del servicio de contenido audiovisual, con la respectiva autorización de uso de espectro radioeléctrico y la correspondiente asignación de canal radioeléctrico. Las licencias para la prestación de servicios de difusión de contenido audiovisual serán independientes de la concesión, autorización o licencia que, en su caso, sea necesaria para prestar el servicio de telecomunicaciones que transporte los contenidos audiovisuales, la que se regirá por el marco jurídico en materia de telecomunicaciones vigente. La facultad legal, autorización o licencia para prestar servicios de telecomunicaciones no habilitará por sí misma a prestar servicios de difusión de contenido audiovisual incluidos en el objeto de la presente ley.\nLa autorización de uso de espectro radioeléctrico otorgada a un servicio de difusión de contenido audiovisual solo podrá transferirse en forma conjunta con la licencia para la prestación de este último. No está permitido realizar ningún negocio jurídico sobre la concesión de uso de espectro en forma independiente, salvo autorización expresa del Poder Ejecutivo.",
+    "titulo": "Artículo 7",
+    "titulo_norma": "TÍTULO I - DE LAS HABILITACIONES PARA PRESTAR SERVICIOS DE DIFUSIÓN DE CONTENIDO AUDIOVISUAL",
+    "capitulo": "CAPÍTULO II - ESPECTRO RADIOELÉCTRICO Y CANALES RADIOELÉCTRICOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/7",
+    "articulo": 7,
+    "documento": "Ley 20.383"
+   },
+   "despues": {
+    "texto": "(Autorización de uso de espectro radioeléctrico y asignación de canales radioeléctricos).- Los servicios de difusión de contenido audiovisual que utilicen espectro radioeléctrico, sean gratuitos u onerosos, deberán contar, además de la licencia para la prestación del servicio de contenido audiovisual, con la respectiva autorización de uso de espectro radioeléctrico y la correspondiente asignación de canal radioeléctrico. Las licencias para la prestación de servicios de difusión de contenido audiovisual serán independientes de la concesión, autorización o licencia que, en su caso, sea necesaria para prestar el servicio de telecomunicaciones que transporte los contenidos audiovisuales, la que se regirá por el marco jurídico en materia de telecomunicaciones vigente. La facultad legal, autorización o licencia para prestar servicios de telecomunicaciones no habilitará por sí misma a prestar servicios de difusión de contenido audiovisual incluidos en el objeto de la presente ley.\nLa autorización de uso de espectro radioeléctrico otorgada a un servicio de difusión de contenido audiovisual solo podrá transferirse en forma conjunta con la licencia para la prestación de este último. No está permitido realizar ningún negocio jurídico sobre la concesión de uso de espectro en forma independiente, salvo autorización expresa del Poder Ejecutivo. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 149 .",
+    "titulo": "Artículo 7",
+    "titulo_norma": "TÍTULO I - DE LAS HABILITACIONES PARA PRESTAR SERVICIOS DE DIFUSIÓN DE CONTENIDO AUDIOVISUAL",
+    "capitulo": "CAPÍTULO II - ESPECTRO RADIOELÉCTRICO Y CANALES RADIOELÉCTRICOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/7",
+    "articulo": 7,
+    "documento": "Ley 20.383"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "8",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Uso y gestión del espectro y canales radioeléctricos).- Los titulares de licencias para la prestación de servicios de difusión de contenido audiovisual que utilicen espectro radioeléctrico, solo podrán emplearlo para la finalidad dispuesta en las respectivas autorizaciones, ajustándose a la normativa aplicable y adoptando los adelantos tecnológicos que propendan al mejor aprovechamiento de dicho espectro.\nEl Poder Ejecutivo velará para que la utilización del espectro radioeléctrico sea realizada de la manera más eficiente posible. Las autorizaciones de uso de espectro radioeléctrico se otorgarán respetando las limitaciones técnicas del espectro, los convenios internacionales y su disponibilidad.\nCuando la tecnología permita que un mismo canal radioeléctrico admita la difusión simultánea de varias señales, el derecho de uso de la banda de frecuencias asignada podrá atribuirse a un único titular o, de forma compartida, a varios titulares, en las condiciones técnicas o de otra índole que, por razones fundadas, autorice el Poder Ejecutivo.\nLos titulares a los que se haya asignado el derecho de uso de un canal radioeléctrico para prestar servicios de radiodifusión abierta de radio o televisión no podrán ceder, arrendar o transferir de ninguna manera a terceros, el uso de todo o parte del canal asignado, sin previa autorización del Poder Ejecutivo, conforme a lo previsto en la presente ley.",
+    "titulo": "Artículo 8",
+    "titulo_norma": "TÍTULO I - DE LAS HABILITACIONES PARA PRESTAR SERVICIOS DE DIFUSIÓN DE CONTENIDO AUDIOVISUAL",
+    "capitulo": "CAPÍTULO II - ESPECTRO RADIOELÉCTRICO Y CANALES RADIOELÉCTRICOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/8",
+    "articulo": 8,
+    "documento": "Ley 20.383"
+   },
+   "despues": {
+    "texto": "(Uso y gestión del espectro y canales radioeléctricos).- Los titulares de licencias para la prestación de servicios de difusión de contenido audiovisual que utilicen espectro radioeléctrico, solo podrán emplearlo para la finalidad dispuesta en las respectivas autorizaciones, ajustándose a la normativa aplicable y adoptando los adelantos tecnológicos que propendan al mejor aprovechamiento de dicho espectro.\nEl Poder Ejecutivo velará para que la utilización del espectro radioeléctrico sea realizada de la manera más eficiente posible. Las autorizaciones de uso de espectro radioeléctrico se otorgarán respetando las limitaciones técnicas del espectro, los convenios internacionales y su disponibilidad.\nCuando la tecnología permita que un mismo canal radioeléctrico admita la difusión simultánea de varias señales, el derecho de uso de la banda de frecuencias asignada podrá atribuirse a un único titular o, de forma compartida, a varios titulares, en las condiciones técnicas o de otra índole que, por razones fundadas, autorice el Poder Ejecutivo.\nLos titulares a los que se haya asignado el derecho de uso de un canal radioeléctrico para prestar servicios de radiodifusión abierta de radio o televisión no podrán ceder, arrendar o transferir de ninguna manera a terceros, el uso de todo o parte del canal asignado, sin previa autorización del Poder Ejecutivo, conforme a lo previsto en la presente ley.",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 150 .",
+    "titulo": "Artículo 8",
+    "titulo_norma": "TÍTULO I - DE LAS HABILITACIONES PARA PRESTAR SERVICIOS DE DIFUSIÓN DE CONTENIDO AUDIOVISUAL",
+    "capitulo": "CAPÍTULO II - ESPECTRO RADIOELÉCTRICO Y CANALES RADIOELÉCTRICOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/8",
+    "articulo": 8,
+    "documento": "Ley 20.383"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "18",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Control del régimen de limitaciones e incompatibilidades).- Quienes se propusieren realizar un negocio jurídico que pudiere resultar contrario a lo dispuesto en el régimen de limitaciones a la titularidad de licencias, podrán formular una consulta a la Unidad Reguladora de Servicios de Comunicaciones (URSEC) acerca de la compatibilidad con lo establecido en la presente ley. La consulta deberá incluir todos los datos necesarios para apreciar la naturaleza y efectos del negocio en cuestión y, en particular, los datos identificatorios de los sujetos intervinientes en el mismo. La URSEC emitirá un informe en el plazo máximo de sesenta días desde la presentación de la consulta. Dicho informe versará sobre la adecuación o no del negocio en cuestión a lo dispuesto en esta ley y podrá incluir sugerencias dirigidas a subsanar los defectos que el mismo presentare.\nEl informe de la URSEC es vinculante para los consultantes o solicitantes de licencia y por tanto los negocios jurídicos ejecutados en contravención a su dictamen será inválido a estos efectos.\nLos sujetos alcanzados por la presente ley podrán realizar toda iniciativa que suponga el desarrollo de actividades en forma conjunta, adoptando para ello cualquiera de las figuras comerciales previstas en nuestro ordenamiento jurídico.",
+    "titulo": "Artículo 18",
+    "titulo_norma": "TÍTULO I - DE LAS HABILITACIONES PARA PRESTAR SERVICIOS DE DIFUSIÓN DE CONTENIDO AUDIOVISUAL",
+    "capitulo": "CAPÍTULO IV - LIMITACIONES A LA TITULARIDAD DE LICENCIAS Y RÉGIMEN DE INCOMPATIBILIDADES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/18",
+    "articulo": 18,
+    "documento": "Ley 20.383"
+   },
+   "despues": {
+    "texto": "(Control del régimen de limitaciones e incompatibilidades).- Quienes se propusieren realizar un negocio jurídico que pudiere resultar contrario a lo dispuesto en el régimen de limitaciones a la titularidad de licencias, podrán formular una consulta a la Unidad Reguladora de Servicios de Comunicaciones (URSEC) acerca de la compatibilidad con lo establecido en la presente ley. La consulta deberá incluir todos los datos necesarios para apreciar la naturaleza y efectos del negocio en cuestión y, en particular, los datos identificatorios de los sujetos intervinientes en el mismo. La URSEC emitirá un informe en el plazo máximo de sesenta días desde la presentación de la consulta. Dicho informe versará sobre la adecuación o no del negocio en cuestión a lo dispuesto en esta ley y podrá incluir sugerencias dirigidas a subsanar los defectos que el mismo presentare.\nEl informe de la URSEC es vinculante para los consultantes o solicitantes de licencia y por tanto los negocios jurídicos ejecutados en contravención a su dictamen será inválido a estos efectos.\nLos sujetos alcanzados por la presente ley podrán realizar toda iniciativa que suponga el desarrollo de actividades en forma conjunta, adoptando para ello cualquiera de las figuras comerciales previstas en nuestro ordenamiento jurídico.",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 151 .",
+    "titulo": "Artículo 18",
+    "titulo_norma": "TÍTULO I - DE LAS HABILITACIONES PARA PRESTAR SERVICIOS DE DIFUSIÓN DE CONTENIDO AUDIOVISUAL",
+    "capitulo": "CAPÍTULO IV - LIMITACIONES A LA TITULARIDAD DE LICENCIAS Y RÉGIMEN DE INCOMPATIBILIDADES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/18",
+    "articulo": 18,
+    "documento": "Ley 20.383"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "21",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Transferencia de la licencia).- A efectos de transferir, ceder, vender, donar o realizar cualquier otro negocio jurídico que implique, directa o indirectamente, un cambio total o parcial en la titularidad de las licencias, o sin que implique una transferencia de la titularidad de las licencias se transfieran participaciones sociales de un titular de licencia, se requerirá autorización del Poder Ejecutivo, previo informe de la Unidad Reguladora de Servicios de Comunicaciones (URSEC).\nEl procedimiento comenzará con la presentación ante la URSEC de la solicitud del interesado en recibir la licencia o las participaciones sociales correspondientes, quien deberá acreditar el cumplimiento de todos los requisitos establecidos en la presente ley para ser licenciatario o titular de participaciones sociales.\nPresentada la solicitud en forma y cumpliendo con lo que establece esta ley, la URSEC contará con un plazo máximo de sesenta días corridos para elaborar y elevar al Poder Ejecutivo un informe acerca de la misma. Transcurrido dicho plazo, sin que la URSEC se haya pronunciado, se entenderá que no presenta objeciones al negocio jurídico respectivo, debiendo elevar en cualquier caso las actuaciones al Poder Ejecutivo, para que este la evalúe y se pronuncie al respecto en un plazo máximo de noventa días.\nEn el caso que el Poder Ejecutivo dicte resolución favorable a la realización del negocio, o en el referido plazo no se haya pronunciado en forma expresa respecto de la solicitud de transferencia, los interesados dispondrán de un plazo máximo de cuatro meses, contado a partir de la notificación de la resolución respectiva, para comunicar al Poder Ejecutivo el otorgamiento del negocio definitivo, so pena de caducidad de la autorización conferida.\nEn caso de transferencia de la licencia, el adquirente tomará a su cargo el servicio de difusión de contenido audiovisual a partir de la referida comunicación al Poder Ejecutivo.\nLas licencias originarias no podrán ser transferidas dentro de los primeros cinco años de haber sido otorgadas. Esta restricción no será de aplicación para el caso de transferencia por fallecimiento o incapacidad declarada.\nTanto en los negocios de transferencia de la licencia como de participaciones sociales que no impliquen la transferencia de la licencia, se admitirá la celebración de negocios sometidos a condición suspensiva, consistente la referida condición en contar con la autorización del Poder Ejecutivo.\nLa realización de una transferencia sin contar con la previa resolución favorable provocará la nulidad absoluta de aquella, sin perjuicio de la aplicación de las sanciones que correspondieren.\nLa comprobación de la realización de cualquier acto que permita que directa o indirectamente la operación, el funcionamiento o la administración del servicio de difusión de contenido audiovisual estén a cargo de persona no autorizada habilitará la revocación de la licencia otorgada para prestar el servicio.\nLos servicios de difusión de contenido audiovisual de titularidad pública, los universitarios, los comunitarios y otros sin fines de lucro son intransferibles.",
+    "notas_oficiales": "Ver en esta norma, artículo: 35 .",
+    "titulo": "Artículo 21",
+    "titulo_norma": "TÍTULO I - DE LAS HABILITACIONES PARA PRESTAR SERVICIOS DE DIFUSIÓN DE CONTENIDO AUDIOVISUAL",
+    "capitulo": "CAPÍTULO V - TRANSFERENCIA DE LA LICENCIA",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/21",
+    "articulo": 21,
+    "documento": "Ley 20.383"
+   },
+   "despues": {
+    "texto": "(Transferencia de la licencia).- A efectos de transferir, ceder, vender, donar o realizar cualquier otro negocio jurídico que implique, directa o indirectamente, un cambio total o parcial en la titularidad de las licencias, o sin que implique una transferencia de la titularidad de las licencias se transfieran participaciones sociales de un titular de licencia, se requerirá autorización del Poder Ejecutivo, previo informe de la Unidad Reguladora de Servicios de Comunicaciones (URSEC).\nEl procedimiento comenzará con la presentación ante la URSEC de la solicitud del interesado en recibir la licencia o las participaciones sociales correspondientes, quien deberá acreditar el cumplimiento de todos los requisitos establecidos en la presente ley para ser licenciatario o titular de participaciones sociales.\nPresentada la solicitud en forma y cumpliendo con lo que establece esta ley, la URSEC contará con un plazo máximo de sesenta días corridos para elaborar y elevar al Poder Ejecutivo un informe acerca de la misma. Transcurrido dicho plazo, sin que la URSEC se haya pronunciado, se entenderá que no presenta objeciones al negocio jurídico respectivo, debiendo elevar en cualquier caso las actuaciones al Poder Ejecutivo, para que este la evalúe y se pronuncie al respecto en un plazo máximo de noventa días.\nEn el caso que el Poder Ejecutivo dicte resolución favorable a la realización del negocio, o en el referido plazo no se haya pronunciado en forma expresa respecto de la solicitud de transferencia, los interesados dispondrán de un plazo máximo de cuatro meses, contado a partir de la notificación de la resolución respectiva, para comunicar al Poder Ejecutivo el otorgamiento del negocio definitivo, so pena de caducidad de la autorización conferida.\nEn caso de transferencia de la licencia, el adquirente tomará a su cargo el servicio de difusión de contenido audiovisual a partir de la referida comunicación al Poder Ejecutivo.\nLas licencias originarias no podrán ser transferidas dentro de los primeros cinco años de haber sido otorgadas. Esta restricción no será de aplicación para el caso de transferencia por fallecimiento o incapacidad declarada.\nTanto en los negocios de transferencia de la licencia como de participaciones sociales que no impliquen la transferencia de la licencia, se admitirá la celebración de negocios sometidos a condición suspensiva, consistente la referida condición en contar con la autorización del Poder Ejecutivo.\nLa realización de una transferencia sin contar con la previa resolución favorable provocará la nulidad absoluta de aquella, sin perjuicio de la aplicación de las sanciones que correspondieren.\nLa comprobación de la realización de cualquier acto que permita que directa o indirectamente la operación, el funcionamiento o la administración del servicio de difusión de contenido audiovisual estén a cargo de persona no autorizada habilitará la revocación de la licencia otorgada para prestar el servicio.\nLos servicios de difusión de contenido audiovisual de titularidad pública, los universitarios, los comunitarios y otros sin fines de lucro son intransferibles.",
+    "notas_oficiales": "Inciso 3º) ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 152 .\nVer en esta norma, artículo: 35 .",
+    "titulo": "Artículo 21",
+    "titulo_norma": "TÍTULO I - DE LAS HABILITACIONES PARA PRESTAR SERVICIOS DE DIFUSIÓN DE CONTENIDO AUDIOVISUAL",
+    "capitulo": "CAPÍTULO V - TRANSFERENCIA DE LA LICENCIA",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/21",
+    "articulo": 21,
+    "documento": "Ley 20.383"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "60",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Horarios de protección).- Establécese el horario de protección a niños, niñas y adolescentes todos los días de la semana desde la hora 6:00 a la hora 22:00.\nLos programas, los mensajes publicitarios y la autopromoción emitidos en este horario por todos los servicios de comunicación audiovisual, deberán ser aptos para todo público y deberán favorecer los objetivos educativos que dichos medios de comunicación permiten desarrollar.\nSe podrán establecer dentro de este horario recomendaciones y guías para informar y orientar a la población sobre la programación en estos temas, en función de franjas de edad.\nDebe evitarse, en el horario antedicho, la exhibición de programas que promuevan actitudes o conductas violentas, morbosas, delictivas, discriminatorias o pornográficas, o fomenten el esoterismo, los juegos de azar o las apuestas.\nSin perjuicio de la información de los hechos, la programación emitida durante el horario de protección a niños, niñas y adolescentes no deberá incluir:\nA) Imágenes con violencia excesiva, entendida como violencia explícita\nutilizada de forma desmesurada o reiterada, en especial si tiene\nresultados manifiestos de lesiones y muerte de personas y otros seres\nvivos (asesinatos, torturas, violaciones, suicidios o mutilaciones).\nB) Truculencia, entendida como la presentación de conductas\nostensiblemente crueles o que exalten la crueldad, o que abusen del\nsufrimiento, del pánico o del terror, o que exhiban cadáveres o\nresultados de crímenes en forma abierta y detallada.\nC) Apología, exaltación o incitación de la violencia y las conductas\nviolentas, del delito o las conductas delictivas.\nD) Pornografía, entendida como la exhibición de materiales, imágenes o\nsonidos de actos sexuales, o sus reproducciones, con el fin de\nprovocar la excitación sexual del receptor.\nE) Exhibición de escenas con actos sexuales explícitos, obscenos o\ndegradantes, o de elementos de prácticas sadomasoquistas.\nF) Apología, exaltación o incitación a la pornografía, la explotación\nsexual o los delitos sexuales.\nG) Exhibición de consumo explícito y abusivo de drogas legales e\nilegales.\nH) Apología, exaltación o incitación al consumo de drogas o al\nnarcotráfico.\nI) Presentación como exitosas o positivas a las personas o a los\npersonajes adictos a drogas o que participan del narcotráfico.\nJ) Contenidos que hagan apología, promuevan o inciten a actos o conductas\ndiscriminatorias o racistas.\nEn programas informativos, cuando se trate de situaciones de notorio interés público, excepcionalmente podrán incluirse imágenes de violencia excesiva como las definidas en el literal A) de este artículo, incluyendo avisos explícitos para prevenir la exposición del público infantil a estas.\nEn aplicación de estas disposiciones deberá valorarse el contexto y la finalidad de los programas que incluyan estos contenidos.\nEn ningún caso estas pautas deben interpretarse como una imposibilidad de informar, analizar y discutir, en particular durante programas educativos, informativos y periodísticos, sobre situaciones de violencia, sus causas o sus repercusiones en materia de seguridad ciudadana u otros abordajes sobre la realidad uruguaya, ni sobre temas relacionados a la sexualidad, ni sobre temas relacionados a las drogas legales e ilegales, ni sobre temas relacionados a la discriminación, todos ellos en sus más variadas dimensiones. En particular, las presentes directivas no deben ser interpretadas como una limitación a las expresiones surgidas en el debate de opinión o durante manifestaciones políticas, aun si ellas pudieran considerarse agresivas o hirientes para las autoridades públicas o actores políticos y partidarios.\nLos programas no aptos para todo público deberán estar debidamente señalizados con signos visuales y sonoros al comienzo y durante su transmisión, y se deberá asegurar que los servicios interactivos, tales como las guías electrónicas de programas, incluyan la información que advierta de manera suficiente y veraz del contenido del programa a efectos de la protección de niños, niñas o adolescentes.\nLa señalización de los programas deberá realizarse ajustándose al patrón que oportunamente el Poder Ejecutivo aprobará, en base a la propuesta del Consejo de Comunicación Audiovisual.\nLos servicios de televisión para abonados podrán habilitar gratuitamente mecanismos cifrados de acceso para posibilitar el control parental de las señales no establecidas en Uruguay. Las señales con programación exclusiva para adultos no podrán estar nunca en abierto.",
+    "titulo": "Artículo 60",
+    "titulo_norma": "TÍTULO III - PUBLICIDAD",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/60",
+    "articulo": 60,
+    "documento": "Ley 20.383"
+   },
+   "despues": {
+    "texto": "(Horarios de protección).- Establécese el horario de protección a niños, niñas y adolescentes todos los días de la semana desde la hora 6:00 a la hora 22:00.\nLos programas, los mensajes publicitarios y la autopromoción emitidos en este horario por todos los servicios de comunicación audiovisual, deberán ser aptos para todo público y deberán favorecer los objetivos educativos que dichos medios de comunicación permiten desarrollar.\nSe podrán establecer dentro de este horario recomendaciones y guías para informar y orientar a la población sobre la programación en estos temas, en función de franjas de edad.\nDebe evitarse, en el horario antedicho, la exhibición de programas que promuevan actitudes o conductas violentas, morbosas, delictivas, discriminatorias o pornográficas, o fomenten el esoterismo, los juegos de azar o las apuestas.\nSin perjuicio de la información de los hechos, la programación emitida durante el horario de protección a niños, niñas y adolescentes no deberá incluir:\nA) Imágenes con violencia excesiva, entendida como violencia explícita\nutilizada de forma desmesurada o reiterada, en especial si tiene\nresultados manifiestos de lesiones y muerte de personas y otros seres\nvivos (asesinatos, torturas, violaciones, suicidios o mutilaciones).\nB) Truculencia, entendida como la presentación de conductas\nostensiblemente crueles o que exalten la crueldad, o que abusen del\nsufrimiento, del pánico o del terror, o que exhiban cadáveres o\nresultados de crímenes en forma abierta y detallada.\nC) Apología, exaltación o incitación de la violencia y las conductas\nviolentas, del delito o las conductas delictivas.\nD) Pornografía, entendida como la exhibición de materiales, imágenes o\nsonidos de actos sexuales, o sus reproducciones, con el fin de\nprovocar la excitación sexual del receptor.\nE) Exhibición de escenas con actos sexuales explícitos, obscenos o\ndegradantes, o de elementos de prácticas sadomasoquistas.\nF) Apología, exaltación o incitación a la pornografía, la explotación\nsexual o los delitos sexuales.\nG) Exhibición de consumo explícito y abusivo de drogas legales e\nilegales.\nH) Apología, exaltación o incitación al consumo de drogas o al\nnarcotráfico.\nI) Presentación como exitosas o positivas a las personas o a los\npersonajes adictos a drogas o que participan del narcotráfico.\nJ) Contenidos que hagan apología, promuevan o inciten a actos o conductas\ndiscriminatorias o racistas.\nEn programas informativos, cuando se trate de situaciones de notorio interés público, excepcionalmente podrán incluirse imágenes de violencia excesiva como las definidas en el literal A) de este artículo, incluyendo avisos explícitos para prevenir la exposición del público infantil a estas.\nEn aplicación de estas disposiciones deberá valorarse el contexto y la finalidad de los programas que incluyan estos contenidos.\nEn ningún caso estas pautas deben interpretarse como una imposibilidad de informar, analizar y discutir, en particular durante programas educativos, informativos y periodísticos, sobre situaciones de violencia, sus causas o sus repercusiones en materia de seguridad ciudadana u otros abordajes sobre la realidad uruguaya, ni sobre temas relacionados a la sexualidad, ni sobre temas relacionados a las drogas legales e ilegales, ni sobre temas relacionados a la discriminación, todos ellos en sus más variadas dimensiones. En particular, las presentes directivas no deben ser interpretadas como una limitación a las expresiones surgidas en el debate de opinión o durante manifestaciones políticas, aun si ellas pudieran considerarse agresivas o hirientes para las autoridades públicas o actores políticos y partidarios.\nLos programas no aptos para todo público deberán estar debidamente señalizados con signos visuales y sonoros al comienzo y durante su transmisión, y se deberá asegurar que los servicios interactivos, tales como las guías electrónicas de programas, incluyan la información que advierta de manera suficiente y veraz del contenido del programa a efectos de la protección de niños, niñas o adolescentes.\nLa señalización de los programas deberá realizarse ajustándose al patrón que oportunamente el Poder Ejecutivo aprobará, en base a la propuesta del Consejo de Comunicación Audiovisual.\nLos servicios de televisión para abonados podrán habilitar gratuitamente mecanismos cifrados de acceso para posibilitar el control parental de las señales no establecidas en Uruguay. Las señales con programación exclusiva para adultos no podrán estar nunca en abierto.",
+    "notas_oficiales": "Inciso 10) ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 153 .",
+    "titulo": "Artículo 60",
+    "titulo_norma": "TÍTULO III - PUBLICIDAD",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/60",
+    "articulo": 60,
+    "documento": "Ley 20.383"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "61",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Alcance de las disposiciones).- Las anteriores disposiciones serán aplicables a los servicios de televisión abierta, los servicios de televisión para abonados en sus señales propias y las señales de televisión establecidas en Uruguay que sean difundidas o distribuidas por servicios de televisión para abonados.",
+    "titulo": "Artículo 61",
+    "titulo_norma": "TÍTULO III - PUBLICIDAD",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/61",
+    "articulo": 61,
+    "documento": "Ley 20.383"
+   },
+   "despues": {
+    "texto": "(Alcance de las disposiciones).- Las anteriores disposiciones serán aplicables a los servicios de televisión abierta, los servicios de televisión para abonados en sus señales propias y las señales de televisión establecidas en Uruguay que sean difundidas o distribuidas por servicios de televisión para abonados.",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 154 .",
+    "titulo": "Artículo 61",
+    "titulo_norma": "TÍTULO III - PUBLICIDAD",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/20383-2024/61",
+    "articulo": 61,
+    "documento": "Ley 20.383"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

@@ -1,6 +1,42 @@
 {
  "norma": "ley-17060",
  "desde": "2026-09-23T19:08:58Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "12-BIS",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(De la publicidad de las declaraciones).- Las declaraciones del Presidente, Vicepresidente de la República, Senadores, Representantes Nacionales, Ministros de Estado, Subsecretarios, Directores Generales de Secretaría, Ministros de la Suprema Corte de Justicia, de la Corte Electoral, del Tribunal de Cuentas y del Tribunal de lo Contencioso Administrativo, Directores de Entes Autónomos y Servicios Descentralizados, Intendentes Departamentales, Secretarios Generales de las Intendencias Departamentales y Alcaldes, serán recibidas por la Junta de Transparencia y Ética Pública (JUTEP), en sus correspondientes sobres o a través de medios electrónicos. Posteriormente se procederá a su apertura, publicando todas las declaraciones en el sitio web de la JUTEP.\nEn estas publicaciones se omitirán por razones de seguridad los datos identificatorios de los bienes, derechos y obligaciones incluidos en los mismos, los que se determinarán específicamente en la reglamentación respectiva.\nLas publicaciones se realizarán de acuerdo con lo establecido en la Ley N° 19.179, de 27 de diciembre de 2013, y en el artículo 82 de la Ley N° 19.355, de 19 de diciembre de 2015. (*)",
+    "notas_oficiales": "Agregado/s por: Ley Nº 19.797 de 13/09/2019 artículo 3 .",
+    "titulo": "Artículo 12-BIS",
+    "capitulo": "CAPITULO V - DECLARACION JURADA DE BIENES E INGRESOS DE LAS AUTORIDADES Y - FUNCIONARIOS PUBLICOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/17060-1998/12BIS",
+    "articulo": "12-BIS",
+    "documento": "Ley 17.060"
+   },
+   "despues": {
+    "texto": "(De la publicidad de las declaraciones).- Las declaraciones del Presidente, Vicepresidente de la República, Senadores, Representantes Nacionales, Ministros de Estado, Subsecretarios, Directores Generales de Secretaría, Ministros de la Suprema Corte de Justicia, de la Corte Electoral, del Tribunal de Cuentas y del Tribunal de lo Contencioso Administrativo, Directores de Entes Autónomos y Servicios Descentralizados, Intendentes Departamentales, Secretarios Generales de las Intendencias Departamentales y Alcaldes, serán recibidas por la Junta de Transparencia y Ética Pública (JUTEP), en sus correspondientes sobres o a través de medios electrónicos. Posteriormente se procederá a su apertura, publicando todas las declaraciones en el sitio web de la JUTEP.\nEn estas publicaciones se omitirán por razones de seguridad los datos identificatorios de los bienes, derechos y obligaciones incluidos en los mismos, los que se determinarán específicamente en la reglamentación respectiva.\nLas publicaciones se realizarán de acuerdo con lo establecido en la Ley N° 19.179, de 27 de diciembre de 2013, y en el artículo 82 de la Ley N° 19.355, de 19 de diciembre de 2015. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 289 .\nAgregado/s por: Ley Nº 19.797 de 13/09/2019 artículo 3 .",
+    "titulo": "Artículo 12-BIS",
+    "capitulo": "CAPITULO V - DECLARACION JURADA DE BIENES E INGRESOS DE LAS AUTORIDADES Y - FUNCIONARIOS PUBLICOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/17060-1998/12BIS",
+    "articulo": "12-BIS",
+    "documento": "Ley 17.060"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

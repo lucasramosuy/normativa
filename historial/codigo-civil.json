@@ -1,6 +1,46 @@
 {
  "norma": "codigo-civil",
  "desde": "2026-09-23T02:06:21Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "416",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "Durante su cargo, el tutor está obligado a presentar al Juez, dentro\nde los treinta días últimos de cada trienio, un estado de la situación\nen que se encuentra el patrimonio del menor. El Juez, de oficio\no a solicitud del Ministerio Público, podrá disponer que dicho estado sea\npresentado en un período menor.\nEl Ministerio Público, a quien ese estado debe comunicarse, podrá\npedir, si lo creyese conveniente, que el tutor exhiba los libros de la\nadministración y hacer las observaciones que le sugiera su celo por los\nintereses del menor; teniendo presente lo dispuesto en la Sección II,\nCapítulo III de este Título.\nLa aprobación que el Juez diese al estado presentado por el tutor,\nserá en cuanto haya lugar y sin perjuicio de repararse cualquier agravio\ndel menor, al tiempo de la formal rendición de cuentas. (*)",
+    "notas_oficiales": "Ver en esta norma, artículos: 417 y 431 .",
+    "titulo": "Artículo 416",
+    "libro": "LIBRO PRIMERO - DE LAS PERSONAS",
+    "titulo_norma": "TITULO X - DE LA TUTELA",
+    "capitulo": "CAPITULO VI - DE LAS CUENTAS DE LA TUTELA",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-civil/16603-1994/416",
+    "articulo": 416,
+    "documento": "Código Civil"
+   },
+   "despues": {
+    "texto": "Durante su cargo, el tutor está obligado a presentar al Juez, dentro\nde los treinta días últimos de cada trienio, un estado de la situación\nen que se encuentra el patrimonio del menor. El Juez, de oficio\no a solicitud del Ministerio Público, podrá disponer que dicho estado sea\npresentado en un período menor.\nEl Ministerio Público, a quien ese estado debe comunicarse, podrá\npedir, si lo creyese conveniente, que el tutor exhiba los libros de la\nadministración y hacer las observaciones que le sugiera su celo por los\nintereses del menor; teniendo presente lo dispuesto en la Sección II,\nCapítulo III de este Título.\nLa aprobación que el Juez diese al estado presentado por el tutor,\nserá en cuanto haya lugar y sin perjuicio de repararse cualquier agravio\ndel menor, al tiempo de la formal rendición de cuentas. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 260 .\nVer en esta norma, artículos: 417 y 431 .",
+    "titulo": "Artículo 416",
+    "libro": "LIBRO PRIMERO - DE LAS PERSONAS",
+    "titulo_norma": "TITULO X - DE LA TUTELA",
+    "capitulo": "CAPITULO VI - DE LAS CUENTAS DE LA TUTELA",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-civil/16603-1994/416",
+    "articulo": 416,
+    "documento": "Código Civil"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

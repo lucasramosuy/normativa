@@ -1,6 +1,82 @@
 {
  "norma": "ley-19580",
  "desde": "2026-09-23T19:08:58Z",
- "total": 0,
- "entradas": []
+ "total": 2,
+ "entradas": [
+  {
+   "articulo": "53",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Competencia).- Los Juzgados de Paz del Interior, cualquiera sea su categoría, tendrán competencia de urgencia para entender en materia de violencia basada en género, pudiendo disponer de forma provisoria las medidas pertinentes establecidas en esta ley para la protección de presuntas víctimas, debiendo elevar los asuntos al Juzgado Letrado Departamental al que accedan dentro de las veinticuatro horas de haber tomado conocimiento de los hechos, a cuya resolución se estará.",
+    "titulo": "Artículo 53",
+    "seccion": "SECCIÓN III - TRIBUNALES Y FISCALÍAS COMPETENTES",
+    "capitulo": "CAPÍTULO V - PROCESOS DE PROTECCIÓN, INVESTIGACIÓN Y PENALIZACIÓN DE LA VIOLENCIA BASADA EN GÉNERO CONTRA LAS MUJERES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19580-2017/53",
+    "articulo": 53,
+    "documento": "Ley 19.580"
+   },
+   "despues": {
+    "texto": "(Competencia).- Los Juzgados de Paz del Interior, cualquiera sea su categoría, tendrán competencia de urgencia para entender en materia de violencia basada en género, pudiendo disponer de forma provisoria las medidas pertinentes establecidas en esta ley para la protección de presuntas víctimas, debiendo elevar los asuntos al Juzgado Letrado Departamental al que accedan dentro de las veinticuatro horas de haber tomado conocimiento de los hechos, a cuya resolución se estará. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 258 .",
+    "titulo": "Artículo 53",
+    "seccion": "SECCIÓN III - TRIBUNALES Y FISCALÍAS COMPETENTES",
+    "capitulo": "CAPÍTULO V - PROCESOS DE PROTECCIÓN, INVESTIGACIÓN Y PENALIZACIÓN DE LA VIOLENCIA BASADA EN GÉNERO CONTRA LAS MUJERES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19580-2017/53",
+    "articulo": 53,
+    "documento": "Ley 19.580"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "65",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Medidas cautelares especiales).- Para el cumplimiento de la finalidad cautelar, el Tribunal podrá adoptar alguna de las siguientes medidas, u otras análogas, fijando el plazo que corresponda:\nA) Ordenar a la persona agresora que cese en los actos de\nperturbación o intimidación que, directa o indirectamente,\nrealice hacia la víctima.\nB) Prohibir a la persona agresora comunicarse, relacionarse,\nentrevistarse o desarrollar cualquier conducta similar -por sí o\na través de terceros- en relación con la víctima, sus hijos e\nhijas y demás personas afectadas, testigos o denunciantes del\nhecho.\nC) Prohibir, restringir o limitar la presencia de la persona\nagresora en el domicilio o residencia de la víctima, lugares de\ntrabajo, estudio u otros que frecuente ella o sus hijas e hijos u\notras personas a su cargo, pudiendo disponer mecanismos de\nseguimiento que aseguren el estricto cumplimiento de la medida\ndispuesta, tales como los sistemas de tecnología de verificación\nde presencia y localización de personas u otros análogos.\nEn los casos en que se considere en riesgo el derecho a la vida o\na la integridad física de una víctima de violencia doméstica o de\ngénero, el tribunal podrá disponer la colocación del dispositivo\nde monitoreo electrónico en adolescentes. A esos efectos, el\ntribunal deberá fundamentar qué otro tipo de protección es\ninsuficiente o inidóneo. (*)\nD) Ordenar la restitución inmediata de los objetos personales de la\nvíctima, sus hijos e hijas u otras personas a su cargo.\nE) Incautar las armas que la persona agresora tuviere en su poder,\nlas que permanecerán en custodia de la Sede, en la forma que ésta\nlo estime pertinente.\nF) Prohibir a la persona agresora el uso, tenencia o porte de armas\nde fuego, oficiándose a la autoridad competente a sus efectos.\nG) Ordenar al empleador disponer el traslado o suspensión de la\npersona denunciada, cuando la violencia ocurre en el lugar de\ntrabajo de la víctima.\nH) Disponer correctivos y otras medidas para evitar la\ndiscriminación o la violencia hacia las mujeres en el medio\nlaboral o institucional.\nI) Ordenar las prestaciones médicas, educativas o análogas que\nentienda imprescindibles, por parte de los organismos públicos u\notras instituciones responsables.\nJ) Habilitar el cambio de prestador de salud, manteniendo los\nderechos y condiciones establecidas respecto al prestador\nanterior.\nK) Disponer el traslado de la víctima que se encuentre\ninstitucionalizada en un centro residencial, hospitalario o\ncarcelario a otro lugar que asegure sus derechos fundamentales.\nL) Disponer el cambio del administrador de los ingresos económicos\nde cualquier naturaleza que perciban las mujeres en situación de\ndiscapacidad o en cualquier otra situación de dependencia, cuando\nla persona agresora fuese quien cumpliera esa función.\nM) Disponer la asistencia obligatoria de la persona agresora a\nprogramas de rehabilitación.\nN) Disponer el retiro de la persona agresora de la residencia común\ny la entrega inmediata de sus efectos personales en presencia del\nAlguacil, siendo irrelevante quien sea el titular del inmueble.\nAsimismo, se labrará inventario judicial de los bienes muebles\nque se retiren y de los que permanezcan en el lugar, pudiéndose\nexpedir testimonio a solicitud de las partes.\nO) Disponer el reintegro de la víctima al domicilio o residencia, en\npresencia del Alguacil, cuando hubiere salido del mismo a causa\nde la situación de violencia basada en género.\nP) Ordenar la revocación inmediata de los mandatos que la víctima\npudiera haber otorgado a la persona agresora para la\nadministración de bienes comunes, oficiándose al Registro\ncorrespondiente.\nQ) Prohibir la realización de actos de disposición sin el\nconsentimiento escrito de la víctima o venia judicial, respecto a\nlos bienes de las empresas familiares, incluidos los bienes del\nemprendimiento agrario familiar cuando la víctima es titular o\ncónyuge colaboradora en el mismo.",
+    "notas_oficiales": "Literal C), inciso 2º) ver vigencia: Ley Nº 20.212 de 06/11/2023 artículo\n2 .\nLiteral C), inciso 2º) agregado/s por: Ley Nº 20.212 de 06/11/2023\nartículo 513 .",
+    "titulo": "Artículo 65",
+    "seccion": "SECCIÓN IV - PROCESOS DE PROTECCIÓN EN EL ÁMBITO JUDICIAL",
+    "capitulo": "CAPÍTULO V - PROCESOS DE PROTECCIÓN, INVESTIGACIÓN Y PENALIZACIÓN DE LA VIOLENCIA BASADA EN GÉNERO CONTRA LAS MUJERES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19580-2017/65",
+    "articulo": 65,
+    "documento": "Ley 19.580"
+   },
+   "despues": {
+    "texto": "(Medidas cautelares especiales).- Para el cumplimiento de la finalidad cautelar, el Tribunal podrá adoptar alguna de las siguientes medidas, u otras análogas, fijando el plazo que corresponda:\nA) Ordenar a la persona agresora que cese en los actos de\nperturbación o intimidación que, directa o indirectamente,\nrealice hacia la víctima.\nB) Prohibir a la persona agresora comunicarse, relacionarse,\nentrevistarse o desarrollar cualquier conducta similar -por sí o\na través de terceros- en relación con la víctima, sus hijos e\nhijas y demás personas afectadas, testigos o denunciantes del\nhecho.\nC) Prohibir, restringir o limitar la presencia de la persona\nagresora en el domicilio o residencia de la víctima, lugares de\ntrabajo, estudio u otros que frecuente ella o sus hijas e hijos u\notras personas a su cargo, pudiendo disponer mecanismos de\nseguimiento que aseguren el estricto cumplimiento de la medida\ndispuesta, tales como los sistemas de tecnología de verificación\nde presencia y localización de personas u otros análogos.\nEn los casos en que se considere en riesgo el derecho a la vida o\na la integridad física de una víctima de violencia doméstica o de\ngénero, el tribunal podrá disponer la colocación del dispositivo\nde monitoreo electrónico en adolescentes. A esos efectos, el\ntribunal deberá fundamentar qué otro tipo de protección es\ninsuficiente o inidóneo. (*)\nD) Ordenar la restitución inmediata de los objetos personales de la\nvíctima, sus hijos e hijas u otras personas a su cargo.\nE) Incautar las armas que la persona agresora tuviere en su poder,\nlas que permanecerán en custodia de la Sede, en la forma que ésta\nlo estime pertinente. (*)\nF) Prohibir a la persona agresora el uso, tenencia o porte de armas\nde fuego, oficiándose a la autoridad competente a sus efectos. (*)\nG) Ordenar al empleador disponer el traslado o suspensión de la\npersona denunciada, cuando la violencia ocurre en el lugar de\ntrabajo de la víctima.\nH) Disponer correctivos y otras medidas para evitar la\ndiscriminación o la violencia hacia las mujeres en el medio\nlaboral o institucional.\nI) Ordenar las prestaciones médicas, educativas o análogas que\nentienda imprescindibles, por parte de los organismos públicos u\notras instituciones responsables.\nJ) Habilitar el cambio de prestador de salud, manteniendo los\nderechos y condiciones establecidas respecto al prestador\nanterior.\nK) Disponer el traslado de la víctima que se encuentre\ninstitucionalizada en un centro residencial, hospitalario o\ncarcelario a otro lugar que asegure sus derechos fundamentales.\nL) Disponer el cambio del administrador de los ingresos económicos\nde cualquier naturaleza que perciban las mujeres en situación de\ndiscapacidad o en cualquier otra situación de dependencia, cuando\nla persona agresora fuese quien cumpliera esa función.\nM) Disponer la asistencia obligatoria de la persona agresora a\nprogramas de rehabilitación.\nN) Disponer el retiro de la persona agresora de la residencia común\ny la entrega inmediata de sus efectos personales en presencia del\nAlguacil, siendo irrelevante quien sea el titular del inmueble.\nAsimismo, se labrará inventario judicial de los bienes muebles\nque se retiren y de los que permanezcan en el lugar, pudiéndose\nexpedir testimonio a solicitud de las partes.\nO) Disponer el reintegro de la víctima al domicilio o residencia, en\npresencia del Alguacil, cuando hubiere salido del mismo a causa\nde la situación de violencia basada en género.\nP) Ordenar la revocación inmediata de los mandatos que la víctima\npudiera haber otorgado a la persona agresora para la\nadministración de bienes comunes, oficiándose al Registro\ncorrespondiente.\nQ) Prohibir la realización de actos de disposición sin el\nconsentimiento escrito de la víctima o venia judicial, respecto a\nlos bienes de las empresas familiares, incluidos los bienes del\nemprendimiento agrario familiar cuando la víctima es titular o\ncónyuge colaboradora en el mismo.",
+    "notas_oficiales": "Literal C), inciso 2º) ver vigencia: Ley Nº 20.212 de 06/11/2023 artículo\n2 .\nLiterales E) y F) ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y\n259 .\nLiteral C), inciso 2º) agregado/s por: Ley Nº 20.212 de 06/11/2023\nartículo 513 .",
+    "titulo": "Artículo 65",
+    "seccion": "SECCIÓN IV - PROCESOS DE PROTECCIÓN EN EL ÁMBITO JUDICIAL",
+    "capitulo": "CAPÍTULO V - PROCESOS DE PROTECCIÓN, INVESTIGACIÓN Y PENALIZACIÓN DE LA VIOLENCIA BASADA EN GÉNERO CONTRA LAS MUJERES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19580-2017/65",
+    "articulo": 65,
+    "documento": "Ley 19.580"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

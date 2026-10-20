@@ -1,6 +1,154 @@
 {
  "norma": "ley-18437",
  "desde": "2026-09-23T19:08:58Z",
- "total": 0,
- "entradas": []
+ "total": 4,
+ "entradas": [
+  {
+   "articulo": "50",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(De la integración de la Comisión Coordinadora del Sistema Nacional de Educación Pública).- La Comisión Coordinadora del Sistema Nacional de la Educación Pública estará integrada por:\nA) El Ministro o, en su defecto, el Subsecretario de Educación y\nCultura.\nB) El Director de Educación del Ministerio de Educación y Cultura.\nC) El Rector de la Universidad de la República o, en su defecto, el\nVice-Rector.\nD) El Rector de la Universidad Tecnológica o, en su defecto, un\nintegrante de su Consejo Directivo Central.\nE) El Presidente o, en su defecto, otro integrante con voto, del\nConsejo Directivo Central de la Administración Nacional de Educación\nPública.\nF) Un representante de las instituciones de formación militar.\nG) Un representante de las instituciones de formación policial. (*)",
+    "notas_oficiales": "Denominación del Título III dada por Ley Nº 20.446 de 16/12/2025,\nartículo\n336; denominación anterior: \"ORGANIZACIÓN GENERAL DE LA EDUCACIÓN PÚBLICA\"\ndada por Ley Nº 19.889 de 09/07/2020, artículo 144. Denominación\noriginal: \"SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA\".\nVer vigencia: Ley Nº 20.446 de 16/12/2025 artículo 3 .\nAgregado/s por: Ley Nº 20.446 de 16/12/2025 artículo 338 .\nDerogado anteriormente por: Ley Nº 19.889 de 09/07/2020 artículo 206 .\nTEXTO ORIGINAL: Ley Nº 18.437 de 12/12/2008 artículo 50 .",
+    "titulo": "Artículo 50",
+    "titulo_norma": "TITULO III - SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA(*)",
+    "capitulo": "CAPITULO II - ORGANOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18437-2008/50",
+    "articulo": 50,
+    "documento": "Ley 18.437"
+   },
+   "despues": {
+    "texto": "(De la integración de la Comisión Coordinadora del Sistema Nacional de Educación Pública).- La Comisión Coordinadora del Sistema Nacional de la Educación Pública estará integrada por:\nA) El Ministro o, en su defecto, el Subsecretario de Educación y\nCultura.\nB) El Director de Educación del Ministerio de Educación y Cultura.\nC) El Rector de la Universidad de la República o, en su defecto, el\nVice-Rector.\nD) El Rector de la Universidad Tecnológica o, en su defecto, un\nintegrante de su Consejo Directivo Central.\nE) El Presidente o, en su defecto, otro integrante con voto, del\nConsejo Directivo Central de la Administración Nacional de Educación\nPública.\nF) Un representante de las instituciones de formación militar.\nG) Un representante de las instituciones de formación policial. (*)",
+    "notas_oficiales": "Denominación del Título III dada por Ley Nº 20.446 de 16/12/2025,\nartículo\n336; denominación anterior: \"ORGANIZACIÓN GENERAL DE LA EDUCACIÓN PÚBLICA\"\ndada por Ley Nº 19.889 de 09/07/2020, artículo 144. Denominación\noriginal: \"SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA\".\nVer vigencia:\nLey Nº 20.531 de 01/10/2026 artículos 2 y 176 ,\nLey Nº 20.446 de 16/12/2025 artículo 3 .\nAgregado/s por: Ley Nº 20.446 de 16/12/2025 artículo 338 .\nDerogado anteriormente por: Ley Nº 19.889 de 09/07/2020 artículo 206 .\nTEXTO ORIGINAL: Ley Nº 18.437 de 12/12/2008 artículo 50 .",
+    "titulo": "Artículo 50",
+    "titulo_norma": "TITULO III - SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA(*)",
+    "capitulo": "CAPITULO II - ORGANOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18437-2008/50",
+    "articulo": 50,
+    "documento": "Ley 18.437"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "105",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Concepto).- La educación policial y militar, en sus aspectos\nespecíficos y técnicos estará a cargo de los Ministerios del\nInterior y de Defensa Nacional, respectivamente. Los aspectos\ncurriculares generales se regirán por los mismos criterios que los\nniveles educativos correspondientes. La selección e ingreso de los\ndocentes cumplirá los mismos requerimientos que se establezcan para\ncada nivel educativo. En sus planes de estudio deberán estar presentes\nlas líneas transversales establecidas en el artículo 40 de la presente\nley.\nCon respecto a la educación terciaria se regirán de acuerdo a la\nnormativa y disposiciones que emanen de la presente ley, la Ley N°\n19.188, de 7 de enero de 2014, las reglamentaciones vigentes y las que\nse dicten a sus efectos.(*)",
+    "notas_oficiales": "Denominación del Título III dada por Ley Nº 20.446 de 16/12/2025,\nartículo\n336; denominación anterior: \"ORGANIZACIÓN GENERAL DE LA EDUCACIÓN PÚBLICA\"\ndada por Ley Nº 19.889 de 09/07/2020, artículo 144. Denominación\noriginal: \"SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA\".\nRedacción dada por: Ley Nº 19.889 de 09/07/2020 artículo 182 .\nTEXTO ORIGINAL: Ley Nº 18.437 de 12/12/2008 artículo 105 .",
+    "titulo": "Artículo 105",
+    "titulo_norma": "TITULO III - SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA(*)",
+    "capitulo": "CAPITULO XVIII - EDUCACION POLICIAL Y MILITAR",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18437-2008/105",
+    "articulo": 105,
+    "documento": "Ley 18.437"
+   },
+   "despues": {
+    "texto": "(Concepto).- La educación policial y militar, en sus aspectos\nespecíficos y técnicos estará a cargo de los Ministerios del\nInterior y de Defensa Nacional, respectivamente. Los aspectos\ncurriculares generales se regirán por los mismos criterios que los\nniveles educativos correspondientes. La selección e ingreso de los\ndocentes cumplirá los mismos requerimientos que se establezcan para\ncada nivel educativo. En sus planes de estudio deberán estar presentes\nlas líneas transversales establecidas en el artículo 40 de la presente\nley. (*)\nCon respecto a la educación terciaria se regirán de acuerdo a la\nnormativa y disposiciones que emanen de la presente ley, la Ley N°\n19.188, de 7 de enero de 2014, las reglamentaciones vigentes y las que\nse dicten a sus efectos.(*)",
+    "notas_oficiales": "Denominación del Título III dada por Ley Nº 20.446 de 16/12/2025,\nartículo\n336; denominación anterior: \"ORGANIZACIÓN GENERAL DE LA EDUCACIÓN PÚBLICA\"\ndada por Ley Nº 19.889 de 09/07/2020, artículo 144. Denominación\noriginal: \"SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA\".\nRedacción dada por: Ley Nº 19.889 de 09/07/2020 artículo 182 .\nInciso 1º) ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 178 .\nTEXTO ORIGINAL: Ley Nº 18.437 de 12/12/2008 artículo 105 .",
+    "titulo": "Artículo 105",
+    "titulo_norma": "TITULO III - SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA(*)",
+    "capitulo": "CAPITULO XVIII - EDUCACION POLICIAL Y MILITAR",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18437-2008/105",
+    "articulo": 105,
+    "documento": "Ley 18.437"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "107",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Integración).- La Comisión Coordinadora de la Educación se integrará por:\nA) El Ministro o, en su defecto, el Subsecretario de Educación y\nCultura.\nB) El Director de Educación del Ministerio de Educación y Cultura.\nC) Un representante por la Universidad de la República.\nD) Un representante por la Universidad Tecnológica.\nE) Un representante por el conjunto de las instituciones universitarias\nprivadas.\nF) El Presidente o, en su defecto, otro integrante con voto del Consejo\nDirectivo Central de la Administración Nacional de Educación Pública\n(ANEP).\nG) Los Directores Generales y el Presidente del Consejo de Formación en\nEducación de la ANEP.\nH) Un representante de la educación primaria y media privadas.\nI) Un representante de la Comisión Nacional de Educación no Formal.\nJ) Un representante del Instituto del Niño y Adolescente del Uruguay.\nK) Un representante del Instituto Nacional de Empleo y Formación\nProfesional.\nL) Un representante de las instituciones de formación militar.\nM) Un representante de las instituciones de formación policial.\nN) Un representante de las Escuelas de Formación Artística del Servicio\nOficial de Difusión, Representaciones y Espectáculos.(*)",
+    "notas_oficiales": "Denominación del Título III dada por Ley Nº 20.446 de 16/12/2025,\nartículo\n336; denominación anterior: \"ORGANIZACIÓN GENERAL DE LA EDUCACIÓN PÚBLICA\"\ndada por Ley Nº 19.889 de 09/07/2020, artículo 144. Denominación\noriginal: \"SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA\".\nLa denominación del Capítulo XIX del Título III fue dada por Ley Nº 19.889\nde 09/07/2020 artículo 183.\nRedacción dada por: Ley Nº 19.889 de 09/07/2020 artículo 185 .\nTEXTO ORIGINAL: Ley Nº 18.437 de 12/12/2008 artículo 107 .",
+    "titulo": "Artículo 107",
+    "titulo_norma": "TITULO III - SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA(*)",
+    "capitulo": "CAPITULO XIX - COORDINACION DEL SISTEMA NACIONAL DEL EDUCACION (*)",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18437-2008/107",
+    "articulo": 107,
+    "documento": "Ley 18.437"
+   },
+   "despues": {
+    "texto": "(Integración).- La Comisión Coordinadora de la Educación se integrará por:\nA) El Ministro o, en su defecto, el Subsecretario de Educación y\nCultura.\nB) El Director de Educación del Ministerio de Educación y Cultura.\nC) Un representante por la Universidad de la República.\nD) Un representante por la Universidad Tecnológica.\nE) Un representante por el conjunto de las instituciones universitarias\nprivadas.\nF) El Presidente o, en su defecto, otro integrante con voto del Consejo\nDirectivo Central de la Administración Nacional de Educación Pública\n(ANEP).\nG) Los Directores Generales y el Presidente del Consejo de Formación en\nEducación de la ANEP.\nH) Un representante de la educación primaria y media privadas.\nI) Un representante de la Comisión Nacional de Educación no Formal.\nJ) Un representante del Instituto del Niño y Adolescente del Uruguay.\nK) Un representante del Instituto Nacional de Empleo y Formación\nProfesional.\nL) Un representante de las instituciones de formación militar.\nM) Un representante de las instituciones de formación policial.\nN) Un representante de las Escuelas de Formación Artística del Servicio\nOficial de Difusión, Representaciones y Espectáculos.(*)",
+    "notas_oficiales": "Denominación del Título III dada por Ley Nº 20.446 de 16/12/2025,\nartículo\n336; denominación anterior: \"ORGANIZACIÓN GENERAL DE LA EDUCACIÓN PÚBLICA\"\ndada por Ley Nº 19.889 de 09/07/2020, artículo 144. Denominación\noriginal: \"SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA\".\nLa denominación del Capítulo XIX del Título III fue dada por Ley Nº 19.889\nde 09/07/2020 artículo 183.\nRedacción dada por: Ley Nº 19.889 de 09/07/2020 artículo 185 .\nVer vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 177 .\nTEXTO ORIGINAL: Ley Nº 18.437 de 12/12/2008 artículo 107 .",
+    "titulo": "Artículo 107",
+    "titulo_norma": "TITULO III - SISTEMA NACIONAL DE EDUCACIÓN PÚBLICA(*)",
+    "capitulo": "CAPITULO XIX - COORDINACION DEL SISTEMA NACIONAL DEL EDUCACION (*)",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18437-2008/107",
+    "articulo": 107,
+    "documento": "Ley 18.437"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "114",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Dirección).- El Instituto será dirigido y administrado por una\nComisión Directiva de tres miembros designados por el Poder Ejecutivo,\nuno de los cuales lo presidirá.\nLos miembros de la Comisión Directiva deberán ser designados entre\npersonas que, por sus antecedentes personales, profesionales y conocimientos en la materia, aseguren independencia de criterio, eficiencia, objetividad e imparcialidad en su desempeño. Durarán cuatro años en el ejercicio de sus cargos, pudiendo ser designados por única vez por igual período, manteniéndose en los mismos hasta la designación de quienes deberán sucederlos.\nLa Comisión Directiva será asistida en sus funciones por una Comisión\nConsultiva que estará integrada por los siguientes miembros: dos designados por el Consejo Directivo Central de la Administración Nacional\nde Educación Pública, uno designado por cada universidad pública, uno\npor el conjunto de la educación privada habilitada(inicial, primaria y\nmedia), uno por el conjunto de las instituciones universitarias privadas reconocidas por el Ministerio de Educación y Cultura, uno por el\nInstituto del Niño y Adolescente del Uruguay, uno por las instituciones\nde formación militar, uno por las instituciones de formación policial y\nuno por el Instituto Nacional de Empleo y Formación Profesional.\nLa Comisión Consultiva será preceptivamente consultada antes de la\naprobación de cada Plan Estratégico del Instituto y podrá serlo en cada ocasión que la Comisión Directiva considere oportuna por voto\nmayoritario de sus miembros. La Comisión Consultiva tendrá asimismo\nderecho a iniciativa para presentar, por decisión mayoritaria de sus\nmiembros, propuestas, opiniones fundadas y recomendaciones a la\nComisión Directiva. La Comisión Consultiva podrá servirse de las\ninstalaciones del Instituto para sesionar.\nLa representación jurídica del Instituto, en sus relaciones externas,\nserá ejercida por el Presidente de la Comisión Directiva. En ausencia\no impedimento de éste, la representación será ejercida por los dos\nmiembros restantes de la Comisión Directiva actuando conjuntamente. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 19.889 de 09/07/2020 artículo 192 .\nInciso 3º) ver vigencia: Ley Nº 19.355 de 19/12/2015 artículo 3 .\nRedacción dada anteriormente por: Ley Nº 18.869 de 23/12/2011 artículo 1 .\nInciso 3º) redacción dada anteriormente por: Ley Nº 19.355 de 19/12/2015\nartículo 751 .\nTEXTO ORIGINAL:\nLey Nº 19.355 de 19/12/2015 artículo 751 ,\nLey Nº 18.869 de 23/12/2011 artículo 1 ,\nLey Nº 18.437 de 12/12/2008 artículo 114 .",
+    "titulo": "Artículo 114",
+    "titulo_norma": "TITULO IV - INSTITUTO NACIONAL DE EVALUACION EDUCATIVA",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18437-2008/114",
+    "articulo": 114,
+    "documento": "Ley 18.437"
+   },
+   "despues": {
+    "texto": "(Dirección).- El Instituto será dirigido y administrado por una\nComisión Directiva de tres miembros designados por el Poder Ejecutivo,\nuno de los cuales lo presidirá.\nLos miembros de la Comisión Directiva deberán ser designados entre\npersonas que, por sus antecedentes personales, profesionales y conocimientos en la materia, aseguren independencia de criterio, eficiencia, objetividad e imparcialidad en su desempeño. Durarán cuatro años en el ejercicio de sus cargos, pudiendo ser designados por única vez por igual período, manteniéndose en los mismos hasta la designación de quienes deberán sucederlos.\nLa Comisión Directiva será asistida en sus funciones por una Comisión\nConsultiva que estará integrada por los siguientes miembros: dos designados por el Consejo Directivo Central de la Administración Nacional\nde Educación Pública, uno designado por cada universidad pública, uno\npor el conjunto de la educación privada habilitada(inicial, primaria y\nmedia), uno por el conjunto de las instituciones universitarias privadas reconocidas por el Ministerio de Educación y Cultura, uno por el\nInstituto del Niño y Adolescente del Uruguay, uno por las instituciones\nde formación militar, uno por las instituciones de formación policial y\nuno por el Instituto Nacional de Empleo y Formación Profesional.\nLa Comisión Consultiva será preceptivamente consultada antes de la\naprobación de cada Plan Estratégico del Instituto y podrá serlo en cada ocasión que la Comisión Directiva considere oportuna por voto\nmayoritario de sus miembros. La Comisión Consultiva tendrá asimismo\nderecho a iniciativa para presentar, por decisión mayoritaria de sus\nmiembros, propuestas, opiniones fundadas y recomendaciones a la\nComisión Directiva. La Comisión Consultiva podrá servirse de las\ninstalaciones del Instituto para sesionar.\nLa representación jurídica del Instituto, en sus relaciones externas,\nserá ejercida por el Presidente de la Comisión Directiva. En ausencia\no impedimento de éste, la representación será ejercida por los dos\nmiembros restantes de la Comisión Directiva actuando conjuntamente. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 19.889 de 09/07/2020 artículo 192 .\nInciso 3º) ver vigencia:\nLey Nº 20.531 de 01/10/2026 artículos 2 y 179 ,\nLey Nº 19.355 de 19/12/2015 artículo 3 .\nRedacción dada anteriormente por: Ley Nº 18.869 de 23/12/2011 artículo 1 .\nInciso 3º) redacción dada anteriormente por: Ley Nº 19.355 de 19/12/2015\nartículo 751 .\nTEXTO ORIGINAL:\nLey Nº 19.355 de 19/12/2015 artículo 751 ,\nLey Nº 18.869 de 23/12/2011 artículo 1 ,\nLey Nº 18.437 de 12/12/2008 artículo 114 .",
+    "titulo": "Artículo 114",
+    "titulo_norma": "TITULO IV - INSTITUTO NACIONAL DE EVALUACION EDUCATIVA",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18437-2008/114",
+    "articulo": 114,
+    "documento": "Ley 18.437"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

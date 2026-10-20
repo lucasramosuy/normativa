@@ -1,6 +1,41 @@
 {
  "norma": "ley-19272",
  "desde": "2026-09-23T19:08:58Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "16",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "El 15% (quince por ciento) de los ciudadanos inscriptos en una localidad\no circunscripción tendrá el derecho de iniciativa ante el Gobierno\nDepartamental en los asuntos de su competencia, incluida la que\ncorresponde para constituirse en Municipio. Las firmas serán presentadas\nante la Junta Departamental y posteriormente enviadas por ésta a la Corte\nElectoral para su validación.\nEn este caso la Junta Departamental, previa opinión preceptiva del\nIntendente, emitida dentro de los sesenta días de validada la iniciativa,\npodrá disponer la creación del Municipio respectivo, aunque se trate de\nuna población de menos de 2.000 habitantes. Transcurrido dicho plazo, la\nJunta Departamental resolverá sobre la creación del Municipio por una\nmayoría especial de dos tercios de sus integrantes.\nSin perjuicio de lo previsto en el inciso anterior, la Junta\nDepartamental por igual mayoría, podrá disponer la creación de un\nMunicipio, requiriéndose también en este caso, la opinión previa\npreceptiva del Intendente.",
+    "titulo": "Artículo 16",
+    "capitulo": "CAPÍTULO V - DE LA INICIATIVA Y EL CONTROL",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19272-2014/16",
+    "articulo": 16,
+    "documento": "Ley 19.272"
+   },
+   "despues": {
+    "texto": "El 15% (quince por ciento) de los ciudadanos inscriptos en una localidad\no circunscripción tendrá el derecho de iniciativa ante el Gobierno\nDepartamental en los asuntos de su competencia, incluida la que\ncorresponde para constituirse en Municipio. Las firmas serán presentadas\nante la Junta Departamental y posteriormente enviadas por ésta a la Corte\nElectoral para su validación.\nEn este caso la Junta Departamental, previa opinión preceptiva del\nIntendente, emitida dentro de los sesenta días de validada la iniciativa,\npodrá disponer la creación del Municipio respectivo, aunque se trate de\nuna población de menos de 2.000 habitantes. Transcurrido dicho plazo, la\nJunta Departamental resolverá sobre la creación del Municipio por una\nmayoría especial de dos tercios de sus integrantes.\nSin perjuicio de lo previsto en el inciso anterior, la Junta\nDepartamental por igual mayoría, podrá disponer la creación de un\nMunicipio, requiriéndose también en este caso, la opinión previa\npreceptiva del Intendente.",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 30 .",
+    "titulo": "Artículo 16",
+    "capitulo": "CAPÍTULO V - DE LA INICIATIVA Y EL CONTROL",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19272-2014/16",
+    "articulo": 16,
+    "documento": "Ley 19.272"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

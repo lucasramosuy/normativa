@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/18850-2011",
-  "sha256_jsonl": "ecc656b45621ab11bdffe6e1b3f675587c0568d7c1c69f238dac21bd06ac1c51",
+  "sha256_jsonl": "2f8c4202b58a2e2ec79aa7454131812a0fda76177fd1eb230173376ad7478e4f",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

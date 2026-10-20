@@ -1,6 +1,75 @@
 {
  "norma": "ley-18227",
  "desde": "2026-09-24T17:49:04Z",
- "total": 0,
- "entradas": []
+ "total": 2,
+ "entradas": [
+  {
+   "articulo": "6",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Requisitos para el otorgamiento y el mantenimiento de la percepción de\nla prestación).- Para recibir la asignación regulada por la presente ley,\ndeberán acreditarse ante el Banco de Previsión Social, con la frecuencia y\ndel modo que establezca la reglamentación, los siguientes extremos:\nA) Los ingresos y la composición del hogar que integra el beneficiario.\nB) Los demás elementos que caracterizan a dicho hogar como en situación\nde vulnerabilidad socioeconómica y que lo incluyen en el nivel a que\nrefiere el inciso segundo del artículo 1°, en su caso.\nC) La inscripción y concurrencia asidua del beneficiario a institutos de\nenseñanza estatales o privados autorizados por el órgano competente,\nexcepto en los casos de beneficiarios discapacitados en que se\nacredite que aquello no es posible, y la periodicidad de controles de\nasistencia médica brindada a través del sistema público o privado.\nD) Tratándose de personas discapacitadas desde el punto de vista físico\no psíquico, la discapacidad debe impedir su incorporación a todo tipo\nde tarea remunerada. En este caso, el certificado provendrá de los\nservicios médicos del Banco de Previsión Social, debiendo realizarse\nrevisiones periódicas como máximo cada tres años, a los efectos de\nevaluar si se mantiene el mismo grado de incapacidad que permita el\nmantenimiento del pago de la prestación. No obstante, en los casos de\nniños y adolescentes que padezcan discapacidad psíquica, la misma\npodrá acreditarse mediante certificación que al efecto expida el\nRegistro creado por la Ley N° 13.711, de 29 de noviembre de 1968.(*)",
+    "notas_oficiales": "Literal D) redacción dada por: Ley Nº 19.924 de 18/12/2020 artículo 505 .\nLiteral D) ver vigencia: Ley Nº 19.924 de 18/12/2020 artículo 3 .\nLiteral c) reglamentado por: Decreto Nº 239/015 de 07/09/2015.\nVer en esta norma, artículo: 7 .\nTEXTO ORIGINAL: Ley Nº 18.227 de 22/12/2007 artículo 6 .",
+    "titulo": "Artículo 6",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18227-2007/6",
+    "articulo": 6,
+    "documento": "Ley 18.227"
+   },
+   "despues": {
+    "texto": "(Requisitos para el otorgamiento y el mantenimiento de la percepción de\nla prestación).- Para recibir la asignación regulada por la presente ley,\ndeberán acreditarse ante el Banco de Previsión Social, con la frecuencia y\ndel modo que establezca la reglamentación, los siguientes extremos:\nA) Los ingresos y la composición del hogar que integra el beneficiario.\nB) Los demás elementos que caracterizan a dicho hogar como en situación\nde vulnerabilidad socioeconómica y que lo incluyen en el nivel a que\nrefiere el inciso segundo del artículo 1°, en su caso.\nC) La inscripción y concurrencia asidua del beneficiario a institutos de\nenseñanza estatales o privados autorizados por el órgano competente,\nexcepto en los casos de beneficiarios discapacitados en que se\nacredite que aquello no es posible, y la periodicidad de controles de\nasistencia médica brindada a través del sistema público o privado. (*)\nD) Tratándose de personas discapacitadas desde el punto de vista físico\no psíquico, la discapacidad debe impedir su incorporación a todo tipo\nde tarea remunerada. En este caso, el certificado provendrá de los\nservicios médicos del Banco de Previsión Social, debiendo realizarse\nrevisiones periódicas como máximo cada tres años, a los efectos de\nevaluar si se mantiene el mismo grado de incapacidad que permita el\nmantenimiento del pago de la prestación. No obstante, en los casos de\nniños y adolescentes que padezcan discapacidad psíquica, la misma\npodrá acreditarse mediante certificación que al efecto expida el\nRegistro creado por la Ley N° 13.711, de 29 de noviembre de 1968.(*)",
+    "notas_oficiales": "Literal D) redacción dada por: Ley Nº 19.924 de 18/12/2020 artículo 505 .\nLiteral C) ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 230 .\nLiteral D) ver vigencia: Ley Nº 19.924 de 18/12/2020 artículo 3 .\nLiteral c) reglamentado por: Decreto Nº 239/015 de 07/09/2015.\nVer en esta norma, artículo: 7 .\nTEXTO ORIGINAL: Ley Nº 18.227 de 22/12/2007 artículo 6 .",
+    "titulo": "Artículo 6",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18227-2007/6",
+    "articulo": 6,
+    "documento": "Ley 18.227"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "7",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Instituciones de educación no formal).- A los efectos de lo previsto en\nel literal C) del artículo anterior, considéranse incluidas dentro de los\ninstitutos de enseñanza privados, a las instituciones de educación no\nformal que, estando inscriptas en el Registro de Instituciones de\nEducación No Formal del Ministerio de Educación y Cultura y autorizadas\npor el mismo, contribuyan al desarrollo socioeducativo del beneficiario y\na su reinserción en el sistema educativo formal, conforme a la\nreglamentación que dicte el Poder Ejecutivo.\nLos niños y adolescentes incluidos en el artículo 1° de la presente ley,\nque participen en proyectos socioeducativos desarrollados por las\nreferidas instituciones de educación no formal, serán beneficiarios de la\nasignación siempre que los atributarios se comprometan al reingreso de\naquéllos al sistema educativo formal.\nBajo estas condiciones, la asignación se otorgará por una sola vez y por\nun período no mayor a un año.",
+    "notas_oficiales": "Reglamentado por: Decreto Nº 239/015 de 07/09/2015.",
+    "titulo": "Artículo 7",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18227-2007/7",
+    "articulo": 7,
+    "documento": "Ley 18.227"
+   },
+   "despues": {
+    "texto": "(Instituciones de educación no formal).- A los efectos de lo previsto en\nel literal C) del artículo anterior, considéranse incluidas dentro de los\ninstitutos de enseñanza privados, a las instituciones de educación no\nformal que, estando inscriptas en el Registro de Instituciones de\nEducación No Formal del Ministerio de Educación y Cultura y autorizadas\npor el mismo, contribuyan al desarrollo socioeducativo del beneficiario y\na su reinserción en el sistema educativo formal, conforme a la\nreglamentación que dicte el Poder Ejecutivo.\nLos niños y adolescentes incluidos en el artículo 1° de la presente ley,\nque participen en proyectos socioeducativos desarrollados por las\nreferidas instituciones de educación no formal, serán beneficiarios de la\nasignación siempre que los atributarios se comprometan al reingreso de\naquéllos al sistema educativo formal.\nBajo estas condiciones, la asignación se otorgará por una sola vez y por\nun período no mayor a un año. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 230 .\nReglamentado por: Decreto Nº 239/015 de 07/09/2015.",
+    "titulo": "Artículo 7",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18227-2007/7",
+    "articulo": 7,
+    "documento": "Ley 18.227"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

@@ -1,6 +1,42 @@
 {
  "norma": "ley-17613",
  "desde": "2026-09-24T00:38:43Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "47",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Aportes de los Bancos y las Cooperativas de Intermediación Financiera).- El aporte a que se refiere el numeral 1) del artículo anterior será fijado por la Corporación de Protección del Ahorro\nBancario, entre el 1 o/oo (uno por mil) y el 30 o/oo (treinta por mil)\ndel promedio anual de los depósitos del sector no financiero excepto los\ndel Gobierno Central y los del Banco de Previsión Social constituidos en\ncada institución bancaria o cooperativa de intermediación financiera.\nDichos aportes deberán fijarse en función del rango de los distintos\nriesgos a que esté expuesta cada una de ellas. La Corporación de Protección del Ahorro Bancario ubicará fundadamente a cada entidad en el rango de riesgos asumidos que le corresponda aplicando los criterios técnicos generalmente admitidos, pudiendo incluir diferentes tarifas en atención a la moneda de constitución de las obligaciones. Las porciones del aporte determinadas por moneda se pagarán efectivamente en las respectivas monedas, sujeto a lo que fije la reglamentación.\nEl Poder Ejecutivo, a propuesta fundada de la Corporación de Protección\ndel Ahorro Bancario, fijará el máximo de reserva en cada moneda con que\nestará formado el Fondo de Garantía. Los aportes en las respectivas\nmonedas se suspenderán cuando el Fondo de Garantía alcance el máximo\nestablecido para cada una, y se reanudarán cuando caigan por debajo del máximo.\nSi se requirieran erogaciones del Fondo que por su importancia lo\njustifiquen, la Corporación de Protección del Ahorro Bancario podrá\nexigir a las instituciones aportantes el adelanto de la integración de\nsus aportes por el equivalente de hasta tres años, de acuerdo con lo que\nestablezca la reglamentación.\nLa Corporación de Protección del Ahorro Bancario reglamentará lo relativo al régimen de aportación en todo lo que no está previsto en la ley. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 18.401 de 24/10/2008 artículo 39 .\nReglamentado por: Decreto Nº 103/005 de 07/03/2005.\nVer en esta norma, artículo: 61 .\nTEXTO ORIGINAL: Ley Nº 17.613 de 27/12/2002 artículo 47 .",
+    "titulo": "Artículo 47",
+    "capitulo": "CAPITULO II FONDO DE GARANTIA DE DEPOSITOS BANCARIOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/17613-2002/47",
+    "articulo": 47,
+    "documento": "Ley 17.613"
+   },
+   "despues": {
+    "texto": "(Aportes de los Bancos y las Cooperativas de Intermediación Financiera).- El aporte a que se refiere el numeral 1) del artículo anterior será fijado por la Corporación de Protección del Ahorro\nBancario, entre el 1 o/oo (uno por mil) y el 30 o/oo (treinta por mil)\ndel promedio anual de los depósitos del sector no financiero excepto los\ndel Gobierno Central y los del Banco de Previsión Social constituidos en\ncada institución bancaria o cooperativa de intermediación financiera.\nDichos aportes deberán fijarse en función del rango de los distintos\nriesgos a que esté expuesta cada una de ellas. La Corporación de Protección del Ahorro Bancario ubicará fundadamente a cada entidad en el rango de riesgos asumidos que le corresponda aplicando los criterios técnicos generalmente admitidos, pudiendo incluir diferentes tarifas en atención a la moneda de constitución de las obligaciones. Las porciones del aporte determinadas por moneda se pagarán efectivamente en las respectivas monedas, sujeto a lo que fije la reglamentación.\nEl Poder Ejecutivo, a propuesta fundada de la Corporación de Protección\ndel Ahorro Bancario, fijará el máximo de reserva en cada moneda con que\nestará formado el Fondo de Garantía. Los aportes en las respectivas\nmonedas se suspenderán cuando el Fondo de Garantía alcance el máximo\nestablecido para cada una, y se reanudarán cuando caigan por debajo del máximo.\nSi se requirieran erogaciones del Fondo que por su importancia lo\njustifiquen, la Corporación de Protección del Ahorro Bancario podrá\nexigir a las instituciones aportantes el adelanto de la integración de\nsus aportes por el equivalente de hasta tres años, de acuerdo con lo que\nestablezca la reglamentación.\nLa Corporación de Protección del Ahorro Bancario reglamentará lo relativo al régimen de aportación en todo lo que no está previsto en la ley. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 18.401 de 24/10/2008 artículo 39 .\nVer vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 309 .\nReglamentado por: Decreto Nº 103/005 de 07/03/2005.\nVer en esta norma, artículo: 61 .\nTEXTO ORIGINAL: Ley Nº 17.613 de 27/12/2002 artículo 47 .",
+    "titulo": "Artículo 47",
+    "capitulo": "CAPITULO II FONDO DE GARANTIA DE DEPOSITOS BANCARIOS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/17613-2002/47",
+    "articulo": 47,
+    "documento": "Ley 17.613"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

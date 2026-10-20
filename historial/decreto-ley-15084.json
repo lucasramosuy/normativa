@@ -1,6 +1,39 @@
 {
  "norma": "decreto-ley-15084",
  "desde": "2026-09-24T17:49:04Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "5",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "El beneficiario de la asignación familiar es el hijo o menor a cargo de\nlos atributarios referidos en el artículo 2º hasta la edad de catorce\naños.\nEl período de prestación de la asignación se extenderá en la forma que\nse establece a continuación:\n1) Hasta los dieciséis años cuando se compruebe que el beneficiario no\nha podido completar el ciclo de Educación Primaria a los catorce años\npor impedimento plenamente justificado, así como también cuando sea\nhijo de empleado fallecido absolutamente incapacitado para el trabajo\no que sufra privación de libertad.\n2) Hasta los dieciocho años cuando el beneficiario curse estudios de\nnivel superior a los de Educación Primaria en institutos docentes\nestatales o privados autorizados por el órgano competente.\nEn todos los casos los atributarios deberán comprobar la inscripción\ny concurrencia asidua de los beneficiarios a los institutos\ndocentes, los que estarán obligados a expedir la certificación\nrespectiva.\n3) De por vida o hasta que perciba otra prestación de la seguridad\nsocial, cuando el beneficiario padezca de una incapacidad síquica o\nfísica tal que impida su incorporación a todo tipo de tarea\nremunerada. (*)",
+    "titulo": "Artículo 5",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/decretos-ley/15084-1980/5",
+    "articulo": 5,
+    "documento": "Decreto-ley 15.084"
+   },
+   "despues": {
+    "texto": "El beneficiario de la asignación familiar es el hijo o menor a cargo de\nlos atributarios referidos en el artículo 2º hasta la edad de catorce\naños.\nEl período de prestación de la asignación se extenderá en la forma que\nse establece a continuación:\n1) Hasta los dieciséis años cuando se compruebe que el beneficiario no\nha podido completar el ciclo de Educación Primaria a los catorce años\npor impedimento plenamente justificado, así como también cuando sea\nhijo de empleado fallecido absolutamente incapacitado para el trabajo\no que sufra privación de libertad.\n2) Hasta los dieciocho años cuando el beneficiario curse estudios de\nnivel superior a los de Educación Primaria en institutos docentes\nestatales o privados autorizados por el órgano competente.\nEn todos los casos los atributarios deberán comprobar la inscripción\ny concurrencia asidua de los beneficiarios a los institutos\ndocentes, los que estarán obligados a expedir la certificación\nrespectiva.\n3) De por vida o hasta que perciba otra prestación de la seguridad\nsocial, cuando el beneficiario padezca de una incapacidad síquica o\nfísica tal que impida su incorporación a todo tipo de tarea\nremunerada. (*)",
+    "notas_oficiales": "Numeral 2º), inciso 2º) ver vigencia: Ley Nº 20.531 de 01/10/2026\nartículos 2 y 230 .",
+    "titulo": "Artículo 5",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/decretos-ley/15084-1980/5",
+    "articulo": 5,
+    "documento": "Decreto-ley 15.084"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

@@ -1,6 +1,42 @@
 {
  "norma": "ley-15913",
  "desde": "2026-10-03T15:49:29Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "18",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Integración). - La Comisión Nacional del Libro será presidida por el\nDirector del Instituto Nacional del Libro y estará integrada además por\ndos delegados del Ministerio de Educación y Cultura, un delegado del\nMinisterio de Economía y Finanzas, dos delegados de la Cámara Uruguaya del\nLibro, un delegado de la Asociación de Impresores del Uruguay, un\ndelegado de la Cámara de Industriales Gráficos del Uruguay y un delegado\nde los autores, cuya elección se realizará en la forma que determine la\nreglamentación.",
+    "titulo": "Artículo 18",
+    "capitulo": "CAPITULO VI - COMISION NACIONAL DEL LIBRO",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/15913-1987/18",
+    "articulo": 18,
+    "documento": "Ley 15.913"
+   },
+   "despues": {
+    "texto": "(Integración). - La Comisión Nacional del Libro será presidida por el\nDirector del Instituto Nacional del Libro y estará integrada además por\ndos delegados del Ministerio de Educación y Cultura, un delegado del\nMinisterio de Economía y Finanzas, dos delegados de la Cámara Uruguaya del\nLibro, un delegado de la Asociación de Impresores del Uruguay, un\ndelegado de la Cámara de Industriales Gráficos del Uruguay y un delegado\nde los autores, cuya elección se realizará en la forma que determine la\nreglamentación. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 202 .",
+    "titulo": "Artículo 18",
+    "capitulo": "CAPITULO VI - COMISION NACIONAL DEL LIBRO",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/15913-1987/18",
+    "articulo": 18,
+    "documento": "Ley 15.913"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

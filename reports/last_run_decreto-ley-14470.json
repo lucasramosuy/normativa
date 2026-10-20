@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-12T18:33:21Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/decretos-ley/14470-1975",
-  "sha256_jsonl": "7b13ae6184d7b14f19f52dccdd412700b8f33c71f43db9b52ba33f611fd9709f",
+  "sha256_jsonl": "8b40759d61b05cc39335c80d11989d54e953bfd2c2d6fd576ba343f63189187e",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

@@ -1,6 +1,89 @@
 {
  "norma": "codigo-general-proceso",
  "desde": "2026-09-23T02:06:21Z",
- "total": 0,
- "entradas": []
+ "total": 2,
+ "entradas": [
+  {
+   "articulo": "64",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "Forma de los actos procesales.-\nCuando la forma de los actos procesales no esté expresamente\ndeterminada por la ley, será la que resulte indispensable e idónea para\nla finalidad perseguida.",
+    "titulo": "Artículo 64",
+    "libro": "LIBRO I - DISPOSICIONES GENERALES",
+    "titulo_norma": "TITULO VI - DE LA ACTIVIDAD PROCESAL",
+    "seccion": "SECCION I - DE LOS ACTOS PROCESALES EN GENERAL",
+    "capitulo": "CAPITULO I - DISPOSICIONES GENERALES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-general-proceso/15982-1988/64",
+    "articulo": 64,
+    "documento": "Código General del Proceso"
+   },
+   "despues": {
+    "texto": "Forma de los actos procesales.-\nCuando la forma de los actos procesales no esté expresamente\ndeterminada por la ley, será la que resulte indispensable e idónea para\nla finalidad perseguida. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 255 .",
+    "titulo": "Artículo 64",
+    "libro": "LIBRO I - DISPOSICIONES GENERALES",
+    "titulo_norma": "TITULO VI - DE LA ACTIVIDAD PROCESAL",
+    "seccion": "SECCION I - DE LOS ACTOS PROCESALES EN GENERAL",
+    "capitulo": "CAPITULO I - DISPOSICIONES GENERALES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-general-proceso/15982-1988/64",
+    "articulo": 64,
+    "documento": "Código General del Proceso"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "64-BIS",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "Autorízase en todos los procesos judiciales regidos por este Código, en situaciones excepcionales, la utilización de videoconferencia u otros medios telemáticos idóneos para la realización de cualquier audiencia. La Suprema Corte de Justicia calificará las situaciones de excepción y reglamentará la procedencia y utilización de tales medios. El Tribunal dispondrá la utilización de los referidos medios telemáticos, y proveerá a los efectos de que en las audiencias por videoconferencia se asegure la comunicación multidireccional y simultánea entre todos los sujetos actuantes y el respeto de los principios del debido proceso y el derecho de defensa.\nPodrán ser diligenciados por videoconferencia la declaración de parte,\nla declaración de testigos y el examen en audiencia de la prueba pericial, en los supuestos a que refieren los artículos 152, 160 y 183 de este Código, siempre que la parte, el testigo y el perito declaren en forma presencial ante la Sede o en la comisionada a tales efectos. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 19.924 de 18/12/2020 artículo 3 .\nAgregado/s por: Ley Nº 19.924 de 18/12/2020 artículo 539 .",
+    "titulo": "Artículo 64-BIS",
+    "libro": "LIBRO I - DISPOSICIONES GENERALES",
+    "titulo_norma": "TITULO VI - DE LA ACTIVIDAD PROCESAL",
+    "seccion": "SECCION I - DE LOS ACTOS PROCESALES EN GENERAL",
+    "capitulo": "CAPITULO I - DISPOSICIONES GENERALES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-general-proceso/15982-1988/64BIS",
+    "articulo": "64-BIS",
+    "documento": "Código General del Proceso"
+   },
+   "despues": {
+    "texto": "Autorízase en todos los procesos judiciales regidos por este Código, en situaciones excepcionales, la utilización de videoconferencia u otros medios telemáticos idóneos para la realización de cualquier audiencia. La Suprema Corte de Justicia calificará las situaciones de excepción y reglamentará la procedencia y utilización de tales medios. El Tribunal dispondrá la utilización de los referidos medios telemáticos, y proveerá a los efectos de que en las audiencias por videoconferencia se asegure la comunicación multidireccional y simultánea entre todos los sujetos actuantes y el respeto de los principios del debido proceso y el derecho de defensa.\nPodrán ser diligenciados por videoconferencia la declaración de parte,\nla declaración de testigos y el examen en audiencia de la prueba pericial, en los supuestos a que refieren los artículos 152, 160 y 183 de este Código, siempre que la parte, el testigo y el perito declaren en forma presencial ante la Sede o en la comisionada a tales efectos. (*)",
+    "notas_oficiales": "Ver vigencia:\nLey Nº 20.531 de 01/10/2026 artículos 2 y 256 ,\nLey Nº 19.924 de 18/12/2020 artículo 3 .\nAgregado/s por: Ley Nº 19.924 de 18/12/2020 artículo 539 .",
+    "titulo": "Artículo 64-BIS",
+    "libro": "LIBRO I - DISPOSICIONES GENERALES",
+    "titulo_norma": "TITULO VI - DE LA ACTIVIDAD PROCESAL",
+    "seccion": "SECCION I - DE LOS ACTOS PROCESALES EN GENERAL",
+    "capitulo": "CAPITULO I - DISPOSICIONES GENERALES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-general-proceso/15982-1988/64BIS",
+    "articulo": "64-BIS",
+    "documento": "Código General del Proceso"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

@@ -1,6 +1,43 @@
 {
  "norma": "ley-19889",
  "desde": "2026-09-23T19:08:58Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "103",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Llamadas al Servicio de Emergencia).- Sin perjuicio de lo dispuesto en el artículo 166 de la Ley N° 19.355, de 19 de diciembre de 2015, aquel que realice llamadas maliciosas, falsas, jocosas o irregulares al Servicio de Emergencia 911, mediante el uso de telefonía fija o móvil y cuyo titular sea una persona física, o a través de otros medios de comunicación, será sancionado por la Unidad Reguladora de Servicios de Comunicaciones (URSEC) con una multa de 10 UR (diez unidades reajustables) hasta 100 UR (cien unidades reajustables). La multa se aplicará al titular de la línea telefónica.\nCuando la llamada provenga de una línea fija o de una línea móvil y su titular sea una entidad estatal, pública o no, o una entidad privada, la URSEC evaluará y resolverá respecto a la eventual aplicación de la multa prevista en el inciso anterior, siguiendo las reglas de la sana crítica. El producido de las multas a que refiere esta norma se destinará a un fondo de inversiones para mejora del servicio de Emergencia 911 del Ministerio del Interior.\nLo dispuesto en el presente artículo es sin perjuicio de la o las denuncias que puedan corresponder en caso de llamadas con contenidos de apariencia delictiva.",
+    "notas_oficiales": "Reglamentado por: Decreto Nº 271/021 de 20/08/2021.",
+    "titulo": "Artículo 103",
+    "capitulo": "CAPÍTULO IX - DISPOSICIONES VARIAS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19889-2020/103",
+    "articulo": 103,
+    "documento": "Ley 19.889"
+   },
+   "despues": {
+    "texto": "(Llamadas al Servicio de Emergencia).- Sin perjuicio de lo dispuesto en el artículo 166 de la Ley N° 19.355, de 19 de diciembre de 2015, aquel que realice llamadas maliciosas, falsas, jocosas o irregulares al Servicio de Emergencia 911, mediante el uso de telefonía fija o móvil y cuyo titular sea una persona física, o a través de otros medios de comunicación, será sancionado por la Unidad Reguladora de Servicios de Comunicaciones (URSEC) con una multa de 10 UR (diez unidades reajustables) hasta 100 UR (cien unidades reajustables). La multa se aplicará al titular de la línea telefónica.\nCuando la llamada provenga de una línea fija o de una línea móvil y su titular sea una entidad estatal, pública o no, o una entidad privada, la URSEC evaluará y resolverá respecto a la eventual aplicación de la multa prevista en el inciso anterior, siguiendo las reglas de la sana crítica. El producido de las multas a que refiere esta norma se destinará a un fondo de inversiones para mejora del servicio de Emergencia 911 del Ministerio del Interior.\nLo dispuesto en el presente artículo es sin perjuicio de la o las denuncias que puedan corresponder en caso de llamadas con contenidos de apariencia delictiva. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 159 .\nReglamentado por: Decreto Nº 271/021 de 20/08/2021.",
+    "titulo": "Artículo 103",
+    "capitulo": "CAPÍTULO IX - DISPOSICIONES VARIAS",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19889-2020/103",
+    "articulo": 103,
+    "documento": "Ley 19.889"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

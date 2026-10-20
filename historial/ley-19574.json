@@ -1,6 +1,42 @@
 {
  "norma": "ley-19574",
  "desde": "2026-09-23T19:08:58Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "59",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Titularidad y destino de los bienes decomisados).- Toda vez que se decomisen bienes, productos o instrumentos conforme con lo dispuesto en la presente ley, que no deban ser destruidos ni resulten perjudiciales para la población, el tribunal de la causa los pondrá a disposición de la Junta Nacional de Drogas, que tendrá la titularidad y disponibilidad de los mismos.\nComo regla general, tales bienes, productos o instrumentos serán enajenados mediante remate o cualquier otro medio que asegure la transparencia de la operación, a menos que por su naturaleza ello no resulte posible o se justifique en forma expresa la conveniencia u oportunidad de su conservación.\nEl destino de los fondos y de los bienes que se hubiesen conservado se determinará por la Junta Nacional de Drogas, previo informe fundamentado de la Secretaría Nacional de Drogas y de la Secretaría Nacional para la Lucha contra el Lavado de Activos y el Financiamiento del Terrorismo, pudiendo:\nA) Asignar bienes que se hubiesen conservado para uso oficial, en\nlos programas y proyectos vinculados a la prevención o represión\nen materia de drogas, lavado de activos o financiamiento del\nterrorismo.\nB) Transferir los bienes que se hubiesen conservado o el producido\nde su enajenación, a cualquier entidad pública que haya\nparticipado directa o indirectamente en su incautación o en la\ncoordinación de programas de prevención o represión en materia de\ndrogas, lavado de activos o financiamiento del terrorismo.\nC) Transferir los bienes, productos o instrumentos que se hubiesen\nconservado, o el producto de su venta, a cualquier entidad\npública o privada dedicada a la prevención del uso indebido de\ndrogas, el tratamiento, la rehabilitación y la reinserción social\nde los afectados por el consumo.\nD) Prioritariamente destinar los bienes a personas físicas y\njurídicas afectadas directa o indirectamente por las actividades\ndelictivas reguladas por la presente ley, que justifiquen en la\nforma en que establecerá la reglamentación, su vinculación con el\ncaso considerado y la afectación sufrida. (*)\nLa Secretaría Nacional de Drogas solicitará al Ministerio de Economía y Finanzas el refuerzo de los créditos presupuestales asignados, en función de las recaudaciones reales producidas por estos conceptos. Los refuerzos solicitados podrán tener destino tanto para gastos de funcionamiento como de inversión.",
+    "notas_oficiales": "Inciso 3º), literal D) agregado/s por: Ley Nº 19.749 de 15/05/2019\nartículo 11 .",
+    "titulo": "Artículo 59",
+    "capitulo": "CAPÍTULO VII - DEL DECOMISO",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19574-2017/59",
+    "articulo": 59,
+    "documento": "Ley 19.574"
+   },
+   "despues": {
+    "texto": "(Titularidad y destino de los bienes decomisados).- Toda vez que se decomisen bienes, productos o instrumentos conforme con lo dispuesto en la presente ley, que no deban ser destruidos ni resulten perjudiciales para la población, el tribunal de la causa los pondrá a disposición de la Junta Nacional de Drogas, que tendrá la titularidad y disponibilidad de los mismos.\nComo regla general, tales bienes, productos o instrumentos serán enajenados mediante remate o cualquier otro medio que asegure la transparencia de la operación, a menos que por su naturaleza ello no resulte posible o se justifique en forma expresa la conveniencia u oportunidad de su conservación.\nEl destino de los fondos y de los bienes que se hubiesen conservado se determinará por la Junta Nacional de Drogas, previo informe fundamentado de la Secretaría Nacional de Drogas y de la Secretaría Nacional para la Lucha contra el Lavado de Activos y el Financiamiento del Terrorismo, pudiendo:\nA) Asignar bienes que se hubiesen conservado para uso oficial, en\nlos programas y proyectos vinculados a la prevención o represión\nen materia de drogas, lavado de activos o financiamiento del\nterrorismo.\nB) Transferir los bienes que se hubiesen conservado o el producido\nde su enajenación, a cualquier entidad pública que haya\nparticipado directa o indirectamente en su incautación o en la\ncoordinación de programas de prevención o represión en materia de\ndrogas, lavado de activos o financiamiento del terrorismo.\nC) Transferir los bienes, productos o instrumentos que se hubiesen\nconservado, o el producto de su venta, a cualquier entidad\npública o privada dedicada a la prevención del uso indebido de\ndrogas, el tratamiento, la rehabilitación y la reinserción social\nde los afectados por el consumo.\nD) Prioritariamente destinar los bienes a personas físicas y\njurídicas afectadas directa o indirectamente por las actividades\ndelictivas reguladas por la presente ley, que justifiquen en la\nforma en que establecerá la reglamentación, su vinculación con el\ncaso considerado y la afectación sufrida. (*)\nLa Secretaría Nacional de Drogas solicitará al Ministerio de Economía y Finanzas el refuerzo de los créditos presupuestales asignados, en función de las recaudaciones reales producidas por estos conceptos. Los refuerzos solicitados podrán tener destino tanto para gastos de funcionamiento como de inversión.",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 24 .\nInciso 3º), literal D) agregado/s por: Ley Nº 19.749 de 15/05/2019\nartículo 11 .",
+    "titulo": "Artículo 59",
+    "capitulo": "CAPÍTULO VII - DEL DECOMISO",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19574-2017/59",
+    "articulo": 59,
+    "documento": "Ley 19.574"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

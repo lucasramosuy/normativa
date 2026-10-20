@@ -1,6 +1,42 @@
 {
  "norma": "ley-18084",
  "desde": "2026-09-24T17:49:04Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "6",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "La dirección y administración superior será ejercida por el Directorio.\nEstará integrado por cinco miembros:\nA) El Presidente, designado por el Poder Ejecutivo.\nB) Un delegado designado por el Ministerio de Educación y Cultura.\nC) Un delegado designado por el Ministerio de Industria, Energía y\nMinería.\nD) Los dos miembros restantes serán designados por el Consejo\nNacional de Innovación, Ciencia y Tecnología (CONICYT): uno de\nellos deberá ser un investigador miembro del Sistema Nacional de\nInvestigadores, el otro deberá contar con una trayectoria destacada\nen el sector de innovación y el emprendedurismo. (*)\nLos miembros del Directorio deberán acreditar una trayectoria destacable en temas de ciencia, tecnología o innovación, procurándose\nuna integración plural en términos de orientación cognitiva y experiencia\nlaboral. El Presidente será rentado, con cargo a la Agencia, los demás no\nrecibirán remuneración por desarrollar la función: en el caso de los delegados, podrán ser funcionarios de los respectivos ministerios.\nEn caso de empate, el Presidente tendrá voto doble. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 20.075 de 20/10/2022 artículo 239 .\nLiteral D) redacción dada por: Ley Nº 20.446 de 16/12/2025 artículo 71 .\nVer vigencia: Ley Nº 20.075 de 20/10/2022 artículo 5 .\nLiteral D) ver vigencia: Ley Nº 20.446 de 16/12/2025 artículo 3 .\nRedacción dada anteriormente por: Ley Nº 19.472 de 23/12/2016 artículo 16 .\nVer en esta norma, artículo: 11 .\nTEXTO ORIGINAL:\nLey Nº 20.075 de 20/10/2022 artículo 239 ,\nLey Nº 19.472 de 23/12/2016 artículo 16 ,\nLey Nº 18.084 de 28/12/2006 artículo 6 .",
+    "titulo": "Artículo 6",
+    "capitulo": "CAPITULO III - ORGANIZACION Y FUNCIONAMIENTO",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18084-2006/6",
+    "articulo": 6,
+    "documento": "Ley 18.084"
+   },
+   "despues": {
+    "texto": "La dirección y administración superior será ejercida por el Directorio.\nEstará integrado por cinco miembros:\nA) El Presidente, designado por el Poder Ejecutivo.\nB) Un delegado designado por el Ministerio de Educación y Cultura.\nC) Un delegado designado por el Ministerio de Industria, Energía y\nMinería.\nD) Los dos miembros restantes serán designados por el Consejo\nNacional de Innovación, Ciencia y Tecnología (CONICYT): uno de\nellos deberá ser un investigador miembro del Sistema Nacional de\nInvestigadores, el otro deberá contar con una trayectoria destacada\nen el sector de innovación y el emprendedurismo. (*)\nLos miembros del Directorio deberán acreditar una trayectoria destacable en temas de ciencia, tecnología o innovación, procurándose\nuna integración plural en términos de orientación cognitiva y experiencia\nlaboral. El Presidente será rentado, con cargo a la Agencia, los demás no\nrecibirán remuneración por desarrollar la función: en el caso de los delegados, podrán ser funcionarios de los respectivos ministerios.\nEn caso de empate, el Presidente tendrá voto doble. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 20.075 de 20/10/2022 artículo 239 .\nLiteral D) redacción dada por: Ley Nº 20.446 de 16/12/2025 artículo 71 .\nVer vigencia: Ley Nº 20.075 de 20/10/2022 artículo 5 .\nLiteral B) ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 22 .\nLiteral D) ver vigencia: Ley Nº 20.446 de 16/12/2025 artículo 3 .\nRedacción dada anteriormente por: Ley Nº 19.472 de 23/12/2016 artículo 16 .\nVer en esta norma, artículo: 11 .\nTEXTO ORIGINAL:\nLey Nº 20.075 de 20/10/2022 artículo 239 ,\nLey Nº 19.472 de 23/12/2016 artículo 16 ,\nLey Nº 18.084 de 28/12/2006 artículo 6 .",
+    "titulo": "Artículo 6",
+    "capitulo": "CAPITULO III - ORGANIZACION Y FUNCIONAMIENTO",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/18084-2006/6",
+    "articulo": 6,
+    "documento": "Ley 18.084"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

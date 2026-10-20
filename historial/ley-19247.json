@@ -1,6 +1,108 @@
 {
  "norma": "ley-19247",
- "desde": "2026-10-13T14:01:52+00:00",
- "total": 0,
- "entradas": []
+ "desde": "2026-10-13T14:01:52Z",
+ "total": 3,
+ "entradas": [
+  {
+   "articulo": "1",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Tenencia y porte no autorizados).- Prohíbese la tenencia y porte de\narmas de fuego, municiones, explosivos y otros materiales relacionados que\nno hayan sido debidamente autorizados por el Ministerio del Interior, por\nel Ministerio de Defensa Nacional o por ambos, según corresponda.\nEl Poder Ejecutivo establecerá los tipos, características y requisitos que\nse deberán cumplir para autorizar la tenencia y porte de armas de fuego,\nmuniciones, explosivos y otros materiales relacionados en poder de\nciviles, así como las sanciones previstas en esta ley por la tenencia no\nautorizada de las mismas.\nSe entenderá por armas de fuego, municiones, explosivos y otros materiales\nrelacionados a los mencionados en los numerales 3 a 6 del Artículo I de la\nConvención Interamericana contra la Fabricación y el Tráfico Ilícitos de\nArmas de Fuego, Municiones, Explosivos y Otros Materiales Relacionados\naprobada por la Ley N° 17.300, de 22 de marzo de 2001.",
+    "notas_oficiales": "Ver en esta norma, artículos: 3 y 6 .",
+    "titulo": "Artículo 1",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19247-2014/1",
+    "articulo": 1,
+    "documento": "Ley 19.247"
+   },
+   "despues": {
+    "texto": "(Tenencia y porte no autorizados).- Prohíbese la tenencia y porte de\narmas de fuego, municiones, explosivos y otros materiales relacionados que\nno hayan sido debidamente autorizados por el Ministerio del Interior, por\nel Ministerio de Defensa Nacional o por ambos, según corresponda.\nEl Poder Ejecutivo establecerá los tipos, características y requisitos que\nse deberán cumplir para autorizar la tenencia y porte de armas de fuego,\nmuniciones, explosivos y otros materiales relacionados en poder de\nciviles, así como las sanciones previstas en esta ley por la tenencia no\nautorizada de las mismas.\nSe entenderá por armas de fuego, municiones, explosivos y otros materiales\nrelacionados a los mencionados en los numerales 3 a 6 del Artículo I de la\nConvención Interamericana contra la Fabricación y el Tráfico Ilícitos de\nArmas de Fuego, Municiones, Explosivos y Otros Materiales Relacionados\naprobada por la Ley N° 17.300, de 22 de marzo de 2001. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 101 .\nVer en esta norma, artículos: 3 y 6 .",
+    "titulo": "Artículo 1",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19247-2014/1",
+    "articulo": 1,
+    "documento": "Ley 19.247"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "8",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Delito de tráfico internacional de armas de fuego, municiones,\nexplosivos y otros materiales relacionados).- El que importare, exportare,\nadquiriere, vendiere, entregare, distribuyere, trasladare o transfiriere\narmas de fuego, municiones, explosivos y otros materiales relacionados\ndesde o a través del territorio nacional a otro Estado sin obtener\npreviamente la autorización de todos los Estados concernidos, será\ncastigado con doce meses de prisión a doce años de penitenciaría.\nSi el delito hubiera sido cometido por quien integra una organización\ncriminal, la pena será aumentada en un tercio.",
+    "notas_oficiales": "Ver en esta norma, artículo: 12 .",
+    "titulo": "Artículo 8",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19247-2014/8",
+    "articulo": 8,
+    "documento": "Ley 19.247"
+   },
+   "despues": {
+    "texto": "(Delito de tráfico internacional de armas de fuego, municiones,\nexplosivos y otros materiales relacionados).- El que importare, exportare,\nadquiriere, vendiere, entregare, distribuyere, trasladare o transfiriere\narmas de fuego, municiones, explosivos y otros materiales relacionados\ndesde o a través del territorio nacional a otro Estado sin obtener\npreviamente la autorización de todos los Estados concernidos, será\ncastigado con doce meses de prisión a doce años de penitenciaría.\nSi el delito hubiera sido cometido por quien integra una organización\ncriminal, la pena será aumentada en un tercio. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 104 .\nVer en esta norma, artículo: 12 .",
+    "titulo": "Artículo 8",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19247-2014/8",
+    "articulo": 8,
+    "documento": "Ley 19.247"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "9",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Delito de tráfico interno, fabricación ilegal de armas de fuego,\nmuniciones, explosivos y otros materiales relacionados).- El que de\ncualquier modo adquiriere o recibiere a título oneroso o gratuito,\narrendare, distribuyere, diere o tuviere en depósito, fabricare, armare,\nensamblare, adulterare o vendiere armas de fuego, municiones, explosivos y\notros materiales relacionados, sin autorización o contraviniendo las\nnormas legales, será castigado con una pena de seis meses de prisión a\nseis años de penitenciaría.\nSi el delito hubiera sido cometido por quien integra una organización\ncriminal, la pena será aumentada en un tercio.",
+    "notas_oficiales": "Ver en esta norma, artículos: 10 y 12 .",
+    "titulo": "Artículo 9",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19247-2014/9",
+    "articulo": 9,
+    "documento": "Ley 19.247"
+   },
+   "despues": {
+    "texto": "(Delito de tráfico interno, fabricación ilegal de armas de fuego,\nmuniciones, explosivos y otros materiales relacionados).- El que de\ncualquier modo adquiriere o recibiere a título oneroso o gratuito,\narrendare, distribuyere, diere o tuviere en depósito, fabricare, armare,\nensamblare, adulterare o vendiere armas de fuego, municiones, explosivos y\notros materiales relacionados, sin autorización o contraviniendo las\nnormas legales, será castigado con una pena de seis meses de prisión a\nseis años de penitenciaría.\nSi el delito hubiera sido cometido por quien integra una organización\ncriminal, la pena será aumentada en un tercio.",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 105 .\nVer en esta norma, artículos: 10 y 12 .",
+    "titulo": "Artículo 9",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19247-2014/9",
+    "articulo": 9,
+    "documento": "Ley 19.247"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

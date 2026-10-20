@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17940-2006",
-  "sha256_jsonl": "e4fd997434b9feb69fbeddc144e083f1649a682b939bce5ae91b9fdcf3d43903",
+  "sha256_jsonl": "791b1baf9bcf33e9b9ef8107e7aa5aca9917f57a7424867cd02ff50afc8c40bf",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

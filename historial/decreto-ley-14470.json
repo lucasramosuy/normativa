@@ -1,6 +1,41 @@
 {
  "norma": "decreto-ley-14470",
- "desde": "2026-10-13T14:01:52+00:00",
- "total": 0,
- "entradas": []
+ "desde": "2026-10-13T14:01:52Z",
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "54",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "EL régimen de reclusión aplicable al recluso según fuere la extensión o\nla naturaleza de la medida privativa de libertad que se la haya aplicado,\nestará integrado por diferentes tratamientos caracterizados por su\nindividualización y personalización, progresividad y diversidad de los\nniveles de confinamiento, los cuales se cumplirán en establecimientos de\nseguridad máxima, media y mínima. Conforme con ello, el régimen aplicable\nse caracterizará por su progresividad y constará de:\n1º) Período de observación;\n2º) Período de tratamiento;\n3º) Período de prueba.",
+    "titulo": "Artículo 54",
+    "capitulo": "CAPITULO V - NORMAS SOBRE PROGRESIVIDAD DEL REGIMEN DE RECLUSION",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/decretos-ley/14470-1975/54",
+    "articulo": 54,
+    "documento": "Decreto-ley 14.470"
+   },
+   "despues": {
+    "texto": "EL régimen de reclusión aplicable al recluso según fuere la extensión o\nla naturaleza de la medida privativa de libertad que se la haya aplicado,\nestará integrado por diferentes tratamientos caracterizados por su\nindividualización y personalización, progresividad y diversidad de los\nniveles de confinamiento, los cuales se cumplirán en establecimientos de\nseguridad máxima, media y mínima. Conforme con ello, el régimen aplicable\nse caracterizará por su progresividad y constará de:\n1º) Período de observación;\n2º) Período de tratamiento;\n3º) Período de prueba.",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 76 .",
+    "titulo": "Artículo 54",
+    "capitulo": "CAPITULO V - NORMAS SOBRE PROGRESIVIDAD DEL REGIMEN DE RECLUSION",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/decretos-ley/14470-1975/54",
+    "articulo": 54,
+    "documento": "Decreto-ley 14.470"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

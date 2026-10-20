@@ -1,6 +1,44 @@
 {
  "norma": "ley-19315",
  "desde": "2026-09-23T20:55:48Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "24",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Unidades dependientes de la Dirección de la Policía Nacional).- De la Dirección de la Policía Nacional dependerán las siguientes unidades policiales:\nA) Jefaturas de Policía Departamentales.\nB) Dirección Nacional de la Guardia Republicana.\nC) Dirección Nacional de Bomberos.\nD) Dirección Nacional de la Educación Policial.\nE) Dirección Nacional de Policía Científica.\nF) Dirección Nacional de Policía Caminera.\nG) Dirección Nacional de la Seguridad Rural.\nH) Dirección Nacional de Aviación de la Policía Nacional.\nI) Dirección General del Centro Comando Unificado.\nJ) Dirección General de Fiscalización de Empresas cuyo objeto sea la\nseguridad privada.\nK) Dirección de Investigaciones de la Policía Nacional. (*)\nL) Dirección Nacional de Policía Comunitaria Orientada a Problemas. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 20.212 de 06/11/2023 artículo 139 .\nLiteral L) ver vigencia: Ley Nº 20.446 de 16/12/2025 artículo 3 .\nLiteral L) agregado/s por: Ley Nº 20.446 de 16/12/2025 artículo 135 .\nRedacción dada anteriormente por: Ley Nº 19.889 de 09/07/2020 artículo 58 .\nReglamentado por: Decreto Nº 294/016 de 19/09/2016.\nVer en esta norma, artículo: 94 (vigencia).\nTEXTO ORIGINAL:\nLey Nº 19.889 de 09/07/2020 artículo 58 ,\nLey Nº 19.315 de 18/02/2015 artículo 24 .",
+    "titulo": "Artículo 24",
+    "titulo_norma": "TÍTULO III",
+    "capitulo": "CAPÍTULO III - DE LA DIRECCIÓN DE LA POLICÍA NACIONAL",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19315-2015/24",
+    "articulo": 24,
+    "documento": "Ley 19.315"
+   },
+   "despues": {
+    "texto": "(Unidades dependientes de la Dirección de la Policía Nacional).- De la Dirección de la Policía Nacional dependerán las siguientes unidades policiales:\nA) Jefaturas de Policía Departamentales.\nB) Dirección Nacional de la Guardia Republicana.\nC) Dirección Nacional de Bomberos.\nD) Dirección Nacional de la Educación Policial.\nE) Dirección Nacional de Policía Científica.\nF) Dirección Nacional de Policía Caminera.\nG) Dirección Nacional de la Seguridad Rural.\nH) Dirección Nacional de Aviación de la Policía Nacional.\nI) Dirección General del Centro Comando Unificado.\nJ) Dirección General de Fiscalización de Empresas cuyo objeto sea la\nseguridad privada.\nK) Dirección de Investigaciones de la Policía Nacional. (*)\nL) Dirección Nacional de Policía Comunitaria Orientada a Problemas. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 20.212 de 06/11/2023 artículo 139 .\nLiteral L) ver vigencia: Ley Nº 20.446 de 16/12/2025 artículo 3 .\nLiteral M) ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 64 .\nLiteral L) agregado/s por: Ley Nº 20.446 de 16/12/2025 artículo 135 .\nRedacción dada anteriormente por: Ley Nº 19.889 de 09/07/2020 artículo 58 .\nReglamentado por: Decreto Nº 294/016 de 19/09/2016.\nVer en esta norma, artículo: 94 (vigencia).\nTEXTO ORIGINAL:\nLey Nº 19.889 de 09/07/2020 artículo 58 ,\nLey Nº 19.315 de 18/02/2015 artículo 24 .",
+    "titulo": "Artículo 24",
+    "titulo_norma": "TÍTULO III",
+    "capitulo": "CAPÍTULO III - DE LA DIRECCIÓN DE LA POLICÍA NACIONAL",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19315-2015/24",
+    "articulo": 24,
+    "documento": "Ley 19.315"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }

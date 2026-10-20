@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17378-2001",
-  "sha256_jsonl": "ceb25b73310fc1b09df65e6cb4c9d992b84393bd0e62f508ca9847eb86eb7214",
+  "sha256_jsonl": "43b4fb075439d8b93450b0bd589c7f6e0b5fb8a6b5089610141d52a2a349c8d7",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

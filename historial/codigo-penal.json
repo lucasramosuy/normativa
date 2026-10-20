@@ -1,6 +1,85 @@
 {
  "norma": "codigo-penal",
  "desde": "2026-09-23T02:06:21Z",
- "total": 0,
- "entradas": []
+ "total": 2,
+ "entradas": [
+  {
+   "articulo": "152-BIS",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Porte y tenencia de armas de fuego).-\nEl que portare o tuviere en su poder armas de fuego, municiones, explosivos y otros materiales relacionados, cuyos signos de\nidentificación hubieren sido alterados o suprimidos, o cuyas características o munición hubieren sido alteradas, en forma circunstancial o permanente, de manera tal de aumentar significativamente su capacidad de daño, será castigado con tres a dieciocho meses de prisión. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 19.247 de 15/08/2014 artículo 13 .\nRedacción dada anteriormente por: Ley Nº 16.707 de 12/07/1995 artículo 15 .\nTEXTO ORIGINAL: Ley Nº 16.707 de 12/07/1995 artículo 15 .",
+    "titulo": "Artículo 152-BIS",
+    "libro": "LIBRO II",
+    "titulo_norma": "TITULO III - DELITOS CONTRA LA PAZ PUBLICA",
+    "capitulo": "CAPITULO I",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-penal/9155-1933/152BIS",
+    "articulo": "152-BIS",
+    "documento": "Código Penal"
+   },
+   "despues": {
+    "texto": "(Porte y tenencia de armas de fuego).-\nEl que portare o tuviere en su poder armas de fuego, municiones, explosivos y otros materiales relacionados, cuyos signos de\nidentificación hubieren sido alterados o suprimidos, o cuyas características o munición hubieren sido alteradas, en forma circunstancial o permanente, de manera tal de aumentar significativamente su capacidad de daño, será castigado con tres a dieciocho meses de prisión. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 19.247 de 15/08/2014 artículo 13 .\nVer vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 102 .\nRedacción dada anteriormente por: Ley Nº 16.707 de 12/07/1995 artículo 15 .\nTEXTO ORIGINAL: Ley Nº 16.707 de 12/07/1995 artículo 15 .",
+    "titulo": "Artículo 152-BIS",
+    "libro": "LIBRO II",
+    "titulo_norma": "TITULO III - DELITOS CONTRA LA PAZ PUBLICA",
+    "capitulo": "CAPITULO I",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-penal/9155-1933/152BIS",
+    "articulo": "152-BIS",
+    "documento": "Código Penal"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  },
+  {
+   "articulo": "152-TER",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Porte y tenencia de armas de fuego en lugares públicos).-\nEl que portare o tuviere en su poder armas de fuego en lugares públicos, sin la debida autorización para su porte o tenencia, será castigado con tres a dieciocho meses de prisión.\nEs agravante especial que el delito se cometa en un espectáculo\npúblico o en ocasión de él. (*)",
+    "notas_oficiales": "Agregado/s por: Ley Nº 19.247 de 15/08/2014 artículo 14 .",
+    "titulo": "Artículo 152-TER",
+    "libro": "LIBRO II",
+    "titulo_norma": "TITULO III - DELITOS CONTRA LA PAZ PUBLICA",
+    "capitulo": "CAPITULO I",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-penal/9155-1933/152TER",
+    "articulo": "152-TER",
+    "documento": "Código Penal"
+   },
+   "despues": {
+    "texto": "(Porte y tenencia de armas de fuego en lugares públicos).-\nEl que portare o tuviere en su poder armas de fuego en lugares públicos, sin la debida autorización para su porte o tenencia, será castigado con tres a dieciocho meses de prisión.\nEs agravante especial que el delito se cometa en un espectáculo\npúblico o en ocasión de él. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.531 de 01/10/2026 artículos 2 y 103 .\nAgregado/s por: Ley Nº 19.247 de 15/08/2014 artículo 14 .",
+    "titulo": "Artículo 152-TER",
+    "libro": "LIBRO II",
+    "titulo_norma": "TITULO III - DELITOS CONTRA LA PAZ PUBLICA",
+    "capitulo": "CAPITULO I",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-penal/9155-1933/152TER",
+    "articulo": "152-TER",
+    "documento": "Código Penal"
+   },
+   "publicado": "2026-10-20T15:41:06+00:00",
+   "detectado": "2026-10-20T10:00:30Z",
+   "main_sha": "0e9fe78",
+   "pr": {
+    "numero": 66,
+    "url": "https://github.com/lucasramosuy/normativa/pull/66",
+    "titulo": "Cambios en IMPO detectados el 2026-10-20"
+   }
+  }
+ ]
 }
