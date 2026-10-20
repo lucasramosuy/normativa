@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/8733-1931",
-  "sha256_jsonl": "5eeb1a6e251ec1961180253a6d26c621d74ef8bab49e4ea2fa16d722a13b81f5",
+  "sha256_jsonl": "8ef5bb7f03bcb0f0af283cf443e4d8e3975281ba8b0b6c3ab2b20659cc67d3bd",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

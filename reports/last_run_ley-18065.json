@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-09-28T15:14:11Z",
+  "fecha_scraping": "2026-10-20T09:03:09Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/18065-2006",
-  "sha256_jsonl": "04a8465ae30fea11be86c7f10d284b9b47ee5f02394ef435fe4421bd9b9ea981",
+  "sha256_jsonl": "93fedc3b6d4956581544f59f2cd53a68c7cdcf0eb6e2eb0c055f2ffc5608950f",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
