@@ -13,6 +13,9 @@ La rama www contiene la web Astro; lee data e historial publicados en api. main 
 - Contenido retirado, derogado o sin texto no recibe explicación vigente.
 - Preview de borradores exclusivamente local, no en configuración productiva.
 
+## SEO y buscadores con IA (2026-10-20)
+Decisiones: aparecer en buscadores clásicos y en las respuestas con citas de buscadores con IA (ChatGPT search, Perplexity), sin abrir el texto al entrenamiento de modelos. El robots.txt efectivo vive en la raíz del dominio (repo `www`), porque solo cuenta el de `/`; el de `/normativa/` queda como referencia. Datos estructurados `Legislation` y `BreadcrumbList` en JSON-LD, fechas de último cambio desde el historial publicado (nunca la fecha del build), `llms.txt` y `og.png` generados en/del build. Verificación en Bing Webmaster Tools y Google Search Console la hace Lucas con sus cuentas; el sitio no agrega claves ni servicios pagos.
+
 ## Aceptación
 Pruebas del cierre editorial e invalidación aprobadas; 30 registros con fuente y hash; pnpm build normal y preview correctos; solo registros aprobados en HTML productivo; visual y navegación a 390 y 1280 px sin desbordes. Publicación autorizada para el piloto verificado; no equivale a revisión jurídica profesional.
 
