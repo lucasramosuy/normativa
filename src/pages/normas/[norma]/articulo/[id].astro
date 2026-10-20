@@ -9,6 +9,7 @@ import Historial from '../../../../components/Historial.astro';
 import {eliminados,fechaLarga} from '../../../../data/historial';
 import {citadoPor,enlazarNota,lineasNotas,articuloDe} from '../../../../lib/citas';
 import {NORMAS,getArticles,getNorma,idOf,labelOf,headingsOf,splitTitle,toBlocks,splitHeading} from '../../../../data/normas';
+import {articuloJsonLd,breadcrumbJsonLd,migasArticulo} from '../../../../lib/seo';
 export function getStaticPaths(){return NORMAS.flatMap(n=>{const list=getArticles(n.slug);return [...list.map((a,i)=>({params:{norma:n.slug,id:idOf(a)},props:{article:a,prev:list[i-1]??null,next:list[i+1]??null,quitado:null}})),...eliminados(n.slug).map(({article,entrada})=>({params:{norma:n.slug,id:idOf(article)},props:{article,prev:null,next:null,quitado:entrada.publicado}}))]})}
 const {article,prev,next,quitado}=Astro.props as any;const slug=Astro.params.norma!;const norma=getNorma(slug);const base=import.meta.env.BASE_URL;
 const label=labelOf(article);const levels=headingsOf(article).map(splitHeading);
@@ -27,7 +28,7 @@ const VIA={texto:'en el texto',notas:'en notas de IMPO',ambos:'texto y notas'} a
 const criollo=cargarExplicacion(slug,idOf(article),article,(s,id)=>getArticles(s).find(a=>idOf(a)===id),{retirado:!!quitado,vistaBorrador:import.meta.env.CRIOLLO_PREVIEW==='true'});
 const desc=(rubro?`${rubro}. `:'')+body.replace(/\s+/g,' ').slice(0,150);
 ---
-<Base title={`Artículo ${label}${rubro?` (${rubro})`:''} · ${norma.corto} · Normativa Uruguay`} description={desc}>
+<Base title={`Artículo ${label}${rubro?` (${rubro})`:''} · ${norma.corto} · Normativa Uruguay`} description={desc} jsonLd={[articuloJsonLd(norma,article,label),breadcrumbJsonLd(migasArticulo(norma,article,label))]}>
 <main class="wrap pb-20 pt-8">
   <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><nav class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500" aria-label="Ruta"><a class="hover:text-forest" href={base}>Inicio</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}explorar/`}>Explorar</a><span aria-hidden="true">›</span><a class="hover:text-forest" href={`${base}normas/${slug}/`}>{norma.corto}</a><span aria-hidden="true">›</span><span class="text-slate-700">Artículo {label}</span></nav><div class="w-full md:max-w-md"><Search compact norma={slug} label={`Buscar en ${norma.corto}`} placeholder={`Buscar en ${norma.corto}…`}/></div></div>
 

@@ -48,6 +48,19 @@ export function recientes(limit = 200) {
 /** Earliest "first version" date across normas (for "sin cambios desde ..."). */
 export const desdeDe = (slug: string) => getHistorial(slug).desde;
 
+/** Última fecha de publicación de cambios de la norma; si no hay entradas, la fecha de incorporación. */
+export const ultimaDe = (slug: string) => {
+  const h = getHistorial(slug);
+  const pubs = h.entradas.map(e => e.publicado).sort();
+  return pubs[pubs.length - 1] ?? h.desde;
+};
+
+/** Última fecha de publicación de cambios de un artículo; null si nunca cambió. */
+export const ultimaArticuloDe = (slug: string, articulo: string | number) => {
+  const pubs = entradasDe(slug, articulo).map(e => e.publicado).sort();
+  return pubs[pubs.length - 1] ?? null;
+};
+
 const TZ = 'America/Montevideo';
 export const fechaCorta = (iso: string | null | undefined) =>
   iso ? new Date(iso).toLocaleDateString('es-UY', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: TZ }) : '';

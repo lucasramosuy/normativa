@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
-    "data": "git fetch origin api && rm -rf data historial && git archive FETCH_HEAD data | tar -x && (git archive FETCH_HEAD historial 2>/dev/null | tar -x || true)"
+    "data": "git fetch origin api && rm -rf data historial && git archive FETCH_HEAD data | tar -x && (git archive FETCH_HEAD historial 2>/dev/null | tar -x || true)",
+    "og": "node scripts/og.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -24,6 +25,7 @@
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "pagefind": "^1.4.0"
   }
 }

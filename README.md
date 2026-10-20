@@ -38,6 +38,7 @@ Los workflows manuales viejos (`scrape.yml`, `scrape-codigos.yml`), que commitea
 - Historial de cambios en cada artículo, página [/cambios/](https://lucasramos.uy/normativa/cambios/) y feed Atom (`/cambios/feed.xml`). Solo cambios publicados. Los artículos que dejan de figurar en IMPO conservan su página con un aviso.
 - Explorador interactivo en `/api/probar/` y contrato OpenAPI 3.0.3 en `/api/openapi.json`, ambos estáticos y self-hosted. Las cinco consultas salen del contrato y los slugs se generan con el catálogo publicado. Sin librería de UI adicional ni CDN.
 - API estática v1 en `/api/v1/` (`normas.json`, `{norma}.json`, `{norma}/{articulo}.json`, `historial.json`, `historial/{norma}.json`, `citas/{norma}.json`, `busqueda.json`). Documentación: https://lucasramos.uy/normativa/api/
+- SEO y buscadores con IA: JSON-LD `Legislation` + migas (`BreadcrumbList`) en cada norma y artículo, `lastmod` del sitemap desde las fechas de cambio publicadas en `api` (sin fecha de build inventada), `llms.txt` generado en el build con el mapa de normas y la API, y `og.png` (1200x630) generado desde `og.svg` con las tipografías de marca (`pnpm run og`); WhatsApp y X no aceptan SVG como `og:image`. El robots.txt que cuenta es el de la raíz del dominio (repo `www`): permite los rastreadores de búsqueda con IA (OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot) y sigue bloqueando los de entrenamiento.
 
 ## Worker de Cloudflare (`worker/proxy.js`)
 
