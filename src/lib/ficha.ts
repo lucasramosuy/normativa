@@ -1,3 +1,4 @@
+import { fichaButtonAriaLabel } from './ficha-button-label.mjs';
 /** "Armar ficha": the selection lives only in this browser (localStorage). Items are "norma/articulo" keys.
  * textos holds the teacher's edited version of an article (sanitized HTML), keyed the same way; only /ficha/ reads it. */
 export type Ficha = { titulo: string; items: string[]; textos: Record<string, string> };
@@ -40,6 +41,8 @@ function paintButton(b: HTMLElement) {
   b.setAttribute('aria-pressed', String(on));
   b.textContent = on ? '✓ En la ficha' : '+ Ficha';
   b.title = on ? 'Quitar de la ficha' : 'Agregar a la ficha';
+  const label = b.dataset.fichaLabel?.trim();
+  if (label) b.setAttribute('aria-label', fichaButtonAriaLabel(label, on));
 }
 
 /** Wires +Ficha buttons inside root (call again after rendering new ones). */
