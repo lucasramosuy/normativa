@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T09:03:09Z",
+  "fecha_scraping": "2026-10-27T09:29:43Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/12840-1960",
-  "sha256_jsonl": "1b34853fbf0d8c572daccb88533d405f38a72168c091f249679c74caa65e641c",
+  "sha256_jsonl": "4ad21f884585c3e940dffbab85c4a2f3d01f62aab0662fbe86cb11ee555bc778",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
