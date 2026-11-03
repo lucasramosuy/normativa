@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T09:03:09Z",
+  "fecha_scraping": "2026-11-03T11:30:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/16805-1996",
-  "sha256_jsonl": "7dd7a29e42b410fab4495a3f899c190ba9bc896594c0c2bc4ecad3272c4e67f6",
+  "sha256_jsonl": "5a28ba57d5f91995b439fb6f008a5cbcde5332f2a54ae1616a5953a0e1721723",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

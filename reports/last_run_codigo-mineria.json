@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T08:53:50Z",
+  "fecha_scraping": "2026-11-03T11:23:12Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-mineria/15242-1982",
-  "sha256_jsonl": "f5523a2332c0ac1e6e41d946a3df3f69cf218c1bd9d8843ca10062b67fdbaa02",
+  "sha256_jsonl": "bc2e30afae77f3810e9ba8ca8de965317b72be602ee4e786164ff624cfb644c5",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

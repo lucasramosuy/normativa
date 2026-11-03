@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T09:03:09Z",
+  "fecha_scraping": "2026-11-03T11:30:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17829-2004",
-  "sha256_jsonl": "b7fd91dc960254bcad67a9e01922e9f982d931eeef4921795b2a43e242778836",
+  "sha256_jsonl": "9b4dfa8e43c59a84ba65dc5750f47b1678139e0d71ada3e40269782d8be2e0c3",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

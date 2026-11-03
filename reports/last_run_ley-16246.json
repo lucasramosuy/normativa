@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T09:03:09Z",
+  "fecha_scraping": "2026-11-03T11:30:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/16246-1992",
-  "sha256_jsonl": "a7a07a08f9d65512d56193a595fc0669d55ec700e7bc917a20a61e02991695b4",
+  "sha256_jsonl": "7a53ae923f17d641744fd9ac51b56a46779648666473e2a50899da5093ff9c8f",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T09:03:09Z",
+  "fecha_scraping": "2026-11-03T11:30:17Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/11029-1948",
-  "sha256_jsonl": "db12b5b90a072aac8ff22846aa7393d23b009a8fd2acd7760b79c935eb196654",
+  "sha256_jsonl": "4a77b4849412bdaae5e0915de62bcc9f8a785e2a5d387327229aff03f2042e15",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
