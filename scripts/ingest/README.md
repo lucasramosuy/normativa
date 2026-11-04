@@ -77,6 +77,9 @@ suma unos 15 s a la revisión semanal, que tiene un límite de 240 min.
 Todos los lunes (06:17 de Montevideo, o a mano con "Run workflow") el workflow
 "Revisión semanal de IMPO" corre los scrapers (Constitución, códigos y, con `--tolerante`, las leyes de `leyes.json`) y compara el resultado con lo
 que hay en `main`, ignorando `fecha_scraping`. Si no cambió ningún artículo no
-hace nada. Si cambió algo, abre un PR contra `main` con el resumen de artículos
+hace nada. Los scrapers, además, no reescriben archivos cuando lo único nuevo es
+la fecha de descarga: conservan la `fecha_scraping` anterior de cada artículo sin
+cambios y solo tocan `data/` y `reports/` cuando hay cambios reales, así el PR
+muestra únicamente los artículos y normas afectados. Si cambió algo, abre un PR contra `main` con el resumen de artículos
 modificados, agregados y eliminados (con el diff del texto). No publica en
 `api`: después de mergear, publicar sigue siendo el workflow "Publicar datos en api".

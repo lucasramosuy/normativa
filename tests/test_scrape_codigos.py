@@ -1,5 +1,7 @@
 """Regresión: el título Artículo Unico usa el ancla oficial 1 en IMPO."""
 import importlib.util
+import json
+import tempfile
 from pathlib import Path
 import unittest
 
@@ -68,6 +70,68 @@ class ArticuloUnicoTest(unittest.TestCase):
         html = '<html><body><a id="131144" name="131144"></a><h4>Artículo 131-144</h4><pre>Derogados.</pre></body></html>'
         rows, _ = scraper.parse_norma(html, "Ley de prueba", "https://example.invalid", "2026-10-12T00:00:00Z")
         self.assertEqual(rows[0]["articulo_id"], "131144")
+
+
+def cargar_modulo(nombre, relativo):
+    spec = importlib.util.spec_from_file_location(nombre, ROOT / relativo)
+    modulo = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modulo)
+    return modulo
+
+
+def fila(articulo, texto, fecha):
+    return {"documento": "Ley de prueba", "articulo": articulo, "texto": texto, "fecha_scraping": fecha}
+
+
+class WriteOutputsTest(unittest.TestCase):
+    """La revisión semanal no debe reescribir archivos cuando IMPO no cambió:
+    si lo único nuevo es fecha_scraping, data/ y reports/ quedan byte a byte iguales
+    y git no ve cambios (los PR dejaban de ser +19.579/-19.579)."""
+
+    def correr_dos_veces(self, modulo, filas1, filas2, tmp):
+        data = Path(tmp) / "data/ley-1.jsonl"
+        reporte = Path(tmp) / "reports/last_run_ley-1.json"
+        rep1 = {"documento": "Ley de prueba", "fecha_scraping": "2026-11-03T00:00:00Z"}
+        rep2 = {"documento": "Ley de prueba", "fecha_scraping": "2026-11-10T00:00:00Z"}
+        cambio1 = modulo.write_outputs(filas1, rep1, data, reporte)
+        jsonl1 = data.read_text(encoding="utf-8")
+        reporte1 = reporte.read_text(encoding="utf-8")
+        cambio2 = modulo.write_outputs(filas2, rep2, data, reporte)
+        return cambio1, cambio2, jsonl1, data.read_text(encoding="utf-8"), reporte1, reporte.read_text(encoding="utf-8")
+
+    def probar_sin_cambios(self, modulo):
+        with tempfile.TemporaryDirectory() as tmp:
+            filas1 = [fila(1, "Uno.", "2026-11-03T00:00:00Z"), fila(2, "Dos.", "2026-11-03T00:00:00Z")]
+            filas2 = [fila(1, "Uno.", "2026-11-10T00:00:00Z"), fila(2, "Dos.", "2026-11-10T00:00:00Z")]
+            cambio1, cambio2, jsonl1, jsonl2, rep1, rep2 = self.correr_dos_veces(modulo, filas1, filas2, tmp)
+        self.assertTrue(cambio1)  # primera escritura: el archivo no existía
+        self.assertFalse(cambio2)
+        self.assertEqual(jsonl1, jsonl2)  # conserva la fecha_scraping original
+        self.assertIn("2026-11-03", jsonl2)
+        self.assertEqual(rep1, rep2)  # el reporte tampoco se reescribe
+
+    def probar_un_articulo_cambiado(self, modulo):
+        with tempfile.TemporaryDirectory() as tmp:
+            filas1 = [fila(1, "Uno.", "2026-11-03T00:00:00Z"), fila(2, "Dos.", "2026-11-03T00:00:00Z")]
+            filas2 = [fila(1, "Uno.", "2026-11-10T00:00:00Z"), fila(2, "Dos actualizado.", "2026-11-10T00:00:00Z")]
+            _, cambio2, _, jsonl2, _, rep2 = self.correr_dos_veces(modulo, filas1, filas2, tmp)
+            lineas = jsonl2.splitlines()
+            self.assertTrue(cambio2)
+            self.assertIn("2026-11-03", json.loads(lineas[0])["fecha_scraping"])  # el art. 1 conserva su fecha
+            self.assertIn("2026-11-10", json.loads(lineas[1])["fecha_scraping"])  # el art. 2 cambió de verdad
+            self.assertIn("2026-11-10", rep2)  # el reporte sí se actualiza cuando hubo cambios
+
+    def test_scrape_codigos_sin_cambios_no_reescribe(self):
+        self.probar_sin_cambios(scraper)
+
+    def test_scrape_codigos_conserva_fecha_solo_en_articulos_iguales(self):
+        self.probar_un_articulo_cambiado(scraper)
+
+    def test_scrape_constitucion_sin_cambios_no_reescribe(self):
+        self.probar_sin_cambios(cargar_modulo("scrape_constitucion", "scripts/ingest/scrape_constitucion.py"))
+
+    def test_scrape_constitucion_conserva_fecha_solo_en_articulos_iguales(self):
+        self.probar_un_articulo_cambiado(cargar_modulo("scrape_constitucion", "scripts/ingest/scrape_constitucion.py"))
 
 
 if __name__ == "__main__":

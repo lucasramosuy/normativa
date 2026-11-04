@@ -55,7 +55,7 @@ Una línea JSON por artículo, claves ordenadas.
 | `notas_oficiales` | Notas de IMPO (redacción, derogaciones, referencias). |
 | `estado_actual` | Vigencia según IMPO. |
 | `fecha_promulgacion`, `fecha_publicacion` | Fechas de la norma. |
-| `fecha_scraping` | Momento de la descarga. |
+| `fecha_scraping` | Momento en que se descargó esta versión del artículo (se conserva si el artículo no cambió, para que los diffs muestren solo cambios reales). |
 | `hash_contenido` | Hash del contenido del artículo. |
 | `url_fuente` | URL oficial en IMPO. |
 
