@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T08:53:50Z",
+  "fecha_scraping": "2026-10-27T09:22:01Z",
   "fuente": "https://www.impo.com.uy/bases/codigo-penal/9155-1933",
-  "sha256_jsonl": "3fc057d872f798049b17e5b2425b726ef74d0cc034f51ccb7ae7cd1126058d2d",
+  "sha256_jsonl": "d288d2847e17d90aa56c4d49f6905a378127928b3e01a1c45779bcafd1b6e856",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

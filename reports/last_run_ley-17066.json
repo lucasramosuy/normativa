@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T09:03:09Z",
+  "fecha_scraping": "2026-10-27T09:29:43Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/17066-1998",
-  "sha256_jsonl": "dac2e8dd71ef56fd27aead360bbab4bcda7d7ae7f3d1ffb530e265d7881bb7ca",
+  "sha256_jsonl": "ff3573507a3426fa007e8b4968afc438cd05f9e9ca875502288e2be8abd126ed",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }

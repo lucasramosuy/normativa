@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T09:03:09Z",
+  "fecha_scraping": "2026-10-27T09:29:43Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/19307-2014",
-  "sha256_jsonl": "204db2e060284db0b7be92ed03f1964c0e7e604828edd18131f3ee4e720a361e",
+  "sha256_jsonl": "ab23a0626ffaa52dfcb6470954ba5bd1bf9127a7f3d0caece549b097ebda8a80",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
