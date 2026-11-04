@@ -363,16 +363,50 @@ def parse_norma(html: str, documento: str, url: str, scraped_at: str) -> tuple[l
     return records, report
 
 
-def write_outputs(records: list[dict], report: dict, data_path: Path, report_path: Path) -> None:
+# Campos que cambian en cada corrida aunque IMPO siga igual. Si lo único nuevo
+# en un artículo es la fecha de descarga, se conserva la fecha anterior: así git
+# solo marca como cambiadas las líneas (y los archivos) con cambios reales, y los
+# PR semanales dejan de listar los 500+ archivos.
+VOLATILES_ARTICULO = ("fecha_scraping",)
+VOLATILES_REPORTE = ("fecha_scraping",)
+
+
+def cargar_jsonl_anterior(ruta: Path) -> dict[str, dict]:
+    """Artículos ya guardados, por número, para comparar contra la nueva descarga."""
+    filas = {}
+    if ruta.exists():
+        for linea in ruta.read_text(encoding="utf-8").splitlines():
+            if linea.strip():
+                fila = json.loads(linea)
+                filas[str(fila["articulo"])] = fila
+    return filas
+
+
+def sin_volatiles(fila: dict, volatiles: tuple[str, ...]) -> dict:
+    return {campo: valor for campo, valor in fila.items() if campo not in volatiles}
+
+
+def write_outputs(records: list[dict], report: dict, data_path: Path, report_path: Path) -> bool:
+    """Escribe data y reporte solo si cambiaron. Devuelve True si cambió el jsonl."""
     data_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
+    anteriores = cargar_jsonl_anterior(data_path)
+    for record in records:
+        anterior = anteriores.get(str(record["articulo"]))
+        if anterior and sin_volatiles(anterior, VOLATILES_ARTICULO) == sin_volatiles(record, VOLATILES_ARTICULO):
+            record["fecha_scraping"] = anterior["fecha_scraping"]
     jsonl = "".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in records)
     report["sha256_jsonl"] = hashlib.sha256(jsonl.encode("utf-8")).hexdigest()
-    data_path.write_text(jsonl, encoding="utf-8")
-    report_path.write_text(
-        json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
+    data_cambio = not data_path.exists() or data_path.read_text(encoding="utf-8") != jsonl
+    if data_cambio:
+        data_path.write_text(jsonl, encoding="utf-8")
+    reporte_anterior = json.loads(report_path.read_text(encoding="utf-8")) if report_path.exists() else None
+    if reporte_anterior is None or sin_volatiles(reporte_anterior, VOLATILES_REPORTE) != sin_volatiles(report, VOLATILES_REPORTE):
+        report_path.write_text(
+            json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+    return data_cambio
 
 
 def main() -> None:
@@ -444,11 +478,12 @@ def main() -> None:
         racha.clear()
         report["crawl_delay_segundos"] = delay
         report["user_agent"] = args.user_agent
-        write_outputs(records, report, Path(f"data/{norma['id']}.jsonl"),
-                      Path(f"reports/last_run_{norma['id']}.json"))
+        cambio = write_outputs(records, report, Path(f"data/{norma['id']}.jsonl"),
+                               Path(f"reports/last_run_{norma['id']}.json"))
         extra = report.get("articulos_desde_datos_abiertos")
         print(f"OK: {norma['id']}: {len(records)} artículos"
-              + (f" ({len(extra)} desde datos abiertos)" if extra else ""))
+              + (f" ({len(extra)} desde datos abiertos)" if extra else "")
+              + ("" if cambio else " (sin cambios de contenido)"))
 
     for fallida in racha:
         errores.append({"id": fallida["id"], "error": errores_por_id[fallida["id"]]})
