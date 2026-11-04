@@ -1,8 +1,47 @@
 {
  "norma": "codigo-penal",
  "desde": "2026-09-23T02:06:21Z",
- "total": 2,
+ "total": 3,
  "entradas": [
+  {
+   "articulo": "365",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "Será castigado con pena de 7 (siete) a 30 (treinta) días de prestación de trabajo comunitario:\n1° (Participación en competencias vehiculares no autorizadas).- El que\nen carreteras, calles, vías de tránsito en general y en lugares no\nautorizados expresamente participare de carreras u otro tipo de competencia valiéndose de un vehículo con motor.\n2° (Conducción de vehículos motorizados sin la autorización\ncorrespondiente).- El que condujere en la vía pública vehículos motorizados sin haber obtenido del organismo competente los permisos correspondientes o si los mismos le hubieren sido suspendidos o cancelados.\n3° (Conducción de vehículos motorizados con grave estado de embriaguez).- El que condujere vehículos motorizados en estado grave de\nembriaguez con niveles de alcohol en la sangre superiores a 1,2 gramos\npor litro.\n4° (Conducción de vehículos motorizados al doble de la velocidad\npermitida).- El que condujere vehículos motorizados al doble o más del doble de la velocidad máxima permitida en cualquier vía de tránsito.\n5° (Conducción de vehículos motorizados sin casco protector).- El que\nviajare en la vía pública en vehículos motorizados descriptos en el\nartículo 7 de la Ley N° 19.061, de 6 de enero de 2013, sin el casco\nreglamentario, en violación del artículo 33 de la Ley N° 18.191, de 14 de\nnoviembre de 2007.\n6° (Omisión, por el director de una obra, de las precauciones debidas).- El director de la construcción o demolición de una obra que omitiere las medidas adecuadas en defensa de las personas y de las propiedades, en tanto el hecho no constituya delito.\n7° (Disparo de armas de fuego y de petardos en poblado).- El que\ndentro de poblado o en sitio público, o frecuentado, disparare armas de\nfuego, petardos u otros proyectiles, que causaren peligro o alarma.\nEn las situaciones previstas en los numerales 1° y 3° de este\nartículo, el Juez, a pedido del Ministerio Público, podrá imponer como pena accesoria la incautación del vehículo por un plazo máximo de 3\n(tres) meses. Los gastos del depósito correrán por cuenta del propietario del vehículo. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 19.120 de 20/08/2013 artículo 6 .\nNumeral 4º) derogado anteriormente por: Ley Nº 16.088 de 25/10/1989\nartículo 12 .\nRedacción dada anteriormente por: Ley Nº 15.903 de 10/11/1987 artículo\n216 .\nNumeral 17) redacción dada anteriormente por: Ley Nº 18.651 de 19/02/2010\nartículo 87 .\nTEXTO ORIGINAL:\nLey Nº 18.651 de 19/02/2010 artículo 87 ,\nLey Nº 15.903 de 10/11/1987 artículo 216 ,\nLey Nº 9.155 de 04/12/1933 artículo 365 .",
+    "titulo": "Artículo 365",
+    "libro": "LIBRO III",
+    "titulo_norma": "TITULO I - DE LAS FALTAS",
+    "capitulo": "CAPITULO IV - DE LAS FALTAS CONTRA LA INTEGRIDAD FISICA",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-penal/9155-1933/365",
+    "articulo": 365,
+    "documento": "Código Penal"
+   },
+   "despues": {
+    "texto": "Será castigado con pena de 7 (siete) a 30 (treinta) días de prestación de trabajo comunitario:\n1° (Participación en competencias vehiculares no autorizadas).- El que\nen carreteras, calles, vías de tránsito en general y en lugares no\nautorizados expresamente participare de carreras u otro tipo de competencia valiéndose de un vehículo con motor.\n2° (Conducción de vehículos motorizados sin la autorización\ncorrespondiente).- El que condujere en la vía pública vehículos motorizados sin haber obtenido del organismo competente los permisos correspondientes o si los mismos le hubieren sido suspendidos o cancelados.\n3° (Conducción de vehículos motorizados con grave estado de embriaguez).- El que condujere vehículos motorizados en estado grave de\nembriaguez con niveles de alcohol en la sangre superiores a 1,2 gramos\npor litro.\n4° (Conducción de vehículos motorizados al doble de la velocidad\npermitida).- El que condujere vehículos motorizados al doble o más del doble de la velocidad máxima permitida en cualquier vía de tránsito.\n5° (Conducción de vehículos motorizados sin casco protector).- El que\nviajare en la vía pública en vehículos motorizados descriptos en el\nartículo 7 de la Ley N° 19.061, de 6 de enero de 2013, sin el casco\nreglamentario, en violación del artículo 33 de la Ley N° 18.191, de 14 de\nnoviembre de 2007.\n6° (Omisión, por el director de una obra, de las precauciones debidas).- El director de la construcción o demolición de una obra que omitiere las medidas adecuadas en defensa de las personas y de las propiedades, en tanto el hecho no constituya delito.\n7° (Disparo de armas de fuego y de petardos en poblado).- El que\ndentro de poblado o en sitio público, o frecuentado, disparare armas de\nfuego, petardos u otros proyectiles, que causaren peligro o alarma.\nEn las situaciones previstas en los numerales 1° y 3° de este\nartículo, el Juez, a pedido del Ministerio Público, podrá imponer como pena accesoria la incautación del vehículo por un plazo máximo de 3\n(tres) meses. Los gastos del depósito correrán por cuenta del propietario del vehículo. (*)",
+    "notas_oficiales": "Redacción dada por: Ley Nº 19.120 de 20/08/2013 artículo 6 .\nVer vigencia: Ley Nº 20.531 de 01/10/2026 artículo 106 .\nNumeral 4º) derogado anteriormente por: Ley Nº 16.088 de 25/10/1989\nartículo 12 .\nRedacción dada anteriormente por: Ley Nº 15.903 de 10/11/1987 artículo\n216 .\nNumeral 17) redacción dada anteriormente por: Ley Nº 18.651 de 19/02/2010\nartículo 87 .\nTEXTO ORIGINAL:\nLey Nº 18.651 de 19/02/2010 artículo 87 ,\nLey Nº 15.903 de 10/11/1987 artículo 216 ,\nLey Nº 9.155 de 04/12/1933 artículo 365 .",
+    "titulo": "Artículo 365",
+    "libro": "LIBRO III",
+    "titulo_norma": "TITULO I - DE LAS FALTAS",
+    "capitulo": "CAPITULO IV - DE LAS FALTAS CONTRA LA INTEGRIDAD FISICA",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/codigo-penal/9155-1933/365",
+    "articulo": 365,
+    "documento": "Código Penal"
+   },
+   "publicado": "2026-11-04T18:26:33+00:00",
+   "detectado": "2026-10-27T10:28:47Z",
+   "main_sha": "97aa20f",
+   "pr": {
+    "numero": 69,
+    "url": "https://github.com/lucasramosuy/normativa/pull/69",
+    "titulo": "Cambios en IMPO detectados el 2026-10-27"
+   }
+  },
   {
    "articulo": "152-BIS",
    "tipo": "modificado",
@@ -33,7 +72,7 @@
     "articulo": "152-BIS",
     "documento": "Código Penal"
    },
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "main_sha": "0e9fe78",
    "pr": {
@@ -72,7 +111,7 @@
     "articulo": "152-TER",
     "documento": "Código Penal"
    },
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "main_sha": "0e9fe78",
    "pr": {

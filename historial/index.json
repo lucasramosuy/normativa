@@ -18,7 +18,7 @@
   "codigo-civil": {
    "desde": "2026-09-23T02:06:21Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "codigo-comercio": {
    "desde": "2026-09-23T02:06:21Z",
@@ -28,7 +28,7 @@
   "codigo-general-proceso": {
    "desde": "2026-09-23T02:06:21Z",
    "total": 2,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "codigo-mineria": {
    "desde": "2026-09-23T19:08:58Z",
@@ -42,8 +42,8 @@
   },
   "codigo-penal": {
    "desde": "2026-09-23T02:06:21Z",
-   "total": 2,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "total": 3,
+   "ultimo": "2026-11-04T18:26:33+00:00"
   },
   "codigo-proceso-penal-2017": {
    "desde": "2026-09-23T02:06:21Z",
@@ -113,7 +113,7 @@
   "decreto-ley-14470": {
    "desde": "2026-10-13T14:01:52Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "decreto-ley-14560": {
    "desde": "2026-10-13T14:01:52Z",
@@ -138,7 +138,7 @@
   "decreto-ley-15084": {
    "desde": "2026-09-24T17:49:04Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "decreto-ley-15180": {
    "desde": "2026-09-23T20:55:48Z",
@@ -273,7 +273,7 @@
   "ley-15913": {
    "desde": "2026-10-03T15:49:29Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-15921": {
    "desde": "2026-09-23T22:45:39Z",
@@ -383,7 +383,7 @@
   "ley-16871": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 2,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-16906": {
    "desde": "2026-09-23T22:45:39Z",
@@ -408,7 +408,7 @@
   "ley-17060": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-17063": {
    "desde": "2026-09-24T00:38:43Z",
@@ -458,7 +458,7 @@
   "ley-17250": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 2,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-17283": {
    "desde": "2026-09-23T19:08:58Z",
@@ -488,7 +488,7 @@
   "ley-17613": {
    "desde": "2026-09-24T00:38:43Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-17684": {
    "desde": "2026-09-23T22:45:39Z",
@@ -598,7 +598,7 @@
   "ley-18084": {
    "desde": "2026-09-24T17:49:04Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-18091": {
    "desde": "2026-09-23T19:08:58Z",
@@ -663,7 +663,7 @@
   "ley-18227": {
    "desde": "2026-09-24T17:49:04Z",
    "total": 2,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-18232": {
    "desde": "2026-09-23T22:45:39Z",
@@ -773,7 +773,7 @@
   "ley-18437": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 4,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-18441": {
    "desde": "2026-09-23T22:45:39Z",
@@ -833,7 +833,7 @@
   "ley-18572": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-18590": {
    "desde": "2026-09-30T23:53:54Z",
@@ -898,7 +898,7 @@
   "ley-18651": {
    "desde": "2026-09-23T20:55:48Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-18786": {
    "desde": "2026-09-23T22:45:39Z",
@@ -1003,12 +1003,12 @@
   "ley-19210": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 3,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-19247": {
    "desde": "2026-10-13T14:01:52Z",
    "total": 3,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-19253": {
    "desde": "2026-09-24T16:43:01Z",
@@ -1018,7 +1018,7 @@
   "ley-19272": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-19286": {
    "desde": "2026-09-24T16:43:01Z",
@@ -1038,7 +1038,7 @@
   "ley-19315": {
    "desde": "2026-09-23T20:55:48Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-19353": {
    "desde": "2026-09-23T22:45:39Z",
@@ -1083,12 +1083,12 @@
   "ley-19574": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-19580": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 2,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-19590": {
    "desde": "2026-09-24T16:43:01Z",
@@ -1218,7 +1218,7 @@
   "ley-19889": {
    "desde": "2026-09-23T19:08:58Z",
    "total": 1,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-19903": {
    "desde": "2026-10-03T15:49:29Z",
@@ -1288,7 +1288,7 @@
   "ley-20383": {
    "desde": "2026-09-30T23:53:54Z",
    "total": 6,
-   "ultimo": "2026-10-20T15:41:06+00:00"
+   "ultimo": "2026-10-20T15:41:06Z"
   },
   "ley-20431": {
    "desde": "2026-10-03T15:49:29Z",
@@ -1343,13 +1343,28 @@
  },
  "recientes": [
   {
+   "norma": "codigo-penal",
+   "articulo": "365",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-04T18:26:33+00:00",
+   "detectado": "2026-10-27T10:28:47Z",
+   "pr": {
+    "numero": 69,
+    "url": "https://github.com/lucasramosuy/normativa/pull/69",
+    "titulo": "Cambios en IMPO detectados el 2026-10-27"
+   }
+  },
+  {
    "norma": "codigo-civil",
    "articulo": "416",
    "tipo": "modificado",
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1365,7 +1380,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1380,7 +1395,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1395,7 +1410,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1410,7 +1425,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1425,7 +1440,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1440,7 +1455,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1456,7 +1471,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1472,7 +1487,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1487,7 +1502,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1502,7 +1517,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1517,7 +1532,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1532,7 +1547,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1547,7 +1562,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1562,7 +1577,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1578,7 +1593,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1594,7 +1609,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1609,7 +1624,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1625,7 +1640,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1640,7 +1655,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1655,7 +1670,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1670,7 +1685,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1685,7 +1700,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1700,7 +1715,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1715,7 +1730,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1730,7 +1745,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1746,7 +1761,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1762,7 +1777,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1777,7 +1792,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1792,7 +1807,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1807,7 +1822,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1822,7 +1837,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1838,7 +1853,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1854,7 +1869,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1870,7 +1885,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1886,7 +1901,7 @@
     "texto",
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1901,7 +1916,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1916,7 +1931,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1931,7 +1946,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1946,7 +1961,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,
@@ -1961,7 +1976,7 @@
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-10-20T15:41:06+00:00",
+   "publicado": "2026-10-20T15:41:06Z",
    "detectado": "2026-10-20T10:00:30Z",
    "pr": {
     "numero": 66,

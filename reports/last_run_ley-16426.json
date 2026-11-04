@@ -6,9 +6,9 @@
   "duplicados": 0,
   "estado_actual": "documento_actualizado",
   "faltantes": 0,
-  "fecha_scraping": "2026-10-20T09:03:09Z",
+  "fecha_scraping": "2026-10-27T09:29:43Z",
   "fuente": "https://www.impo.com.uy/bases/leyes/16426-1993",
-  "sha256_jsonl": "ae6dd8935efcd94c628551ae1e3a8b0d6993f8c97c31e61e04897e43490af207",
+  "sha256_jsonl": "5507b4645212276c49e9069cda7e46fde63419903381b19b578eff6bdc5c1400",
   "sin_texto_en_impo": [],
   "user_agent": "normativa-uy-scraper/1.0 (+https://github.com/lucasramosuy/normativa)"
 }
