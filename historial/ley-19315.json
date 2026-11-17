@@ -1,8 +1,45 @@
 {
  "norma": "ley-19315",
  "desde": "2026-09-23T20:55:48Z",
- "total": 1,
+ "total": 2,
  "entradas": [
+  {
+   "articulo": "38-BIS",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Derecho al porte de armas por el personal policial en situación de retiro).- El personal policial en situación de retiro del subescalafón ejecutivo, que no posea antecedentes penales, previa evaluación de su idoneidad, que será reglamentada por el Poder Ejecutivo, tendrá el derecho de portar arma corta, la que deberá estar registrada con su consiguiente Guía de Posesión actualizada. El Ministerio del Interior llevará un registro de personal policial en situación de retiro con porte de armas vigente. En casos especiales, el Ministerio del Interior, por razones fundadas, podrá extender este derecho al personal policial en situación de retiro, de otros subescalafones. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.075 de 20/10/2022 artículo 5 .\nAgregado/s por: Ley Nº 19.889 de 09/07/2020 artículo 64 .\nReglamentado por: Decreto Nº 345/020 de 18/12/2020.",
+    "titulo": "Artículo 38-BIS",
+    "titulo_norma": "TÍTULO IV - DEL ESTATUTO DEL PERSONAL POLICIAL",
+    "capitulo": "CAPÍTULO I - DEL ESTATUTO Y EL ESTADO POLICIAL",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19315-2015/38BIS",
+    "articulo": "38-BIS",
+    "documento": "Ley 19.315"
+   },
+   "despues": {
+    "texto": "(Derecho al porte de armas por el personal policial en situación de retiro).- El personal policial en situación de retiro del subescalafón ejecutivo, que no posea antecedentes penales, previa evaluación de su idoneidad, que será reglamentada por el Poder Ejecutivo, tendrá el derecho de portar arma corta, la que deberá estar registrada con su consiguiente Guía de Posesión actualizada. El Ministerio del Interior llevará un registro de personal policial en situación de retiro con porte de armas vigente. En casos especiales, el Ministerio del Interior, por razones fundadas, podrá extender este derecho al personal policial en situación de retiro, de otros subescalafones. (*)",
+    "notas_oficiales": "Ver vigencia: Ley Nº 20.075 de 20/10/2022 artículo 5 .\nAgregado/s por: Ley Nº 19.889 de 09/07/2020 artículo 64 .\nReglamentado por:\nDecreto Nº 263/026 de 27/10/2026,\nDecreto Nº 345/020 de 18/12/2020.",
+    "titulo": "Artículo 38-BIS",
+    "titulo_norma": "TÍTULO IV - DEL ESTATUTO DEL PERSONAL POLICIAL",
+    "capitulo": "CAPÍTULO I - DEL ESTATUTO Y EL ESTADO POLICIAL",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19315-2015/38BIS",
+    "articulo": "38-BIS",
+    "documento": "Ley 19.315"
+   },
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "main_sha": "0116032",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
   {
    "articulo": "24",
    "tipo": "modificado",

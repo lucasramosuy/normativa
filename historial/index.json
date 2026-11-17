@@ -43,7 +43,7 @@
   "codigo-penal": {
    "desde": "2026-09-23T02:06:21Z",
    "total": 3,
-   "ultimo": "2026-11-04T18:26:33+00:00"
+   "ultimo": "2026-11-04T18:26:33Z"
   },
   "codigo-proceso-penal-2017": {
    "desde": "2026-09-23T02:06:21Z",
@@ -392,8 +392,8 @@
   },
   "ley-17011": {
    "desde": "2026-09-23T19:08:58Z",
-   "total": 0,
-   "ultimo": null
+   "total": 7,
+   "ultimo": "2026-11-17T18:37:34+00:00"
   },
   "ley-17015": {
    "desde": "2026-09-24T17:49:04Z",
@@ -1037,8 +1037,8 @@
   },
   "ley-19315": {
    "desde": "2026-09-23T20:55:48Z",
-   "total": 1,
-   "ultimo": "2026-10-20T15:41:06Z"
+   "total": 2,
+   "ultimo": "2026-11-17T18:37:34+00:00"
   },
   "ley-19353": {
    "desde": "2026-09-23T22:45:39Z",
@@ -1162,8 +1162,8 @@
   },
   "ley-19775": {
    "desde": "2026-09-23T22:45:39Z",
-   "total": 0,
-   "ultimo": null
+   "total": 1,
+   "ultimo": "2026-11-17T18:37:34+00:00"
   },
   "ley-19791": {
    "desde": "2026-09-30T23:53:54Z",
@@ -1343,13 +1343,149 @@
  },
  "recientes": [
   {
+   "norma": "ley-17011",
+   "articulo": "73",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
+   "norma": "ley-17011",
+   "articulo": "74",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
+   "norma": "ley-17011",
+   "articulo": "75",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
+   "norma": "ley-17011",
+   "articulo": "76",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
+   "norma": "ley-17011",
+   "articulo": "77",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
+   "norma": "ley-17011",
+   "articulo": "78",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
+   "norma": "ley-17011",
+   "articulo": "79",
+   "tipo": "modificado",
+   "campos": [
+    "texto",
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
+   "norma": "ley-19315",
+   "articulo": "38-BIS",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
+   "norma": "ley-19775",
+   "articulo": "30-BIS",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  },
+  {
    "norma": "codigo-penal",
    "articulo": "365",
    "tipo": "modificado",
    "campos": [
     "notas_oficiales"
    ],
-   "publicado": "2026-11-04T18:26:33+00:00",
+   "publicado": "2026-11-04T18:26:33Z",
    "detectado": "2026-10-27T10:28:47Z",
    "pr": {
     "numero": 69,

@@ -1,6 +1,44 @@
 {
  "norma": "ley-19775",
  "desde": "2026-09-23T22:45:39Z",
- "total": 0,
- "entradas": []
+ "total": 1,
+ "entradas": [
+  {
+   "articulo": "30-BIS",
+   "tipo": "modificado",
+   "campos": [
+    "notas_oficiales"
+   ],
+   "antes": {
+    "texto": "(Derecho a la tenencia y al porte de armas por el personal militar en situación de retiro).- Sin perjuicio de lo dispuesto, el personal militar egresado de las Escuelas de Formación de Oficiales y Suboficiales del Ministerio de Defensa Nacional en situación de retiro, que no posea antecedentes penales ni de violencia intrafamiliar, previa evaluación de su idoneidad y conforme a la reglamentación que dicte el Poder Ejecutivo, tendrá el derecho a la tenencia y porte de arma corta, que deberá estar registrada con su consiguiente Guía de Posesión actualizada. El Ministerio de Defensa Nacional llevará un registro de Personal Militar en situación de retiro con Porte de Armas vigente. (*)",
+    "notas_oficiales": "Agregado/s por: Ley Nº 19.889 de 09/07/2020 artículo 111 .\nReglamentado por: Decreto Nº 345/020 de 18/12/2020.",
+    "titulo": "Artículo 30-BIS",
+    "titulo_norma": "TÍTULO IV - ESTATUTO DEL PERSONAL MILITAR",
+    "capitulo": "CAPÍTULO I - DISPOSICIONES GENERALES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19775-2019/30BIS",
+    "articulo": "30-BIS",
+    "documento": "Ley 19.775"
+   },
+   "despues": {
+    "texto": "(Derecho a la tenencia y al porte de armas por el personal militar en situación de retiro).- Sin perjuicio de lo dispuesto, el personal militar egresado de las Escuelas de Formación de Oficiales y Suboficiales del Ministerio de Defensa Nacional en situación de retiro, que no posea antecedentes penales ni de violencia intrafamiliar, previa evaluación de su idoneidad y conforme a la reglamentación que dicte el Poder Ejecutivo, tendrá el derecho a la tenencia y porte de arma corta, que deberá estar registrada con su consiguiente Guía de Posesión actualizada. El Ministerio de Defensa Nacional llevará un registro de Personal Militar en situación de retiro con Porte de Armas vigente. (*)",
+    "notas_oficiales": "Agregado/s por: Ley Nº 19.889 de 09/07/2020 artículo 111 .\nReglamentado por:\nDecreto Nº 263/026 de 27/10/2026,\nDecreto Nº 345/020 de 18/12/2020.",
+    "titulo": "Artículo 30-BIS",
+    "titulo_norma": "TÍTULO IV - ESTATUTO DEL PERSONAL MILITAR",
+    "capitulo": "CAPÍTULO I - DISPOSICIONES GENERALES",
+    "estado_actual": "documento_actualizado",
+    "url_fuente": "https://www.impo.com.uy/bases/leyes/19775-2019/30BIS",
+    "articulo": "30-BIS",
+    "documento": "Ley 19.775"
+   },
+   "publicado": "2026-11-17T18:37:34+00:00",
+   "detectado": "2026-11-17T13:31:49Z",
+   "main_sha": "0116032",
+   "pr": {
+    "numero": 74,
+    "url": "https://github.com/lucasramosuy/normativa/pull/74",
+    "titulo": "Cambios en IMPO detectados el 2026-11-17"
+   }
+  }
+ ]
 }
